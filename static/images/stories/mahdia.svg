@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <linearGradient id="g4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F4A261"/>
+      <stop offset="100%" stop-color="#E76F51"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#g4)"/>
+  <circle cx="80" cy="80" r="50" fill="rgba(255,255,255,0.10)"/>
+  <circle cx="340" cy="340" r="80" fill="rgba(255,255,255,0.08)"/>
+  <text x="200" y="240" font-family="'Fraunces', Georgia, serif" font-size="190" font-weight="500" fill="white" text-anchor="middle" letter-spacing="-8">MK</text>
+</svg>
