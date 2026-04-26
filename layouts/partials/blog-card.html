@@ -1,0 +1,9 @@
+<a href="{{ .RelPermalink }}" class="blog-card">
+  <div class="blog-card__thumb {{ .Params.thumb_style }}">// {{ .Params.category | default "Post" }}</div>
+  <div class="blog-card__body">
+    <div class="blog-meta">{{ .Date.Format "January 2, 2006" }}<span class="dot">·</span>{{ .Params.read_time | default "5 min read" }}</div>
+    <h3>{{ .Title }}</h3>
+    <p>{{ .Description }}</p>
+    <span class="blog-card__arrow">Read post →</span>
+  </div>
+</a>

@@ -1,0 +1,13 @@
+{{ define "main" }}
+<section class="hero" style="text-align: center; min-height: 60vh; display: flex; align-items: center; justify-content: center;">
+  <div style="max-width: 600px;">
+    <div class="eyebrow alt" style="justify-content: center; margin-bottom: 24px;">404 · Page not found</div>
+    <h1 style="margin-bottom: 24px;">This page took the <em>scenic route</em> and got lost.</h1>
+    <p class="lead" style="margin-bottom: 40px;">The link you followed may be broken, the page may have moved, or you might have typed something not quite right. Here's where to go next.</p>
+    <div class="hero__cta-row" style="justify-content: center;">
+      <a href="{{ "/" | relURL }}" class="btn btn--primary">Back to home</a>
+      <a href="{{ "/programs/" | relURL }}" class="btn btn--secondary">See our programs</a>
+    </div>
+  </div>
+</section>
+{{ end }}

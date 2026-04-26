@@ -1,0 +1,10 @@
+<div class="nav-wrap" id="navWrap">
+  <nav class="nav" aria-label="Primary">
+    {{ partial "logo.html" . }}
+    <ul class="nav-links">
+      {{ range .Site.Menus.main }}
+        <li><a class="nav-link" href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+      {{ end }}
+    </ul>
+  </nav>
+</div>

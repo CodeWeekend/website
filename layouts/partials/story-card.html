@@ -1,0 +1,13 @@
+<a href="{{ .RelPermalink }}" class="story-card">
+  <div class="story-card__img">
+    <img src="{{ .Params.image }}" alt="{{ .Params.image_alt | default (printf "Portrait of %s" .Params.student_name) }}" loading="lazy" />
+  </div>
+  <div class="story-card__body">
+    <div class="story-card__cohort">Cohort {{ .Params.cohort_num | default "—" }} · {{ .Params.program }}</div>
+    <h3>{{ .Title }}</h3>
+    <div class="story-card__role">
+      <strong>{{ .Params.student_name }}</strong>
+      {{ .Params.role_now }} @ {{ .Params.employer }}
+    </div>
+  </div>
+</a>

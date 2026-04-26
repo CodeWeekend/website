@@ -1,0 +1,29 @@
+<article class="program-card{{ if eq .Params.accent "warm" }} advanced{{ end }}">
+  <div class="program-tag">{{ if eq .Params.accent "warm" }}▲{{ else }}●{{ end }} {{ .Params.status_label | default "Foundational" }} · {{ .Params.status | default "enrolling now" }}</div>
+  <h3 class="program-name">{{ .Title }}</h3>
+  <div class="program-meta">
+    <div class="program-meta__item">
+      <div class="program-meta__label">Duration</div>
+      <div class="program-meta__value">{{ .Params.duration }}</div>
+    </div>
+    <div class="program-meta__item">
+      <div class="program-meta__label">Format</div>
+      <div class="program-meta__value">{{ .Params.format }}</div>
+    </div>
+    <div class="program-meta__item">
+      <div class="program-meta__label">{{ if .Params.prerequisite }}Prerequisite{{ else }}Level{{ end }}</div>
+      <div class="program-meta__value">{{ if .Params.prerequisite }}{{ .Params.prerequisite }}{{ else }}{{ .Params.level }}{{ end }}</div>
+    </div>
+    <div class="program-meta__item">
+      <div class="program-meta__label">Tuition</div>
+      <div class="program-meta__value">{{ .Params.tuition | default "Free" }}</div>
+    </div>
+  </div>
+  <p class="program-desc">{{ .Description }}</p>
+  {{ with .Params.features }}
+  <ul class="program-features">
+    {{ range . }}<li>{{ . }}</li>{{ end }}
+  </ul>
+  {{ end }}
+  <a href="{{ .RelPermalink }}" class="btn {{ if eq .Params.accent "warm" }}btn--secondary{{ else }}btn--primary{{ end }}">{{ if .Params.cta_label }}{{ .Params.cta_label }}{{ else }}Learn more{{ end }}</a>
+</article>

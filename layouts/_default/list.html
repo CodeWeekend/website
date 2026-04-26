@@ -1,0 +1,26 @@
+{{ define "main" }}
+<header class="page-header">
+  <div class="page-header__inner">
+    <div class="crumb"><a href="{{ "/" | relURL }}">Home</a> &middot; {{ .Title }}</div>
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p class="lead page-header__lead">{{ . }}</p>{{ end }}
+  </div>
+</header>
+
+{{ with .Content }}
+<article class="prose">{{ . }}</article>
+{{ end }}
+
+<section class="list-grid">
+  <div class="list-grid__inner">
+    <ul style="list-style: none; padding: 0;">
+      {{ range .Pages.ByDate.Reverse }}
+        <li style="padding: 16px 0; border-bottom: 1px solid var(--line);">
+          <a href="{{ .RelPermalink }}" style="font-family: var(--serif); font-size: 24px; color: var(--slate-900);">{{ .Title }}</a>
+          {{ with .Description }}<p style="color: var(--slate-600); margin-top: 6px;">{{ . }}</p>{{ end }}
+        </li>
+      {{ end }}
+    </ul>
+  </div>
+</section>
+{{ end }}
