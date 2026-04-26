@@ -9,7 +9,7 @@ prerequisite: ""
 tuition: "Free"
 status: ""
 status_label: ""
-accent: "primary"
+accent: "primary" # or "warm"
 features: []
 weight: 100
 ---

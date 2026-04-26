@@ -1,0 +1,17 @@
+{{- $programs := where .Site.RegularPages "Section" "programs" -}}
+{{- $programs = $programs.ByWeight -}}
+<section class="programs-block" id="programs">
+  <div class="programs-block__inner">
+    <div class="section-header">
+      <div class="eyebrow">Programs</div>
+      <h2>Two programs. <em>One progression.</em> Both fully live.</h2>
+      <p class="lead">Start with the foundational Web &amp; AI bootcamp. Continue into Full Stack to go from job-ready to senior-track. Both are taught live, in cohort — never asynchronous, never recorded-and-forgotten.</p>
+    </div>
+
+    <div class="program-grid">
+      {{ range $programs }}
+        {{ partial "program-card.html" . }}
+      {{ end }}
+    </div>
+  </div>
+</section>

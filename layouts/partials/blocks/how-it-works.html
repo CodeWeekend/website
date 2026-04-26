@@ -1,0 +1,20 @@
+<section class="how">
+  <div class="how__inner">
+    <div class="section-header">
+      <div class="eyebrow dark">How it works</div>
+      <h2>From application to <em>first dev job.</em></h2>
+      <p class="lead">No tricks, no hidden costs, no asynchronous video courses to watch alone at midnight. A real cohort, real mentors, and a real path to work.</p>
+    </div>
+
+    <div class="how__grid">
+      {{ range .Site.Data.howitworks }}
+      <article class="how-step">
+        <div class="how-step__num">{{ .num }}</div>
+        <h3>{{ .title }}</h3>
+        <p>{{ .body }}</p>
+        <span class="how-step__meta">{{ .meta }}</span>
+      </article>
+      {{ end }}
+    </div>
+  </div>
+</section>

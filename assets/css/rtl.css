@@ -1,0 +1,80 @@
+/* ============================================================
+   CodeWeekend — RTL Overrides
+   Applied automatically when html[dir="rtl"]
+   Most properties already use logical inline-* values in main.css,
+   so this file handles only the things that need explicit flipping.
+   ============================================================ */
+
+html[dir="rtl"] {
+  font-family: var(--rtl-font);
+}
+html[dir="rtl"] body {
+  font-family: var(--rtl-font);
+  letter-spacing: 0;
+  font-size: 17px;
+}
+html[dir="rtl"] h1,
+html[dir="rtl"] h2,
+html[dir="rtl"] h3,
+html[dir="rtl"] h4,
+html[dir="rtl"] .display,
+html[dir="rtl"] .featured-story__quote,
+html[dir="rtl"] .program-hero__meta-item .v,
+html[dir="rtl"] .stat__num,
+html[dir="rtl"] .how-step__num,
+html[dir="rtl"] .partner-logo,
+html[dir="rtl"] .site-footer__tag,
+html[dir="rtl"] .program-name {
+  font-family: var(--rtl-font);
+  letter-spacing: 0;
+}
+
+/* Reverse the eyebrow underline + the stories CTA arrow */
+html[dir="rtl"] .eyebrow { flex-direction: row-reverse; }
+html[dir="rtl"] .nav-link::after { transform-origin: right; }
+
+/* CTA arrows: → becomes ← when RTL */
+html[dir="rtl"] .btn--primary::after { content: '←'; }
+html[dir="rtl"] .util-cta::after { content: '←'; }
+html[dir="rtl"] .btn--primary:hover::after { transform: translateX(-3px); }
+html[dir="rtl"] .util-cta:hover::after { transform: translateX(-2px); }
+html[dir="rtl"] .blog-card__arrow,
+html[dir="rtl"] .np-banner__link,
+html[dir="rtl"] .btn--ghost {
+  /* visual hint that text contains an arrow already */
+}
+html[dir="rtl"] .btn--ghost::after { transform: scaleX(-1); display: inline-block; }
+html[dir="rtl"] .stories-cta-row .btn--ghost { direction: rtl; }
+
+/* Featured quote left-quote becomes right-quote */
+html[dir="rtl"] .featured-story__quote::before {
+  content: '\201D';
+  inset-inline-start: auto;
+  inset-inline-end: -0.4em;
+}
+
+/* Footer logo brace mirroring (rendered LTR brand) */
+html[dir="rtl"] .logo {
+  direction: ltr; /* Brand wordmark stays LTR; only surrounding chrome flips */
+}
+
+/* Lang switch should stay LTR */
+html[dir="rtl"] .lang-switch { direction: ltr; }
+
+/* Newsletter form button stays right-aligned visually */
+html[dir="rtl"] .newsletter-form { direction: ltr; }
+
+/* Reverse the promise counter direction */
+html[dir="rtl"] .promise__list li { direction: rtl; }
+
+/* Section header alignment when RTL */
+html[dir="rtl"] .section-header { text-align: right; }
+html[dir="rtl"] .section-header.center { text-align: center; }
+
+/* For body prose, flip blockquote border */
+html[dir="rtl"] article.prose blockquote {
+  border-inline-start: 3px solid var(--sky-500);
+}
+
+/* Partner strip gets some breathing room */
+html[dir="rtl"] .partner-strip { direction: rtl; }

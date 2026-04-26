@@ -1,0 +1,18 @@
+<section class="promise" id="about">
+  <div class="promise__inner">
+    <div class="eyebrow dark">The CodeWeekend Promise</div>
+    <h2>What every learner <em>can count on,</em> always.</h2>
+    <p class="promise__lead">A named, structural commitment to every student we accept. Not aspirational language — operational guarantees.</p>
+
+    <ul class="promise__list">
+      {{ range .Site.Data.promise }}
+      <li>
+        <div>
+          <strong>{{ .title }}</strong>
+          {{ .body }}
+        </div>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,40 @@
+{{ define "main" }}
+<section class="program-hero">
+  <div class="program-hero__inner">
+    <div class="crumb"><a href="{{ "/" | relURL }}">Home</a> &middot; <a href="{{ "/programs/" | relURL }}">Programs</a> &middot; {{ .Title }}</div>
+    <div class="eyebrow {{ if eq .Params.accent "warm" }}alt{{ end }}">{{ .Params.status_label }} program · {{ .Params.status }}</div>
+    <h1>{{ .Title }}</h1>
+    <p class="lead program-hero__sub">{{ .Description }}</p>
+
+    <div class="program-hero__meta-grid">
+      <div class="program-hero__meta-item">
+        <h4>Duration</h4>
+        <div class="v">{{ .Params.duration }}</div>
+      </div>
+      <div class="program-hero__meta-item">
+        <h4>Format</h4>
+        <div class="v">{{ .Params.format }}</div>
+      </div>
+      <div class="program-hero__meta-item">
+        <h4>{{ if .Params.prerequisite }}Prerequisite{{ else }}Level{{ end }}</h4>
+        <div class="v">{{ if .Params.prerequisite }}{{ .Params.prerequisite }}{{ else }}{{ .Params.level }}{{ end }}</div>
+      </div>
+      <div class="program-hero__meta-item">
+        <h4>Tuition</h4>
+        <div class="v">{{ .Params.tuition | default "Free" }}</div>
+      </div>
+    </div>
+
+    <div style="margin-top: 48px;">
+      <a href="{{ .Site.Params.applyFormUrl }}" class="btn btn--primary" target="_blank" rel="noopener noreferrer">{{ .Params.cta_label | default "Apply now" }}</a>
+    </div>
+  </div>
+</section>
+
+<article class="prose">
+  {{ .Content }}
+</article>
+
+{{ partial "blocks/promise.html" . }}
+{{ partial "blocks/get-involved.html" . }}
+{{ end }}

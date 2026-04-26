@@ -1,0 +1,33 @@
+{{- $featured := first 1 (where (where .Site.RegularPages "Section" "stories") "Params.featured" true) -}}
+{{- $hero := index $featured 0 -}}
+
+<section class="hero">
+  <div class="hero__grid">
+    <div class="hero__text">
+      <div class="eyebrow">2025 cohort · For women & girls in Afghanistan</div>
+      <h1>Change your life, <em>learn to code.</em></h1>
+      <p class="hero__sub">Through immersive coding bootcamps, CodeWeekend teaches you the skills and entrepreneurial mindset you need to thrive — now and in the future. Free, fully-live, and built around the people who need it most.</p>
+      <div class="hero__cta-row">
+        <a href="{{ "/programs/web-and-ai/" | relURL }}" class="btn btn--primary">See the 2025 program</a>
+        <a href="{{ "/stories/" | relURL }}" class="btn btn--secondary">Read student stories</a>
+      </div>
+      <div class="hero__trust">
+        <span><strong>Since 2014</strong></span>
+        <span aria-hidden="true">·</span>
+        <span><strong>Non-profit</strong> in BC, Canada</span>
+        <span aria-hidden="true">·</span>
+        <span><strong>$0</strong> tuition</span>
+      </div>
+    </div>
+
+    <div class="hero__image-wrap">
+      <img src="{{ "/images/hero.svg" | relURL }}" alt="Stylized illustration of code on a screen, with text overlay reading 'A bootcamp for women and girls in Afghanistan'" loading="eager" />
+      {{ if $hero }}
+      <a href="{{ $hero.RelPermalink }}" class="hero__image-tag">
+        <strong>{{ $hero.Params.student_name }}</strong>
+        Cohort {{ $hero.Params.cohort_num | default "2025" }} · {{ $hero.Params.role_now }}
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</section>

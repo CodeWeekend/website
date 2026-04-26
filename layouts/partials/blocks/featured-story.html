@@ -1,0 +1,24 @@
+{{- $featured := first 1 (where (where .Site.RegularPages "Section" "stories") "Params.featured" true) -}}
+{{- $hero := index $featured 0 -}}
+{{- if $hero -}}
+<section class="featured-story">
+  <div class="featured-story__inner">
+    <div class="featured-story__portrait">
+      <img src="{{ $hero.Params.image }}" alt="Portrait of {{ $hero.Params.student_name }}" loading="lazy" />
+    </div>
+    <div>
+      <div class="eyebrow alt">Featured story · {{ $hero.Date.Format "January 2006" }}</div>
+      <p class="featured-story__quote">{{ $hero.Params.quote | safeHTML }}</p>
+      <div class="featured-story__meta">
+        <strong>{{ $hero.Params.student_name }}</strong>
+        <span class="featured-story__meta-divider" aria-hidden="true"></span>
+        <span>Cohort {{ $hero.Params.cohort_num | default "6" }} · {{ $hero.Params.program }}</span>
+        <span class="featured-story__meta-divider" aria-hidden="true"></span>
+        <span>{{ $hero.Params.role_now }} at {{ $hero.Params.employer }}</span>
+      </div>
+      <p class="lead" style="margin-bottom: 28px; max-width: 50ch;">{{ $hero.Params.summary | default $hero.Description }}</p>
+      <a href="{{ $hero.RelPermalink }}" class="btn--ghost">Read {{ $hero.Params.student_name }}'s full story →</a>
+    </div>
+  </div>
+</section>
+{{- end -}}

@@ -1,0 +1,17 @@
+{{- /* Tally form embed shortcode. Usage: {{< tally id="abc123" title="Apply for the Web & AI cohort" height="700" >}} */ -}}
+{{- $id := .Get "id" -}}
+{{- $title := .Get "title" | default "Form" -}}
+{{- $height := .Get "height" | default "700" -}}
+<div style="margin: 32px 0;">
+  <iframe
+    src="https://tally.so/embed/{{ $id }}?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+    title="{{ $title }}"
+    loading="lazy"
+    width="100%"
+    height="{{ $height }}"
+    frameborder="0"
+    marginheight="0"
+    marginwidth="0"
+    style="border: 1px solid var(--line); border-radius: var(--radius); background: white;">
+  </iframe>
+</div>

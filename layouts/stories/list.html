@@ -1,0 +1,19 @@
+{{ define "main" }}
+<header class="page-header">
+  <div class="page-header__inner">
+    <div class="crumb"><a href="{{ "/" | relURL }}">Home</a> &middot; Stories</div>
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p class="lead page-header__lead">{{ . }}</p>{{ end }}
+  </div>
+</header>
+
+<section class="stories-block" style="border-top: none;">
+  <div class="stories-block__inner">
+    <div class="story-grid">
+      {{ range .Pages.ByDate.Reverse }}
+        {{ partial "story-card.html" . }}
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

@@ -1,0 +1,32 @@
+{{ define "main" }}
+<header class="page-header">
+  <div class="page-header__inner">
+    <div class="crumb"><a href="{{ "/" | relURL }}">Home</a> &middot; <a href="{{ "/blog/" | relURL }}">Blog</a></div>
+    <div class="blog-meta" style="margin-top: 16px; margin-bottom: 0;">{{ .Date.Format "January 2, 2006" }}<span class="dot">·</span>{{ .Params.read_time | default "5 min read" }}{{ with .Params.category }}<span class="dot">·</span>{{ . }}{{ end }}</div>
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p class="lead page-header__lead">{{ . }}</p>{{ end }}
+  </div>
+</header>
+
+<article class="prose">
+  {{ .Content }}
+</article>
+
+<section class="blog-teaser" style="border-top: 1px solid var(--line);">
+  <div class="blog-teaser__inner">
+    <div class="section-header">
+      <div class="eyebrow">More from the blog</div>
+      <h2 style="font-size: 36px;">Keep reading.</h2>
+    </div>
+    <div class="blog-grid">
+      {{ $current := .Permalink }}
+      {{ $more := where .Site.RegularPages "Section" "blog" }}
+      {{ $more = where $more "Permalink" "ne" $current }}
+      {{ $more = first 3 ($more.ByDate.Reverse) }}
+      {{ range $more }}
+        {{ partial "blog-card.html" . }}
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

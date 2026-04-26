@@ -1,19 +1,55 @@
+# =============================================================================
+# Caddyfile — production server config for CodeWeekend
+# =============================================================================
+#
+# When deployed via Coolify, set the domain on the Coolify side and
+# Coolify will provision the cert and proxy traffic to this container on :80.
+# This Caddyfile listens on :80 inside the container and assumes Coolify
+# handles TLS termination at the edge.
+#
+# If you run the container on bare metal with a public IP, replace ":80"
+# with your domain (e.g. "codeweekend.net") and Caddy will auto-provision
+# Let's Encrypt certificates.
+
 :80 {
 	root * /usr/share/caddy
 	file_server
+
+	# Compression — gzip + brotli — for everything compressible
 	encode zstd br gzip
+
+	# Security headers
 	header {
+		# Cross-origin / framing
 		X-Content-Type-Options "nosniff"
 		X-Frame-Options "SAMEORIGIN"
 		Referrer-Policy "strict-origin-when-cross-origin"
+
+		# HSTS only when HTTPS is terminated upstream by Coolify
+		# Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+
+		# Permissions
 		Permissions-Policy "geolocation=(), microphone=(), camera=()"
+
+		# CSP — relaxed enough for Google Translate + embedded Tally/Airtable forms
+		Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://translate.google.com https://translate.googleapis.com https://www.google.com https://*.gstatic.com https://tally.so https://*.tally.so; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://*.gstatic.com; img-src 'self' data: https:; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://translate.googleapis.com https://*.googleapis.com; frame-src https://translate.google.com https://www.google.com https://tally.so https://*.tally.so https://airtable.com https://*.airtable.com;"
+
+		# Don't reveal server type
 		-Server
 	}
+
+	# Long cache for fingerprinted assets (Hugo Pipes adds hashes)
 	@assets path *.css *.js *.woff2 *.woff
 	header @assets Cache-Control "public, max-age=31536000, immutable"
+
+	# Short cache for HTML (so updates ship fast)
 	@html path *.html /
 	header @html Cache-Control "public, max-age=300, must-revalidate"
+
+	# Redirect /index.html → /
 	redir /index.html / 301
+
+	# 404 page
 	handle_errors {
 		@404 expression {http.error.status_code} == 404
 		rewrite @404 /404.html

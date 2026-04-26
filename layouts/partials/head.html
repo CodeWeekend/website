@@ -1,0 +1,64 @@
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#FAFAF7" />
+
+{{- $title := .Title -}}
+{{- if .IsHome -}}
+  {{- $title = printf "%s — %s" .Site.Title (.Site.Params.tagline | default "Coding bootcamp") -}}
+{{- else -}}
+  {{- $title = printf "%s — %s" .Title .Site.Title -}}
+{{- end -}}
+
+<title>{{ $title }}</title>
+
+{{- $description := .Description | default .Site.Params.description -}}
+{{- if .Params.description -}}{{- $description = .Params.description -}}{{- end -}}
+<meta name="description" content="{{ $description }}" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="{{ $title }}" />
+<meta property="og:description" content="{{ $description }}" />
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
+<meta property="og:url" content="{{ .Permalink }}" />
+{{- with .Site.Params.ogImage -}}
+<meta property="og:image" content="{{ . | absURL }}" />
+{{- end -}}
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{{ $title }}" />
+<meta name="twitter:description" content="{{ $description }}" />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..700,0..100&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<!-- CSS -->
+{{ $main := resources.Get "css/main.css" | resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $main.RelPermalink }}" integrity="{{ $main.Data.Integrity }}" />
+
+{{ $rtl := resources.Get "css/rtl.css" | resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $rtl.RelPermalink }}" integrity="{{ $rtl.Data.Integrity }}" />
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="alternate icon" href="/favicon.ico" />
+
+<!-- RSS -->
+{{ range .AlternativeOutputFormats -}}
+{{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+{{ end -}}
+
+<!-- Apply RTL early to prevent flash -->
+<script>
+  (function() {
+    try {
+      var lang = localStorage.getItem('codeweekend-lang');
+      if (lang === 'fa' || lang === 'ps' || lang === 'ar' || lang === 'ur') {
+        document.documentElement.dir = 'rtl';
+        document.documentElement.lang = lang === 'fa' ? 'fa-AF' : lang;
+      }
+    } catch(e) {}
+  })();
+</script>

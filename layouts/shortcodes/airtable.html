@@ -1,0 +1,16 @@
+{{- /* Airtable form embed shortcode. Usage: {{< airtable id="shrXXX" title="Apply for cohort 8" height="700" >}} */ -}}
+{{- $id := .Get "id" -}}
+{{- $title := .Get "title" | default "Form" -}}
+{{- $height := .Get "height" | default "700" -}}
+<div style="margin: 32px 0;">
+  <iframe class="airtable-embed"
+    src="https://airtable.com/embed/{{ $id }}"
+    title="{{ $title }}"
+    loading="lazy"
+    width="100%"
+    height="{{ $height }}"
+    frameborder="0"
+    onmousewheel=""
+    style="border: 1px solid var(--line); border-radius: var(--radius); background: white;">
+  </iframe>
+</div>

@@ -1,0 +1,15 @@
+{{ define "main" }}
+<header class="page-header">
+  <div class="page-header__inner">
+    <div class="crumb"><a href="{{ "/" | relURL }}">Home</a> &middot; Get Involved</div>
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p class="lead page-header__lead">{{ . }}</p>{{ end }}
+  </div>
+</header>
+
+{{ with .Content }}
+<article class="prose">{{ . }}</article>
+{{ end }}
+
+{{ partial "blocks/get-involved.html" . }}
+{{ end }}

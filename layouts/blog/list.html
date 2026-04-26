@@ -1,0 +1,19 @@
+{{ define "main" }}
+<header class="page-header">
+  <div class="page-header__inner">
+    <div class="crumb"><a href="{{ "/" | relURL }}">Home</a> &middot; Blog</div>
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p class="lead page-header__lead">{{ . }}</p>{{ end }}
+  </div>
+</header>
+
+<section class="blog-teaser" style="border-top: none;">
+  <div class="blog-teaser__inner">
+    <div class="blog-grid">
+      {{ range .Pages.ByDate.Reverse }}
+        {{ partial "blog-card.html" . }}
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

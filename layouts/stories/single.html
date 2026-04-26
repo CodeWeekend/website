@@ -1,0 +1,27 @@
+{{ define "main" }}
+<section class="story-hero">
+  <div class="story-hero__inner">
+    <div>
+      <div class="crumb"><a href="{{ "/" | relURL }}">Home</a> &middot; <a href="{{ "/stories/" | relURL }}">Stories</a></div>
+      <div class="eyebrow alt" style="margin-top: 16px;">Cohort {{ .Params.cohort_num }} · {{ .Params.program }} · {{ .Date.Format "January 2006" }}</div>
+      <h1>{{ .Title }}</h1>
+      <div class="story-hero__role">
+        <strong>{{ .Params.student_name }}</strong>
+        <span class="dot" aria-hidden="true"></span>
+        <span>{{ .Params.role_now }} at {{ .Params.employer }}</span>
+      </div>
+      {{ with .Description }}<p class="lead">{{ . }}</p>{{ end }}
+    </div>
+    <div class="story-hero__image">
+      <img src="{{ .Params.image }}" alt="{{ .Params.image_alt | default (printf "Portrait of %s" .Params.student_name) }}" />
+    </div>
+  </div>
+</section>
+
+<article class="prose">
+  {{ with .Params.quote }}<blockquote>{{ . | safeHTML }}</blockquote>{{ end }}
+  {{ .Content }}
+</article>
+
+{{ partial "blocks/get-involved.html" . }}
+{{ end }}

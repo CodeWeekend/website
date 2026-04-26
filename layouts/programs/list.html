@@ -1,0 +1,25 @@
+{{ define "main" }}
+<header class="page-header">
+  <div class="page-header__inner">
+    <div class="crumb"><a href="{{ "/" | relURL }}">Home</a> &middot; Programs</div>
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p class="lead page-header__lead">{{ . }}</p>{{ end }}
+  </div>
+</header>
+
+<section class="programs-block" style="border-top: none;">
+  <div class="programs-block__inner">
+    <div class="program-grid">
+      {{ range .Pages.ByWeight }}
+        {{ partial "program-card.html" . }}
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+{{ with .Content }}
+<article class="prose">{{ . }}</article>
+{{ end }}
+
+{{ partial "blocks/promise.html" . }}
+{{ end }}

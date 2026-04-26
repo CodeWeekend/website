@@ -1,6 +1,12 @@
+/* ============================================================
+   CodeWeekend — Main JS
+   Sticky nav, animated stat counters, fade-in observers
+   ============================================================ */
+
 (function () {
   'use strict';
 
+  // ---------- Sticky nav with backdrop blur on scroll ----------
   const navWrap = document.getElementById('navWrap');
   if (navWrap) {
     const onScroll = () => {
@@ -11,13 +17,16 @@
     onScroll();
   }
 
+  // ---------- Animated stat counters ----------
   const statNums = document.querySelectorAll('.stat__num[data-target]');
   if (statNums.length && 'IntersectionObserver' in window) {
     const animate = (el) => {
       const target = el.dataset.target || '0';
       const isFloat = target.includes('.');
       const numericTarget = parseFloat(target);
-      if (isNaN(numericTarget)) return;
+      if (isNaN(numericTarget)) {
+        return;
+      }
       const duration = 1400;
       const start = performance.now();
       const suffixEl = el.querySelector('.stat__suffix');
@@ -45,6 +54,7 @@
     statNums.forEach((s) => observer.observe(s));
   }
 
+  // ---------- Newsletter form (placeholder; redirects to external service) ----------
   const newsletterForm = document.querySelector('.newsletter-form');
   if (newsletterForm) {
     newsletterForm.addEventListener('submit', (e) => {

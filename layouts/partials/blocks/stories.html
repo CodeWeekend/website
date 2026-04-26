@@ -1,0 +1,21 @@
+{{- $stories := where .Site.RegularPages "Section" "stories" -}}
+{{- $stories = first 4 ($stories.ByDate.Reverse) -}}
+<section class="stories-block" id="stories">
+  <div class="stories-block__inner">
+    <div class="section-header">
+      <div class="eyebrow">Stories</div>
+      <h2>Where our graduates are <em>now.</em></h2>
+      <p class="lead">Every cohort produces working developers. Read about a few — and the path that took them there.</p>
+    </div>
+
+    <div class="story-grid">
+      {{ range $stories }}
+        {{ partial "story-card.html" . }}
+      {{ end }}
+    </div>
+
+    <div class="stories-cta-row">
+      <a href="{{ "/stories/" | relURL }}" class="btn--ghost">See all student stories →</a>
+    </div>
+  </div>
+</section>

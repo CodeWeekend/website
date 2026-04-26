@@ -1,0 +1,17 @@
+{{- $posts := where .Site.RegularPages "Section" "blog" -}}
+{{- $posts = first 3 ($posts.ByDate.Reverse) -}}
+<section class="blog-teaser" id="blog">
+  <div class="blog-teaser__inner">
+    <div class="section-header">
+      <div class="eyebrow">From the blog</div>
+      <h2>Notes from the cohorts &amp; <em>the team.</em></h2>
+      <p class="lead">Curriculum updates, alumni features, and short essays on what we're learning about how learning works.</p>
+    </div>
+
+    <div class="blog-grid">
+      {{ range $posts }}
+        {{ partial "blog-card.html" . }}
+      {{ end }}
+    </div>
+  </div>
+</section>
