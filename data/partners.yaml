@@ -1,0 +1,8 @@
+- name: "Linda Norgrove Foundation"
+  style: "italic"
+- name: "Hackajob"
+  style: "alt"
+- name: "Scrimba"
+  style: "default"
+- name: "RapidIteration"
+  style: "alt"
