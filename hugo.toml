@@ -6,10 +6,8 @@ enableRobotsTXT = true
 enableEmoji = true
 
 [params]
-  description = "An inclusive community of developers. Free, fully-live coding bootcamps for Afghan youth — with the 2025 cohort dedicated to women and girls in Afghanistan."
+  description = "An inclusive community of developers. Free, fully-live coding bootcamps for Afghan youth, with the 2025 cohort dedicated to women and girls in Afghanistan."
   tagline = "An inclusive community of developers."
-  authorName = "CodeWeekend"
-  ogImage = "/images/og-default.jpg"
   applyFormUrl = "https://tally.so/r/REPLACE_ME_APPLY"
   mentorFormUrl = "https://tally.so/r/REPLACE_ME_MENTOR"
   hireFormUrl = "https://tally.so/r/REPLACE_ME_HIRE"
@@ -57,14 +55,6 @@ enableEmoji = true
     name = "Full Stack"
     pageRef = "/programs/full-stack"
     weight = 20
-  [[menus.footer_programs]]
-    name = "Curriculum"
-    pageRef = "/programs"
-    weight = 30
-  [[menus.footer_programs]]
-    name = "FAQ"
-    pageRef = "/about"
-    weight = 40
 
   [[menus.footer_about]]
     name = "Our mission"
@@ -75,17 +65,13 @@ enableEmoji = true
     pageRef = "/about/team"
     weight = 15
   [[menus.footer_about]]
-    name = "Stories"
-    pageRef = "/stories"
-    weight = 20
-  [[menus.footer_about]]
     name = "News"
     pageRef = "/blog"
-    weight = 30
+    weight = 20
   [[menus.footer_about]]
     name = "Contact"
     pageRef = "/contact"
-    weight = 40
+    weight = 30
 
   [[menus.footer_involved]]
     name = "Donate"
@@ -103,18 +89,7 @@ enableEmoji = true
 [markup]
   [markup.goldmark.renderer]
     unsafe = true
-  [markup.tableOfContents]
-    endLevel = 4
-    ordered = false
-    startLevel = 2
 
 [outputs]
   home = ["HTML", "RSS"]
   section = ["HTML", "RSS"]
-
-[imaging]
-  quality = 85
-  resampleFilter = "lanczos"
-
-[security.funcs]
-  getenv = ["^HUGO_", "^CI$"]
