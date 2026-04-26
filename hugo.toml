@@ -1,0 +1,120 @@
+baseURL = "https://codeweekend.net/"
+languageCode = "en-us"
+title = "CodeWeekend"
+defaultContentLanguage = "en"
+enableRobotsTXT = true
+enableEmoji = true
+
+[params]
+  description = "An inclusive community of developers. Free, fully-live coding bootcamps for Afghan youth — with the 2025 cohort dedicated to women and girls in Afghanistan."
+  tagline = "An inclusive community of developers."
+  authorName = "CodeWeekend"
+  ogImage = "/images/og-default.jpg"
+  applyFormUrl = "https://tally.so/r/REPLACE_ME_APPLY"
+  mentorFormUrl = "https://tally.so/r/REPLACE_ME_MENTOR"
+  hireFormUrl = "https://tally.so/r/REPLACE_ME_HIRE"
+  newsletterFormUrl = "https://tally.so/r/REPLACE_ME_NEWSLETTER"
+  donateUrl = "/get-involved/donate/"
+  contactEmail = "hello@codeweekend.net"
+
+  [params.social]
+    instagram = "https://instagram.com/codeweekend"
+    facebook = "https://facebook.com/codeweekend"
+    x = "https://x.com/codeweekend"
+    linkedin = "https://linkedin.com/school/codeweekend"
+
+[menus]
+  [[menus.main]]
+    name = "Programs"
+    pageRef = "/programs"
+    weight = 10
+  [[menus.main]]
+    name = "Stories"
+    pageRef = "/stories"
+    weight = 20
+  [[menus.main]]
+    name = "About"
+    pageRef = "/about"
+    weight = 30
+  [[menus.main]]
+    name = "Get Involved"
+    pageRef = "/get-involved"
+    weight = 40
+  [[menus.main]]
+    name = "News"
+    pageRef = "/blog"
+    weight = 50
+  [[menus.main]]
+    name = "Contact"
+    pageRef = "/contact"
+    weight = 60
+
+  [[menus.footer_programs]]
+    name = "Web & AI"
+    pageRef = "/programs/web-and-ai"
+    weight = 10
+  [[menus.footer_programs]]
+    name = "Full Stack"
+    pageRef = "/programs/full-stack"
+    weight = 20
+  [[menus.footer_programs]]
+    name = "Curriculum"
+    pageRef = "/programs"
+    weight = 30
+  [[menus.footer_programs]]
+    name = "FAQ"
+    pageRef = "/about"
+    weight = 40
+
+  [[menus.footer_about]]
+    name = "Our mission"
+    pageRef = "/about"
+    weight = 10
+  [[menus.footer_about]]
+    name = "Team"
+    pageRef = "/about/team"
+    weight = 15
+  [[menus.footer_about]]
+    name = "Stories"
+    pageRef = "/stories"
+    weight = 20
+  [[menus.footer_about]]
+    name = "News"
+    pageRef = "/blog"
+    weight = 30
+  [[menus.footer_about]]
+    name = "Contact"
+    pageRef = "/contact"
+    weight = 40
+
+  [[menus.footer_involved]]
+    name = "Donate"
+    pageRef = "/get-involved/donate"
+    weight = 10
+  [[menus.footer_involved]]
+    name = "Mentor"
+    pageRef = "/get-involved/mentor"
+    weight = 20
+  [[menus.footer_involved]]
+    name = "Hire a graduate"
+    pageRef = "/get-involved/hire"
+    weight = 30
+
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true
+  [markup.tableOfContents]
+    endLevel = 4
+    ordered = false
+    startLevel = 2
+
+[outputs]
+  home = ["HTML", "RSS"]
+  section = ["HTML", "RSS"]
+
+[imaging]
+  quality = 85
+  resampleFilter = "lanczos"
+
+[security.funcs]
+  getenv = ["^HUGO_", "^CI$"]
