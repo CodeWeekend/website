@@ -87,6 +87,7 @@ newsletterFormUrl = "https://tally.so/r/REPLACE_ME_NEWSLETTER"
 The site ships in English. The utility bar (top right) has **EN · دری · پښتو**.
 
 Clicking دری or پښتو:
+
 1. Sets a `googtrans` cookie pointing Google Translate at Dari (`fa`) or Pashto (`ps`)
 2. Sets `<html dir="rtl">` immediately (no flash) via an inline early-load script in `<head>`
 3. Loads the Google Translate widget offscreen, which translates all visible text on next load
@@ -194,7 +195,7 @@ docker run --rm -p 8080:80 codeweekend
 
 The site builds and runs as-is. Some content is placeholder until real assets are gathered:
 
-- **Student photos** in `static/images/stories/` are SVG initials avatars — replace with real graduate photos *with consent*
+- **Student photos** in `static/images/stories/` are SVG initials avatars — replace with real graduate photos _with consent_
 - **Form URLs** in `hugo.toml` — replace with real Tally/Airtable IDs
 - **Hero image** (`static/images/hero.svg`) is a stylized illustration — could be replaced with a real photo of a cohort, with consent
 - **Stats** in `data/stats.yaml` — currently shows real-looking numbers (10+ years, 280+ applications, 50 in 2025 cohort, 30 LNF scholarships); update as the program grows
