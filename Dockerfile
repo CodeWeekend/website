@@ -20,7 +20,7 @@ RUN hugo --minify --gc
 # ---------- Serve stage ----------
 FROM caddy:2-alpine
 
-# Caddy config (auto-SSL, gzip, brotli, security headers)
+# Caddy config (gzip, zstd, security headers)
 COPY Caddyfile /etc/caddy/Caddyfile
 
 # Static site output from the build stage

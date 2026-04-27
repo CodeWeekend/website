@@ -15,8 +15,8 @@
 	root * /usr/share/caddy
 	file_server
 
-	# Compression — gzip + brotli — for everything compressible
-	encode zstd br gzip
+	# Compression — zstd + gzip — for everything compressible
+	encode zstd gzip
 
 	# Security headers
 	header {

@@ -10,7 +10,7 @@ Built with Hugo. Hosted on GitHub. Deployed via Coolify.
 - **Markdown** for all content (no CMS)
 - **Custom theme** in `layouts/` — no external theme dependency
 - **Google Translate** widget for Dari (دری) and Pashto (پښتو), with automatic RTL switching
-- **Caddy** in production (HTTP/2, gzip, brotli, security headers)
+- **Caddy** in production (HTTP/2, gzip, zstd, security headers)
 - **GitHub Actions** for CI (build check, accessibility audit, Lighthouse)
 - **Coolify** for self-hosted deployment
 
