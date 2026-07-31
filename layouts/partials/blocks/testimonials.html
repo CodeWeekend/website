@@ -5,7 +5,7 @@
       <h2 id="testimonials-title">What the community <em>said about CodeWeekend.</em></h2>
     </div>
     <ul class="testimonials__grid">
-      {{ range hugo.Data.testimonials }}
+      {{ range site.Data.testimonials }}
       <li>
         <blockquote>&ldquo;{{ .quote }}&rdquo;</blockquote>
         <p><strong>{{ .name }}</strong><span>{{ .location }}</span></p>

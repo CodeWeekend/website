@@ -20,7 +20,7 @@
       </div>
     </div>
     <ul class="alumni-grid">
-      {{ range hugo.Data.alumni }}
+      {{ range site.Data.alumni }}
       <li class="alumni-card">
         {{ if .profile }}<a href="{{ .profile }}" rel="noopener noreferrer" aria-label="View {{ .name }}'s published profile">{{ end }}
           <img src="{{ .image | relURL }}" alt="Portrait of {{ .name }}" loading="lazy" width="320" height="320">
