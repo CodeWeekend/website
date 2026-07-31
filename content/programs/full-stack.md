@@ -34,19 +34,23 @@ CodeWeekend has previously run six-month Full Stack programs, most notably the *
 ## What you'll learn
 
 ### Months 1–2 — The backend in depth
+
 Node.js, Python, and Go — pick one as a primary, get conversational with the other two. Web servers, routing, middleware, authentication, error handling. Database design: relational fundamentals, normalization, indexing, transactions. Document and key-value databases. ORMs and when to bypass them.
 
 ### Months 3–4 — Systems thinking
+
 What happens when a single server stops being enough. Caching strategies. Queueing for asynchronous work. Observability: logging, metrics, tracing. Designing for failure. Reading the systems design problems you'd actually be asked in a senior interview.
 
 ### Month 5 — DevOps and infrastructure
+
 Docker. Container orchestration. CI/CD pipelines. Infrastructure as code (Terraform basics). Monitoring and alerting. The shape of a production deployment, end to end.
 
 ### Month 6 — Capstone & senior-track interview prep
+
 A six-week capstone, typically with a partner organization needing real engineering work. Senior-level system design interviews. Behavioral interview prep at the depth a senior role requires.
 
 ## When the next cohort runs
 
-The Full Stack Bootcamp is currently between cohorts as we focus on the 2025 Web & AI program for women and girls in Afghanistan. Express interest below to be notified when the next Full Stack cohort opens.
+The Full Stack Bootcamp is currently between cohorts as we focus on the 2026 Web & AI program for women and girls in Afghanistan. Express interest below to be notified when the next Full Stack cohort opens.
 
 [Tell us you're interested →](mailto:hello@codeweekend.net?subject=Full%20Stack%20Bootcamp%20interest)

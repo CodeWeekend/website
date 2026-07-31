@@ -73,14 +73,15 @@ The site has no backend. All forms are external (Tally, Airtable, Google Forms, 
 {{< airtable id="shrXXX" title="Mentor application" >}}
 ```
 
-Replace the placeholder URLs in `hugo.toml` under `[params]`:
+The application, mentor, and hiring CTAs use working internal pages by default:
 
 ```toml
-applyFormUrl = "https://tally.so/r/REPLACE_ME_APPLY"
-mentorFormUrl = "https://tally.so/r/REPLACE_ME_MENTOR"
-hireFormUrl = "https://tally.so/r/REPLACE_ME_HIRE"
-newsletterFormUrl = "https://tally.so/r/REPLACE_ME_NEWSLETTER"
+applyFormUrl = "/get-involved/apply/"
+mentorFormUrl = "/get-involved/mentor/"
+hireFormUrl = "/get-involved/hire/"
 ```
+
+Each page currently provides an email pathway. Replace a URL with a verified external form only after testing its privacy notice, success state, and mobile behavior.
 
 ## Translation (Dari & Pashto)
 
@@ -196,7 +197,7 @@ docker run --rm -p 8080:80 codeweekend
 The site builds and runs as-is. Some content is placeholder until real assets are gathered:
 
 - **Student photos** in `static/images/stories/` are SVG initials avatars — replace with real graduate photos _with consent_
-- **Form URLs** in `hugo.toml` — replace with real Tally/Airtable IDs
+- **Application workflow** — replace the email-based interest pathway with a verified form before the next cohort opens
 - **Hero image** (`static/images/hero.svg`) is a stylized illustration — could be replaced with a real photo of a cohort, with consent
 - **Stats** in `data/stats.yaml` — currently shows real-looking numbers (10+ years, 280+ applications, 50 in 2025 cohort, 30 LNF scholarships); update as the program grows
 - **Donate flow** — currently routes to email; wire up direct online giving when ready

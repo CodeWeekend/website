@@ -1,18 +1,18 @@
 ---
 title: "Mentor"
-description: "If you're a working developer with a few hours a month, you can change a learner's trajectory. Female mentors are especially important for our 2025 cohort."
+description: "If you're a working developer with a few hours a month, you can change a learner's trajectory. Female mentors are especially important for our 2026 cohort."
 date: 2026-04-01
 ---
 
-## A note on the 2025 cohort
+## A note on the 2026 cohort
 
-The 2025 Web & AI Bootcamp is for **women and girls in Afghanistan**. We've intentionally built the mentor pool around **female mentors from Afghanistan and abroad** so participants see what is possible — and have someone in the room who has navigated the path they are walking.
+The 2026 Web & AI Bootcamp is for **women and girls in Afghanistan**. We've intentionally built the mentor pool around **female mentors from Afghanistan and abroad** so participants see what is possible — and have someone in the room who has navigated the path they are walking.
 
 If you're a working female developer interested in mentoring this cohort or future ones, **we particularly need you**. If you identify otherwise, you're still warmly welcome to mentor — see below.
 
 ## What mentoring looks like
 
-Mentoring is a roughly two-hour weekly commitment, with a cohort-length minimum (twelve weeks for the 2025 program). The two hours typically break down as:
+Mentoring is a roughly two-hour weekly commitment, with a cohort-length minimum (twelve weeks for the 2026 program). The two hours typically break down as:
 
 - **One hour: 1:1 with a student.** A scheduled call where you walk through their code, talk about what they are stuck on, and answer questions about the industry they're trying to break into.
 - **One hour: cohort availability.** You're in the cohort's chat during the week. When students post questions in your area of expertise, you weigh in. You might review a pull request or two.

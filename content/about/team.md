@@ -1,49 +1,32 @@
 ---
-title: "Our Team"
-description: "The people behind CodeWeekend — instructors, mentors, and operations who make the program possible."
+title: "Team and Board"
+description: "Confirmed leadership, nonprofit governance, and the historical team behind CodeWeekend."
 date: 2026-04-25
 ---
 
-CodeWeekend is run by a small core team, supported by an extended network of mentors, volunteers, and partner organizations.
+This page distinguishes confirmed current leadership from people documented on the former website. Historical service is preserved without implying that every person remains active today.
 
-## Core team
+## Confirmed current leadership
 
 ### Jamshid Hashimi
-**Founder**
 
-Jamshid is a passionate technologist, innovation enthusiast, and software engineer with more than a decade of experience. He founded CodeWeekend in Kabul on June 4, 2014, and has led the community ever since. Today he leads instruction for the 2025 cohort, guiding students through the structured curriculum.
+**Founder and 2026 program lead**
 
-### Abida Nabizada
-**Teacher & Developer**
-
-Abida is part of the CodeWeekend instructional team, supporting students through the program with hands-on teaching and mentorship.
-
-### Shaheen Naikpay
-**Operations & Finance**
-
-Shaheen is a tech enthusiast and project manager with over a decade of operations and project management experience. He oversees the operational backbone of CodeWeekend.
-
-### Hamid Afghan
-**Teacher & Developer**
-
-Hamid is part of the CodeWeekend instructional team.
-
-### Mustafa Ehsan Alokozay
-**Lead Mentor**
-
-Mustafa is an open-source enthusiast who has contributed to several open-source projects. He has extensive experience in software engineering and leads the mentor program.
-
-### Azizullah Saeidi
-**Teacher & Developer**
-
-Azizullah is part of the CodeWeekend instructional team.
-
-## Mentors
-
-The 2025 cohort is supported by a group of dedicated **female mentors from Afghanistan and abroad** who join the live sessions to share their professional experiences, answer questions, and encourage learners with their own stories.
-
-If you're a working developer interested in mentoring, [we'd love to hear from you](/get-involved/mentor/).
+Jamshid is a passionate technologist, innovation enthusiast, and software engineer with more than a decade of experience. He founded CodeWeekend in Kabul on June 4, 2014, and has led the community ever since. Today he leads instruction for the 2026 cohort, guiding students through the structured curriculum.
 
 ## Board
 
-CodeWeekend is now incorporated as a non-profit society in British Columbia, Canada. We are forming a board of directors representing nonprofit governance, the Afghan diaspora community, and the engineering and education sectors. Specific board appointments will be announced as they are finalized.
+CodeWeekend is incorporated as a nonprofit society in British Columbia, Canada. The public source material available for this migration did not identify the current directors, so board names will be published after they are confirmed.
+
+## Historical team
+
+The former About page listed these people as team members. Their service is retained here as institutional history, not as a current staff directory:
+
+- **Jamshid Hashimi** — founder
+- **Abida Nabizada** — teacher and developer
+- **Shaheen Naikpay** — operations and finance
+- **Hamid Afghan** — teacher and developer
+- **Mustafa Ehsan Alokozay** — lead mentor
+- **Azizullah Saeidi** — teacher and developer
+
+See the [past and present community](/community/) for the historical instructor and mentor network. For governance questions or role corrections, [contact CodeWeekend](/contact/).

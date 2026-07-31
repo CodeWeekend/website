@@ -32,7 +32,7 @@
 		Permissions-Policy "geolocation=(), microphone=(), camera=()"
 
 		# CSP — relaxed enough for Google Translate + embedded Tally/Airtable forms
-		Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://translate.google.com https://translate.googleapis.com https://www.google.com https://*.gstatic.com https://tally.so https://*.tally.so; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://*.gstatic.com; img-src 'self' data: https:; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://translate.googleapis.com https://*.googleapis.com; frame-src https://translate.google.com https://www.google.com https://tally.so https://*.tally.so https://airtable.com https://*.airtable.com;"
+		Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://translate.google.com https://translate.googleapis.com https://www.google.com https://*.gstatic.com https://tally.so https://*.tally.so; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://*.gstatic.com; img-src 'self' data: https:; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://translate.googleapis.com https://*.googleapis.com; frame-src https://translate.google.com https://www.google.com https://tally.so https://*.tally.so https://airtable.com https://*.airtable.com; form-action 'self' https://codeweekendorg.kit.com;"
 
 		# Don't reveal server type
 		-Server
@@ -48,6 +48,26 @@
 
 	# Redirect /index.html → /
 	redir /index.html / 301
+
+	# Legacy site routes
+	redir /courses/fullstack-development-full-time* /programs/web-and-ai/ 301
+	redir /courses/fullstack-development-part-time* /programs/full-stack/ 301
+	redir /courses* /programs/ 301
+	redir /our-graduates* /alumni/ 301
+	redir /case-studies/pourya-amire-graduate-case-study* /stories/pourya/ 301
+	redir /case-studies/mustafa-mohammadi-graduate-case-study* /stories/mustafa/ 301
+	redir /case-studies/mehreen-najm-graduate-case-study* /stories/mehreen/ 301
+	redir /case-studies* /stories/ 301
+	redir /codeweekend-instructors* /community/ 301
+	redir /codeweekend-mentors* /community/ 301
+	redir /team/* /community/ 301
+	redir /news* /blog/ 301
+	redir /codeweekend-2025-web-ai-development-bootcamp-and-becoming-a-non-profit-organization* /blog/becoming-nonprofit/ 301
+	redir /codeweekend-updates-2022* /blog/codeweekend-updates-2022/ 301
+	redir /codeweekend-bootcamp-2021* /blog/codeweekend-bootcamp-2021/ 301
+	redir /what-is-software-development* /blog/what-is-software-development/ 301
+	redir /a-successful-career-in-software-development* /blog/a-successful-career-in-software-development/ 301
+	redir /do-you-want-to-learn-coding-whats-next* /blog/do-you-want-to-learn-coding-whats-next/ 301
 
 	# 404 page
 	handle_errors {

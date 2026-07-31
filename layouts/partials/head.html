@@ -20,7 +20,8 @@
 <meta property="og:description" content="{{ $description }}" />
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
 <meta property="og:url" content="{{ .Permalink }}" />
-{{- with .Site.Params.ogImage -}}
+{{- $ogImage := .Params.og_image | default .Site.Params.ogImage -}}
+{{- with $ogImage -}}
 <meta property="og:image" content="{{ . | absURL }}" />
 {{- end -}}
 
@@ -40,6 +41,11 @@
 
 {{ $rtl := resources.Get "css/rtl.css" | resources.Minify | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $rtl.RelPermalink }}" integrity="{{ $rtl.Data.Integrity }}" />
+
+{{ range .Params.styles }}
+{{ $pageStyle := resources.Get . | resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $pageStyle.RelPermalink }}" integrity="{{ $pageStyle.Data.Integrity }}" />
+{{ end }}
 
 <!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />

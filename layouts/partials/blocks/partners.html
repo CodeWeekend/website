@@ -2,7 +2,7 @@
   <div class="partners__inner">
     <div class="partners__label">Where our graduates work today</div>
     <div class="partner-strip">
-      {{ range .Site.Data.partners }}
+      {{ range hugo.Data.partners }}
         <span class="partner-logo {{ .style }}">{{ .name }}</span>
       {{ end }}
     </div>

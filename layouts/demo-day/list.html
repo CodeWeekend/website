@@ -1,0 +1,234 @@
+{{ define "main" }}
+<div class="demo-day">
+  <nav class="event-nav" aria-label="Demo Day">
+    <div class="event-nav__inner">
+      <a class="event-nav__name" href="#top">2026 Demo Day</a>
+      <div class="event-nav__links">
+        <a href="#experience">What to expect</a>
+        <a href="#about">About us</a>
+        <a href="#questions">Questions</a>
+      </div>
+      <a class="event-nav__rsvp" href="{{ .Params.rsvp_url }}" target="_blank" rel="noopener noreferrer">RSVP</a>
+    </div>
+  </nav>
+
+  <section class="event-hero" id="top" aria-labelledby="event-title">
+    <div class="event-hero__inner">
+      <div class="event-hero__copy event-reveal">
+        <p class="event-kicker">Web & AI Development Bootcamp</p>
+        <h1 id="event-title">CodeWeekend <span>2026 Demo Day</span></h1>
+        <p class="event-hero__lead">Meet the graduates turning months of learning into working products. Join us for an online celebration of talent, persistence, and what becomes possible when opportunity meets code.</p>
+
+        <div class="event-hero__actions">
+          <a class="event-button event-button--primary" href="{{ .Params.rsvp_url }}" target="_blank" rel="noopener noreferrer">Reserve your place</a>
+          <a class="event-button event-button--quiet" href="#experience">Explore the programme</a>
+        </div>
+
+        <dl class="event-facts" aria-label="Event details">
+          <div>
+            <dt>When</dt>
+            <dd>
+              {{ if eq .Params.event_status "Date to be announced" }}
+                {{ .Params.event_status }}
+              {{ else }}
+                {{ .Params.event_date }} · {{ .Params.event_time }} ({{ .Params.event_timezone }})
+              {{ end }}
+            </dd>
+          </div>
+          <div>
+            <dt>Where</dt>
+            <dd>{{ .Params.event_location }}</dd>
+          </div>
+          <div>
+            <dt>Admission</dt>
+            <dd>Free with RSVP</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="event-hero__visual event-reveal event-reveal--late" aria-label="Members of the CodeWeekend community">
+        <figure class="event-photo event-photo--main">
+          <img src="{{ "/images/alumni/Fauzia_Kargar-644x650.png" | relURL }}" alt="Fauzia Karger, CodeWeekend Executive Director" loading="eager" />
+        </figure>
+        <figure class="event-photo event-photo--small">
+          <img src="{{ "/images/alumni/image-Ghezala-Wahidi.png" | relURL }}" alt="Ghezala Wahidi, CodeWeekend alumna" loading="eager" />
+        </figure>
+        <div class="event-hero__count" aria-hidden="true">
+          <strong>30</strong>
+          <span>graduates<br />one stage</span>
+        </div>
+        <div class="event-hero__code" aria-hidden="true">
+          <span>const future =</span>
+          <strong>students.build();</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <aside class="event-press" aria-label="CodeWeekend in the media">
+    <div class="event-press__inner">
+      <span>Our story has been featured by</span>
+      <a href="https://www.technologyreview.com/2021/12/30/1043133/afghanistan-coding-bootcamp/" target="_blank" rel="noopener noreferrer">MIT Technology Review</a>
+      <a href="https://www.freecodecamp.org/news/inside-afghanistans-friendliest-coding-club-d553719579e/" target="_blank" rel="noopener noreferrer">freeCodeCamp</a>
+      <a href="https://educationdefenders.net/members/codeweekend/" target="_blank" rel="noopener noreferrer">Education Defenders Network</a>
+    </div>
+  </aside>
+
+  <section class="event-intro" id="about" aria-labelledby="about-title">
+    <div class="event-section event-intro__grid">
+      <div>
+        <p class="event-kicker">More than a graduation</p>
+        <h2 id="about-title">A room full of <em>next steps.</em></h2>
+      </div>
+      <div class="event-intro__copy">
+        <p>CodeWeekend began in Kabul in 2014 as a grassroots gathering for developers. More than 100 community events later, we have grown into a Canadian non-profit delivering free, practical technology education for Afghan youth.</p>
+        <p>Our Web & AI Development Bootcamp is fully live and built around making. Students learn core web technologies, modern AI tools, collaboration, and the confidence to take an idea from a blank screen to a working product.</p>
+        <a class="event-text-link" href="{{ "/about/" | relURL }}">Meet CodeWeekend</a>
+      </div>
+    </div>
+
+    <div class="event-section event-numbers" aria-label="CodeWeekend at a glance">
+      <div><strong>2014</strong><span>Founded in Kabul</span></div>
+      <div><strong>100+</strong><span>Community events</span></div>
+      <div><strong>280+</strong><span>Bootcamp applicants</span></div>
+      <div><strong>$0</strong><span>Student tuition</span></div>
+    </div>
+  </section>
+
+  <section class="event-programme" id="experience" aria-labelledby="programme-title">
+    <div class="event-section">
+      <header class="event-section__header">
+        <div>
+          <p class="event-kicker event-kicker--light">The programme</p>
+          <h2 id="programme-title">Come curious. Leave <em>connected.</em></h2>
+        </div>
+        <p>This is not a slide-deck graduation. It is a live look at what 30 emerging developers can imagine, build, and explain in their own words.</p>
+      </header>
+
+      <ol class="event-agenda">
+        <li>
+          <span class="event-agenda__num">01</span>
+          <div><h3>Live project demos</h3><p>Ten selected graduates present their strongest Web and AI projects, followed by questions from the audience and judges.</p></div>
+          <span class="event-agenda__meta">10 builders</span>
+        </li>
+        <li>
+          <span class="event-agenda__num">02</span>
+          <div><h3>Cohort spotlight</h3><p>A fast-moving showcase gives every graduating student a place in the story and a moment for their work to be seen.</p></div>
+          <span class="event-agenda__meta">All graduates</span>
+        </li>
+        <li>
+          <span class="event-agenda__num">03</span>
+          <div><h3>Awards & recognition</h3><p>We celebrate technical execution, problem-solution fit, creativity, presentation, and the growth behind each project.</p></div>
+          <span class="event-agenda__meta">Community applause</span>
+        </li>
+        <li>
+          <span class="event-agenda__num">04</span>
+          <div><h3>Open networking</h3><p>Meet graduates, employers, mentors, partners, and friends of CodeWeekend in focused online breakout rooms.</p></div>
+          <span class="event-agenda__meta">Real conversations</span>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="event-builders" aria-labelledby="builders-title">
+    <div class="event-section event-builders__grid">
+      <div class="event-builders__portrait">
+        <img src="{{ "/images/stories/mahdia.svg" | relURL }}" alt="Mahdia Khamoosh monogram" loading="lazy" />
+        <span>Student story · Panjshir</span>
+      </div>
+      <blockquote>
+        <p class="event-kicker">What students build</p>
+        <h2 id="builders-title">“A place where my voice can be <em>seen and heard.</em>”</h2>
+        <p>Mahdia Khamoosh built and launched her personal website from scratch in the first weeks of the program. By Demo Day, every graduate has moved from learning foundations to presenting a capstone of their own.</p>
+        <a class="event-text-link" href="{{ "/stories/mahdia/" | relURL }}">Read Mahdia's story</a>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="event-audience" aria-labelledby="audience-title">
+    <div class="event-section">
+      <header class="event-section__header event-section__header--ink">
+        <div>
+          <p class="event-kicker">Who should join</p>
+          <h2 id="audience-title">There is a seat here <em>for you.</em></h2>
+        </div>
+        <p>Demo Day is open to anyone who wants to see emerging Afghan tech talent and help turn graduation into momentum.</p>
+      </header>
+
+      <div class="event-audience__grid">
+        <article><span>01</span><h3>Employers</h3><p>Meet graduates, see how they think, and discover candidates for junior roles, internships, or project work.</p></article>
+        <article><span>02</span><h3>Technologists</h3><p>Offer thoughtful feedback, share experience, and connect with builders working across web and AI.</p></article>
+        <article><span>03</span><h3>Partners & supporters</h3><p>See the direct result of scholarships, connectivity, mentorship, and sustained belief in students.</p></article>
+        <article><span>04</span><h3>Friends & community</h3><p>Celebrate an important milestone and help every graduate feel that their work matters beyond the classroom.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="event-partners" aria-labelledby="partners-title">
+    <div class="event-section event-partners__grid">
+      <div>
+        <p class="event-kicker">With thanks</p>
+        <h2 id="partners-title">Opportunity is built <em>together.</em></h2>
+      </div>
+      <div class="event-partners__list">
+        <article>
+          <h3>Linda Norgrove Foundation</h3>
+          <p>Supporting women in Afghanistan through education and empowerment, including full scholarships and vital student support for this cohort.</p>
+          <a href="https://lindanorgrovefoundation.org/" target="_blank" rel="noopener noreferrer">Visit partner</a>
+        </article>
+        <article>
+          <h3>GiveInternet</h3>
+          <p>Helping bridge the digital divide so learners can access the internet and tools they need to participate, practice, and complete the bootcamp.</p>
+          <a href="https://giveinternet.org/" target="_blank" rel="noopener noreferrer">Visit partner</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="event-faq" id="questions" aria-labelledby="questions-title">
+    <div class="event-section event-faq__grid">
+      <div>
+        <p class="event-kicker">Good to know</p>
+        <h2 id="questions-title">A few details before you join.</h2>
+        <p class="event-faq__contact">Still curious? Write to <a href="mailto:hello@codeweekend.net">hello@codeweekend.net</a>.</p>
+      </div>
+      <div class="event-faq__items">
+        <details open>
+          <summary>When is Demo Day?</summary>
+          <p>The date and start time are being finalized. RSVP now and we will send the confirmed schedule, primary timezone, and UTC reference directly to you.</p>
+        </details>
+        <details>
+          <summary>Where does the event take place?</summary>
+          <p>Demo Day is fully online. Confirmed guests will receive the private joining link and simple access instructions by email.</p>
+        </details>
+        <details>
+          <summary>Who can attend?</summary>
+          <p>Registration is open to employers, technologists, partners, mentors, alumni, media, friends, families, and anyone interested in supporting emerging talent.</p>
+        </details>
+        <details>
+          <summary>Is there a cost?</summary>
+          <p>No. Attendance is free, but registration is required so we can plan capacity and send you the secure event link.</p>
+        </details>
+        <details>
+          <summary>Will the event be recorded?</summary>
+          <p>We plan to record the formal program. Recording and photography will follow CodeWeekend's student consent and privacy practices.</p>
+        </details>
+        <details>
+          <summary>What if I have an access need?</summary>
+          <p>Tell us in the RSVP form. We will share available captioning and access arrangements with confirmed guests before the event.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="event-rsvp" aria-labelledby="rsvp-title">
+    <div class="event-rsvp__inner">
+      <p class="event-kicker event-kicker--light">Registration is open</p>
+      <h2 id="rsvp-title">Be there when the work <em>goes live.</em></h2>
+      <p>Reserve your place for CodeWeekend 2026 Demo Day. We will email the confirmed date, time, agenda, and private event link as soon as the schedule is set.</p>
+      <a class="event-button event-button--white" href="{{ .Params.rsvp_url }}" target="_blank" rel="noopener noreferrer">RSVP on Airtable</a>
+      <span>Free online event · Confirmation by email</span>
+    </div>
+  </section>
+</div>
+{{ end }}

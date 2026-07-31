@@ -62,8 +62,6 @@ html[dir="rtl"] .logo {
 html[dir="rtl"] .lang-switch { direction: ltr; }
 
 /* Newsletter form button stays right-aligned visually */
-html[dir="rtl"] .newsletter-form { direction: ltr; }
-
 /* Reverse the promise counter direction */
 html[dir="rtl"] .promise__list li { direction: rtl; }
 
