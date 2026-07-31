@@ -16,7 +16,7 @@
     <span class="eyebrow">Published work</span>
     <h2 id="project-showcase-title">Built by the 2025 cohort</h2>
     <ul class="project-grid">
-      {{ range hugo.Data.projects }}
+      {{ range site.Data.projects }}
       <li class="project-card">
         <img src="{{ .image | relURL }}" alt="{{ .alt }}" loading="lazy" width="1024" height="1024">
         <div class="project-card__body">
