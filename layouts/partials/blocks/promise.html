@@ -5,7 +5,7 @@
     <p class="promise__lead">A named, structural commitment to every student we accept. Not aspirational language — operational guarantees.</p>
 
     <ul class="promise__list">
-      {{ range .Site.Data.promise }}
+      {{ range hugo.Data.promise }}
       <li>
         <div>
           <strong>{{ .title }}</strong>

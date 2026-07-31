@@ -3,12 +3,14 @@
     <div class="site-footer__top">
       <div class="site-footer__brand">
         {{ partial "logo.html" . }}
-        <p class="site-footer__tag">A free, fully-live coding bootcamp for Afghan youth — and anyone else ready to change their trajectory.</p>
-        <form class="newsletter-form"
-              {{ with .Site.Params.newsletterFormUrl }}data-form-url="{{ . }}"{{ end }}
-              onsubmit="event.preventDefault();">
-          <input type="email" placeholder="your@email.com" aria-label="Email address for newsletter" required />
-          <button type="submit">Subscribe</button>
+        <p class="site-footer__tag">Free, fully-live technology education and mentorship for Afghan learners, with programs focused on women and girls.</p>
+        <form class="newsletter-form" action="https://codeweekendorg.kit.com/posts" method="post" target="_blank">
+          <label for="newsletter-email">Program and community updates</label>
+          <div class="newsletter-form__controls">
+            <input id="newsletter-email" name="email_address" type="email" autocomplete="email" placeholder="Email address" required>
+            <button type="submit">Subscribe</button>
+          </div>
+          <p>Sent through Kit. Unsubscribe at any time.</p>
         </form>
       </div>
 
@@ -43,7 +45,8 @@
         <h4>Resources</h4>
         <ul>
           <li><a href="{{ "/blog/" | relURL }}">Blog</a></li>
-          <li><a href="{{ "/about/" | relURL }}">Annual report</a></li>
+          <li><a href="{{ "/projects/" | relURL }}">Student projects</a></li>
+          <li><a href="{{ "/community/" | relURL }}">Community network</a></li>
           <li><a href="{{ "/privacy/" | relURL }}">Privacy</a></li>
           <li><a href="{{ "/terms/" | relURL }}">Terms</a></li>
         </ul>

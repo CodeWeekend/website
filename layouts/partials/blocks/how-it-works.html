@@ -7,7 +7,7 @@
     </div>
 
     <div class="how__grid">
-      {{ range .Site.Data.howitworks }}
+      {{ range hugo.Data.howitworks }}
       <article class="how-step">
         <div class="how-step__num">{{ .num }}</div>
         <h3>{{ .title }}</h3>

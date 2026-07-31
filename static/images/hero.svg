@@ -104,7 +104,7 @@
 
   <!-- caption / brand -->
   <g transform="translate(60 100)">
-    <text font-family="'JetBrains Mono', monospace" font-size="14" fill="#1AAEDC" letter-spacing="3">// COHORT 2025</text>
+    <text font-family="'JetBrains Mono', monospace" font-size="14" fill="#1AAEDC" letter-spacing="3">// COHORT 2026</text>
   </g>
 
   <g transform="translate(60 880)">

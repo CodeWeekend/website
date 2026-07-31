@@ -1,24 +1,24 @@
 ---
 title: "Donate"
-description: "Donations cover scholarships, internet packages, and laptops for the women and girls in our 2025 cohort. Recurring giving is what lets us plan."
+description: "Donations cover scholarships, internet packages, and laptops for women and girls in our 2026 cohort. Recurring giving is what lets us plan."
 date: 2026-04-01
 ---
 
 ## Why donations matter
 
-CodeWeekend is free for participants. That doesn't mean it's free to run. The 2025 Web & AI Bootcamp is funded primarily through scholarships from the [Linda Norgrove Foundation](https://lindanorgrovefoundation.org), with operational costs and supplementary support coming from individual donors and partner organizations.
+CodeWeekend is free for participants. That doesn't mean it's free to run. The 2026 Web & AI Bootcamp builds on scholarship and access support established with the [Linda Norgrove Foundation](https://lindanorgrovefoundation.org) in 2025, with operational costs and supplementary support coming from individual donors and partner organizations.
 
-Donations make the *un-glamorous* parts of the program possible — the things that turn an admitted applicant into a graduate.
+Donations make the _un-glamorous_ parts of the program possible — the things that turn an admitted applicant into a graduate.
 
 ## What your donation does
 
-| Amount | Covers |
-|---|---|
-| **$25** | One month of internet access for one participant |
-| **$100** | A laptop power adapter, hardware support, or a week of mentor stipends |
-| **$500** | A laptop, refurbished or new, for a participant who needs one |
-| **$2,500** | A full cohort seat — twelve weeks of live instruction for one student |
-| **$10,000** | A named scholarship or program sponsorship for the next cohort |
+| Amount      | Covers                                                                 |
+| ----------- | ---------------------------------------------------------------------- |
+| **$25**     | One month of internet access for one participant                       |
+| **$100**    | A laptop power adapter, hardware support, or a week of mentor stipends |
+| **$500**    | A laptop, refurbished or new, for a participant who needs one          |
+| **$2,500**  | A full cohort seat — twelve weeks of live instruction for one student  |
+| **$10,000** | A named scholarship or program sponsorship for the next cohort         |
 
 ## Recurring giving
 

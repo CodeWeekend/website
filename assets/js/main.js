@@ -54,17 +54,4 @@
     statNums.forEach((s) => observer.observe(s));
   }
 
-  // ---------- Newsletter form (placeholder; redirects to external service) ----------
-  const newsletterForm = document.querySelector('.newsletter-form');
-  if (newsletterForm) {
-    newsletterForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const url = newsletterForm.dataset.formUrl;
-      if (url) {
-        window.open(url, '_blank', 'noopener,noreferrer');
-      } else {
-        alert('Newsletter signup is not yet configured.');
-      }
-    });
-  }
 })();

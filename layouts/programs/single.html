@@ -26,7 +26,7 @@
     </div>
 
     <div style="margin-top: 48px;">
-      <a href="{{ .Site.Params.applyFormUrl }}" class="btn btn--primary" target="_blank" rel="noopener noreferrer">{{ .Params.cta_label | default "Apply now" }}</a>
+      <a href="{{ .Site.Params.applyFormUrl | relURL }}" class="btn btn--primary">{{ .Params.cta_label | default "Apply now" }}</a>
     </div>
   </div>
 </section>

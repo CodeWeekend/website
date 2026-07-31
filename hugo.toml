@@ -6,14 +6,13 @@ enableRobotsTXT = true
 enableEmoji = true
 
 [params]
-  description = "An inclusive community of developers. Free, fully-live coding bootcamps for Afghan youth — with the 2025 cohort dedicated to women and girls in Afghanistan."
+  description = "An inclusive community of developers. Free, fully-live coding bootcamps for Afghan youth — with the 2026 cohort dedicated to women and girls in Afghanistan."
   tagline = "An inclusive community of developers."
   authorName = "CodeWeekend"
   ogImage = "/images/og-default.jpg"
-  applyFormUrl = "https://tally.so/r/REPLACE_ME_APPLY"
-  mentorFormUrl = "https://tally.so/r/REPLACE_ME_MENTOR"
-  hireFormUrl = "https://tally.so/r/REPLACE_ME_HIRE"
-  newsletterFormUrl = "https://tally.so/r/REPLACE_ME_NEWSLETTER"
+  applyFormUrl = "/get-involved/apply/"
+  mentorFormUrl = "/get-involved/mentor/"
+  hireFormUrl = "/get-involved/hire/"
   donateUrl = "/get-involved/donate/"
   contactEmail = "hello@codeweekend.net"
 
@@ -29,25 +28,33 @@ enableEmoji = true
     pageRef = "/programs"
     weight = 10
   [[menus.main]]
+    name = "Impact"
+    pageRef = "/impact"
+    weight = 20
+  [[menus.main]]
+    name = "Alumni"
+    pageRef = "/alumni"
+    weight = 30
+  [[menus.main]]
     name = "Stories"
     pageRef = "/stories"
-    weight = 20
+    weight = 40
   [[menus.main]]
     name = "About"
     pageRef = "/about"
-    weight = 30
+    weight = 50
   [[menus.main]]
     name = "Get Involved"
     pageRef = "/get-involved"
-    weight = 40
+    weight = 60
   [[menus.main]]
     name = "News"
     pageRef = "/blog"
-    weight = 50
+    weight = 70
   [[menus.main]]
     name = "Contact"
     pageRef = "/contact"
-    weight = 60
+    weight = 80
 
   [[menus.footer_programs]]
     name = "Web & AI"
@@ -67,26 +74,30 @@ enableEmoji = true
     weight = 40
 
   [[menus.footer_about]]
-    name = "Our mission"
-    pageRef = "/about"
+    name = "Impact"
+    pageRef = "/impact"
     weight = 10
   [[menus.footer_about]]
-    name = "Team"
-    pageRef = "/about/team"
-    weight = 15
-  [[menus.footer_about]]
-    name = "Stories"
-    pageRef = "/stories"
+    name = "Alumni"
+    pageRef = "/alumni"
     weight = 20
   [[menus.footer_about]]
-    name = "News"
-    pageRef = "/blog"
+    name = "Team and board"
+    pageRef = "/about/team"
     weight = 30
   [[menus.footer_about]]
-    name = "Contact"
-    pageRef = "/contact"
+    name = "Partners"
+    pageRef = "/partners"
     weight = 40
+  [[menus.footer_about]]
+    name = "Media"
+    pageRef = "/media"
+    weight = 50
 
+  [[menus.footer_involved]]
+    name = "Apply"
+    pageRef = "/get-involved/apply"
+    weight = 5
   [[menus.footer_involved]]
     name = "Donate"
     pageRef = "/get-involved/donate"
@@ -99,6 +110,10 @@ enableEmoji = true
     name = "Hire a graduate"
     pageRef = "/get-involved/hire"
     weight = 30
+  [[menus.footer_involved]]
+    name = "Partner or fund"
+    pageRef = "/get-involved/partner"
+    weight = 40
 
 [markup]
   [markup.goldmark.renderer]

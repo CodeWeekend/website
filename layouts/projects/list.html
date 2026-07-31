@@ -1,0 +1,34 @@
+{{ define "main" }}
+<header class="page-header">
+  <div class="page-header__inner">
+    <div class="crumb"><a href="{{ "/" | relURL }}">Home</a> &middot; {{ .Title }}</div>
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p class="lead page-header__lead">{{ . }}</p>{{ end }}
+  </div>
+</header>
+
+{{ with .Content }}
+<article class="prose project-intro">{{ . }}</article>
+{{ end }}
+
+<section class="project-showcase" aria-labelledby="project-showcase-title">
+  <div class="project-showcase__inner">
+    <span class="eyebrow">Published work</span>
+    <h2 id="project-showcase-title">Built by the 2025 cohort</h2>
+    <ul class="project-grid">
+      {{ range hugo.Data.projects }}
+      <li class="project-card">
+        <img src="{{ .image | relURL }}" alt="{{ .alt }}" loading="lazy" width="1024" height="1024">
+        <div class="project-card__body">
+          <p class="project-card__meta">{{ .cohort }}</p>
+          <h3>{{ .title }}</h3>
+          <p><strong>{{ .student }}</strong></p>
+          <p>{{ .description }}</p>
+          {{ with .story }}<a href="{{ . }}">Read the student story <span aria-hidden="true">&rarr;</span></a>{{ end }}
+        </div>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+</section>
+{{ end }}

@@ -1,0 +1,37 @@
+{{ define "main" }}
+<header class="page-header">
+  <div class="page-header__inner">
+    <div class="crumb"><a href="{{ "/" | relURL }}">Home</a> &middot; {{ .Title }}</div>
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p class="lead page-header__lead">{{ . }}</p>{{ end }}
+  </div>
+</header>
+
+{{ with .Content }}
+<article class="prose alumni-intro">{{ . }}</article>
+{{ end }}
+
+<section class="alumni-directory" aria-labelledby="alumni-directory-title">
+  <div class="alumni-directory__inner">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Published directory</span>
+        <h2 id="alumni-directory-title">54 graduates</h2>
+      </div>
+    </div>
+    <ul class="alumni-grid">
+      {{ range hugo.Data.alumni }}
+      <li class="alumni-card">
+        {{ if .profile }}<a href="{{ .profile }}" rel="noopener noreferrer" aria-label="View {{ .name }}'s published profile">{{ end }}
+          <img src="{{ .image | relURL }}" alt="Portrait of {{ .name }}" loading="lazy" width="320" height="320">
+          <span class="alumni-card__body">
+            <strong>{{ .name }}</strong>
+            {{ with .role }}<span>{{ . }}</span>{{ end }}
+          </span>
+        {{ if .profile }}</a>{{ end }}
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+</section>
+{{ end }}
