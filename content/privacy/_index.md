@@ -15,7 +15,7 @@ If anything below is unclear, please email us at [privacy@codeweekend.net](mailt
 
 ## 1. Who we are
 
-**CodeWeekend** is a non-profit society incorporated in British Columbia, Canada (registered August 2025). For the purposes of this policy, "CodeWeekend," "we," "us," and "our" refer to that society and its small team of staff, instructors, mentors, and volunteers.
+**CodeWeekend** is a non-profit society incorporated in British Columbia, Canada (registered in 2026). For the purposes of this policy, "CodeWeekend," "we," "us," and "our" refer to that society and its small team of staff, instructors, mentors, and volunteers.
 
 The website [codeweekend.net](https://codeweekend.net) is operated by CodeWeekend.
 
@@ -24,6 +24,7 @@ The website [codeweekend.net](https://codeweekend.net) is operated by CodeWeeken
 We collect the smallest amount of information that lets us run the program well. In practice, this means:
 
 ### Information you give us directly
+
 - **When you apply to a cohort:** Your name, email address, country, age, prior experience, what draws you to the program, and your written application responses.
 - **When you contact us:** Anything you choose to share in an email or contact form (name, email, message content).
 - **When you donate:** We use third-party processors (e.g. Stripe) for payments. We may receive your name, email, donation amount, and the country your card is registered in. **We do not receive or store full credit card details.**
@@ -31,11 +32,13 @@ We collect the smallest amount of information that lets us run the program well.
 - **When you subscribe to our newsletter:** Your email address (and optionally your first name).
 
 ### Information collected automatically
+
 - **Server logs:** Our hosting provider records standard web server logs (IP address, browser user-agent, page requested, timestamp) for security and operational purposes. These logs are typically retained for 30 days.
 - **Browser storage:** When you click the **EN / دری / پښتو** language toggle, we store your choice in your browser's `localStorage` so the language persists across page loads. We also set a `googtrans` cookie that tells Google Translate which language to render the page in. This is the only cookie we set ourselves.
 - **No analytics, no tracking pixels.** We do not currently run Google Analytics, Facebook Pixel, or any cross-site tracking. If we add privacy-friendly analytics in the future (e.g. Plausible), this policy will be updated.
 
 ### Information from third parties
+
 - **Form submissions** sent via Tally, Airtable, or Google Forms come to us through those platforms. Each of those services has its own privacy policy. We use them because they are simpler than running our own form backend; we do not store your data there longer than we need to process your application or response.
 - **Social media:** If you interact with us on Instagram, Facebook, X, or LinkedIn, those platforms collect their own data per their respective policies.
 
@@ -97,6 +100,7 @@ When we use service providers outside of Canada, we look for providers who offer
 Different jurisdictions give you different rights over your personal information. We try to honour all of them regardless of where you live.
 
 You can ask us to:
+
 - **Access** the personal information we hold about you.
 - **Correct** information that is inaccurate or incomplete.
 - **Delete** your information (with limited exceptions where we are legally required to keep records).
@@ -123,17 +127,18 @@ If you want your information removed sooner, ask us. In most cases we can comply
 
 We use a minimal amount of browser storage:
 
-| What | Type | Why | Set by |
-|------|------|-----|--------|
-| `codeweekend-lang` | localStorage | Remembers your language choice (EN, دری, پښتو) so the page loads in your selected language next visit | CodeWeekend |
-| `googtrans` | Cookie | Tells Google Translate which language to translate the page into; **only set after you click a non-English language** | CodeWeekend (in conjunction with Google Translate) |
-| Google Translate cookies | Cookies | Set by Google Translate when active. See [Google's privacy policy](https://policies.google.com/privacy). **Only loaded after you click دری or پښتو.** | Google |
+| What                     | Type         | Why                                                                                                                                                   | Set by                                             |
+| ------------------------ | ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------- |
+| `codeweekend-lang`       | localStorage | Remembers your language choice (EN, دری, پښتو) so the page loads in your selected language next visit                                                 | CodeWeekend                                        |
+| `googtrans`              | Cookie       | Tells Google Translate which language to translate the page into; **only set after you click a non-English language**                                 | CodeWeekend (in conjunction with Google Translate) |
+| Google Translate cookies | Cookies      | Set by Google Translate when active. See [Google's privacy policy](https://policies.google.com/privacy). **Only loaded after you click دری or پښتو.** | Google                                             |
 
 We do not use any cookies for analytics, advertising, or tracking. The page works in English with no cookies set at all.
 
 ## 11. Children's privacy
 
 CodeWeekend's bootcamp programs are designed for participants 16 and older. For anyone under 18:
+
 - We require parent or guardian consent for participation.
 - We require parent or guardian consent for any photo, name, or story used publicly.
 - We do not knowingly collect personal information from children under 13. If you believe we have, contact [privacy@codeweekend.net](mailto:privacy@codeweekend.net) and we will delete it immediately.

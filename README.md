@@ -1,6 +1,6 @@
 # CodeWeekend
 
-The website for [CodeWeekend](https://codeweekend.net) — an inclusive community of developers, founded in Kabul in 2014, now incorporated as a non-profit society in British Columbia, Canada. The 2025 program is a 12-week Web & AI Development Bootcamp for women and girls in Afghanistan.
+The website for [CodeWeekend](https://codeweekend.net) — an inclusive community of developers, founded in Kabul in 2014, now incorporated as a non-profit society in British Columbia, Canada. The 2026 program is a 12-week Web & AI Development Bootcamp for women and girls in Afghanistan.
 
 Built with Hugo. Hosted on GitHub. Deployed via Coolify.
 
@@ -46,7 +46,7 @@ Set `draft: false` when ready and push to `main`. Coolify auto-deploys.
 
 ### Featured story
 
-The homepage hero pulls from the most recent story marked `featured: true` in its front matter. Currently this is Mahdia Khamoosh from the 2025 cohort. To change:
+The homepage hero pulls from the most recent story marked `featured: true` in its front matter. Currently this is Mahdia Khamoosh from the 2026 cohort. To change:
 
 1. In the previously-featured story, set `featured: false`
 2. In the new featured story, set `featured: true`
@@ -105,7 +105,7 @@ codeweekend-site/
 ├── hugo.toml                  # site config, menus, params
 ├── archetypes/                # front-matter templates for new content
 ├── assets/css/                # main.css + rtl.css (Hugo Pipes minifies + fingerprints)
-├── assets/js/                 # main.js + translate.js
+├── assets/js/                 # main.js
 ├── content/                   # all Markdown content
 │   ├── _index.md
 │   ├── about/
@@ -113,10 +113,10 @@ codeweekend-site/
 │   │   └── team.md
 │   ├── programs/
 │   │   ├── _index.md
-│   │   ├── web-and-ai.md      # 2025 cohort: women & girls in Afghanistan
+│   │   ├── web-and-ai.md      # 2026 cohort: women & girls in Afghanistan
 │   │   └── full-stack.md      # historical 6-month program
 │   ├── stories/               # real graduates (real names, placeholder avatars)
-│   │   ├── mahdia.md          # FEATURED: 2025 cohort
+│   │   ├── mahdia.md          # FEATURED: 2026 cohort
 │   │   ├── pourya.md
 │   │   ├── mustafa.md
 │   │   └── mehreen.md
@@ -199,7 +199,7 @@ The site builds and runs as-is. Some content is placeholder until real assets ar
 - **Student photos** in `static/images/stories/` are SVG initials avatars — replace with real graduate photos _with consent_
 - **Application workflow** — replace the email-based interest pathway with a verified form before the next cohort opens
 - **Hero image** (`static/images/hero.svg`) is a stylized illustration — could be replaced with a real photo of a cohort, with consent
-- **Stats** in `data/stats.yaml` — currently shows real-looking numbers (10+ years, 280+ applications, 50 in 2025 cohort, 30 LNF scholarships); update as the program grows
+- **Stats** in `data/stats.yaml` — currently shows real-looking numbers (10+ years, 280+ applications, 50 in 2026 cohort, 30 LNF scholarships); update as the program grows
 - **Donate flow** — currently routes to email; wire up direct online giving when ready
 
 ## Content provenance
@@ -209,8 +209,8 @@ The content in this site was migrated from the previous codeweekend.net site (Ap
 - **Founder, history, mission** — directly from the About page
 - **Team members** — from the About page (Jamshid Hashimi, Abida Nabizada, Shaheen Naikpay, Hamid Afghan, Mustafa Ehsan Alokozay, Azizullah Saeidi)
 - **Student testimonials** — from the homepage and Case Studies (Pourya Amire, Mustafa Mohammadi, Mehreen Najm)
-- **2025 cohort details** — from the August 2025 announcement post (Mahdia Khamoosh, the program structure, Linda Norgrove Foundation, the BC nonprofit incorporation)
-- **News posts** — three full posts from the previous site (2025 announcement, 2022 year-in-review, 2021 bootcamp launch)
+- **2026 cohort details** — from the July 2026 announcement post (Mahdia Khamoosh, the program structure, Linda Norgrove Foundation, the BC nonprofit incorporation)
+- **News posts** — three full posts from the previous site (2026 announcement, 2022 year-in-review, 2021 bootcamp launch)
 - **Partners** — Linda Norgrove Foundation, Hackajob, Scrimba, RapidIteration
 
 ## License

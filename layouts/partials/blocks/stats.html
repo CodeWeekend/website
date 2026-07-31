@@ -1,6 +1,6 @@
 <section class="stats-band">
   <div class="stats-band__grid">
-    {{ range hugo.Data.stats }}
+    {{ range site.Data.stats }}
     <div class="stat">
       <div class="stat__num" data-target="{{ .value }}">{{ .value }}<span class="stat__suffix">{{ .suffix }}</span></div>
       <div class="stat__label"><strong>{{ .label }}</strong>{{ .description }}</div>

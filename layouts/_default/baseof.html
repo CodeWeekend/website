@@ -12,12 +12,8 @@
   </main>
 
   {{ partial "footer.html" . }}
-  {{ partial "translate.html" . }}
 
   {{ $main := resources.Get "js/main.js" | resources.Minify | resources.Fingerprint }}
   <script src="{{ $main.RelPermalink }}" integrity="{{ $main.Data.Integrity }}" defer></script>
-
-  {{ $translate := resources.Get "js/translate.js" | resources.Minify | resources.Fingerprint }}
-  <script src="{{ $translate.RelPermalink }}" integrity="{{ $translate.Data.Integrity }}"></script>
 </body>
 </html>

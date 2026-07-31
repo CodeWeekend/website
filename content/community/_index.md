@@ -25,8 +25,8 @@ For confirmed current leadership and governance information, see [Team and Board
 - **Edrees Kakar** — Afghan-Canadian professional and mentor
 - **Shaheen Naikpay** — technology and operations professional
 
-## 2025 mentors
+## 2026 mentors
 
-The 2025 Web & AI cohort was supported by female mentors from Afghanistan and abroad who joined live sessions to share professional experience, answer questions, and encourage learners. Their names were not published in the source article.
+The 2026 Web & AI cohort was supported by female mentors from Afghanistan and abroad who joined live sessions to share professional experience, answer questions, and encourage learners. Their names were not published in the source article.
 
 [Volunteer as a mentor](/get-involved/mentor/) or [contact CodeWeekend](/contact/) to confirm a current role.

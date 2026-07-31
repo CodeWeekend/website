@@ -5,7 +5,7 @@ description: "Organizations that have funded scholarships, expanded access to le
 
 ## Linda Norgrove Foundation
 
-For the 2025 Web & AI Development Bootcamp, the [Linda Norgrove Foundation](https://lindanorgrovefoundation.org) funded **30 full scholarships** and **24 internet packages** for women and girls in Afghanistan.
+For the 2026 Web & AI Development Bootcamp, the [Linda Norgrove Foundation](https://lindanorgrovefoundation.org) funded **30 full scholarships** and **24 internet packages** for women and girls in Afghanistan.
 
 ## Hackajob
 

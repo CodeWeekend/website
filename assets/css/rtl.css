@@ -58,9 +58,6 @@ html[dir="rtl"] .logo {
   direction: ltr; /* Brand wordmark stays LTR; only surrounding chrome flips */
 }
 
-/* Lang switch should stay LTR */
-html[dir="rtl"] .lang-switch { direction: ltr; }
-
 /* Newsletter form button stays right-aligned visually */
 /* Reverse the promise counter direction */
 html[dir="rtl"] .promise__list li { direction: rtl; }

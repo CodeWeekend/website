@@ -1,8 +1,8 @@
 ---
-title: "CodeWeekend 2025: Web & AI development bootcamp and becoming a non-profit organization"
-date: 2025-08-28
+title: "CodeWeekend 2026: Web & AI development bootcamp and becoming a non-profit organization"
+date: 2026-07-28
 draft: false
-description: "Two milestones for 2025: the launch of a 12-week Web & AI Development Bootcamp for women and girls in Afghanistan, and CodeWeekend's incorporation as a non-profit society in British Columbia, Canada."
+description: "Two milestones for 2026: the launch of a 12-week Web & AI Development Bootcamp for women and girls in Afghanistan, and CodeWeekend's incorporation as a non-profit society in British Columbia, Canada."
 category: "Announcement"
 read_time: "6 min read"
 thumb_style: "default"
@@ -13,12 +13,12 @@ At CodeWeekend, we believe learning has the power to change lives. When young pe
 
 We are pleased to share two milestones:
 
-- The launch of the **Web & AI Development Bootcamp 2025**, a 12-week program for women and girls in Afghanistan.
+- The launch of the **Web & AI Development Bootcamp 2026**, a 12-week program for women and girls in Afghanistan.
 - The registration of **CodeWeekend as a non-profit organization in British Columbia, Canada**.
 
 Together, these steps strengthen our ability to reach more learners, build meaningful partnerships, and continue creating opportunities where they are most needed.
 
-## CodeWeekend 2025: A Bootcamp for Women and Girls in Afghanistan
+## CodeWeekend 2026: A Bootcamp for Women and Girls in Afghanistan
 
 This year's bootcamp has already brought so much excitement. We received more than **280 applications** from across Afghanistan, and after a careful selection process, **50 participants** were admitted.
 
@@ -28,7 +28,7 @@ With generous support from the [Linda Norgrove Foundation](https://lindanorgrove
 
 ## Program Structure: Step by Step Learning
 
-The Web & AI Development Bootcamp 2025 is designed to guide learners from the basics of technology to building real projects they can share proudly.
+The Web & AI Development Bootcamp 2026 is designed to guide learners from the basics of technology to building real projects they can share proudly.
 
 1. **Foundations** — Students begin with computer basics, the internet, Git, and essential digital tools.
 2. **Frontend Development** — They move on to learning HTML, CSS, JavaScript, responsive design, and the React framework to create modern, user-friendly websites.
@@ -83,7 +83,7 @@ We also thank our long-standing partners and friends who continue to walk beside
 > "The internet package support makes a big difference. It allows me to stay connected every day and not fall behind."
 > — Bootcamp student
 
-As the weeks go on, we will share more reflections and stories from our 2025 cohort.
+As the weeks go on, we will share more reflections and stories from our 2026 cohort.
 
 ## Looking Ahead
 
@@ -102,8 +102,8 @@ None of this would be possible without our students, mentors, volunteers, partne
 
 Here's to another year of learning and growth.
 
-— *The CodeWeekend Team* 💚
+— _The CodeWeekend Team_ 💚
 
 ---
 
-*Join us on this journey: follow CodeWeekend on [Instagram](https://instagram.com/codeweekend), [Facebook](https://facebook.com/codeweekend), [X](https://x.com/codeweekend), or [LinkedIn](https://linkedin.com/school/codeweekend), or join our upcoming events to learn, connect, and support the next generation of Afghan developers.*
+_Join us on this journey: follow CodeWeekend on [Instagram](https://instagram.com/codeweekend), [Facebook](https://facebook.com/codeweekend), [X](https://x.com/codeweekend), or [LinkedIn](https://linkedin.com/school/codeweekend), or join our upcoming events to learn, connect, and support the next generation of Afghan developers._

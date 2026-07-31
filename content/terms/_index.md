@@ -15,7 +15,7 @@ By using the site or participating in any CodeWeekend activity, you agree to the
 
 ## 1. Who we are
 
-CodeWeekend is a non-profit society registered in British Columbia, Canada (August 2025). We run free, fully-live coding bootcamps — primarily for Afghan youth, with a 2025 cohort dedicated to women and girls in Afghanistan.
+CodeWeekend is a non-profit society registered in British Columbia, Canada (2026). We run free, fully-live coding bootcamps — primarily for Afghan youth, with a 2026 cohort dedicated to women and girls in Afghanistan.
 
 In these Terms, "CodeWeekend," "we," "us," and "our" refer to that society. "You" refers to whoever is using the site or participating in our activities.
 
@@ -24,18 +24,20 @@ In these Terms, "CodeWeekend," "we," "us," and "our" refer to that society. "You
 The CodeWeekend website is open to everyone. You can read pages, donate, and contact us regardless of where you live.
 
 To **apply to a CodeWeekend bootcamp**, you must:
+
 - Be at least 16 years old (with parent or guardian consent if you are under 18);
 - Have access to a working internet connection or be eligible for our internet support program;
 - Be available for the live class schedule of the cohort you apply to;
 - Apply truthfully — we cannot help you if your application doesn't reflect your actual situation.
 
-Specific cohorts may have additional eligibility criteria (e.g. our 2025 cohort is for women and girls in Afghanistan). Those are stated on each program's page.
+Specific cohorts may have additional eligibility criteria (e.g. our 2026 cohort is for women and girls in Afghanistan). Those are stated on each program's page.
 
 To **mentor**, **partner**, or **donate**, see the requirements on the relevant page.
 
 ## 3. What we offer
 
 CodeWeekend offers:
+
 - **Cohort-based coding bootcamps** taught live by working developers and supported by mentors. Specific durations, formats, and content vary by cohort and are described on each program page.
 - **Mentorship matching** for accepted students.
 - **Hiring introductions** to companies, when graduates opt in.
@@ -47,6 +49,7 @@ We do not offer paid courses, certifications recognized by external accrediting 
 ## 4. Application and admission
 
 When you apply to a cohort:
+
 - We will keep your application confidential and only share it with the people who need to evaluate it.
 - Admissions decisions are at our sole discretion based on the criteria described on the program page. We do not provide individual feedback on rejections — this is so we can keep applications open and free without taxing the small staff who run the program.
 - An offer of admission is conditional on completing any required onboarding steps (e.g. signing a learner agreement, parent consent for minors).
@@ -71,6 +74,7 @@ We make these calls case by case. The safety and dignity of our learners always 
 ## 6. Use of the website
 
 You agree not to:
+
 - Attempt to gain unauthorized access to any part of the site;
 - Reverse-engineer, scrape at scale, or interfere with the operation of the site;
 - Use the site to distribute malware, phishing content, or anything illegal;
@@ -85,18 +89,21 @@ The site is provided "as is." We work hard to keep it accurate, available, and s
 Everything published on this website — text, code samples, illustrations, logos, the design of the site itself — is © CodeWeekend except where another author or rights-holder is credited.
 
 You can:
+
 - Read, share, and link to anything on this site freely.
 - Quote material in news articles, academic work, and similar contexts with appropriate attribution.
 
 You cannot:
+
 - Republish substantial portions of our material without permission;
 - Use the CodeWeekend name or logo to imply endorsement, partnership, or affiliation that does not exist.
 
-The codebase for this website is published under the MIT license at [github.com/rapiditeration/codeweekend](https://github.com/rapiditeration/codeweekend). The MIT license covers the *code* — not the brand, content, or specific design assets.
+The codebase for this website is published under the MIT license at [github.com/rapiditeration/codeweekend](https://github.com/rapiditeration/codeweekend). The MIT license covers the _code_ — not the brand, content, or specific design assets.
 
 ### Your work in the program
 
 If you participate in a CodeWeekend program:
+
 - **You retain ownership** of the projects, code, and creative work you produce.
 - You grant CodeWeekend a non-exclusive, worldwide, royalty-free license to use your work for educational and promotional purposes (e.g. featuring your capstone in a Demo Day post or our annual report) — but only with your explicit consent for any specific public use.
 - We will never use your work to compete with you, sell it, or pretend it is ours.
@@ -109,7 +116,7 @@ Curriculum materials we provide during the program are for your personal learnin
 
 - **All donations are voluntary** and are used for program operations consistent with our mission.
 - **Donations are non-refundable** unless required by law or unless you can demonstrate the donation was made in error (e.g. duplicate transaction). We will work in good faith to resolve any donation issues — email [donate@codeweekend.net](mailto:donate@codeweekend.net).
-- **Tax receipts:** Until our charitable status with the Canada Revenue Agency is finalized, we cannot issue official Canadian tax receipts. We will provide acknowledgment letters and, once charitable status is granted, retroactively issue receipts to eligible 2025 donors.
+- **Tax receipts:** Until our charitable status with the Canada Revenue Agency is finalized, we cannot issue official Canadian tax receipts. We will provide acknowledgment letters and, once charitable status is granted, retroactively issue receipts to eligible 2026 donors.
 - **For donors outside Canada:** check with your local tax authority on the treatment of contributions to a Canadian non-profit society.
 
 ## 9. No employment guarantee
@@ -127,6 +134,7 @@ We are honest about the realistic range of outcomes on our [stories page](/stori
 You can stop using the site or leave any cohort at any time. We will respect your decision and remove your access from cohort channels and any private resources promptly upon request.
 
 We may terminate your access to the site, a cohort, or our community channels if:
+
 - You violate these Terms or the code of conduct;
 - We are legally required to;
 - We end a specific service or program.
@@ -147,6 +155,7 @@ Some jurisdictions do not allow the limitations or exclusions above. In those ju
 ## 12. Indemnification
 
 You agree to indemnify and hold harmless CodeWeekend, its directors, staff, instructors, mentors, and volunteers against claims arising from:
+
 - Your violation of these Terms or the code of conduct;
 - Your unlawful use of the site or program resources;
 - Your infringement of someone else's rights through the work you produce in the program.

@@ -61,6 +61,7 @@
 	redir /codeweekend-instructors* /community/ 301
 	redir /codeweekend-mentors* /community/ 301
 	redir /team/* /community/ 301
+	redir /impact/2025* /impact/2026/ 301
 	redir /news* /blog/ 301
 	redir /codeweekend-2025-web-ai-development-bootcamp-and-becoming-a-non-profit-organization* /blog/becoming-nonprofit/ 301
 	redir /codeweekend-updates-2022* /blog/codeweekend-updates-2022/ 301

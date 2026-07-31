@@ -23,8 +23,8 @@ CodeWeekend began as a volunteer-led developer community in Kabul and grew into 
     <div><h2>Scholarships, access, and a third cohort</h2><p>More than 250 people applied and 30 learners joined the third cohort. Hackajob funded scholarships for 20 women, and Scrimba provided one year of premium access to 100 learners. <a href="/blog/codeweekend-updates-2022/">Read the 2022 review</a>.</p></div>
   </li>
   <li>
-    <span class="impact-timeline__year">2025</span>
-    <div><h2>Women, AI education, and nonprofit status</h2><p>CodeWeekend received more than 280 applications for its Web & AI program and admitted 50 women and girls. The Linda Norgrove Foundation supported 30 scholarships and 24 internet packages. CodeWeekend also incorporated as a nonprofit society in British Columbia. <a href="/impact/2025/">See the 2025 cohort impact</a>.</p></div>
+    <span class="impact-timeline__year">2026</span>
+    <div><h2>Women, AI education, and nonprofit status</h2><p>CodeWeekend received more than 280 applications for its Web & AI program and admitted 50 women and girls. The Linda Norgrove Foundation supported 30 scholarships and 24 internet packages. CodeWeekend also incorporated as a nonprofit society in British Columbia. <a href="/impact/2026/">See the 2026 cohort impact</a>.</p></div>
   </li>
 </ol>
 
