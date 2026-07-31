@@ -5,7 +5,7 @@
 # =============================================================================
 
 # ---------- Build stage ----------
-FROM hugomods/hugo:exts-0.140.0 AS builder
+FROM hugomods/hugo:exts-0.154.5 AS builder
 
 WORKDIR /src
 
