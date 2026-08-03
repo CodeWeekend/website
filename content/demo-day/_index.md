@@ -10,5 +10,5 @@ event_date: "To be announced"
 event_time: "To be announced"
 event_timezone: "UTC reference will be provided"
 event_location: "Live online"
-rsvp_url: "https://airtable.com/apppPAlL3lgpXK5eU/pagcuZlithKOv5pNt/form"
+rsvp_url: "https://airtable.com/apppPAlL3lgpXK5eU/pagQLaOxHRVd6rAjQ/form"
 ---
