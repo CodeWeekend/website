@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="640" viewBox="0 0 640 640" role="img" aria-label="Student portrait placeholder">
+  <rect width="640" height="640" fill="#F2E4CE"/>
+  <circle cx="320" cy="250" r="96" fill="#083B5A" opacity="0.18"/>
+  <path d="M160 520c40-110 120-160 160-160s120 50 160 160" fill="#083B5A" opacity="0.18"/>
+  <text x="320" y="590" text-anchor="middle" fill="#0C6A8C" font-family="Georgia, serif" font-size="28" letter-spacing="4">CODEWEEKEND</text>
+</svg>

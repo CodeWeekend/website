@@ -43,8 +43,17 @@
 <link rel="stylesheet" href="{{ $rtl.RelPermalink }}" integrity="{{ $rtl.Data.Integrity }}" />
 
 {{ range .Params.styles }}
-{{ $pageStyle := resources.Get . | resources.Minify | resources.Fingerprint }}
-<link rel="stylesheet" href="{{ $pageStyle.RelPermalink }}" integrity="{{ $pageStyle.Data.Integrity }}" />
+  {{ with resources.Get . }}
+    {{ $pageStyle := . | resources.Minify | resources.Fingerprint }}
+    <link rel="stylesheet" href="{{ $pageStyle.RelPermalink }}" integrity="{{ $pageStyle.Data.Integrity }}" />
+  {{ end }}
+{{ end }}
+
+{{ range .Params.scripts }}
+  {{ with resources.Get . }}
+    {{ $pageScript := . | resources.Minify | resources.Fingerprint }}
+    <script src="{{ $pageScript.RelPermalink }}" integrity="{{ $pageScript.Data.Integrity }}" defer></script>
+  {{ end }}
 {{ end }}
 
 <!-- Favicon -->
