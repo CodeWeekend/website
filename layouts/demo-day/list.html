@@ -5,6 +5,7 @@
       <a class="event-nav__name" href="#top">2026 Demo Day</a>
       <div class="event-nav__links">
         <a href="#experience">What to expect</a>
+        <a href="#graduates">Graduates</a>
         <a href="#about">About us</a>
         <a href="#questions">Questions</a>
       </div>
@@ -31,7 +32,7 @@
               {{ if eq .Params.event_status "Date to be announced" }}
                 {{ .Params.event_status }}
               {{ else }}
-                {{ .Params.event_date }} · {{ .Params.event_time }} ({{ .Params.event_timezone }})
+                {{ .Params.event_date }}
               {{ end }}
             </dd>
           </div>
@@ -46,15 +47,17 @@
         </dl>
       </div>
 
-      <div class="event-hero__visual event-reveal event-reveal--late" aria-label="Members of the CodeWeekend community">
-        <figure class="event-photo event-photo--main">
-          <img src="{{ "/images/alumni/Fauzia_Kargar-644x650.png" | relURL }}" alt="Fauzia Karger, CodeWeekend Executive Director" loading="eager" />
-        </figure>
-        <figure class="event-photo event-photo--small">
-          <img src="{{ "/images/alumni/image-Ghezala-Wahidi.png" | relURL }}" alt="Ghezala Wahidi, CodeWeekend alumna" loading="eager" />
+      <div class="event-hero__visual event-reveal event-reveal--late">
+        <div class="event-hero__frame" aria-hidden="true"></div>
+        <figure class="event-hero__portrait">
+          <img src="{{ "/images/students-photo/Zarara Kazimi.jpg" | relURL }}" alt="Zarara Kazimi, CodeWeekend 2026 graduate" loading="eager" />
+          <figcaption>
+            <strong>Zarara Kazimi</strong>
+            <span>2026 graduate</span>
+          </figcaption>
         </figure>
         <div class="event-hero__count" aria-hidden="true">
-          <strong>30</strong>
+          <strong>{{ len site.Data.demo_day_students }}</strong>
           <span>graduates<br />one stage</span>
         </div>
         <div class="event-hero__code" aria-hidden="true">
@@ -102,48 +105,198 @@
           <p class="event-kicker event-kicker--light">The programme</p>
           <h2 id="programme-title">Come curious. Leave <em>connected.</em></h2>
         </div>
-        <p>This is not a slide-deck graduation. It is a live look at what 30 emerging developers can imagine, build, and explain in their own words.</p>
+        <p>This is not a slide-deck graduation. It is a live look at what 20+ emerging developers can imagine, build, and explain in their own words — with the full cohort introduced below.</p>
       </header>
 
       <ol class="event-agenda">
         <li>
           <span class="event-agenda__num">01</span>
-          <div><h3>Live project demos</h3><p>Ten selected graduates present their strongest Web and AI projects, followed by questions from the audience and judges.</p></div>
-          <span class="event-agenda__meta">10 builders</span>
+          <div>
+            <h3>Live project demos</h3>
+            <p>More than twenty graduates present their strongest Web and AI projects, followed by questions from the audience and judges.</p>
+          </div>
+          <span class="event-agenda__meta">20+ presentations</span>
         </li>
-        <li>
+        <li class="event-agenda__choice">
           <span class="event-agenda__num">02</span>
-          <div><h3>Cohort spotlight</h3><p>A fast-moving showcase gives every graduating student a place in the story and a moment for their work to be seen.</p></div>
-          <span class="event-agenda__meta">All graduates</span>
+          <div class="event-agenda__choice-copy">
+            <h3>Audience Choice</h3>
+            <p>Celebrate standout work across five categories that honor craft, creativity, and impact.</p>
+          </div>
+          <span class="event-agenda__meta">Five categories</span>
+          <ol class="event-award-grid">
+            <li>
+              <span>01</span>
+              <strong>Most Innovative Project</strong>
+              <em>Original thinking in product and technology</em>
+            </li>
+            <li>
+              <span>02</span>
+              <strong>Most Creative Presentation</strong>
+              <em>Storytelling that holds the room</em>
+            </li>
+            <li>
+              <span>03</span>
+              <strong>Most Impactful Project Idea</strong>
+              <em>Solutions with real-world meaning</em>
+            </li>
+            <li>
+              <span>04</span>
+              <strong>Best Use of AI</strong>
+              <em>AI that serves the problem, not the hype</em>
+            </li>
+            <li>
+              <span>05</span>
+              <strong>Best User Experience</strong>
+              <em>Clear, thoughtful, human-centered design</em>
+            </li>
+          </ol>
         </li>
         <li>
           <span class="event-agenda__num">03</span>
-          <div><h3>Awards & recognition</h3><p>We celebrate technical execution, problem-solution fit, creativity, presentation, and the growth behind each project.</p></div>
+          <div>
+            <h3>Awards & recognition</h3>
+            <p>We celebrate technical execution, problem-solution fit, creativity, presentation, and the growth behind each project.</p>
+          </div>
           <span class="event-agenda__meta">Community applause</span>
         </li>
         <li>
           <span class="event-agenda__num">04</span>
-          <div><h3>Open networking</h3><p>Meet graduates, employers, mentors, partners, and friends of CodeWeekend in focused online breakout rooms.</p></div>
+          <div>
+            <h3>Open networking</h3>
+            <p>Meet graduates, employers, mentors, partners, and friends of CodeWeekend in focused online breakout rooms.</p>
+          </div>
           <span class="event-agenda__meta">Real conversations</span>
         </li>
       </ol>
     </div>
   </section>
 
-  <section class="event-builders" aria-labelledby="builders-title">
-    <div class="event-section event-builders__grid">
-      <div class="event-builders__portrait">
-        <img src="{{ "/images/stories/mahdia.svg" | relURL }}" alt="Mahdia Khamoosh monogram" loading="lazy" />
-        <span>Student story · Panjshir</span>
+  <section class="event-graduates" id="graduates" aria-labelledby="graduates-title">
+    <div class="event-section">
+      <header class="event-section__header event-section__header--ink">
+        <div>
+          <p class="event-kicker">What students build</p>
+          <h2 id="graduates-title">Meet the <em>2026 graduates.</em></h2>
+        </div>
+        <p>Scan the cohort, then open any profile for the full story, quote, and project details.</p>
+      </header>
+
+      <div class="event-grad-grid">
+        {{ range $index, $student := site.Data.demo_day_students }}
+          {{ $placeholder := "/images/students-photo/placeholder.svg" }}
+          {{ $img := $student.image | default $placeholder }}
+          {{ if eq $img "" }}{{ $img = $placeholder }}{{ end }}
+          {{ if $student.profile_complete }}
+          <article class="event-grad-card">
+            <button type="button" class="event-grad-card__hit" data-grad-open="{{ $index }}" aria-label="View profile for {{ $student.name }}">
+              <span class="event-grad-card__media">
+                <img src="{{ $img | relURL }}" alt="" loading="lazy" width="480" height="480" draggable="false" />
+              </span>
+              <span class="event-grad-card__body">
+                <span class="event-grad-card__name">{{ $student.name }}</span>
+                {{ with $student.project_title }}
+                <span class="event-grad-card__project">{{ . }}</span>
+                {{ end }}
+                {{ with $student.project_description }}
+                <span class="event-grad-card__project-desc">{{ . | markdownify | plainify }}</span>
+                {{ end }}
+                <span class="event-grad-card__cta">View Profile</span>
+              </span>
+            </button>
+          </article>
+          {{ else }}
+          <article class="event-grad-card event-grad-card--pending">
+            <div class="event-grad-card__media">
+              <img src="{{ $placeholder | relURL }}" alt="" loading="lazy" width="480" height="480" draggable="false" />
+            </div>
+            <div class="event-grad-card__body">
+              <span class="event-grad-card__name">{{ $student.name }}</span>
+              <span class="event-grad-card__project">{{ $student.role | default "Web & AI 2026 graduate" }}</span>
+              <span class="event-grad-card__pending">Profile coming soon</span>
+            </div>
+          </article>
+          {{ end }}
+        {{ end }}
       </div>
-      <blockquote>
-        <p class="event-kicker">What students build</p>
-        <h2 id="builders-title">“A place where my voice can be <em>seen and heard.</em>”</h2>
-        <p>Mahdia Khamoosh built and launched her personal website from scratch in the first weeks of the program. By Demo Day, every graduate has moved from learning foundations to presenting a capstone of their own.</p>
-        <a class="event-text-link" href="{{ "/stories/mahdia/" | relURL }}">Read Mahdia's story</a>
-      </blockquote>
     </div>
   </section>
+
+  <div
+    class="grad-viewer"
+    id="gradViewer"
+    hidden
+    aria-hidden="true"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="gradViewerName"
+  >
+    <div class="grad-viewer__scrim" data-grad-close tabindex="-1"></div>
+    <div class="grad-viewer__dialog">
+      <button type="button" class="grad-viewer__close" data-grad-close aria-label="Close profile">
+        <span aria-hidden="true">&times;</span>
+      </button>
+
+      <div class="grad-viewer__scroll">
+        <div class="grad-viewer__header">
+          <div class="grad-viewer__photo">
+            <img id="gradViewerImg" src="" alt="" draggable="false" />
+          </div>
+          <div class="grad-viewer__intro">
+            <h2 id="gradViewerName"></h2>
+            <p class="grad-viewer__role" id="gradViewerRole"></p>
+            <p class="grad-viewer__location" id="gradViewerLocation"></p>
+            <div class="grad-viewer__links" id="gradViewerLinks" aria-label="Professional links"></div>
+            <blockquote class="grad-viewer__quote" id="gradViewerQuote" hidden></blockquote>
+          </div>
+        </div>
+
+        <div class="grad-viewer__body">
+          <div class="grad-viewer__block" id="gradViewerBioBlock" hidden>
+            <div id="gradViewerBio"></div>
+          </div>
+          <div class="grad-viewer__block grad-viewer__project" id="gradViewerProjectBlock" hidden>
+            <span class="grad-viewer__label">Project</span>
+            <h3 id="gradViewerProjectTitle"></h3>
+            <div class="grad-viewer__demo-slot" id="gradViewerDemo" hidden></div>
+            <p id="gradViewerProjectDesc"></p>
+          </div>
+        </div>
+      </div>
+      <div class="grad-viewer__fade" aria-hidden="true"></div>
+    </div>
+  </div>
+
+  <script>
+    {{- $unlockDate := .Params.demo_unlock_date | default "2026-08-27" -}}
+    {{- $unlockAt := time.AsTime (printf "%sT00:00:00+04:30" $unlockDate) -}}
+    {{- $demosLive := ge now $unlockAt -}}
+    {{- $profiles := slice -}}
+    {{- range site.Data.demo_day_students -}}
+      {{- $hasDemo := and .demo_url (ne .demo_url "") -}}
+      {{- $row := dict
+        "name" .name
+        "role" .role
+        "location" .location
+        "quote" .quote
+        "bio" .bio
+        "project_title" .project_title
+        "project_description" .project_description
+        "image" .image
+        "profile_complete" .profile_complete
+        "linkedin_url" .linkedin_url
+        "portfolio_url" .portfolio_url
+        "yankar_url" .yankar_url
+        "demo_ready" $hasDemo
+        "demo_url" (cond $demosLive .demo_url "")
+      -}}
+      {{- $profiles = $profiles | append $row -}}
+    {{- end -}}
+    window.DEMO_DAY_PROFILES = {{ $profiles | jsonify | safeJS }};
+    window.DEMO_DAY_DEMOS_LIVE = {{ $demosLive | jsonify | safeJS }};
+    window.DEMO_DAY_UNLOCK_DATE = {{ $unlockDate | jsonify | safeJS }};
+    window.DEMO_DAY_EVENT_DATE_LABEL = {{ .Params.event_date | default "Thursday, 27 August 2026" | jsonify | safeJS }};
+  </script>
 
   <section class="event-audience" aria-labelledby="audience-title">
     <div class="event-section">
@@ -195,7 +348,7 @@
       <div class="event-faq__items">
         <details open>
           <summary>When is Demo Day?</summary>
-          <p>The date and start time are being finalized. RSVP now and we will send the confirmed schedule, primary timezone, and UTC reference directly to you.</p>
+          <p>{{ .Params.event_date }}, from {{ .Params.event_time }} {{ .Params.event_timezone }}. To see the event time in your own timezone, visit <a href="{{ .Params.event_timezone_url }}" target="_blank" rel="noopener noreferrer">inyourowntime.zone</a>. RSVP now and we will email your private joining link.</p>
         </details>
         <details>
           <summary>Where does the event take place?</summary>
@@ -225,7 +378,7 @@
     <div class="event-rsvp__inner">
       <p class="event-kicker event-kicker--light">Registration is open</p>
       <h2 id="rsvp-title">Be there when the work <em>goes live.</em></h2>
-      <p>Reserve your place for CodeWeekend 2026 Demo Day. We will email the confirmed date, time, agenda, and private event link as soon as the schedule is set.</p>
+      <p>Reserve your place for CodeWeekend 2026 Demo Day on {{ .Params.event_date }}. We will email the private event link and any final details after you RSVP.</p>
       <a class="event-button event-button--white" href="{{ .Params.rsvp_url }}" target="_blank" rel="noopener noreferrer">RSVP on Airtable</a>
       <span>Free online event · Confirmation by email</span>
     </div>
