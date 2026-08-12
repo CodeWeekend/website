@@ -76,9 +76,9 @@
   bio: |
     Bibi Hawa Abdul Shukoor is a Full-Stack Web Developer from Afghanistan with a passion for building modern web applications and AI-powered software solutions. She is particularly interested in web development, artificial intelligence, and creating practical digital products that solve real-world problems.
     
-    Before joining CodeWeekend, she learned programming independently and continuously improved his technical skills through self-study and hands-on practice. She was eager to gain practical experience and work on professional software projects that could prepare him for the technology industry.
+    Before joining CodeWeekend, she learned programming independently and continuously improved her technical skills through self-study and hands-on practice. She was eager to gain practical experience and work on professional software projects that could prepare her for the technology industry.
     
-    Through CodeWeekend, she strengthened his knowledge of JavaScript, React, Supabase, Git, database design, authentication systems, and AI integration using modern APIs. The program helped her gain confidence in building complete full-stack applications from planning and development to deployment.
+    Through CodeWeekend, she strengthened her knowledge of JavaScript, React, Supabase, Git, database design, authentication systems, and AI integration using modern APIs. The program helped her gain confidence in building complete full-stack applications from planning and development to deployment.
     
     As her capstone project, she developed DataNest AI, an AI-powered document intelligence platform that enables users to upload documents, organize knowledge, ask AI questions about uploaded files, search information efficiently, and manage AI conversation history. The project combines React, Supabase, OpenRouter AI, vector embeddings, and modern UI design to deliver an intelligent knowledge management experience.
     
@@ -224,7 +224,7 @@
     Throughout my academic journey, I have built a diverse skill set, starting with foundational computer skills such as typing and Windows in 7th grade, and advancing to the Microsoft Office Package by 11th grade. I also developed strong English language skills across writing, speaking, reading, and listening, and after three years of study, I was invited to teach English classes at my learning center — an experience that deepened my communication and mentoring abilities.
     My interest in data science and programming grew alongside my business studies, leading me to explore technologies such as HTML, Java, and React. My journey was strengthened through CodeWeekend, where I built hands-on projects, including a personal portfolio, and grew more confident applying my technical skills in practice.
     I am committed to continuing my growth at the intersection of business and technology, and I hope to apply my skills to create meaningful impact in my field.
-  project_title: MindfullDairy
+  project_title: MindfulDiary
   project_description: |
     Most journaling apps are just a text box. You write, it saves, and that's the end of it — your words sit there, unanswered. MindfulDiary is built on a simple belief: journaling feels more worthwhile when something acknowledges what you wrote back.
     

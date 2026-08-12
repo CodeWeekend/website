@@ -57,7 +57,7 @@
           </figcaption>
         </figure>
         <div class="event-hero__count" aria-hidden="true">
-          <strong>25</strong>
+          <strong>{{ len site.Data.demo_day_students }}</strong>
           <span>graduates<br />one stage</span>
         </div>
         <div class="event-hero__code" aria-hidden="true">
@@ -268,8 +268,33 @@
   </div>
 
   <script>
-    window.DEMO_DAY_PROFILES = {{ site.Data.demo_day_students | jsonify | safeJS }};
-    window.DEMO_DAY_UNLOCK_DATE = {{ .Params.demo_unlock_date | default "2026-08-27" | jsonify | safeJS }};
+    {{- $unlockDate := .Params.demo_unlock_date | default "2026-08-27" -}}
+    {{- $unlockAt := time.AsTime (printf "%sT00:00:00+04:30" $unlockDate) -}}
+    {{- $demosLive := ge now $unlockAt -}}
+    {{- $profiles := slice -}}
+    {{- range site.Data.demo_day_students -}}
+      {{- $hasDemo := and .demo_url (ne .demo_url "") -}}
+      {{- $row := dict
+        "name" .name
+        "role" .role
+        "location" .location
+        "quote" .quote
+        "bio" .bio
+        "project_title" .project_title
+        "project_description" .project_description
+        "image" .image
+        "profile_complete" .profile_complete
+        "linkedin_url" .linkedin_url
+        "portfolio_url" .portfolio_url
+        "yankar_url" .yankar_url
+        "demo_ready" $hasDemo
+        "demo_url" (cond $demosLive .demo_url "")
+      -}}
+      {{- $profiles = $profiles | append $row -}}
+    {{- end -}}
+    window.DEMO_DAY_PROFILES = {{ $profiles | jsonify | safeJS }};
+    window.DEMO_DAY_DEMOS_LIVE = {{ $demosLive | jsonify | safeJS }};
+    window.DEMO_DAY_UNLOCK_DATE = {{ $unlockDate | jsonify | safeJS }};
     window.DEMO_DAY_EVENT_DATE_LABEL = {{ .Params.event_date | default "Thursday, 27 August 2026" | jsonify | safeJS }};
   </script>
 

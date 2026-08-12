@@ -35,9 +35,11 @@
 
   let lastFocus = null;
   let activeTip = null;
+  let focusTrapHandler = null;
 
   const unlockDate = String(window.DEMO_DAY_UNLOCK_DATE || '2026-08-27').trim();
   const eventDateLabel = String(window.DEMO_DAY_EVENT_DATE_LABEL || 'Thursday, 27 August 2026').trim();
+  const demosLiveFromBuild = window.DEMO_DAY_DEMOS_LIVE === true;
   const demoLockedMessage = `The live demo will be available on Demo Day, ${eventDateLabel}.`;
   const lockIcon =
     '<svg class="grad-viewer__demo-lock" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17 9h-1V7a4 4 0 1 0-8 0v2H7a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2zm-6-2a2 2 0 1 1 4 0v2h-4V7zm6 12H7v-8h10v8z"/></svg>';
@@ -59,6 +61,7 @@
   };
 
   const areDemosUnlocked = () => {
+    if (demosLiveFromBuild) return true;
     try {
       const parts = new Intl.DateTimeFormat('en-CA', {
         timeZone: 'Asia/Kabul',
@@ -175,6 +178,66 @@
     img.dataset.protected = 'true';
   };
 
+  const getFocusable = () => {
+    if (!viewer) return [];
+    return Array.from(
+      viewer.querySelectorAll(
+        'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])'
+      )
+    ).filter((el) => !el.hasAttribute('disabled') && el.offsetParent !== null && !el.closest('[hidden]'));
+  };
+
+  const releaseFocusTrap = () => {
+    if (focusTrapHandler) {
+      document.removeEventListener('keydown', focusTrapHandler, true);
+      focusTrapHandler = null;
+    }
+    document.querySelectorAll('[data-grad-inert]').forEach((el) => {
+      el.removeAttribute('inert');
+      el.removeAttribute('data-grad-inert');
+    });
+  };
+
+  const engageFocusTrap = () => {
+    releaseFocusTrap();
+
+    const markInertTree = (root) => {
+      Array.from(root.children).forEach((child) => {
+        if (child === viewer) return;
+        if (child.contains(viewer)) {
+          markInertTree(child);
+          return;
+        }
+        child.setAttribute('inert', '');
+        child.setAttribute('data-grad-inert', 'true');
+      });
+    };
+
+    markInertTree(document.body);
+
+    focusTrapHandler = (event) => {
+      if (viewer.hidden || event.key !== 'Tab') return;
+      const focusable = getFocusable();
+      if (!focusable.length) {
+        event.preventDefault();
+        const closeBtn = viewer.querySelector('.grad-viewer__close');
+        if (closeBtn) closeBtn.focus();
+        return;
+      }
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    };
+
+    document.addEventListener('keydown', focusTrapHandler, true);
+  };
+
   const protectGraduateImages = () => {
     document
       .querySelectorAll('.event-grad-card__media img, .grad-viewer__photo img')
@@ -185,14 +248,15 @@
     if (!demoSlot) return;
     demoSlot.replaceChildren();
 
-    if (!hasUrl(student.demo_url)) {
+    const href = String(student.demo_url || '').trim();
+    const hasDemo = hasUrl(href) || student.demo_ready === true;
+
+    if (!hasDemo) {
       setHidden(demoSlot, true);
       return;
     }
 
-    const href = String(student.demo_url).trim();
-
-    if (areDemosUnlocked()) {
+    if (areDemosUnlocked() && hasUrl(href)) {
       const link = document.createElement('a');
       link.className = 'grad-viewer__demo';
       link.href = href;
@@ -291,6 +355,7 @@
     viewer.hidden = false;
     viewer.setAttribute('aria-hidden', 'false');
     document.body.classList.add('grad-viewer-open');
+    engageFocusTrap();
 
     requestAnimationFrame(() => {
       viewer.classList.add('is-open');
@@ -304,6 +369,7 @@
     if (viewer.hidden) return;
 
     clearActiveTip();
+    releaseFocusTrap();
     viewer.classList.remove('is-open');
     document.body.classList.remove('grad-viewer-open');
 
