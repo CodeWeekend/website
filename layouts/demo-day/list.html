@@ -33,6 +33,7 @@
                 {{ .Params.event_status }}
               {{ else }}
                 {{ .Params.event_date }}
+                <span class="event-facts__note">{{ .Params.event_time }} Kabul Time</span>
               {{ end }}
             </dd>
           </div>

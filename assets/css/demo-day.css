@@ -197,6 +197,14 @@
   line-height: 1.45;
 }
 
+.event-facts__note {
+  display: block;
+  margin-top: 2px;
+  color: var(--slate-500);
+  font-size: 13px;
+  font-weight: 500;
+}
+
 .event-hero__visual {
   position: relative;
   min-height: 520px;
@@ -430,6 +438,7 @@
   .event-facts { gap: 10px; }
   .event-facts div { padding-top: 10px; }
   .event-facts dd { font-size: 12px; }
+  .event-facts__note { font-size: 11px; }
   .event-hero__visual {
     min-height: 0;
     margin-top: 28px;
