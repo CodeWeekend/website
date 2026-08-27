@@ -411,3 +411,70 @@
 
   protectGraduateImages();
 })();
+
+/* Graduates gallery search (name + project title) */
+(function () {
+  'use strict';
+
+  const bindGradSearch = () => {
+    const input = document.getElementById('gradSearch');
+    const grid = document.getElementById('gradGrid');
+    const empty = document.getElementById('gradSearchEmpty');
+    const status = document.getElementById('gradSearchStatus');
+    if (!input || !grid || input.dataset.searchBound === '1') return;
+    input.dataset.searchBound = '1';
+
+    const cards = Array.from(grid.querySelectorAll('.event-grad-card[data-grad-search]'));
+    const total = cards.length;
+
+    const normalize = (value) =>
+      String(value || '')
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .replace(/[–—−]/g, '-')
+        .replace(/[^a-z0-9\s-]/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim();
+
+    const applyFilter = () => {
+      const query = normalize(input.value);
+      const tokens = query ? query.split(' ').filter(Boolean) : [];
+      let visible = 0;
+
+      cards.forEach((card) => {
+        const haystack = normalize(card.getAttribute('data-grad-search'));
+        const match = tokens.length === 0 || tokens.every((token) => haystack.includes(token));
+        card.hidden = !match;
+        card.classList.toggle('is-search-hidden', !match);
+        if (match) visible += 1;
+      });
+
+      if (empty) {
+        empty.hidden = visible !== 0;
+        empty.textContent =
+          visible === 0 && query
+            ? `No graduates match “${input.value.trim()}”.`
+            : 'No graduates match your search.';
+      }
+
+      if (status) {
+        if (!query) status.textContent = '';
+        else if (visible === 0) status.textContent = '0 results';
+        else status.textContent = `${visible} of ${total} graduates`;
+      }
+    };
+
+    input.addEventListener('input', applyFilter);
+    input.addEventListener('keyup', applyFilter);
+    input.addEventListener('change', applyFilter);
+    input.addEventListener('search', applyFilter);
+    applyFilter();
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', bindGradSearch);
+  } else {
+    bindGradSearch();
+  }
+})();
