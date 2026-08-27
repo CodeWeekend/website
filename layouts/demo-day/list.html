@@ -122,34 +122,34 @@
           <span class="event-agenda__num">02</span>
           <div class="event-agenda__choice-copy">
             <h3>Audience Choice</h3>
-            <p>Celebrate standout work across five categories that honor craft, creativity, and impact.</p>
+            <p>Guests vote live across five awards — from the strongest overall project to innovation, technical craft, design, and real-world impact.</p>
           </div>
-          <span class="event-agenda__meta">Five categories</span>
+          <span class="event-agenda__meta">Five awards</span>
           <ol class="event-award-grid">
-            <li>
+            <li class="event-award-grid__featured">
               <span>01</span>
-              <strong>Most Innovative Project</strong>
-              <em>Original thinking in product and technology</em>
+              <strong>Best Overall Project</strong>
+              <em>The strongest complete project — idea, execution, usefulness, craft, and presentation.</em>
             </li>
             <li>
               <span>02</span>
-              <strong>Most Creative Presentation</strong>
-              <em>Storytelling that holds the room</em>
+              <strong>Most Innovative Project</strong>
+              <em>The most original idea — creativity and a fresh approach to the problem.</em>
             </li>
             <li>
               <span>03</span>
-              <strong>Most Impactful Project Idea</strong>
-              <em>Solutions with real-world meaning</em>
+              <strong>Best Technical Execution</strong>
+              <em>The strongest build — clean functionality and technology used well.</em>
             </li>
             <li>
               <span>04</span>
-              <strong>Best Use of AI</strong>
-              <em>AI that serves the problem, not the hype</em>
+              <strong>Best User Experience &amp; Design</strong>
+              <em>The best experience — usability, clarity, and thoughtful design.</em>
             </li>
             <li>
               <span>05</span>
-              <strong>Best User Experience</strong>
-              <em>Clear, thoughtful, human-centered design</em>
+              <strong>Best Real-World Impact</strong>
+              <em>The strongest potential impact — useful now, meaningful beyond Demo Day.</em>
             </li>
           </ol>
         </li>
@@ -157,7 +157,7 @@
           <span class="event-agenda__num">03</span>
           <div>
             <h3>Awards & recognition</h3>
-            <p>We celebrate technical execution, problem-solution fit, creativity, presentation, and the growth behind each project.</p>
+            <p>We celebrate standout work across Audience Choice and the growth, craft, and courage behind every Capstone.</p>
           </div>
           <span class="event-agenda__meta">Community applause</span>
         </li>
@@ -183,13 +183,27 @@
         <p>Scan the cohort, then open any profile for the full story, quote, and project details.</p>
       </header>
 
-      <div class="event-grad-grid">
+      <div class="event-grad-search">
+        <label class="event-grad-search__label" for="gradSearch">Search graduates</label>
+        <input
+          id="gradSearch"
+          class="event-grad-search__input"
+          type="search"
+          placeholder="Search by name or project"
+          autocomplete="off"
+          spellcheck="false"
+        />
+        <p class="event-grad-search__status" id="gradSearchStatus" aria-live="polite"></p>
+      </div>
+
+      <div class="event-grad-grid" id="gradGrid">
         {{ range $index, $student := site.Data.demo_day_students }}
           {{ $placeholder := "/images/students-photo/placeholder.svg" }}
           {{ $img := $student.image | default $placeholder }}
           {{ if eq $img "" }}{{ $img = $placeholder }}{{ end }}
+          {{ $search := printf "%s %s" $student.name ($student.project_title | default "") }}
           {{ if $student.profile_complete }}
-          <article class="event-grad-card">
+          <article class="event-grad-card" data-grad-search="{{ $search }}">
             <button type="button" class="event-grad-card__hit" data-grad-open="{{ $index }}" aria-label="View profile for {{ $student.name }}">
               <span class="event-grad-card__media">
                 <img src="{{ $img | relURL }}" alt="" loading="lazy" width="480" height="480" draggable="false" />
@@ -207,7 +221,7 @@
             </button>
           </article>
           {{ else }}
-          <article class="event-grad-card event-grad-card--pending">
+          <article class="event-grad-card event-grad-card--pending" data-grad-search="{{ $search }}">
             <div class="event-grad-card__media">
               <img src="{{ $placeholder | relURL }}" alt="" loading="lazy" width="480" height="480" draggable="false" />
             </div>
@@ -220,6 +234,55 @@
           {{ end }}
         {{ end }}
       </div>
+      <p class="event-grad-empty" id="gradSearchEmpty" hidden>No graduates match your search.</p>
+      <script>
+        (function () {
+          var input = document.getElementById('gradSearch');
+          var grid = document.getElementById('gradGrid');
+          var empty = document.getElementById('gradSearchEmpty');
+          var status = document.getElementById('gradSearchStatus');
+          if (!input || !grid || input.getAttribute('data-search-bound') === '1') return;
+          input.setAttribute('data-search-bound', '1');
+          var cards = Array.prototype.slice.call(grid.querySelectorAll('.event-grad-card[data-grad-search]'));
+          var total = cards.length;
+          function normalize(value) {
+            return String(value || '')
+              .toLowerCase()
+              .replace(/[–—−]/g, '-')
+              .replace(/[^a-z0-9\s-]/g, ' ')
+              .replace(/\s+/g, ' ')
+              .trim();
+          }
+          function applyFilter() {
+            var query = normalize(input.value);
+            var tokens = query ? query.split(' ').filter(Boolean) : [];
+            var visible = 0;
+            cards.forEach(function (card) {
+              var haystack = normalize(card.getAttribute('data-grad-search'));
+              var match = !tokens.length || tokens.every(function (token) { return haystack.indexOf(token) !== -1; });
+              card.hidden = !match;
+              if (match) card.classList.remove('is-search-hidden');
+              else card.classList.add('is-search-hidden');
+              if (match) visible += 1;
+            });
+            if (empty) {
+              empty.hidden = visible !== 0;
+              empty.textContent = visible === 0 && query
+                ? 'No graduates match “' + input.value.trim() + '”.'
+                : 'No graduates match your search.';
+            }
+            if (status) {
+              if (!query) status.textContent = '';
+              else if (visible === 0) status.textContent = '0 results';
+              else status.textContent = visible + ' of ' + total + ' graduates';
+            }
+          }
+          input.addEventListener('input', applyFilter);
+          input.addEventListener('keyup', applyFilter);
+          input.addEventListener('change', applyFilter);
+          input.addEventListener('search', applyFilter);
+        })();
+      </script>
     </div>
   </section>
 
@@ -274,7 +337,8 @@
     {{- $demosLive := ge now $unlockAt -}}
     {{- $profiles := slice -}}
     {{- range site.Data.demo_day_students -}}
-      {{- $hasDemo := and .demo_url (ne .demo_url "") -}}
+      {{- $demoUrl := .demo_url | default "" -}}
+      {{- $hasDemo := and $demoUrl (ne $demoUrl "") -}}
       {{- $row := dict
         "name" .name
         "role" .role
@@ -289,7 +353,7 @@
         "portfolio_url" .portfolio_url
         "yankar_url" .yankar_url
         "demo_ready" $hasDemo
-        "demo_url" (cond $demosLive .demo_url "")
+        "demo_url" $demoUrl
       -}}
       {{- $profiles = $profiles | append $row -}}
     {{- end -}}

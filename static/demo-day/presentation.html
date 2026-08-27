@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CodeWeekend Demo Day 2026 — Presentation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,550;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #0e1f2c;
+      --navy: #083b5a;
+      --blue: #1aaedc;
+      --blue-soft: #b7e4f7;
+      --coral: #e76f51;
+      --paper: #fafaf7;
+      --warm: #f2e4ce;
+      --line: #dbe1e5;
+      --slate-300: #cbd5e1;
+      --slate-400: #94a3b8;
+      --slate-500: #64748b;
+      --slate-600: #475569;
+      --sky-100: #e0f2fe;
+      --sky-200: #bae6fd;
+      --sky-300: #7dd3fc;
+      --sky-400: #38bdf8;
+      --serif: 'Fraunces', Georgia, serif;
+      --sans: 'Inter', system-ui, sans-serif;
+      --mono: 'JetBrains Mono', ui-monospace, monospace;
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      height: 100%;
+      background: #061018;
+      color: var(--ink);
+      font-family: var(--sans);
+      overflow: hidden;
+    }
+    .deck {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+    }
+    .slide {
+      position: absolute;
+      inset: 0;
+      display: none;
+      flex-direction: column;
+      padding: clamp(28px, 4vw, 56px) clamp(28px, 5vw, 72px) clamp(40px, 5vw, 64px);
+      background: var(--paper);
+      opacity: 0;
+    }
+    .slide.is-active {
+      display: flex;
+      opacity: 1;
+      animation: rise 420ms ease;
+    }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .slide--dark {
+      background: linear-gradient(160deg, #062536 0%, var(--navy) 48%, #0a4a6e 100%);
+      color: white;
+    }
+    .slide--navy {
+      background: var(--navy);
+      color: white;
+    }
+    .slide__chrome {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: clamp(18px, 3vh, 36px);
+    }
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0;
+      color: #0c6a8c;
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .slide--dark .kicker,
+    .slide--navy .kicker { color: var(--sky-200); }
+    .kicker::before {
+      content: '';
+      width: 28px;
+      height: 2px;
+      background: var(--coral);
+    }
+    .slide__meta {
+      color: var(--slate-500);
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .slide--dark .slide__meta,
+    .slide--navy .slide__meta { color: rgba(255,255,255,0.55); }
+    h1 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(42px, 7vw, 84px);
+      font-weight: 550;
+      line-height: 0.98;
+      letter-spacing: -0.02em;
+      max-width: 14ch;
+    }
+    h1 em, h2 em {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--blue);
+    }
+    .slide--dark h1 em,
+    .slide--navy h1 em,
+    .slide--dark h2 em { color: var(--sky-300); }
+    h2 {
+      margin: 0 0 16px;
+      font-family: var(--serif);
+      font-size: clamp(34px, 5vw, 58px);
+      font-weight: 550;
+      line-height: 1.05;
+      max-width: 18ch;
+    }
+    h3 {
+      margin: 0 0 10px;
+      font-family: var(--serif);
+      font-size: clamp(24px, 3vw, 34px);
+      font-weight: 550;
+      line-height: 1.15;
+    }
+    .lead {
+      margin: 18px 0 0;
+      max-width: 42rem;
+      color: var(--slate-600);
+      font-size: clamp(16px, 1.7vw, 20px);
+      line-height: 1.55;
+    }
+    .slide--dark .lead,
+    .slide--navy .lead { color: rgba(255,255,255,0.78); }
+    .cover {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: clamp(24px, 4vw, 64px);
+      align-items: end;
+    }
+    .cover__badge {
+      justify-self: end;
+      width: min(220px, 28vw);
+      aspect-ratio: 1;
+      display: grid;
+      place-content: center;
+      text-align: center;
+      padding: 20px;
+      border-radius: 8px;
+      background: var(--coral);
+      color: white;
+    }
+    .cover__badge strong {
+      font-family: var(--serif);
+      font-size: clamp(56px, 8vw, 84px);
+      font-weight: 400;
+      line-height: 0.85;
+    }
+    .cover__badge span {
+      display: block;
+      margin-top: 8px;
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .cover__code {
+      margin-top: 28px;
+      display: inline-block;
+      padding: 14px 18px;
+      border-radius: 6px;
+      background: rgba(14,31,44,0.92);
+      color: white;
+      font-family: var(--mono);
+      font-size: 13px;
+    }
+    .cover__code strong { color: var(--sky-300); font-weight: 600; }
+    .facts {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 36px;
+      max-width: 720px;
+    }
+    .facts div {
+      padding-top: 12px;
+      border-top: 1px solid rgba(255,255,255,0.18);
+    }
+    .facts dt {
+      color: rgba(255,255,255,0.55);
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .facts dd {
+      margin: 6px 0 0;
+      font-size: 15px;
+      font-weight: 650;
+    }
+    .stats {
+      margin-top: auto;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .stats article {
+      min-height: 110px;
+      padding: 20px 18px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: white;
+    }
+    .stats strong {
+      display: block;
+      font-family: var(--serif);
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 450;
+      line-height: 1;
+    }
+    .stats span {
+      display: block;
+      margin-top: 10px;
+      color: var(--slate-500);
+      font-size: 13px;
+      line-height: 1.35;
+    }
+    .journey {
+      margin-top: auto;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .journey article {
+      min-height: 180px;
+      padding: 22px 18px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+    .journey span {
+      color: var(--coral);
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+    }
+    .journey h3 {
+      margin: 14px 0 10px;
+      color: white;
+      font-size: 24px;
+    }
+    .journey p {
+      margin: 0;
+      color: rgba(255,255,255,0.72);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .awards {
+      margin-top: auto;
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .awards article {
+      min-height: 200px;
+      padding: 18px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.05);
+    }
+    .awards span {
+      color: var(--coral);
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+    }
+    .awards strong {
+      color: white;
+      font-family: var(--serif);
+      font-size: clamp(18px, 1.8vw, 22px);
+      font-weight: 500;
+      line-height: 1.2;
+    }
+    .awards em {
+      margin-top: auto;
+      color: var(--slate-300);
+      font-family: var(--sans);
+      font-size: 12px;
+      font-style: normal;
+      line-height: 1.45;
+    }
+    .agenda {
+      margin-top: auto;
+      display: grid;
+      gap: 0;
+    }
+    .agenda li {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 56px 1fr auto;
+      gap: 24px;
+      align-items: center;
+      padding: 18px 0;
+      border-top: 1px solid rgba(255,255,255,0.12);
+    }
+    .agenda li:last-child { border-bottom: 1px solid rgba(255,255,255,0.12); }
+    .agenda .num { color: var(--sky-400); font-family: var(--mono); font-size: 12px; }
+    .agenda h3 { margin: 0 0 4px; color: white; font-size: 26px; }
+    .agenda p { margin: 0; color: rgba(255,255,255,0.7); font-size: 14px; }
+    .agenda .meta {
+      color: var(--sky-200);
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .cohort {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      overflow: auto;
+    }
+    .cohort li {
+      min-height: 72px;
+      padding: 12px 14px;
+      border-radius: 6px;
+      background: white;
+      border: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .cohort strong {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+    .cohort span {
+      color: var(--slate-500);
+      font-size: 11px;
+      line-height: 1.35;
+    }
+    .project {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: clamp(24px, 4vw, 56px);
+      align-items: center;
+      min-height: 0;
+    }
+    .project__media {
+      overflow: hidden;
+      border-radius: 8px;
+      aspect-ratio: 1;
+      background: var(--warm);
+      max-height: min(520px, 62vh);
+    }
+    .project__media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .project__role {
+      margin: 0 0 8px;
+      color: #0c6a8c;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .project h2 {
+      max-width: none;
+      font-size: clamp(36px, 4.6vw, 54px);
+    }
+    .project__loc {
+      margin: 6px 0 22px;
+      color: var(--slate-500);
+      font-size: 14px;
+    }
+    .project__label {
+      margin: 0 0 8px;
+      color: var(--coral);
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .project h3 {
+      color: var(--ink);
+      font-size: clamp(26px, 3vw, 36px);
+    }
+    .project__blurb {
+      margin: 12px 0 0;
+      max-width: 38rem;
+      color: var(--slate-600);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    .partners {
+      margin-top: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .partners article {
+      padding: 28px 24px;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      background: white;
+    }
+    .partners h3 { margin-bottom: 10px; }
+    .partners p {
+      margin: 0;
+      color: var(--slate-600);
+      font-size: 15px;
+      line-height: 1.55;
+    }
+    .thanks-grid {
+      margin-top: auto;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .thanks-grid div {
+      padding: 22px 18px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: white;
+      font-family: var(--serif);
+      font-size: 22px;
+    }
+    .hud {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 10px 18px;
+      background: rgba(6,16,24,0.72);
+      color: rgba(255,255,255,0.72);
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      backdrop-filter: blur(8px);
+    }
+    .hud progress {
+      flex: 1;
+      height: 3px;
+      appearance: none;
+      border: 0;
+      background: rgba(255,255,255,0.15);
+    }
+    .hud progress::-webkit-progress-bar { background: rgba(255,255,255,0.15); }
+    .hud progress::-webkit-progress-value { background: var(--blue); }
+    .hud progress::-moz-progress-bar { background: var(--blue); }
+    .help {
+      position: fixed;
+      top: 14px;
+      right: 14px;
+      z-index: 30;
+      padding: 8px 10px;
+      border-radius: 6px;
+      background: rgba(14,31,44,0.8);
+      color: white;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.06em;
+      opacity: 0.7;
+    }
+    @media (max-width: 900px) {
+      .cover, .project { grid-template-columns: 1fr; }
+      .stats, .journey, .awards, .cohort, .thanks-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .facts, .partners { grid-template-columns: 1fr; }
+      .agenda li { grid-template-columns: 40px 1fr; }
+      .agenda .meta { grid-column: 2; }
+    }
+  </style>
+</head>
+<body>
+  <div class="help">← → / Space · F fullscreen</div>
+  <div class="deck" id="deck">
+
+    <section class="slide slide--dark is-active" data-title="Cover">
+      <div class="slide__chrome">
+        <span class="kicker">Web & AI Development Bootcamp</span>
+        <span class="slide__meta">Live event</span>
+      </div>
+      <div class="cover">
+        <div>
+          <h1>CodeWeekend <em>2026 Demo Day</em></h1>
+          <p class="lead">An online celebration of talent, persistence, and what becomes possible when opportunity meets code.</p>
+          <div class="cover__code"><span>const future = </span><strong>students.build();</strong></div>
+          <dl class="facts">
+            <div><dt>When</dt><dd>Thursday, 27 August 2026</dd></div>
+            <div><dt>Time</dt><dd>7:30–10:30 PM AFT</dd></div>
+            <div><dt>Where</dt><dd>Live online</dd></div>
+          </dl>
+        </div>
+        <div class="cover__badge" aria-hidden="true">
+          <strong>25</strong>
+          <span>graduates<br />one stage</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="Welcome">
+      <div class="slide__chrome">
+        <span class="kicker">Welcome</span>
+        <span class="slide__meta">Demo Day 2026</span>
+      </div>
+      <h2>Welcome, everyone.</h2>
+      <p class="lead">Thank you to our guests, mentors, partners, employers, friends, and families for joining us. Today we celebrate 25 graduates of the Web & AI Development Bootcamp — and the projects they are ready to share.</p>
+      <p class="lead">This is not only a graduation. It is a live look at what emerging developers can imagine, build, and explain in their own words.</p>
+    </section>
+
+    <section class="slide" data-title="About CodeWeekend">
+      <div class="slide__chrome">
+        <span class="kicker">About CodeWeekend</span>
+        <span class="slide__meta">Mission</span>
+      </div>
+      <h2>A room full of <em>next steps.</em></h2>
+      <p class="lead">CodeWeekend began in Kabul in 2014 as a grassroots gathering for developers. Today we are a Canadian non-profit delivering free, practical technology education for Afghan youth — with programs focused on women and girls.</p>
+      <div class="stats" aria-label="CodeWeekend at a glance">
+        <article><strong>2014</strong><span>Founded in Kabul</span></article>
+        <article><strong>100+</strong><span>Community events</span></article>
+        <article><strong>280+</strong><span>Bootcamp applicants</span></article>
+        <article><strong>$0</strong><span>Student tuition</span></article>
+      </div>
+    </section>
+
+    <section class="slide slide--navy" data-title="The Journey">
+      <div class="slide__chrome">
+        <span class="kicker">The journey</span>
+        <span class="slide__meta">Web & AI Development Bootcamp</span>
+      </div>
+      <h2>From curiosity to <em>craft.</em></h2>
+      <p class="lead">Across the bootcamp, students learned by making — strengthening fundamentals, collaborating, shipping practice projects, and growing the confidence to take an idea from a blank screen to a working product.</p>
+      <div class="journey">
+        <article><span>01</span><h3>Learn</h3><p>Core web technologies, modern AI tools, and the habits of professional builders.</p></article>
+        <article><span>02</span><h3>Build</h3><p>Hands-on projects that turn lessons into working interfaces, flows, and features.</p></article>
+        <article><span>03</span><h3>Struggle</h3><p>Debugging, iteration, and resilience when something breaks — then rebuilding better.</p></article>
+        <article><span>04</span><h3>Grow</h3><p>Capstone work that shows how far each graduate has come, in their own voice.</p></article>
+      </div>
+    </section>
+
+    <section class="slide" data-title="What They Built">
+      <div class="slide__chrome">
+        <span class="kicker">What students build</span>
+        <span class="slide__meta">Capstone showcase</span>
+      </div>
+      <h2>Tonight’s projects are the <em>capstone.</em></h2>
+      <p class="lead">These demos are the strongest expression of months of learning — not the only thing students worked on. Practice projects, collaboration, and continuous iteration prepared each graduate to design, build, and present a final product.</p>
+      <p class="lead">What you will see tonight: working Web & AI applications, explained by the people who made them.</p>
+    </section>
+
+    <section class="slide slide--navy" data-title="Tonight's Programme">
+      <div class="slide__chrome">
+        <span class="kicker">The programme</span>
+        <span class="slide__meta">Come curious. Leave connected.</span>
+      </div>
+      <h2>How tonight <em>unfolds.</em></h2>
+      <ol class="agenda">
+        <li>
+          <span class="num">01</span>
+          <div>
+            <h3>Live project demos</h3>
+            <p>Graduates present their strongest Web and AI projects, with questions from the audience and judges.</p>
+          </div>
+          <span class="meta">20+ presentations</span>
+        </li>
+        <li>
+          <span class="num">02</span>
+          <div>
+            <h3>Audience Choice</h3>
+            <p>Celebrate standout work across five categories that honor craft, creativity, and impact.</p>
+          </div>
+          <span class="meta">Five categories</span>
+        </li>
+        <li>
+          <span class="num">03</span>
+          <div>
+            <h3>Awards & recognition</h3>
+            <p>We celebrate execution, problem-solution fit, creativity, presentation, and growth.</p>
+          </div>
+          <span class="meta">Community applause</span>
+        </li>
+        <li>
+          <span class="num">04</span>
+          <div>
+            <h3>Open networking</h3>
+            <p>Meet graduates, employers, mentors, partners, and friends in focused online rooms.</p>
+          </div>
+          <span class="meta">Real conversations</span>
+        </li>
+      </ol>
+    </section>
+
+    <section class="slide slide--navy" data-title="Audience Choice">
+      <div class="slide__chrome">
+        <span class="kicker">Audience Choice</span>
+        <span class="slide__meta">Five categories</span>
+      </div>
+      <h2>Celebrate standout <em>work.</em></h2>
+      <div class="awards">
+        <article><span>01</span><strong>Best Overall Project</strong><em>Main award — problem, idea, execution, usefulness, technical quality, and presentation</em></article>
+        <article><span>02</span><strong>Most Innovative Project</strong><em>Most original idea — creativity and a fresh approach</em></article>
+        <article><span>03</span><strong>Best Technical Execution</strong><em>Strongest build — quality and technology used well</em></article>
+        <article><span>04</span><strong>Best User Experience &amp; Design</strong><em>Best UX — usability, clarity, and thoughtful craft</em></article>
+        <article><span>05</span><strong>Best Real-World Impact</strong><em>Meaningful potential beyond Demo Day</em></article>
+      </div>
+    </section>
+
+    <section class="slide" data-title="Meet the Cohort">
+      <div class="slide__chrome">
+        <span class="kicker">The 2026 graduates</span>
+        <span class="slide__meta">25 builders</span>
+      </div>
+      <h2>Meet the <em>cohort.</em></h2>
+      <ul class="cohort">
+        <li><strong>Asma Mehraban</strong><span>PostPlanner-AI</span></li>
+        <li><strong>Asma Samadi</strong><span>TravelGenie – AI Travel Planning Assistant</span></li>
+        <li><strong>Basira Mehrzad</strong><span>MorningFocus</span></li>
+        <li><strong>Bibi Hawa Abdul Shukoor</strong><span>DataNest AI</span></li>
+        <li><strong>Bibi Mariam Abdul Shukoor</strong><span>CareerMatch - AI-Powered Personalized Job Matching System</span></li>
+        <li><strong>Bibi Zhara Abdul Shukoor</strong><span>HR Pilot – AI-Powered Recruitment Platform</span></li>
+        <li><strong>Fareshta Foladi</strong><span>BrainNote AI</span></li>
+        <li><strong>Farzana Ebrahimi</strong><span>QuickHelp AI – AI-Powered Support &amp; Response System</span></li>
+        <li><strong>Hamisha Noori</strong><span>DevTrack</span></li>
+        <li><strong>Hanifa Yousufi</strong><span>MindfulDiary</span></li>
+        <li><strong>Jamila Waziry</strong><span>AfghanBuddy (AI-Powered Travel Discovery &amp; Smart Tour Planning Platform)</span></li>
+        <li><strong>Lima Rahimzai</strong><span>PitchPilot</span></li>
+        <li><strong>Mahdia Hassani</strong><span>SafeNet</span></li>
+        <li><strong>Marwa Qadeer</strong><span>GiftMatch AI</span></li>
+        <li><strong>Maryam Hamrah</strong><span>Launchpad</span></li>
+        <li><strong>Maryam Moostamandy</strong><span>SmartCloset</span></li>
+        <li><strong>Narges Yousufzada</strong><span>BookSense AI</span></li>
+        <li><strong>Rahimah ANsari</strong><span>CatchyReminders</span></li>
+        <li><strong>Roqia stanikzai</strong><span>AI Movie Analyzer</span></li>
+        <li><strong>Samira Hakimi</strong><span>MeetMind – AI Meeting Assistant</span></li>
+        <li><strong>Sana Waziry</strong><span>SmartReceipt</span></li>
+        <li><strong>Shabnam Ahmadi</strong><span>Emoji Translator</span></li>
+        <li><strong>Sima Gulestani</strong><span>HireFlow</span></li>
+        <li><strong>Zahra Ahmadi</strong><span>Freela</span></li>
+        <li><strong>Zarara Kazimi</strong><span>AidLink – AI-Powered Platform Connecting People with NGOs and Support Services</span></li>
+      </ul>
+    </section>
+
+    <section class="slide slide--dark" data-title="Showcase begins">
+      <div class="slide__chrome">
+        <span class="kicker">Live demos</span>
+        <span class="slide__meta">Now presenting</span>
+      </div>
+      <div style="margin:auto 0;">
+        <h1>Project <em>showcase</em></h1>
+        <p class="lead">Each graduate will share their capstone. Listen for the problem, the solution, and the craft behind the build.</p>
+      </div>
+    </section>
+
+
+
+    <section class="slide slide--project" data-title="Asma Mehraban">
+      <div class="slide__chrome">
+        <span class="kicker">Student showcase</span>
+        <span class="slide__meta">01 / 25</span>
+      </div>
+      <div class="project">
+        <div class="project__media">
+          <img src="/images/students-photo/placeholder.svg" alt="" draggable="false" />
+        </div>
+        <div class="project__copy">
+          <p class="project__role">Web &amp; AI Developer</p>
+          <h2>Asma Mehraban</h2>
+          <p class="project__loc">Jaba Saraj/ Parwan/ Afghanistan</p>
+          <p class="project__label">Capstone project</p>
+          <h3>PostPlanner-AI</h3>
+          <p class="project__blurb">PostPlanner AI is an AI-powered social media content management platform designed to help creators and businesses create, organize, and manage social…</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide slide--project" data-title="Asma Samadi">
+      <div class="slide__chrome">
+        <span class="kicker">Student showcase</span>
+        <span class="slide__meta">02 / 25</span>
+      </div>
+      <div class="project">
+        <div class="project__media">
+          <img src="/images/students-photo/placeholder.svg" alt="" draggable="false" />
+        </div>
+        <div class="project__copy">
+          <p class="project__role">Aspiring Backend Developer</p>
+          <h2>Asma Samadi</h2>
+          <p class="project__loc">Kabul, Afghanistan</p>
+          <p class="project__label">Capstone project</p>
+          <h3>TravelGenie – AI Travel Planning Assistant</h3>
+          <p class="project__blurb">TravelGenie is an AI-powered travel planning web application that helps users plan their trips in an easier and more organized way.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide slide--project" data-title="Basira Mehrzad">
+      <div class="slide__chrome">
+        <span class="kicker">Student showcase</span>
+        <span class="slide__meta">03 / 25</span>
+      </div>
+      <div class="project">
+        <div class="project__media">
+          <img src="/images/students-photo/Basira Mehrzad.jpg" alt="" draggable="false" />
+        </div>
+        <div class="project__copy">
+          <p class="project__role">Web &amp; AI Developer</p>
+          <h2>Basira Mehrzad</h2>
+          <p class="project__loc">Herat , Afghanistan</p>
+          <p class="project__label">Capstone project</p>
+          <h3>MorningFocus</h3>
+          <p class="project__blurb">MorningFocus is an AI-powered productivity web application that helps users stay focused on what matters most each day.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide slide--project" data-title="Bibi Hawa Abdul Shukoor">
+      <div class="slide__chrome">
+        <span class="kicker">Student showcase</span>
+        <span class="slide__meta">04 / 25</span>
+      </div>
+      <div class="project">
+        <div class="project__media">
+          <img src="/images/students-photo/Bibi Hawa Abdul Shukoor.jpeg" alt="" draggable="false" />
+        </div>
+        <div class="project__copy">
+          <p class="project__role">Full-Stack Web Developer</p>
+          <h2>Bibi Hawa Abdul Shukoor</h2>
+          <p class="project__loc">Kabul, Afghanistan</p>
+          <p class="project__label">Capstone project</p>
+          <h3>DataNest AI</h3>
+          <p class="project__blurb">DataNest AI is a full-stack AI-powered document intelligence platform designed to help users upload, organize, search, and interact with their documents…</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide slide--project" data-title="Bibi Mariam Abdul Shukoor">
+      <div class="slide__chrome">
+        <span class="kicker">Student showcase</span>
+        <span class="slide__meta">05 / 25</span>
+      </div>
+      <div class="project">
+        <div class="project__media">
+          <img src="/images/students-photo/Bibi Maryam Abdul Shukoor.jpeg" alt="" draggable="false" />
+        </div>
+        <div class="project__copy">
+          <p class="project__role">Frontend Developer</p>
+          <h2>Bibi Mariam Abdul Shukoor</h2>
+          <p class="project__loc">Kabul Afghanistan</p>
+          <p class="project__label">Capstone project</p>
+          <h3>CareerMatch - AI-Powered Personalized Job Matching System</h3>
+          <p class="project__blurb">CareerMatch is an AI-powered job matching platform designed to help job seekers find relevant career opportunities based on their skills, experience,…</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide slide--project" data-title="Bibi Zhara Abdul Shukoor">
+      <div class="slide__chrome">
+        <span class="kicker">Student showcase</span>
+        <span class="slide__meta">06 / 25</span>
+      </div>
+      <div class="project">
+        <div class="project__media">
+          <img src="/images/students-photo/Bibi Zhara Abdul Shukoor.jpeg" alt="" draggable="false" />
+        </div>
+        <div class="project__copy">
+          <p class="project__role">Front-End Web Developer</p>
+          <h2>Bibi Zhara Abdul Shukoor</h2>
+          <p class="project__loc">Kabul Afghanistan</p>
+          <p class="project__label">Capstone project</p>
+          <h3>HR Pilot – AI-Powered Recruitment Platform</h3>
+          <p class="project__blurb">HR Pilot is an AI-powered recruitment platform designed to streamline the hiring process by helping recruiters manage jobs and candidates more efficiently.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide slide--project" data-title="Fareshta Foladi">
+      <div class="slide__chrome">
+        <span class="kicker">Student showcase</span>
+        <span class="slide__meta">07 / 25</span>
+      </div>
+      <div class="project">
+        <div class="project__media">
+          <img src="/images/students-photo/placeholder.svg" alt="" draggable="false" />
+        </div>
+        <div class="project__copy">
+          <p class="project__role">Frontend Developer</p>
+          <h2>Fareshta Foladi</h2>
+          <p class="project__loc">Herat_Afghanistan</p>
+          <p class="project__label">Capstone project</p>
+          <h3>BrainNote AI</h3>
+          <p class="project__blurb">BrainNote AI is an AI-powered note-taking web application designed to help users capture, organize, search, and manage their ideas more effectively.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide slide--project" data-title="Farzana Ebrahimi">
+      <div class="slide__chrome">
+        <span class="kicker">Student showcase</span>
+        <span class="slide__meta">08 / 25</span>
+      </div>
+      <div class="project">
+        <div class="project__media">
+          <img src="/images/students-photo/Farzana Ebrahimi.png" alt="" draggable="false" />
+        </div>
+        <div class="project__copy">
+          <p class="project__role">Junior Frontend Developer</p>
+          <h2>Farzana Ebrahimi</h2>
+          <p class="project__loc">Herat, Afghanistan</p>
+          <p class="project__label">Capstone project</p>
+          <h3>QuickHelp AI – AI-Powered Support &amp; Response System</h3>
+          <p class="project__blurb">QuickHelp AI QuickHelp AI is an AI-powered support and response system designed to help businesses provide faster and more accurate customer support.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide slide--project" data-title="Hamisha Noori">
+      <div class="slide__chrome">
+        <span class="kicker">Student showcase</span>
+        <span class="slide__meta">09 / 25</span>
+      </div>
+      <div class="project">
+        <div class="project__media">
+          <img src="/images/students-photo/placeholder.svg" alt="" draggable="false" />
+        </div>
+        <div class="project__copy">
+          <p class="project__role">Aspiring Frontend Developer</p>
+          <h2>Hamisha Noori</h2>
+          <p class="project__loc">Mazar-e-Sharif, Balkh,</p>
+          <p class="project__label">Capstone project</p>
+          <h3>DevTrack</h3>
+          <p class="project__blurb">DevTrack is an AI-powered web application designed to help developers analyze their GitHub projects, identify areas for improvement, and receive…</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide slide--project" data-title="Hanifa Yousufi">
+      <div class="slide__chrome">
+        <span class="kicker">Student showcase</span>
+        <span class="slide__meta">10 / 25</span>
+      </div>
+      <div class="project">
+        <div class="project__media">
+          <img src="/images/students-photo/placeholder.svg" alt="" draggable="false" />
+        </div>
+        <div class="project__copy">
+          <p class="project__role">Frontend Developer skilled programming</p>
+          <h2>Hanifa Yousufi</h2>
+          <p class="project__loc">Kabul</p>
+          <p class="project__label">Capstone project</p>
+          <h3>MindfulDiary</h3>
+          <p class="project__blurb">Most journaling apps are just a text box.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide slide--project" data-title="Jamila Waziry">
+      <div class="slide__chrome">
+        <span class="kicker">Student showcase</span>
+        <span class="slide__meta">11 / 25</span>
+      </div>
+      <div class="project">
+        <div class="project__media">
+          <img src="/images/students-photo/placeholder.svg" alt="" draggable="false" />
+        </div>
+        <div class="project__copy">
+          <p class="project__role">Full-Stack Developer</p>
+          <h2>Jamila Waziry</h2>
+          <p class="project__loc">Kabul</p>
+          <p class="project__label">Capstone project</p>
+          <h3>AfghanBuddy (AI-Powered Travel Discovery &amp; Smart Tour Planning Platform)</h3>
+          <p class="project__blurb">AfghanBuddy is an AI-powered travel platform designed to help users discover Afghanistan’s destinations, culture, history, and natural beauty.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide slide--project" data-title="Lima Rahimzai">
+      <div class="slide__chrome">
+        <span class="kicker">Student showcase</span>
+        <span class="slide__meta">12 / 25</span>
+      </div>
+      <div class="project">
+        <div class="project__media">
+          <img src="/images/students-photo/placeholder.svg" alt="" draggable="false" />
+        </div>
+        <div class="project__copy">
+          <p class="project__role">Frontend Developer</p>
+          <h2>Lima Rahimzai</h2>
+          <p class="project__loc">Kabul, Afghanistan</p>
+          <p class="project__label">Capstone project</p>
+          <h3>PitchPilot</h3>
+          <p class="project__blurb">PitchPilot is an AI-powered startup coach designed to help people with startup ideas transform them into structured business concepts.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide slide--project" data-title="Mahdia Hassani">
+      <div class="slide__chrome">
+        <span class="kicker">Student showcase</span>
+        <span class="slide__meta">13 / 25</span>
+      </div>
+      <div class="project">
+        <div class="project__media">
+          <img src="/images/students-photo/Mahdia Hassani.jpg" alt="" draggable="false" />
+        </div>
+        <div class="project__copy">
+          <p class="project__role">Frontend Developer</p>
+          <h2>Mahdia Hassani</h2>
+          <p class="project__loc">Kabul Afghanistan</p>
+          <p class="project__label">Capstone project</p>
+          <h3>SafeNet</h3>
+          <p class="project__blurb">SafeNet is an AI-powered cybersecurity awareness platform that helps users identify online threats, understand common scams, and develop safer digital…</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide slide--project" data-title="Marwa Qadeer">
+      <div class="slide__chrome">
+        <span class="kicker">Student showcase</span>
+        <span class="slide__meta">14 / 25</span>
+      </div>
+      <div class="project">
+        <div class="project__media">
+          <img src="/images/students-photo/Marwa Qadeer.jpeg" alt="" draggable="false" />
+        </div>
+        <div class="project__copy">
+          <p class="project__role">Aspiring Frontend Developer</p>
+          <h2>Marwa Qadeer</h2>
+          <p class="project__loc">Charah-E-Qambar, Kabul, Afghanistan</p>
+          <p class="project__label">Capstone project</p>
+          <h3>GiftMatch AI</h3>
+          <p class="project__blurb">GiftMatch AI is an AI-powered gift recommendation platform that helps users organize important occasions such as birthdays and generate personalized gift…</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide slide--project" data-title="Maryam Hamrah">
+      <div class="slide__chrome">
+        <span class="kicker">Student showcase</span>
+        <span class="slide__meta">15 / 25</span>
+      </div>
+      <div class="project">
+        <div class="project__media">
+          <img src="/images/students-photo/Maryam Hamrah.jpg" alt="" draggable="false" />
+        </div>
+        <div class="project__copy">
+          <p class="project__role">IT Student</p>
+          <h2>Maryam Hamrah</h2>
+          <p class="project__loc">Mazar-i-Sharif,  Afghanistan</p>
+          <p class="project__label">Capstone project</p>
+          <h3>Launchpad</h3>
+          <p class="project__blurb">Launchpad is an AI-powered career roadmap platform designed to help learners create a personalized path toward their career goals.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide slide--project" data-title="Maryam Moostamandy">
+      <div class="slide__chrome">
+        <span class="kicker">Student showcase</span>
+        <span class="slide__meta">16 / 25</span>
+      </div>
+      <div class="project">
+        <div class="project__media">
+          <img src="/images/students-photo/placeholder.svg" alt="" draggable="false" />
+        </div>
+        <div class="project__copy">
+          <p class="project__role">Frontend Developer</p>
+          <h2>Maryam Moostamandy</h2>
+          <p class="project__loc">Parwan, Afghanistan</p>
+          <p class="project__label">Capstone project</p>
+          <h3>SmartCloset</h3>
+          <p class="project__blurb">SmartCloset is a web-based smart wardrobe application designed to help users organize their clothing items and create suitable outfit combinations.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide slide--project" data-title="Narges Yousufzada">
+      <div class="slide__chrome">
+        <span class="kicker">Student showcase</span>
+        <span class="slide__meta">17 / 25</span>
+      </div>
+      <div class="project">
+        <div class="project__media">
+          <img src="/images/students-photo/Narges Yousufzada.jpg" alt="" draggable="false" />
+        </div>
+        <div class="project__copy">
+          <p class="project__role">Aspiring Frontend Developer using React &amp; AI. Building Practical Digital Solutions</p>
+          <h2>Narges Yousufzada</h2>
+          <p class="project__loc">Kabul, Afghanistan</p>
+          <p class="project__label">Capstone project</p>
+          <h3>BookSense AI</h3>
+          <p class="project__blurb">BookSense AI is a AI-powered web application that helps users discover books based on their personal interests and preferences.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide slide--project" data-title="Rahimah ANsari">
+      <div class="slide__chrome">
+        <span class="kicker">Student showcase</span>
+        <span class="slide__meta">18 / 25</span>
+      </div>
+      <div class="project">
+        <div class="project__media">
+          <img src="/images/students-photo/Rahima Ansari.jpg" alt="" draggable="false" />
+        </div>
+        <div class="project__copy">
+          <p class="project__role">Frontend Web Developer</p>
+          <h2>Rahimah ANsari</h2>
+          <p class="project__loc">Herat, Afghanistan</p>
+          <p class="project__label">Capstone project</p>
+          <h3>CatchyReminders</h3>
+          <p class="project__blurb">CatchyReminders is an AI-powered reminder application that transforms boring tasks that are easy to ignore into funny, engaging, and personalized…</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide slide--project" data-title="Roqia stanikzai">
+      <div class="slide__chrome">
+        <span class="kicker">Student showcase</span>
+        <span class="slide__meta">19 / 25</span>
+      </div>
+      <div class="project">
+        <div class="project__media">
+          <img src="/images/students-photo/Roqia Stanikzai.jpg" alt="" draggable="false" />
+        </div>
+        <div class="project__copy">
+          <p class="project__role">Aspiring Frontend web developer, React and JavaScript learner and code weekend participant</p>
+          <h2>Roqia stanikzai</h2>
+          <p class="project__loc">Kabul, Afghanistan</p>
+          <p class="project__label">Capstone project</p>
+          <h3>AI Movie Analyzer</h3>
+          <p class="project__blurb">It is an AI film tracker that reads your movie review and tells you what kind of movies you love.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide slide--project" data-title="Samira Hakimi">
+      <div class="slide__chrome">
+        <span class="kicker">Student showcase</span>
+        <span class="slide__meta">20 / 25</span>
+      </div>
+      <div class="project">
+        <div class="project__media">
+          <img src="/images/students-photo/Samira Hakimi.jpg" alt="" draggable="false" />
+        </div>
+        <div class="project__copy">
+          <p class="project__role">AI &amp; Full-Stack Web Developer</p>
+          <h2>Samira Hakimi</h2>
+          <p class="project__loc">Herat, Afghanistan</p>
+          <p class="project__label">Capstone project</p>
+          <h3>MeetMind – AI Meeting Assistant</h3>
+          <p class="project__blurb">MeetMind is a full-stack AI-powered meeting assistant that helps users organize meetings more efficiently.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide slide--project" data-title="Sana Waziry">
+      <div class="slide__chrome">
+        <span class="kicker">Student showcase</span>
+        <span class="slide__meta">21 / 25</span>
+      </div>
+      <div class="project">
+        <div class="project__media">
+          <img src="/images/students-photo/Sana Waziri.jpeg" alt="" draggable="false" />
+        </div>
+        <div class="project__copy">
+          <p class="project__role">Web Developer</p>
+          <h2>Sana Waziry</h2>
+          <p class="project__loc">Kabul, Afghanistan</p>
+          <p class="project__label">Capstone project</p>
+          <h3>SmartReceipt</h3>
+          <p class="project__blurb">SmartReceipts is an AI-powered expense management application designed to help users track, organize, and analyze their spending.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide slide--project" data-title="Shabnam Ahmadi">
+      <div class="slide__chrome">
+        <span class="kicker">Student showcase</span>
+        <span class="slide__meta">22 / 25</span>
+      </div>
+      <div class="project">
+        <div class="project__media">
+          <img src="/images/students-photo/Shabnam Ahmadi.jpeg" alt="" draggable="false" />
+        </div>
+        <div class="project__copy">
+          <p class="project__role">Where creativity meets code — that&#x27;s where I build.</p>
+          <h2>Shabnam Ahmadi</h2>
+          <p class="project__loc">Kabul, Afghanistan</p>
+          <p class="project__label">Capstone project</p>
+          <h3>Emoji Translator</h3>
+          <p class="project__blurb">Emoji Translator is an AI-powered web application that transforms ordinary sentences into creative, emoji-only messages.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide slide--project" data-title="Sima Gulestani">
+      <div class="slide__chrome">
+        <span class="kicker">Student showcase</span>
+        <span class="slide__meta">23 / 25</span>
+      </div>
+      <div class="project">
+        <div class="project__media">
+          <img src="/images/students-photo/Sima Gulestani.jpg" alt="" draggable="false" />
+        </div>
+        <div class="project__copy">
+          <p class="project__role">Frontend Developer</p>
+          <h2>Sima Gulestani</h2>
+          <p class="project__loc">Afghanistan</p>
+          <p class="project__label">Capstone project</p>
+          <h3>HireFlow</h3>
+          <p class="project__blurb">HireFlow is an AI-powered career assistant designed to help job seekers improve their resumes, understand skill gaps, and prepare effectively for…</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide slide--project" data-title="Zahra Ahmadi">
+      <div class="slide__chrome">
+        <span class="kicker">Student showcase</span>
+        <span class="slide__meta">24 / 25</span>
+      </div>
+      <div class="project">
+        <div class="project__media">
+          <img src="/images/students-photo/Zahra Ahmadi.png" alt="" draggable="false" />
+        </div>
+        <div class="project__copy">
+          <p class="project__role">Frontend Developer</p>
+          <h2>Zahra Ahmadi</h2>
+          <p class="project__loc">Kabul Afghanistan</p>
+          <p class="project__label">Capstone project</p>
+          <h3>Freela</h3>
+          <p class="project__blurb">AI freelance assistant that generates proposals and matches freelancers with suitable projects</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide slide--project" data-title="Zarara Kazimi">
+      <div class="slide__chrome">
+        <span class="kicker">Student showcase</span>
+        <span class="slide__meta">25 / 25</span>
+      </div>
+      <div class="project">
+        <div class="project__media">
+          <img src="/images/students-photo/Zarara Kazimi.jpg" alt="" draggable="false" />
+        </div>
+        <div class="project__copy">
+          <p class="project__role">Frontend Developer</p>
+          <h2>Zarara Kazimi</h2>
+          <p class="project__loc">Kabul afghanistan</p>
+          <p class="project__label">Capstone project</p>
+          <h3>AidLink – AI-Powered Platform Connecting People with NGOs and Support Services</h3>
+          <p class="project__blurb">AidLink is an AI-powered web platform designed to help individuals quickly find NGOs, humanitarian organizations, and essential support services based on…</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="Partners">
+      <div class="slide__chrome">
+        <span class="kicker">With thanks</span>
+        <span class="slide__meta">Opportunity is built together</span>
+      </div>
+      <h2>Opportunity is built <em>together.</em></h2>
+      <p class="lead">This Demo Day is possible because partners believed in these students — and in what access to learning can unlock.</p>
+      <div class="partners">
+        <article>
+          <h3>Linda Norgrove Foundation</h3>
+          <p>Scholarships and support that helped open doors to this bootcamp for women and girls across Afghanistan.</p>
+        </article>
+        <article>
+          <h3>GiveInternet</h3>
+          <p>Connectivity support so students could stay online, keep learning, and finish what they started.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="slide slide--navy" data-title="Impact">
+      <div class="slide__chrome">
+        <span class="kicker">Celebration</span>
+        <span class="slide__meta">What this means</span>
+      </div>
+      <h2>What they carried <em>here.</em></h2>
+      <p class="lead">These graduates did more than finish assignments. They learned in public, built through constraints, and turned limited access into finished products others can use and understand.</p>
+      <p class="lead">Tonight is proof of persistence — and a beginning for what comes next.</p>
+    </section>
+
+    <section class="slide slide--dark" data-title="Thank You">
+      <div class="slide__chrome">
+        <span class="kicker">Closing</span>
+        <span class="slide__meta">CodeWeekend 2026 Demo Day</span>
+      </div>
+      <h1>Thank <em>you.</em></h1>
+      <p class="lead">To our students, mentors, partners, judges, guests, and supporters — thank you for believing in this work and showing up for it.</p>
+      <div class="thanks-grid">
+        <div>Students</div>
+        <div>Mentors</div>
+        <div>Partners</div>
+        <div>Community</div>
+      </div>
+      <div class="cover__code" style="margin-top:28px;"><span>const future = </span><strong>students.build();</strong></div>
+    </section>
+
+  </div>
+
+  <div class="hud" aria-hidden="true">
+    <span id="hudTitle">Cover</span>
+    <progress id="hudProgress" max="100" value="0"></progress>
+    <span id="hudCount">1 / 1</span>
+  </div>
+
+  <script>
+    (function () {
+      const slides = Array.from(document.querySelectorAll('.slide'));
+      const titleEl = document.getElementById('hudTitle');
+      const countEl = document.getElementById('hudCount');
+      const progressEl = document.getElementById('hudProgress');
+      let index = 0;
+
+      const show = (next) => {
+        index = Math.max(0, Math.min(slides.length - 1, next));
+        slides.forEach((slide, i) => slide.classList.toggle('is-active', i === index));
+        const active = slides[index];
+        titleEl.textContent = active.dataset.title || 'Slide';
+        countEl.textContent = (index + 1) + ' / ' + slides.length;
+        progressEl.value = ((index + 1) / slides.length) * 100;
+      };
+
+      document.addEventListener('keydown', (event) => {
+        if (['ArrowRight', 'PageDown', ' ', 'Enter'].includes(event.key)) {
+          event.preventDefault();
+          show(index + 1);
+        } else if (['ArrowLeft', 'PageUp', 'Backspace'].includes(event.key)) {
+          event.preventDefault();
+          show(index - 1);
+        } else if (event.key === 'Home') {
+          event.preventDefault();
+          show(0);
+        } else if (event.key === 'End') {
+          event.preventDefault();
+          show(slides.length - 1);
+        } else if (event.key.toLowerCase() === 'f') {
+          event.preventDefault();
+          if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+          else document.exitFullscreen();
+        }
+      });
+
+      document.addEventListener('click', (event) => {
+        if (event.target.closest('.help')) return;
+        const mid = window.innerWidth / 2;
+        show(event.clientX >= mid ? index + 1 : index - 1);
+      });
+
+      show(0);
+    })();
+  </script>
+</body>
+</html>
