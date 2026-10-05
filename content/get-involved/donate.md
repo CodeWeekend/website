@@ -46,7 +46,7 @@ For donors elsewhere: please consult your local tax authority's rules on charita
 
 We are deeply grateful to the funders who make this work possible:
 
-- **[Linda Norgrove Foundation](https://lindanorgrovefoundation.org)** — primary funder of the 2026 cohort: 30 full scholarships and 24 internet packages.
+- **[Linda Norgrove Foundation](https://lindanorgrovefoundation.org)** — primary funder of the 2025 cohort: 30 full scholarships and 24 internet packages.
 - **[Hackajob](https://hackajob.com)** — 2022 partner: 20 scholarships for female students plus a fundraising marathon.
 - **[Scrimba](https://scrimba.com)** — 2021–2022 partner: a year of premium course access for 100 students.
 - **Many individual donors and volunteer mentors** — without whom none of this scales.

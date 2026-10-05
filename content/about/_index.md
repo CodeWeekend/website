@@ -51,6 +51,6 @@ CodeWeekend is run by a small team of working developers, instructors, and opera
 
 ## Our partners
 
-The 2026 program is made possible by the [Linda Norgrove Foundation](https://lindanorgrovefoundation.org), which provided 30 full scholarships and 24 internet packages for participants. In previous years, we've also partnered with [Hackajob](https://hackajob.com) (20 scholarships for women) and [Scrimba](https://scrimba.com) (premium course access for 100 students).
+The 2025 program was made possible by the [Linda Norgrove Foundation](https://lindanorgrovefoundation.org), which provided 30 full scholarships and 24 internet packages for participants. In previous years, we've also partnered with [Hackajob](https://hackajob.com) (20 scholarships for women) and [Scrimba](https://scrimba.com) (premium course access for 100 students).
 
 If you'd like to partner with us — whether through scholarships, internships, or hiring graduates — visit our [Get Involved](/get-involved/) page.
