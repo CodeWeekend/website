@@ -15,7 +15,7 @@ If anything below is unclear, please email us at [privacy@codeweekend.net](mailt
 
 ## 1. Who we are
 
-**CodeWeekend** is a non-profit society incorporated in British Columbia, Canada (registered in 2025). For the purposes of this policy, "CodeWeekend," "we," "us," and "our" refer to that society and its small team of staff, instructors, mentors, and volunteers.
+**CodeWeekend** is a non-profit society incorporated in British Columbia, Canada (registered August 2025). For the purposes of this policy, "CodeWeekend," "we," "us," and "our" refer to that society and its small team of staff, instructors, mentors, and volunteers.
 
 The website [codeweekend.net](https://codeweekend.net) is operated by CodeWeekend.
 

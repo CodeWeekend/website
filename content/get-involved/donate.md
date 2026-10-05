@@ -6,7 +6,7 @@ date: 2026-04-01
 
 ## Why donations matter
 
-CodeWeekend is free for participants. That doesn't mean it's free to run. The 2026 Web & AI Bootcamp receives scholarship and access support from the [Linda Norgrove Foundation](https://lindanorgrovefoundation.org), with operational costs and supplementary support coming from individual donors and partner organizations.
+CodeWeekend is free for participants. That doesn't mean it's free to run. The 2026 Web & AI Bootcamp builds on scholarship and access support established with the [Linda Norgrove Foundation](https://lindanorgrovefoundation.org) in 2025, with operational costs and supplementary support coming from individual donors and partner organizations.
 
 Donations make the _un-glamorous_ parts of the program possible — the things that turn an admitted applicant into a graduate.
 

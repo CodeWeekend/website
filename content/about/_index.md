@@ -15,7 +15,7 @@ To achieve this goal, we run intensive, fully-live training programs with qualif
 
 CodeWeekend was founded in Kabul, Afghanistan in 2014 — first as a community for developers, then evolving into a structured bootcamp program. Today, we serve Afghan youth in-country, in diaspora across the region, and increasingly women and girls who have been disproportionately affected by recent events.
 
-Our **2026 Web & AI Development Bootcamp** is a 12-week program created specifically for women and girls in Afghanistan. It is supported by the [Linda Norgrove Foundation](https://lindanorgrovefoundation.org).
+Our **2026 Web & AI Development Bootcamp** is a 12-week program created specifically for women and girls in Afghanistan. It builds on the access and scholarship support established with the [Linda Norgrove Foundation](https://lindanorgrovefoundation.org) in 2025.
 
 ## A short history
 
@@ -23,7 +23,7 @@ CodeWeekend was founded by **Jamshid Hashimi on June 4, 2014**. Since then, the 
 
 In 2019, we launched our first structured Coding Bootcamp. The pilot program was completely free of charge; we accepted 20 participants and graduated 12. After the events of August 2021, we expanded the bootcamp into a remote, full-time offering serving Afghan youth both inside and outside Afghanistan.
 
-In **2025**, CodeWeekend was officially incorporated as a **non-profit society in British Columbia, Canada** — giving us the structure to expand programs, build long-term partnerships, and ensure our support is sustainable.
+In **August 2025**, CodeWeekend was officially incorporated as a **non-profit society in British Columbia, Canada** — giving us the structure to expand programs, build long-term partnerships, and ensure our support is sustainable.
 
 ## What makes us different
 

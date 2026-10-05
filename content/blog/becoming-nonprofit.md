@@ -1,6 +1,6 @@
 ---
 title: "CodeWeekend 2025: Web & AI development bootcamp and becoming a non-profit organization"
-date: 2025-07-28
+date: 2025-08-28
 draft: false
 description: "Two milestones for 2025: the launch of a 12-week Web & AI Development Bootcamp for women and girls in Afghanistan, and CodeWeekend's incorporation as a non-profit society in British Columbia, Canada."
 category: "Announcement"
