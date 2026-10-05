@@ -15,7 +15,7 @@ By using the site or participating in any CodeWeekend activity, you agree to the
 
 ## 1. Who we are
 
-CodeWeekend is a non-profit society registered in British Columbia, Canada (2026). We run free, fully-live coding bootcamps — primarily for Afghan youth, with a 2026 cohort dedicated to women and girls in Afghanistan.
+CodeWeekend is a non-profit society registered in British Columbia, Canada (2025). We run free, fully-live coding bootcamps — primarily for Afghan youth, with a 2026 cohort dedicated to women and girls in Afghanistan.
 
 In these Terms, "CodeWeekend," "we," "us," and "our" refer to that society. "You" refers to whoever is using the site or participating in our activities.
 
