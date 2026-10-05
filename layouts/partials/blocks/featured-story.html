@@ -4,7 +4,7 @@
 <section class="featured-story">
   <div class="featured-story__inner">
     <div class="featured-story__portrait">
-      <img src="{{ $hero.Params.image }}" alt="Portrait of {{ $hero.Params.student_name }}" loading="lazy" />
+      <img src="{{ $hero.Params.image }}" alt="" loading="lazy" />
     </div>
     <div>
       <div class="eyebrow alt">Featured story · {{ $hero.Date.Format "January 2006" }}</div>
@@ -12,12 +12,12 @@
       <div class="featured-story__meta">
         <strong>{{ $hero.Params.student_name }}</strong>
         <span class="featured-story__meta-divider" aria-hidden="true"></span>
-        <span>Cohort {{ $hero.Params.cohort_num | default "6" }} · {{ $hero.Params.program }}</span>
+        <span class="featured-story__cohort">Cohort {{ $hero.Params.cohort_num | default "6" }} · {{ $hero.Params.program }}</span>
         <span class="featured-story__meta-divider" aria-hidden="true"></span>
-        <span>{{ $hero.Params.role_now }} at {{ $hero.Params.employer }}</span>
+        <span class="featured-story__role">{{ $hero.Params.role_now }} at {{ $hero.Params.employer }}</span>
       </div>
       <p class="lead" style="margin-bottom: 28px; max-width: 50ch;">{{ $hero.Params.summary | default $hero.Description }}</p>
-      <a href="{{ $hero.RelPermalink }}" class="btn--ghost">Read {{ $hero.Params.student_name }}'s full story →</a>
+      <a href="{{ $hero.RelPermalink }}" class="btn--ghost">Read {{ $hero.Params.student_name }}'s full story <span class="arrow" aria-hidden="true">→</span></a>
     </div>
   </div>
 </section>

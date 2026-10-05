@@ -1,0 +1,18 @@
+{
+  "id": "/",
+  "name": "CodeWeekend",
+  "short_name": "CodeWeekend",
+  "description": "An inclusive community of developers. Free, fully-live coding bootcamps for Afghan learners.",
+  "lang": "en",
+  "dir": "ltr",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#FBF7EF",
+  "theme_color": "#FBF7EF",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

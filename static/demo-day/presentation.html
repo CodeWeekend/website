@@ -6,36 +6,36 @@
   <title>CodeWeekend Demo Day 2026 — Presentation</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,550;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:wght@400;500;600&family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,600;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,500..800&display=swap" rel="stylesheet" />
+  <meta name="theme-color" content="#0E1630" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <style>
+    /* CodeWeekend brand tokens v1.0 (brand/tokens.css) — this deck is standalone, so it carries its own copy */
     :root {
-      --ink: #0e1f2c;
-      --navy: #083b5a;
-      --blue: #1aaedc;
-      --blue-soft: #b7e4f7;
-      --coral: #e76f51;
-      --paper: #fafaf7;
-      --warm: #f2e4ce;
-      --line: #dbe1e5;
-      --slate-300: #cbd5e1;
-      --slate-400: #94a3b8;
-      --slate-500: #64748b;
-      --slate-600: #475569;
-      --sky-100: #e0f2fe;
-      --sky-200: #bae6fd;
-      --sky-300: #7dd3fc;
-      --sky-400: #38bdf8;
-      --serif: 'Fraunces', Georgia, serif;
-      --sans: 'Inter', system-ui, sans-serif;
-      --mono: 'JetBrains Mono', ui-monospace, monospace;
+      --lapis-50:#F1F6FF; --lapis-100:#E3ECFF; --lapis-200:#C8D9FF; --lapis-300:#9CBBFF; --lapis-400:#6A92F3;
+      --lapis-500:#3F69DB; --lapis-600:#2347B4; --lapis-700:#1A3896; --lapis-800:#122970; --lapis-900:#0B1C4B;
+      --saffron-50:#FFF6E8; --saffron-100:#FFECCD; --saffron-200:#FFDCA1; --saffron-300:#FEC55F; --saffron-400:#F5A71E;
+      --saffron-500:#D89100; --saffron-600:#B47800; --saffron-700:#976400; --saffron-800:#7B5100; --saffron-900:#573905;
+      --pomegranate-50:#FFF0F0; --pomegranate-100:#FFE1E1; --pomegranate-300:#F4858A; --pomegranate-500:#CD3349;
+      --pomegranate-600:#B4223B; --pomegranate-700:#92182E;
+      --firuza-50:#E9F7FC; --firuza-100:#D1F0FA; --firuza-300:#60C0DE; --firuza-600:#116B82; --firuza-700:#06566A;
+      --white:#FFFFFF; --paper:#FBF7EF; --paper-2:#F3ECDF; --sand:#EADFCB;
+      --line:#E4DACA; --line-2:#EEE7DA; --line-strong:#8E8475;
+      --stone:#5F584C; --ink-2:#3A3E50; --ink:#1B2034;
+      --night:#0E1630; --night-2:#172042; --night-line:#2A3560; --mist:#A9B1C6;
+
+      --font-display:'Bricolage Grotesque','Atkinson Hyperlegible Next',system-ui,sans-serif;
+      --font-body:'Atkinson Hyperlegible Next',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+      --font-mono:'Atkinson Hyperlegible Mono',ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+      --radius: 14px;
     }
     * { box-sizing: border-box; }
     html, body {
       margin: 0;
       height: 100%;
-      background: #061018;
+      background: var(--night);
       color: var(--ink);
-      font-family: var(--sans);
+      font-family: var(--font-body);
       overflow: hidden;
     }
     .deck {
@@ -48,7 +48,7 @@
       inset: 0;
       display: none;
       flex-direction: column;
-      padding: clamp(28px, 4vw, 56px) clamp(28px, 5vw, 72px) clamp(40px, 5vw, 64px);
+      padding: clamp(28px, 4vw, 56px) clamp(28px, 5vw, 72px) clamp(52px, 5.5vw, 76px);
       background: var(--paper);
       opacity: 0;
     }
@@ -61,13 +61,14 @@
       from { opacity: 0; transform: translateY(10px); }
       to { opacity: 1; transform: translateY(0); }
     }
+    /* Dark grounds are flat: Night, and Lapis-900 for brand bands */
     .slide--dark {
-      background: linear-gradient(160deg, #062536 0%, var(--navy) 48%, #0a4a6e 100%);
-      color: white;
+      background: var(--night);
+      color: var(--paper);
     }
     .slide--navy {
-      background: var(--navy);
-      color: white;
+      background: var(--lapis-900);
+      color: var(--paper);
     }
     .slide__chrome {
       display: flex;
@@ -76,143 +77,220 @@
       gap: 16px;
       margin-bottom: clamp(18px, 3vh, 36px);
     }
+    /* Logo lockup (Small master, brand/logo/logo-inline.svg), reverse colours on dark */
+    .deck-brand {
+      display: block;
+      line-height: 0;
+      --logo-mark: var(--lapis-600);
+      --logo-panel: var(--saffron-400);
+      --logo-accent: var(--pomegranate-600);
+      --logo-word: var(--ink);
+    }
+    .slide--dark .deck-brand,
+    .slide--navy .deck-brand {
+      --logo-mark: var(--paper);
+      --logo-word: var(--paper);
+      --logo-accent: var(--pomegranate-300);
+    }
+    .deck-brand svg {
+      display: block;
+      width: clamp(174px, 14.5vw, 232px);
+      height: auto;
+    }
     .kicker {
       display: inline-flex;
       align-items: center;
       gap: 12px;
       margin: 0;
-      color: #0c6a8c;
-      font-family: var(--mono);
-      font-size: 11px;
-      font-weight: 600;
+      color: var(--lapis-600);
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 500;
       letter-spacing: 0.12em;
       text-transform: uppercase;
     }
     .slide--dark .kicker,
-    .slide--navy .kicker { color: var(--sky-200); }
+    .slide--navy .kicker { color: var(--saffron-300); }
     .kicker::before {
       content: '';
-      width: 28px;
-      height: 2px;
-      background: var(--coral);
+      width: 24px;
+      height: 0;
+      border-top: 3px dashed var(--saffron-400);
     }
     .slide__meta {
-      color: var(--slate-500);
-      font-family: var(--mono);
-      font-size: 11px;
-      letter-spacing: 0.08em;
+      color: var(--stone);
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
     }
     .slide--dark .slide__meta,
-    .slide--navy .slide__meta { color: rgba(255,255,255,0.55); }
+    .slide--navy .slide__meta { color: var(--mist); }
     h1 {
       margin: 0;
-      font-family: var(--serif);
-      font-size: clamp(42px, 7vw, 84px);
-      font-weight: 550;
-      line-height: 0.98;
-      letter-spacing: -0.02em;
+      font-family: var(--font-display);
+      font-optical-sizing: auto;
+      font-size: clamp(42px, 6.4vw, 92px);
+      font-weight: 760;
+      line-height: 1.02;
+      letter-spacing: -0.03em;
       max-width: 14ch;
     }
+    /* Bricolage has no italic: emphasis is upright Lapis with a Saffron stitch underline */
     h1 em, h2 em {
-      font-style: italic;
-      font-weight: 400;
-      color: var(--blue);
+      font-style: normal;
+      color: var(--lapis-600);
+      text-decoration-line: underline;
+      text-decoration-color: var(--saffron-400);
+      text-decoration-thickness: 0.12em;
+      text-underline-offset: 0.12em;
     }
     .slide--dark h1 em,
     .slide--navy h1 em,
-    .slide--dark h2 em { color: var(--sky-300); }
+    .slide--dark h2 em,
+    .slide--navy h2 em { color: var(--lapis-200); }
     h2 {
       margin: 0 0 16px;
-      font-family: var(--serif);
-      font-size: clamp(34px, 5vw, 58px);
-      font-weight: 550;
-      line-height: 1.05;
+      font-family: var(--font-display);
+      font-optical-sizing: auto;
+      font-size: clamp(34px, 4.6vw, 64px);
+      font-weight: 720;
+      line-height: 1.06;
+      letter-spacing: -0.025em;
       max-width: 18ch;
     }
     h3 {
       margin: 0 0 10px;
-      font-family: var(--serif);
-      font-size: clamp(24px, 3vw, 34px);
-      font-weight: 550;
-      line-height: 1.15;
+      font-family: var(--font-display);
+      font-size: clamp(24px, 2.6vw, 34px);
+      font-weight: 650;
+      line-height: 1.18;
+      letter-spacing: -0.015em;
     }
+    .slide > .kicker,
+    .cover .kicker,
+    .closing > .kicker { margin-bottom: clamp(14px, 2vh, 22px); }
     .lead {
       margin: 18px 0 0;
-      max-width: 42rem;
-      color: var(--slate-600);
-      font-size: clamp(16px, 1.7vw, 20px);
+      max-width: 44rem;
+      color: var(--ink-2);
+      font-size: clamp(18px, 1.7vw, 23px);
       line-height: 1.55;
     }
     .slide--dark .lead,
-    .slide--navy .lead { color: rgba(255,255,255,0.78); }
+    .slide--navy .lead { color: var(--lapis-200); }
+    .lead--narrow { max-width: 36rem; }
+
+    /* Cover */
     .cover {
       flex: 1;
+      min-height: 0;
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: clamp(24px, 4vw, 64px);
-      align-items: end;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: clamp(28px, 4.5vw, 72px);
+      align-items: stretch;
+    }
+    .cover__copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+    .cover__art {
+      position: relative;
+      min-height: 0;
+    }
+    .cover__art .dd-sky {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 1px solid var(--night-line);
+      border-radius: var(--radius);
     }
     .cover__badge {
-      justify-self: end;
-      width: min(220px, 28vw);
+      position: absolute;
+      left: -28px;
+      bottom: 28px;
+      width: min(200px, 24vw);
       aspect-ratio: 1;
-      display: grid;
-      place-content: center;
-      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       padding: 20px;
-      border-radius: 8px;
-      background: var(--coral);
-      color: white;
+      border-radius: 12px;
+      background: var(--pomegranate-600);
+      color: var(--white);
     }
     .cover__badge strong {
-      font-family: var(--serif);
-      font-size: clamp(56px, 8vw, 84px);
-      font-weight: 400;
+      font-family: var(--font-display);
+      font-size: clamp(56px, 7vw, 92px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
       line-height: 0.85;
     }
     .cover__badge span {
       display: block;
-      margin-top: 8px;
-      font-family: var(--mono);
-      font-size: 11px;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 500;
       letter-spacing: 0.1em;
+      line-height: 1.35;
       text-transform: uppercase;
     }
     .cover__code {
       margin-top: 28px;
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      align-self: flex-start;
+      gap: 0.6ch;
       padding: 14px 18px;
-      border-radius: 6px;
-      background: rgba(14,31,44,0.92);
-      color: white;
-      font-family: var(--mono);
-      font-size: 13px;
+      border: 1px solid var(--night-line);
+      border-radius: 10px;
+      background: var(--night-2);
+      color: var(--mist);
+      font-family: var(--font-mono);
+      font-size: 16px;
     }
-    .cover__code strong { color: var(--sky-300); font-weight: 600; }
+    .cover__code strong { color: var(--lapis-200); font-weight: 500; }
+    /* live cursor: blinks three times, then holds */
+    .cursor {
+      display: inline-block;
+      width: 0.6em;
+      height: 1.15em;
+      background: var(--saffron-400);
+      animation: blink 530ms steps(1, end) 6 alternate;
+    }
+    @keyframes blink { 50% { opacity: 0; } }
+    @media (prefers-reduced-motion: reduce) {
+      .cursor, .slide.is-active { animation: none; }
+    }
     .facts {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 18px;
-      margin-top: 36px;
-      max-width: 720px;
+      margin: 36px 0 0;
+      max-width: 760px;
     }
     .facts div {
       padding-top: 12px;
-      border-top: 1px solid rgba(255,255,255,0.18);
+      border-top: 1px solid var(--night-line);
     }
     .facts dt {
-      color: rgba(255,255,255,0.55);
-      font-family: var(--mono);
-      font-size: 10px;
-      letter-spacing: 0.1em;
+      color: var(--mist);
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
     }
     .facts dd {
       margin: 6px 0 0;
-      font-size: 15px;
-      font-weight: 650;
+      font-size: 18px;
+      font-weight: 700;
     }
+
+    /* Numbers */
     .stats {
       margin-top: auto;
       display: grid;
@@ -220,26 +298,38 @@
       gap: 14px;
     }
     .stats article {
-      min-height: 110px;
-      padding: 20px 18px;
+      min-height: 150px;
+      padding: 24px 22px;
       border: 1px solid var(--line);
-      border-radius: 8px;
-      background: white;
+      border-radius: var(--radius);
+      background: var(--paper-2);
     }
     .stats strong {
       display: block;
-      font-family: var(--serif);
-      font-size: clamp(28px, 4vw, 40px);
-      font-weight: 450;
+      color: var(--lapis-600);
+      font-family: var(--font-display);
+      font-size: clamp(40px, 4.8vw, 68px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
       line-height: 1;
+    }
+    .stats strong::after {
+      display: block;
+      width: 40px;
+      height: 0;
+      margin-top: 14px;
+      border-top: 3px dashed var(--saffron-400);
+      content: '';
     }
     .stats span {
       display: block;
-      margin-top: 10px;
-      color: var(--slate-500);
-      font-size: 13px;
+      margin-top: 12px;
+      color: var(--stone);
+      font-size: 16px;
       line-height: 1.35;
     }
+
+    /* Cards on Lapis-900 */
     .journey {
       margin-top: auto;
       display: grid;
@@ -247,27 +337,42 @@
       gap: 14px;
     }
     .journey article {
-      min-height: 180px;
-      padding: 22px 18px;
-      border-radius: 8px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
+      min-height: 190px;
+      padding: 24px 20px;
+      border-radius: var(--radius);
+      background: var(--lapis-800);
+      border: 1px solid var(--lapis-700);
     }
-    .journey span {
-      color: var(--coral);
-      font-family: var(--mono);
-      font-size: 12px;
-      letter-spacing: 0.08em;
+    .journey span,
+    .awards span {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--saffron-400);
+      font-family: var(--font-mono);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+    /* girih rhombus bullet, 72°/108° */
+    .journey span::before,
+    .awards span::before,
+    .thanks-grid div::before {
+      width: 9px;
+      height: 12px;
+      background: var(--saffron-400);
+      clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+      content: '';
     }
     .journey h3 {
       margin: 14px 0 10px;
-      color: white;
-      font-size: 24px;
+      color: var(--paper);
+      font-size: 28px;
     }
     .journey p {
       margin: 0;
-      color: rgba(255,255,255,0.72);
-      font-size: 14px;
+      color: var(--lapis-200);
+      font-size: 16px;
       line-height: 1.5;
     }
     .awards {
@@ -277,38 +382,39 @@
       gap: 12px;
     }
     .awards article {
-      min-height: 200px;
-      padding: 18px 16px;
+      min-height: 220px;
+      padding: 20px 18px;
       display: flex;
       flex-direction: column;
       gap: 10px;
-      border-radius: 8px;
-      border: 1px solid rgba(255,255,255,0.14);
-      background: rgba(255,255,255,0.05);
+      border-radius: var(--radius);
+      border: 1px solid var(--lapis-700);
+      background: var(--lapis-800);
     }
-    .awards span {
-      color: var(--coral);
-      font-family: var(--mono);
-      font-size: 11px;
-      letter-spacing: 0.08em;
+    .awards article:first-child {
+      padding-top: 17px;
+      border-color: var(--saffron-400);
+      border-top-width: 4px;
     }
     .awards strong {
-      color: white;
-      font-family: var(--serif);
-      font-size: clamp(18px, 1.8vw, 22px);
-      font-weight: 500;
+      color: var(--paper);
+      font-family: var(--font-display);
+      font-size: clamp(19px, 1.8vw, 24px);
+      font-weight: 650;
+      letter-spacing: -0.01em;
       line-height: 1.2;
     }
     .awards em {
       margin-top: auto;
-      color: var(--slate-300);
-      font-family: var(--sans);
-      font-size: 12px;
+      color: var(--lapis-200);
+      font-family: var(--font-body);
+      font-size: 15px;
       font-style: normal;
       line-height: 1.45;
     }
     .agenda {
-      margin-top: auto;
+      margin: auto 0 0;
+      padding: 0;
       display: grid;
       gap: 0;
     }
@@ -319,19 +425,22 @@
       gap: 24px;
       align-items: center;
       padding: 18px 0;
-      border-top: 1px solid rgba(255,255,255,0.12);
+      border-top: 1px solid var(--lapis-800);
     }
-    .agenda li:last-child { border-bottom: 1px solid rgba(255,255,255,0.12); }
-    .agenda .num { color: var(--sky-400); font-family: var(--mono); font-size: 12px; }
-    .agenda h3 { margin: 0 0 4px; color: white; font-size: 26px; }
-    .agenda p { margin: 0; color: rgba(255,255,255,0.7); font-size: 14px; }
+    .agenda li:last-child { border-bottom: 1px solid var(--lapis-800); }
+    .agenda .num { color: var(--saffron-400); font-family: var(--font-mono); font-size: 15px; font-weight: 600; }
+    .agenda h3 { margin: 0 0 4px; color: var(--paper); font-size: 30px; }
+    .agenda p { margin: 0; color: var(--lapis-200); font-size: 17px; }
     .agenda .meta {
-      color: var(--sky-200);
-      font-family: var(--mono);
-      font-size: 10px;
-      letter-spacing: 0.08em;
+      color: var(--mist);
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
     }
+
+    /* Cohort */
     .cohort {
       margin: 0;
       padding: 0;
@@ -344,39 +453,45 @@
     .cohort li {
       min-height: 72px;
       padding: 12px 14px;
-      border-radius: 6px;
-      background: white;
+      border-radius: 10px;
+      background: var(--paper-2);
       border: 1px solid var(--line);
       display: flex;
       flex-direction: column;
       gap: 4px;
     }
     .cohort strong {
-      font-size: 14px;
-      font-weight: 700;
+      font-family: var(--font-display);
+      font-size: 17px;
+      font-weight: 650;
+      letter-spacing: -0.01em;
       color: var(--ink);
     }
     .cohort span {
-      color: var(--slate-500);
-      font-size: 11px;
+      color: var(--stone);
+      font-size: 14px;
       line-height: 1.35;
     }
+
+    /* Student showcase */
     .project {
       flex: 1;
       display: grid;
       grid-template-columns: 0.85fr 1.15fr;
-      gap: clamp(24px, 4vw, 56px);
+      gap: clamp(24px, 4vw, 64px);
       align-items: center;
       min-height: 0;
     }
     .project__media {
       overflow: hidden;
-      border-radius: 8px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
       aspect-ratio: 1;
-      background: var(--warm);
-      max-height: min(520px, 62vh);
+      background: var(--sand);
+      max-height: min(560px, 64vh);
     }
-    .project__media img {
+    .project__media img,
+    .project__media svg {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -384,38 +499,73 @@
     }
     .project__role {
       margin: 0 0 8px;
-      color: #0c6a8c;
-      font-size: 14px;
+      color: var(--lapis-600);
+      font-size: 18px;
       font-weight: 700;
     }
     .project h2 {
       max-width: none;
-      font-size: clamp(36px, 4.6vw, 54px);
+      font-size: clamp(36px, 4.6vw, 62px);
     }
     .project__loc {
       margin: 6px 0 22px;
-      color: var(--slate-500);
-      font-size: 14px;
+      color: var(--stone);
+      font-family: var(--font-mono);
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
     }
     .project__label {
       margin: 0 0 8px;
-      color: var(--coral);
-      font-family: var(--mono);
-      font-size: 10px;
+      color: var(--pomegranate-600);
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 500;
       letter-spacing: 0.12em;
       text-transform: uppercase;
     }
     .project h3 {
       color: var(--ink);
-      font-size: clamp(26px, 3vw, 36px);
+      font-size: clamp(26px, 3vw, 38px);
     }
     .project__blurb {
       margin: 12px 0 0;
-      max-width: 38rem;
-      color: var(--slate-600);
-      font-size: 16px;
+      max-width: 40rem;
+      color: var(--ink-2);
+      font-size: 19px;
       line-height: 1.6;
     }
+
+    /* Her Kite tiles (foundation §6): identical to the website's kite wall */
+    .her-kite { --hk-field: var(--lapis-600); --hk-kite: var(--saffron-400); --hk-icon: var(--paper); }
+    .her-kite--lapis { --hk-field: var(--lapis-600); --hk-kite: var(--saffron-400); --hk-icon: var(--paper); }
+    .her-kite--night-firuza { --hk-field: var(--night); --hk-kite: var(--firuza-300); --hk-icon: var(--paper); }
+    .her-kite--sand { --hk-field: var(--sand); --hk-kite: var(--pomegranate-600); --hk-icon: var(--ink); }
+    .her-kite--paper { --hk-field: var(--paper-2); --hk-kite: var(--lapis-600); --hk-icon: var(--ink); }
+    .her-kite--night-saffron { --hk-field: var(--night); --hk-kite: var(--saffron-400); --hk-icon: var(--paper); }
+    .her-kite__field, .her-kite__marks { fill: var(--hk-field); }
+    .her-kite__kite { fill: var(--hk-kite); }
+    .her-kite__initial { fill: var(--hk-field); font-family: var(--font-display); font-size: 28px; font-weight: 800; }
+    .her-kite__icon { fill: none; stroke: var(--hk-icon); stroke-width: 1.1px; stroke-linecap: round; stroke-linejoin: round; }
+
+    /* Sky art (cover): flat bands, ridges, sun, the logo kite and a cohort of kites */
+    .dd-sky__band--1 { fill: var(--night); }
+    .dd-sky__band--2 { fill: var(--lapis-900); }
+    .dd-sky__sun { fill: var(--saffron-400); }
+    .dd-sky__ridge--back { fill: var(--lapis-800); }
+    .dd-sky__ridge--front { fill: var(--lapis-600); }
+    .dd-sky__string { fill: none; stroke: var(--mist); stroke-width: 0.8px; opacity: 0.55; }
+    .dd-sky__knot { fill: var(--night); }
+    .dd-sky__kite--saffron { fill: var(--saffron-400); }
+    .dd-sky__kite--pomegranate { fill: var(--pomegranate-300); }
+    .dd-sky__kite--lapis { fill: var(--lapis-200); }
+    .dd-sky__kite--firuza { fill: var(--firuza-300); }
+    .dd-sky__kite--paper { fill: var(--paper); }
+    .dd-sky__logo-body { fill: var(--paper); }
+    .dd-sky__logo-panel { fill: var(--saffron-400); }
+    .dd-sky__logo-tassel { fill: var(--pomegranate-300); }
+
+    /* Partners */
     .partners {
       margin-top: auto;
       display: grid;
@@ -423,18 +573,20 @@
       gap: 16px;
     }
     .partners article {
-      padding: 28px 24px;
-      border-radius: 8px;
+      padding: 30px 26px;
+      border-radius: var(--radius);
       border: 1px solid var(--line);
-      background: white;
+      background: var(--paper-2);
     }
     .partners h3 { margin-bottom: 10px; }
     .partners p {
       margin: 0;
-      color: var(--slate-600);
-      font-size: 15px;
+      color: var(--ink-2);
+      font-size: 18px;
       line-height: 1.55;
     }
+
+    /* Closing */
     .thanks-grid {
       margin-top: auto;
       display: grid;
@@ -442,14 +594,66 @@
       gap: 12px;
     }
     .thanks-grid div {
-      padding: 22px 18px;
-      border-radius: 8px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
-      color: white;
-      font-family: var(--serif);
-      font-size: 22px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 22px 20px;
+      border-radius: var(--radius);
+      background: var(--night-2);
+      border: 1px solid var(--night-line);
+      color: var(--paper);
+      font-family: var(--font-display);
+      font-size: 26px;
+      font-weight: 650;
+      letter-spacing: -0.01em;
     }
+    /* Learners make the kites; the community holds the strings (brand idea, foundation §1) */
+    .thanks-grid .has-kite { position: relative; }
+    .thanks-kite {
+      position: absolute;
+      left: 50%;
+      bottom: 100%;
+      width: 140px;
+      height: 200px;
+      overflow: visible;
+      pointer-events: none;
+    }
+    .has-kite--a .thanks-kite { height: min(170px, 19vh); }
+    .has-kite--b .thanks-kite { height: min(300px, 33vh); }
+    .has-kite--c .thanks-kite { height: min(230px, 25vh); }
+    .thanks-kite__string { stroke: var(--mist); stroke-width: 1px; opacity: 0.6; }
+    .thanks-kite__knot { fill: var(--night); }
+    .thanks-kite__body--saffron { fill: var(--saffron-400); }
+    .thanks-kite__body--firuza { fill: var(--firuza-300); }
+    .thanks-kite__body--pomegranate { fill: var(--pomegranate-300); }
+    .closing__foot {
+      margin-top: 24px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .closing__foot .cover__code { margin-top: 0; }
+    .signoff {
+      margin: 0;
+      color: var(--paper);
+      font-family: var(--font-display);
+      font-size: clamp(22px, 2.2vw, 32px);
+      font-weight: 720;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      text-align: right;
+    }
+    .signoff em {
+      font-style: normal;
+      color: var(--lapis-200);
+      text-decoration-line: underline;
+      text-decoration-color: var(--saffron-400);
+      text-decoration-thickness: 0.12em;
+      text-underline-offset: 0.12em;
+    }
+
+    /* Presenter HUD */
     .hud {
       position: fixed;
       left: 0;
@@ -461,43 +665,48 @@
       justify-content: space-between;
       gap: 16px;
       padding: 10px 18px;
-      background: rgba(6,16,24,0.72);
-      color: rgba(255,255,255,0.72);
-      font-family: var(--mono);
-      font-size: 11px;
-      letter-spacing: 0.06em;
-      backdrop-filter: blur(8px);
+      background: var(--night);
+      border-top: 1px solid var(--night-line);
+      color: var(--mist);
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.04em;
     }
     .hud progress {
       flex: 1;
       height: 3px;
       appearance: none;
       border: 0;
-      background: rgba(255,255,255,0.15);
+      background: var(--night-line);
     }
-    .hud progress::-webkit-progress-bar { background: rgba(255,255,255,0.15); }
-    .hud progress::-webkit-progress-value { background: var(--blue); }
-    .hud progress::-moz-progress-bar { background: var(--blue); }
+    .hud progress::-webkit-progress-bar { background: var(--night-line); }
+    .hud progress::-webkit-progress-value { background: var(--saffron-400); }
+    .hud progress::-moz-progress-bar { background: var(--saffron-400); }
     .help {
       position: fixed;
       top: 14px;
       right: 14px;
       z-index: 30;
       padding: 8px 10px;
+      border: 1px solid var(--night-line);
       border-radius: 6px;
-      background: rgba(14,31,44,0.8);
-      color: white;
-      font-family: var(--mono);
-      font-size: 10px;
-      letter-spacing: 0.06em;
-      opacity: 0.7;
+      background: var(--night-2);
+      color: var(--paper);
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      opacity: 0.8;
     }
     @media (max-width: 900px) {
       .cover, .project { grid-template-columns: 1fr; }
+      .cover__art { min-height: 260px; }
+      .cover__badge { left: 16px; bottom: 16px; width: 140px; }
       .stats, .journey, .awards, .cohort, .thanks-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .facts, .partners { grid-template-columns: 1fr; }
       .agenda li { grid-template-columns: 40px 1fr; }
       .agenda .meta { grid-column: 2; }
+      .closing__foot { flex-direction: column; align-items: flex-start; }
+      .signoff { text-align: left; }
     }
   </style>
 </head>
@@ -507,23 +716,27 @@
 
     <section class="slide slide--dark is-active" data-title="Cover">
       <div class="slide__chrome">
-        <span class="kicker">Web & AI Development Bootcamp</span>
+        <span class="deck-brand" dir="ltr"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-10 -102 1464.1 414" width="232" height="66" role="img" aria-label="CodeWeekend" focusable="false"><title>CodeWeekend</title><path fill="var(--logo-mark, #2347B4)" d="M110 7.3L0 87.2L110 238.6V177.3L50.3 95.1L110 51.8ZM130 51.8L189.7 95.1L130 177.3V238.6L240 87.2L130 7.3ZM112.4 246.2L94.6 259.2L109.8 280.2L127.6 267.3ZM84.9 261.6L63.9 268.4L72 293.2L92.9 286.4Z"/><path fill="var(--logo-panel, #F5A71E)" d="M120 75.4L160.8 105L120 161.2L79.2 105Z"/><path fill="var(--logo-accent, #B4223B)" d="M58.4 283.9L37.3 277L24.2 295L45.4 301.9Z"/><path fill="var(--logo-word, #1B2034)" d="M336.1 155Q323.7 155 314.4 151.4Q305.2 147.8 299 141.3Q292.9 134.7 289.9 125.8Q286.8 116.9 286.8 106.3Q286.8 95.3 289.9 86Q292.9 76.7 298.9 69.7Q305 62.7 314.2 58.8Q323.3 55 335.4 55Q348.7 55 357.6 59.6Q366.5 64.1 371.3 71.9Q376.1 79.6 376.6 89.2L350.3 95.3Q350.3 89.2 348.2 85.2Q346 81.2 342.4 79.4Q338.8 77.5 334.3 77.5Q329.8 77.5 326.5 79.2Q323.2 80.9 320.8 84.4Q318.5 87.9 317.3 92.9Q316.1 98 316.1 104.8Q316.1 114.2 318.4 120.6Q320.6 127 325.1 130.3Q329.6 133.6 336.5 133.6Q343.3 133.6 347.1 130.6Q350.9 127.5 352.3 123Q353.8 118.5 353.8 114L379.7 118Q379.7 125.2 377.2 131.8Q374.8 138.5 369.5 143.8Q364.2 149.1 356 152.1Q347.8 155 336.1 155ZM432.8 155Q418.6 155 407.7 149.5Q396.8 143.9 390.7 132.8Q384.5 121.7 384.5 105Q384.5 87.9 390.8 76.8Q397 65.8 407.9 60.4Q418.9 55 433 55Q447.4 55 458.2 60.5Q469.1 66.1 475.3 77.2Q481.4 88.3 481.4 105Q481.4 122.3 475 133.4Q468.6 144.4 457.5 149.7Q446.5 155 432.8 155ZM433.5 133.8Q439.6 133.8 443.8 130.7Q447.9 127.7 450 121.6Q452 115.4 452 106.8Q452 97.3 449.8 90.8Q447.5 84.3 443.1 80.8Q438.7 77.3 432.2 77.3Q426.3 77.3 422.2 80.3Q418 83.4 415.9 89.5Q413.9 95.6 413.9 104.6Q413.9 118.9 419 126.3Q424.1 133.8 433.5 133.8ZM527.1 155Q515.9 155 507.3 149.2Q498.7 143.3 493.7 132.1Q488.8 120.8 488.8 104.5Q488.8 89.2 493.1 78.1Q497.4 67 505.7 61.1Q514 55.1 525.8 55.1Q534.5 55.1 540.8 58.5Q547.1 61.8 551.2 68.6Q555.4 75.5 557.5 86.1H560.8Q559.7 80.2 558.7 74.5Q557.7 68.8 557.1 63.7Q556.4 58.6 556.4 54.4V24.5H585.6V152.5H561.3L560.9 123.9H558.2Q556.3 134.5 552.1 141.5Q548 148.4 541.7 151.7Q535.4 155 527.1 155ZM537.4 131.6Q542 131.6 545.6 129.7Q549.2 127.7 551.7 124.1Q554.1 120.5 555.4 116Q556.6 111.5 556.6 106.4V103.7Q556.6 99.4 555.6 95.6Q554.6 91.9 552.9 88.8Q551.2 85.7 548.8 83.5Q546.4 81.2 543.3 80Q540.2 78.7 537 78.7Q531.2 78.7 527.2 82.2Q523.1 85.7 521 91.7Q518.8 97.6 518.8 105.4Q518.8 112.9 521.1 119Q523.3 125 527.5 128.3Q531.8 131.6 537.4 131.6ZM688.6 128.2Q687.8 131.6 686.3 134.9Q683.7 140.6 678.7 145.2Q673.6 149.8 665.8 152.4Q658 155 646.6 155Q634.2 155 624.9 151.6Q615.7 148.2 609.5 141.8Q603.4 135.4 600.4 126.5Q597.3 117.6 597.3 106.8Q597.3 96 600.3 86.6Q603.2 77.1 609.2 70Q615.1 62.9 624.1 58.9Q633.1 55 644.8 55Q656.5 55 665.2 58.9Q674 62.9 679.5 70.2Q685 77.5 687.2 87.6Q689.5 97.8 688 110.4L625.4 111Q626.3 121.9 631 127.3Q636.7 134 646.6 134Q651.3 134 654.4 132.7Q657.4 131.5 659.4 129.4Q661.4 127.3 662.5 124.3ZM626.1 95.5L662 95.2Q661.9 91.4 660.8 88.5Q658.9 82.9 654.8 80.2Q650.8 77.5 645 77.5Q638.5 77.5 634 80.9Q629.5 84.3 627.4 90.6Q626.6 92.9 626.1 95.5ZM714.7 152.5L691.8 57.5H722.4L733.7 129.1H736.3L749.9 57.5H783.4L797.3 129.1H799.8L811.1 57.5H840.7L818 152.5H778.9L767 83.9H764.7L753.4 152.5ZM933.9 128.2Q933.1 131.6 931.6 134.9Q929 140.6 924 145.2Q919 149.8 911.1 152.4Q903.3 155 892 155Q879.5 155 870.3 151.6Q861 148.2 854.9 141.8Q848.8 135.4 845.7 126.5Q842.6 117.6 842.6 106.8Q842.6 96 845.6 86.6Q848.6 77.1 854.5 70Q860.5 62.9 869.5 58.9Q878.5 55 890.2 55Q901.9 55 910.6 58.9Q919.3 62.9 924.8 70.2Q930.3 77.5 932.5 87.6Q934.8 97.8 933.4 110.4L870.7 111Q871.6 121.9 876.3 127.3Q882.1 134 892 134Q896.6 134 899.7 132.7Q902.8 131.5 904.7 129.4Q906.7 127.3 907.8 124.3ZM871.4 95.5L907.4 95.2Q907.2 91.4 906.2 88.5Q904.2 82.9 900.1 80.2Q896.1 77.5 890.3 77.5Q883.9 77.5 879.4 80.9Q874.9 84.3 872.7 90.6Q871.9 92.9 871.4 95.5ZM1033.7 128.2Q1032.9 131.6 1031.4 134.9Q1028.8 140.6 1023.7 145.2Q1018.7 149.8 1010.8 152.4Q1003 155 991.7 155Q979.3 155 970 151.6Q960.7 148.2 954.6 141.8Q948.5 135.4 945.4 126.5Q942.4 117.6 942.4 106.8Q942.4 96 945.3 86.6Q948.3 77.1 954.2 70Q960.2 62.9 969.2 58.9Q978.2 55 989.9 55Q1001.6 55 1010.3 58.9Q1019 62.9 1024.5 70.2Q1030 77.5 1032.3 87.6Q1034.5 97.8 1033.1 110.4L970.5 111Q971.3 121.9 976 127.3Q981.8 134 991.7 134Q996.4 134 999.4 132.7Q1002.5 131.5 1004.5 129.4Q1006.4 127.3 1007.5 124.3ZM971.1 95.5L1007.1 95.2Q1006.9 91.4 1005.9 88.5Q1003.9 82.9 999.9 80.2Q995.8 77.5 990.1 77.5Q983.6 77.5 979.1 80.9Q974.6 84.3 972.4 90.6Q971.6 92.9 971.1 95.5ZM1045.9 152.5V24.4H1074.3V93.8Q1080.1 90.4 1084.6 86.2Q1089.1 82 1092.6 77.2Q1096.1 72.4 1098.7 67.5Q1101.3 62.5 1103.1 57.5H1136.4Q1134.2 64.5 1130.3 71.4Q1126.3 78.4 1120.7 84.2Q1115 90.1 1107.2 94.4Q1099.5 98.7 1089.8 100.9V103.4Q1102 101 1109.8 103Q1117.7 105 1122.4 109.8Q1127 114.5 1129.6 121Q1132.1 127.5 1133.7 134.5L1137.7 152.5H1106.2L1104.2 140.6Q1102.9 133.3 1100.9 127.4Q1099 121.6 1094.9 118.2Q1090.9 114.9 1082.6 114.9H1074.3V152.5ZM1231.7 128.2Q1230.9 131.6 1229.4 134.9Q1226.8 140.6 1221.7 145.2Q1216.7 149.8 1208.8 152.4Q1201 155 1189.7 155Q1177.3 155 1168 151.6Q1158.7 148.2 1152.6 141.8Q1146.5 135.4 1143.4 126.5Q1140.4 117.6 1140.4 106.8Q1140.4 96 1143.3 86.6Q1146.3 77.1 1152.2 70Q1158.2 62.9 1167.2 58.9Q1176.2 55 1187.9 55Q1199.6 55 1208.3 58.9Q1217 62.9 1222.5 70.2Q1228 77.5 1230.3 87.6Q1232.5 97.8 1231.1 110.4L1168.5 111Q1169.3 121.9 1174 127.3Q1179.8 134 1189.7 134Q1194.4 134 1197.4 132.7Q1200.5 131.5 1202.5 129.4Q1204.4 127.3 1205.5 124.3ZM1169.1 95.5L1205.1 95.2Q1204.9 91.4 1203.9 88.5Q1201.9 82.9 1197.9 80.2Q1193.8 77.5 1188.1 77.5Q1181.6 77.5 1177.1 80.9Q1172.6 84.3 1170.4 90.6Q1169.6 92.9 1169.1 95.5ZM1243.9 152.5V57.5H1267.8L1268 89.9H1270.7Q1272.5 78.2 1276.5 70.4Q1280.6 62.7 1287.2 58.8Q1293.9 55 1303.4 55Q1319.6 55 1328 66Q1336.4 77.1 1336.4 100.5V152.5H1307.2V104.1Q1307.2 91.3 1303.5 85.4Q1299.8 79.4 1292.3 79.4Q1286 79.4 1281.8 83.4Q1277.5 87.4 1275.3 94.9Q1273 102.5 1273 113.3V152.5ZM1385.5 155Q1374.4 155 1365.7 149.2Q1357.1 143.3 1352.1 132.1Q1347.2 120.8 1347.2 104.5Q1347.2 89.2 1351.5 78.1Q1355.8 67 1364.1 61.1Q1372.4 55.1 1384.3 55.1Q1392.9 55.1 1399.2 58.5Q1405.5 61.8 1409.6 68.6Q1413.8 75.5 1415.9 86.1H1419.2Q1418.1 80.2 1417.1 74.5Q1416.1 68.8 1415.5 63.7Q1414.9 58.6 1414.9 54.4V24.5H1444V152.5H1419.7L1419.4 123.9H1416.7Q1414.7 134.5 1410.5 141.5Q1406.4 148.4 1400.1 151.7Q1393.8 155 1385.5 155ZM1395.8 131.6Q1400.5 131.6 1404.1 129.7Q1407.7 127.7 1410.1 124.1Q1412.5 120.5 1413.8 116Q1415 111.5 1415 106.4V103.7Q1415 99.4 1414 95.6Q1413.1 91.9 1411.3 88.8Q1409.6 85.7 1407.2 83.5Q1404.8 81.2 1401.7 80Q1398.7 78.7 1395.4 78.7Q1389.7 78.7 1385.6 82.2Q1381.6 85.7 1379.4 91.7Q1377.2 97.6 1377.2 105.4Q1377.2 112.9 1379.5 119Q1381.7 125 1386 128.3Q1390.2 131.6 1395.8 131.6Z"/></svg></span>
         <span class="slide__meta">Live event</span>
       </div>
       <div class="cover">
-        <div>
+        <div class="cover__copy">
+          <span class="kicker">Web & AI Development Bootcamp</span>
           <h1>CodeWeekend <em>2026 Demo Day</em></h1>
           <p class="lead">An online celebration of talent, persistence, and what becomes possible when opportunity meets code.</p>
-          <div class="cover__code"><span>const future = </span><strong>students.build();</strong></div>
+          <div class="cover__code" dir="ltr"><span>const future = </span><strong>students.build();</strong><i class="cursor" aria-hidden="true"></i></div>
           <dl class="facts">
             <div><dt>When</dt><dd>Thursday, 27 August 2026</dd></div>
             <div><dt>Time</dt><dd>7:30–10:30 PM AFT</dd></div>
             <div><dt>Where</dt><dd>Live online</dd></div>
           </dl>
         </div>
-        <div class="cover__badge" aria-hidden="true">
-          <strong>25</strong>
-          <span>graduates<br />one stage</span>
+        <div class="cover__art" aria-hidden="true">
+          <svg class="dd-sky" viewBox="0 0 440 520" preserveAspectRatio="xMaxYMin slice" aria-hidden="true" focusable="false"><path class="dd-sky__band dd-sky__band--1" d="M0 0H440V520H0Z"/><path class="dd-sky__band dd-sky__band--2" d="M0 318H440V520H0Z"/><circle class="dd-sky__sun" cx="352" cy="430" r="46"/><path class="dd-sky__ridge dd-sky__ridge--back" d="M-10 530L-10 452L60 420L130 392L190 440L262 398L300 424L372 382L450 440L450 452L450 530Z"/><path class="dd-sky__ridge dd-sky__ridge--front" d="M-10 530L-10 488L40 470L110 446L170 476L236 452L300 484L360 456L430 480L450 488L450 530Z"/><path class="dd-sky__string" d="M303.2 199.3L207 524M390.2 115L268.7 524M237.1 84.9L106.5 524M409.7 263L332.6 524M176.3 44.6L33.7 524M332.8 316.8L271.9 524M263.2 263.6L186.3 524M147.3 156.8L219.9 524"/><path class="dd-sky__kite dd-sky__kite--saffron" d="M298.3 168.1L314.8 176.6L303.2 199.3L285.2 181.2Z"/><path class="dd-sky__knot" d="M297.3 168.3L302.2 199.5L304.3 199.1L299.3 168ZM285.3 182.3L315 177.6L314.7 175.5L285 180.2Z"/><path class="dd-sky__kite dd-sky__kite--pomegranate" d="M393 92.1L402.9 101.3L390.2 115L381.1 98.7Z"/><path class="dd-sky__knot" d="M392.2 92L389.4 114.9L390.9 115.1L393.7 92.2ZM381 99.4L402.8 102.1L403 100.6L381.2 97.9Z"/><path class="dd-sky__kite dd-sky__kite--lapis" d="M235.4 66L245 71.8L237.1 84.9L227 73.3Z"/><path class="dd-sky__knot" d="M234.7 66.1L236.4 84.9L237.8 84.8L236.1 66ZM227.1 74L245 72.5L244.9 71.1L227 72.6Z"/><path class="dd-sky__kite dd-sky__kite--firuza" d="M404 236.2L418.7 242.7L409.7 263L393.3 248.1Z"/><path class="dd-sky__knot" d="M403.1 236.4L408.8 263.1L410.6 262.8L404.9 236ZM393.5 249L418.9 243.6L418.5 241.9L393.1 247.3Z"/><path class="dd-sky__kite dd-sky__kite--paper" d="M178.9 30.1L184.9 36.3L176.3 44.6L171.1 33.9Z"/><path class="dd-sky__knot" d="M178.2 30L175.6 44.5L177 44.7L179.6 30.2ZM171 34.6L184.8 37L185 35.6L171.2 33.2Z"/><path class="dd-sky__kite dd-sky__kite--lapis" d="M334.6 300L342 306.6L332.8 316.8L326 305Z"/><path class="dd-sky__knot" d="M333.9 300L332.2 316.7L333.5 316.8L335.3 300.1ZM326 305.7L341.9 307.3L342 306L326.1 304.3Z"/><path class="dd-sky__kite dd-sky__kite--paper" d="M261.3 250L268.4 253.8L263.2 263.6L255.6 255.6Z"/><path class="dd-sky__knot" d="M260.6 250.1L262.6 263.7L263.9 263.5L262 249.9ZM255.7 256.3L268.5 254.5L268.3 253.1L255.5 254.9Z"/><g transform="translate(108 86) scale(0.3)"><path class="dd-sky__logo-body" d="M110 7.3L0 87.2L110 238.6V177.3L50.3 95.1L110 51.8ZM130 51.8L189.7 95.1L130 177.3V238.6L240 87.2L130 7.3ZM113.5 245.8L97.4 257.5L110.3 275.3L126.5 263.6ZM87.7 260.1L68.7 266.3L75.5 287.2L94.5 281Z"/><path class="dd-sky__logo-panel" d="M115 79L79.2 105L115 154.3ZM125 79V154.3L160.8 105Z"/><path class="dd-sky__logo-tassel" d="M62.5 279.8L44.9 274.1L34 289.1L51.6 294.8Z"/></g></svg>
+          <div class="cover__badge">
+            <strong>25</strong>
+            <span>graduates<br />one stage</span>
+          </div>
         </div>
       </div>
     </section>
@@ -689,8 +902,8 @@
         <span class="slide__meta">01 / 25</span>
       </div>
       <div class="project">
-        <div class="project__media">
-          <img src="/images/students-photo/placeholder.svg" alt="" draggable="false" />
+        <div class="project__media project__media--kite">
+          <svg class="her-kite her-kite--lapis" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><rect class="her-kite__field" width="100" height="100"/><path class="her-kite__kite" d="M50 13L82.3 36.5L50 81L17.7 36.5Z"/><path class="her-kite__marks" d="M49 16.9L23.5 35.5L26.4 35.5L49 19ZM49 22.6L31.3 35.5L34.2 35.5L49 24.7ZM49 28.3L39.1 35.5L42 35.5L49 30.4ZM49 34L46.9 35.5L49 35.5ZM51 16.9L76.5 35.5L73.6 35.5L51 19ZM51 22.6L68.7 35.5L65.8 35.5L51 24.7ZM51 28.3L60.9 35.5L58 35.5L51 30.4ZM51 34L53.1 35.5L51 35.5ZM26.3 42.9a1.1 1.1 0 1 0 2.3 0a1.1 1.1 0 1 0 -2.3 0ZM30.7 42.9a1.1 1.1 0 1 0 2.3 0a1.1 1.1 0 1 0 -2.3 0ZM28.5 46.7a1.1 1.1 0 1 0 2.3 0a1.1 1.1 0 1 0 -2.3 0ZM32.9 46.7a1.1 1.1 0 1 0 2.3 0a1.1 1.1 0 1 0 -2.3 0ZM30.7 50.5a1.1 1.1 0 1 0 2.3 0a1.1 1.1 0 1 0 -2.3 0ZM32.9 54.3a1.1 1.1 0 1 0 2.3 0a1.1 1.1 0 1 0 -2.3 0ZM43.9 65.8a1.1 1.1 0 1 0 2.3 0a1.1 1.1 0 1 0 -2.3 0ZM46.1 69.6a1.1 1.1 0 1 0 2.3 0a1.1 1.1 0 1 0 -2.3 0ZM73.7 42.9a1.1 1.1 0 1 1 -2.3 0a1.1 1.1 0 1 1 2.3 0ZM69.3 42.9a1.1 1.1 0 1 1 -2.3 0a1.1 1.1 0 1 1 2.3 0ZM71.5 46.7a1.1 1.1 0 1 1 -2.3 0a1.1 1.1 0 1 1 2.3 0ZM67.1 46.7a1.1 1.1 0 1 1 -2.3 0a1.1 1.1 0 1 1 2.3 0ZM69.3 50.5a1.1 1.1 0 1 1 -2.3 0a1.1 1.1 0 1 1 2.3 0ZM67.1 54.3a1.1 1.1 0 1 1 -2.3 0a1.1 1.1 0 1 1 2.3 0ZM56.1 65.8a1.1 1.1 0 1 1 -2.3 0a1.1 1.1 0 1 1 2.3 0ZM53.9 69.6a1.1 1.1 0 1 1 -2.3 0a1.1 1.1 0 1 1 2.3 0Z"/><path class="her-kite__marks" d="M49.3 37.7L49.3 12L50.7 12L50.7 37.7ZM49.3 62.5L50.7 62.5L50.7 82L49.3 82ZM16.7 35.8L83.3 35.8L83.3 37.2L16.7 37.2Z"/><text class="her-kite__initial" x="50" y="59.4" text-anchor="middle">A</text><path class="her-kite__icon" d="M80.5 11.5h11v9.5h-11zM80.5 14.8h11M83.5 9.5v3.2M88.5 9.5v3.2"/></svg>
         </div>
         <div class="project__copy">
           <p class="project__role">Web &amp; AI Developer</p>
@@ -709,8 +922,8 @@
         <span class="slide__meta">02 / 25</span>
       </div>
       <div class="project">
-        <div class="project__media">
-          <img src="/images/students-photo/placeholder.svg" alt="" draggable="false" />
+        <div class="project__media project__media--kite">
+          <svg class="her-kite her-kite--night-firuza" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><rect class="her-kite__field" width="100" height="100"/><path class="her-kite__kite" d="M50 13L82.3 36.5L50 81L17.7 36.5Z"/><path class="her-kite__marks" d="M45 20.4a1.1 1.1 0 1 0 2.3 0a1.1 1.1 0 1 0 -2.3 0ZM38.4 24.2a1.1 1.1 0 1 0 2.3 0a1.1 1.1 0 1 0 -2.3 0ZM42.8 24.2a1.1 1.1 0 1 0 2.3 0a1.1 1.1 0 1 0 -2.3 0ZM36.2 28a1.1 1.1 0 1 0 2.3 0a1.1 1.1 0 1 0 -2.3 0ZM40.6 28a1.1 1.1 0 1 0 2.3 0a1.1 1.1 0 1 0 -2.3 0ZM45 28a1.1 1.1 0 1 0 2.3 0a1.1 1.1 0 1 0 -2.3 0ZM29.6 31.8a1.1 1.1 0 1 0 2.3 0a1.1 1.1 0 1 0 -2.3 0ZM34 31.8a1.1 1.1 0 1 0 2.3 0a1.1 1.1 0 1 0 -2.3 0ZM38.4 31.8a1.1 1.1 0 1 0 2.3 0a1.1 1.1 0 1 0 -2.3 0ZM42.8 31.8a1.1 1.1 0 1 0 2.3 0a1.1 1.1 0 1 0 -2.3 0ZM55 20.4a1.1 1.1 0 1 1 -2.3 0a1.1 1.1 0 1 1 2.3 0ZM61.6 24.2a1.1 1.1 0 1 1 -2.3 0a1.1 1.1 0 1 1 2.3 0ZM57.2 24.2a1.1 1.1 0 1 1 -2.3 0a1.1 1.1 0 1 1 2.3 0ZM63.8 28a1.1 1.1 0 1 1 -2.3 0a1.1 1.1 0 1 1 2.3 0ZM59.4 28a1.1 1.1 0 1 1 -2.3 0a1.1 1.1 0 1 1 2.3 0ZM55 28a1.1 1.1 0 1 1 -2.3 0a1.1 1.1 0 1 1 2.3 0ZM70.4 31.8a1.1 1.1 0 1 1 -2.3 0a1.1 1.1 0 1 1 2.3 0ZM66 31.8a1.1 1.1 0 1 1 -2.3 0a1.1 1.1 0 1 1 2.3 0ZM61.6 31.8a1.1 1.1 0 1 1 -2.3 0a1.1 1.1 0 1 1 2.3 0ZM57.2 31.8a1.1 1.1 0 1 1 -2.3 0a1.1 1.1 0 1 1 2.3 0Z"/><path class="her-kite__marks" d="M49.3 37.7L49.3 12L50.7 12L50.7 37.7ZM49.3 62.5L50.7 62.5L50.7 82L49.3 82ZM16.7 35.8L83.3 35.8L83.3 37.2L16.7 37.2Z"/><text class="her-kite__initial" x="50" y="59.4" text-anchor="middle">A</text><path class="her-kite__icon" d="M86 21s-4.6-4.7-4.6-8.1a4.6 4.6 0 0 1 9.2 0c0 3.4-4.6 8.1-4.6 8.1zM86 11.3v.1"/></svg>
         </div>
         <div class="project__copy">
           <p class="project__role">Aspiring Backend Developer</p>
@@ -809,8 +1022,8 @@
         <span class="slide__meta">07 / 25</span>
       </div>
       <div class="project">
-        <div class="project__media">
-          <img src="/images/students-photo/placeholder.svg" alt="" draggable="false" />
+        <div class="project__media project__media--kite">
+          <svg class="her-kite her-kite--sand" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><rect class="her-kite__field" width="100" height="100"/><path class="her-kite__kite" d="M50 13L82.3 36.5L50 81L17.7 36.5Z"/><path class="her-kite__marks" d="M44.9 18L49 18L49 19.7L42.5 19.7ZM38.5 22.6L49 22.6L49 24.3L36.2 24.3ZM32.2 27.2L49 27.2L49 28.9L29.9 28.9ZM25.9 31.8L49 31.8L49 33.5L23.5 33.5ZM55.1 18L51 18L51 19.7L57.5 19.7ZM61.5 22.6L51 22.6L51 24.3L63.8 24.3ZM67.8 27.2L51 27.2L51 28.9L70.1 28.9ZM74.1 31.8L51 31.8L51 33.5L76.5 33.5Z"/><path class="her-kite__marks" d="M49.3 37.7L49.3 12L50.7 12L50.7 37.7ZM49.3 62.5L50.7 62.5L50.7 82L49.3 82ZM16.7 35.8L83.3 35.8L83.3 37.2L16.7 37.2Z"/><text class="her-kite__initial" x="50" y="59.4" text-anchor="middle">F</text><path class="her-kite__icon" d="M86 12.2c-1.6-1.3-3.6-1.8-6-1.8v9.2c2.4 0 4.4.5 6 1.8 1.6-1.3 3.6-1.8 6-1.8v-9.2c-2.4 0-4.4.5-6 1.8zM86 12.2v9.2"/></svg>
         </div>
         <div class="project__copy">
           <p class="project__role">Frontend Developer</p>
@@ -849,8 +1062,8 @@
         <span class="slide__meta">09 / 25</span>
       </div>
       <div class="project">
-        <div class="project__media">
-          <img src="/images/students-photo/placeholder.svg" alt="" draggable="false" />
+        <div class="project__media project__media--kite">
+          <svg class="her-kite her-kite--paper" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><rect class="her-kite__field" width="100" height="100"/><path class="her-kite__kite" d="M50 13L82.3 36.5L50 81L17.7 36.5Z"/><path class="her-kite__marks" d="M45 20.4a1.1 1.1 0 1 0 2.3 0a1.1 1.1 0 1 0 -2.3 0ZM38.4 24.2a1.1 1.1 0 1 0 2.3 0a1.1 1.1 0 1 0 -2.3 0ZM42.8 24.2a1.1 1.1 0 1 0 2.3 0a1.1 1.1 0 1 0 -2.3 0ZM36.2 28a1.1 1.1 0 1 0 2.3 0a1.1 1.1 0 1 0 -2.3 0ZM40.6 28a1.1 1.1 0 1 0 2.3 0a1.1 1.1 0 1 0 -2.3 0ZM45 28a1.1 1.1 0 1 0 2.3 0a1.1 1.1 0 1 0 -2.3 0ZM29.6 31.8a1.1 1.1 0 1 0 2.3 0a1.1 1.1 0 1 0 -2.3 0ZM34 31.8a1.1 1.1 0 1 0 2.3 0a1.1 1.1 0 1 0 -2.3 0ZM38.4 31.8a1.1 1.1 0 1 0 2.3 0a1.1 1.1 0 1 0 -2.3 0ZM42.8 31.8a1.1 1.1 0 1 0 2.3 0a1.1 1.1 0 1 0 -2.3 0ZM55 20.4a1.1 1.1 0 1 1 -2.3 0a1.1 1.1 0 1 1 2.3 0ZM61.6 24.2a1.1 1.1 0 1 1 -2.3 0a1.1 1.1 0 1 1 2.3 0ZM57.2 24.2a1.1 1.1 0 1 1 -2.3 0a1.1 1.1 0 1 1 2.3 0ZM63.8 28a1.1 1.1 0 1 1 -2.3 0a1.1 1.1 0 1 1 2.3 0ZM59.4 28a1.1 1.1 0 1 1 -2.3 0a1.1 1.1 0 1 1 2.3 0ZM55 28a1.1 1.1 0 1 1 -2.3 0a1.1 1.1 0 1 1 2.3 0ZM70.4 31.8a1.1 1.1 0 1 1 -2.3 0a1.1 1.1 0 1 1 2.3 0ZM66 31.8a1.1 1.1 0 1 1 -2.3 0a1.1 1.1 0 1 1 2.3 0ZM61.6 31.8a1.1 1.1 0 1 1 -2.3 0a1.1 1.1 0 1 1 2.3 0ZM57.2 31.8a1.1 1.1 0 1 1 -2.3 0a1.1 1.1 0 1 1 2.3 0ZM21.6 37.5L21.8 37.7L23.9 37.7L23.7 37.5ZM39.8 62.5L49 75.2L49 72.3L41.9 62.5ZM21.8 37.7L35.1 56.1L35.1 53.2L23.9 37.7ZM27.3 37.5L27.4 37.7L29.5 37.7L29.4 37.5ZM45.5 62.5L49 67.4L49 64.5L47.6 62.5ZM27.4 37.7L35.1 48.2L35.1 45.3L29.5 37.7ZM33 37.5L33.1 37.7L35.2 37.7L35.1 37.5ZM35.1 37.7L33.1 37.7L35.1 40.4ZM38.7 37.5L38.8 37.7L40.9 37.7L40.8 37.5ZM44.4 37.5L44.5 37.7L46.6 37.7L46.5 37.5ZM78.4 37.5L78.2 37.7L76.1 37.7L76.3 37.5ZM60.2 62.5L51 75.2L51 72.3L58.1 62.5ZM78.2 37.7L64.9 56.1L64.9 53.2L76.1 37.7ZM72.7 37.5L72.6 37.7L70.5 37.7L70.6 37.5ZM54.5 62.5L51 67.4L51 64.5L52.4 62.5ZM72.6 37.7L64.9 48.2L64.9 45.3L70.5 37.7ZM67 37.5L66.9 37.7L64.8 37.7L64.9 37.5ZM64.9 37.7L66.9 37.7L64.9 40.4ZM61.3 37.5L61.2 37.7L59.1 37.7L59.2 37.5ZM55.6 37.5L55.5 37.7L53.4 37.7L53.5 37.5Z"/><path class="her-kite__marks" d="M49.3 37.7L49.3 12L50.7 12L50.7 37.7ZM49.3 62.5L50.7 62.5L50.7 82L49.3 82ZM16.7 35.8L83.3 35.8L83.3 37.2L16.7 37.2Z"/><text class="her-kite__initial" x="50" y="59.4" text-anchor="middle">H</text><path class="her-kite__icon" d="M83.2 12.2l-2.9 3.3 2.9 3.3M88.8 12.2l2.9 3.3-2.9 3.3M86.9 11.2l-1.8 8.6"/></svg>
         </div>
         <div class="project__copy">
           <p class="project__role">Aspiring Frontend Developer</p>
@@ -869,8 +1082,8 @@
         <span class="slide__meta">10 / 25</span>
       </div>
       <div class="project">
-        <div class="project__media">
-          <img src="/images/students-photo/placeholder.svg" alt="" draggable="false" />
+        <div class="project__media project__media--kite">
+          <svg class="her-kite her-kite--night-saffron" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><rect class="her-kite__field" width="100" height="100"/><path class="her-kite__kite" d="M50 13L82.3 36.5L50 81L17.7 36.5Z"/><path class="her-kite__marks" d="M49 16.9L23.5 35.5L26.4 35.5L49 19ZM49 22.6L31.3 35.5L34.2 35.5L49 24.7ZM49 28.3L39.1 35.5L42 35.5L49 30.4ZM49 34L46.9 35.5L49 35.5ZM51 16.9L76.5 35.5L73.6 35.5L51 19ZM51 22.6L68.7 35.5L65.8 35.5L51 24.7ZM51 28.3L60.9 35.5L58 35.5L51 30.4ZM51 34L53.1 35.5L51 35.5ZM39.2 64.5L40 64.5L40 62.5L42 62.5L42 64.5L44 64.5L44 66.5L46 66.5L46 64.5L48 64.5L48 62.5L49 62.5L49 64.5L48 64.5L48 66.5L46 66.5L46 68.5L44 68.5L44 66.5L42 66.5L42 64.5L40 64.5L40 65.5ZM60.8 64.5L60 64.5L60 62.5L58 62.5L58 64.5L56 64.5L56 66.5L54 66.5L54 64.5L52 64.5L52 62.5L51 62.5L51 64.5L52 64.5L52 66.5L54 66.5L54 68.5L56 68.5L56 66.5L58 66.5L58 64.5L60 64.5L60 65.5Z"/><path class="her-kite__marks" d="M49.3 37.7L49.3 12L50.7 12L50.7 37.7ZM49.3 62.5L50.7 62.5L50.7 82L49.3 82ZM16.7 35.8L83.3 35.8L83.3 37.2L16.7 37.2Z"/><text class="her-kite__initial" x="50" y="59.4" text-anchor="middle">H</text><path class="her-kite__icon" d="M86 12.2c-1.6-1.3-3.6-1.8-6-1.8v9.2c2.4 0 4.4.5 6 1.8 1.6-1.3 3.6-1.8 6-1.8v-9.2c-2.4 0-4.4.5-6 1.8zM86 12.2v9.2"/></svg>
         </div>
         <div class="project__copy">
           <p class="project__role">Frontend Developer skilled programming</p>
@@ -889,8 +1102,8 @@
         <span class="slide__meta">11 / 25</span>
       </div>
       <div class="project">
-        <div class="project__media">
-          <img src="/images/students-photo/placeholder.svg" alt="" draggable="false" />
+        <div class="project__media project__media--kite">
+          <svg class="her-kite her-kite--lapis" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><rect class="her-kite__field" width="100" height="100"/><path class="her-kite__kite" d="M50 13L82.3 36.5L50 81L17.7 36.5Z"/><path class="her-kite__marks" d="M45 20.4a1.1 1.1 0 1 0 2.3 0a1.1 1.1 0 1 0 -2.3 0ZM38.4 24.2a1.1 1.1 0 1 0 2.3 0a1.1 1.1 0 1 0 -2.3 0ZM42.8 24.2a1.1 1.1 0 1 0 2.3 0a1.1 1.1 0 1 0 -2.3 0ZM36.2 28a1.1 1.1 0 1 0 2.3 0a1.1 1.1 0 1 0 -2.3 0ZM40.6 28a1.1 1.1 0 1 0 2.3 0a1.1 1.1 0 1 0 -2.3 0ZM45 28a1.1 1.1 0 1 0 2.3 0a1.1 1.1 0 1 0 -2.3 0ZM29.6 31.8a1.1 1.1 0 1 0 2.3 0a1.1 1.1 0 1 0 -2.3 0ZM34 31.8a1.1 1.1 0 1 0 2.3 0a1.1 1.1 0 1 0 -2.3 0ZM38.4 31.8a1.1 1.1 0 1 0 2.3 0a1.1 1.1 0 1 0 -2.3 0ZM42.8 31.8a1.1 1.1 0 1 0 2.3 0a1.1 1.1 0 1 0 -2.3 0ZM55 20.4a1.1 1.1 0 1 1 -2.3 0a1.1 1.1 0 1 1 2.3 0ZM61.6 24.2a1.1 1.1 0 1 1 -2.3 0a1.1 1.1 0 1 1 2.3 0ZM57.2 24.2a1.1 1.1 0 1 1 -2.3 0a1.1 1.1 0 1 1 2.3 0ZM63.8 28a1.1 1.1 0 1 1 -2.3 0a1.1 1.1 0 1 1 2.3 0ZM59.4 28a1.1 1.1 0 1 1 -2.3 0a1.1 1.1 0 1 1 2.3 0ZM55 28a1.1 1.1 0 1 1 -2.3 0a1.1 1.1 0 1 1 2.3 0ZM70.4 31.8a1.1 1.1 0 1 1 -2.3 0a1.1 1.1 0 1 1 2.3 0ZM66 31.8a1.1 1.1 0 1 1 -2.3 0a1.1 1.1 0 1 1 2.3 0ZM61.6 31.8a1.1 1.1 0 1 1 -2.3 0a1.1 1.1 0 1 1 2.3 0ZM57.2 31.8a1.1 1.1 0 1 1 -2.3 0a1.1 1.1 0 1 1 2.3 0ZM21.6 37.5L21.8 37.7L23.9 37.7L23.7 37.5ZM39.8 62.5L49 75.2L49 72.3L41.9 62.5ZM21.8 37.7L35.1 56.1L35.1 53.2L23.9 37.7ZM27.3 37.5L27.4 37.7L29.5 37.7L29.4 37.5ZM45.5 62.5L49 67.4L49 64.5L47.6 62.5ZM27.4 37.7L35.1 48.2L35.1 45.3L29.5 37.7ZM33 37.5L33.1 37.7L35.2 37.7L35.1 37.5ZM35.1 37.7L33.1 37.7L35.1 40.4ZM38.7 37.5L38.8 37.7L40.9 37.7L40.8 37.5ZM44.4 37.5L44.5 37.7L46.6 37.7L46.5 37.5ZM78.4 37.5L78.2 37.7L76.1 37.7L76.3 37.5ZM60.2 62.5L51 75.2L51 72.3L58.1 62.5ZM78.2 37.7L64.9 56.1L64.9 53.2L76.1 37.7ZM72.7 37.5L72.6 37.7L70.5 37.7L70.6 37.5ZM54.5 62.5L51 67.4L51 64.5L52.4 62.5ZM72.6 37.7L64.9 48.2L64.9 45.3L70.5 37.7ZM67 37.5L66.9 37.7L64.8 37.7L64.9 37.5ZM64.9 37.7L66.9 37.7L64.9 40.4ZM61.3 37.5L61.2 37.7L59.1 37.7L59.2 37.5ZM55.6 37.5L55.5 37.7L53.4 37.7L53.5 37.5Z"/><path class="her-kite__marks" d="M49.3 37.7L49.3 12L50.7 12L50.7 37.7ZM49.3 62.5L50.7 62.5L50.7 82L49.3 82ZM16.7 35.8L83.3 35.8L83.3 37.2L16.7 37.2Z"/><text class="her-kite__initial" x="50" y="59.4" text-anchor="middle">J</text><path class="her-kite__icon" d="M86 21s-4.6-4.7-4.6-8.1a4.6 4.6 0 0 1 9.2 0c0 3.4-4.6 8.1-4.6 8.1zM86 11.3v.1"/></svg>
         </div>
         <div class="project__copy">
           <p class="project__role">Full-Stack Developer</p>
@@ -909,8 +1122,8 @@
         <span class="slide__meta">12 / 25</span>
       </div>
       <div class="project">
-        <div class="project__media">
-          <img src="/images/students-photo/placeholder.svg" alt="" draggable="false" />
+        <div class="project__media project__media--kite">
+          <svg class="her-kite her-kite--night-firuza" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><rect class="her-kite__field" width="100" height="100"/><path class="her-kite__kite" d="M50 13L82.3 36.5L50 81L17.7 36.5Z"/><path class="her-kite__marks" d="M49 16.9L23.5 35.5L26.4 35.5L49 19ZM49 22.6L31.3 35.5L34.2 35.5L49 24.7ZM49 28.3L39.1 35.5L42 35.5L49 30.4ZM49 34L46.9 35.5L49 35.5ZM51 16.9L76.5 35.5L73.6 35.5L51 19ZM51 22.6L68.7 35.5L65.8 35.5L51 24.7ZM51 28.3L60.9 35.5L58 35.5L51 30.4ZM51 34L53.1 35.5L51 35.5ZM39.2 64.5L40 64.5L40 62.5L42 62.5L42 64.5L44 64.5L44 66.5L46 66.5L46 64.5L48 64.5L48 62.5L49 62.5L49 64.5L48 64.5L48 66.5L46 66.5L46 68.5L44 68.5L44 66.5L42 66.5L42 64.5L40 64.5L40 65.5ZM60.8 64.5L60 64.5L60 62.5L58 62.5L58 64.5L56 64.5L56 66.5L54 66.5L54 64.5L52 64.5L52 62.5L51 62.5L51 64.5L52 64.5L52 66.5L54 66.5L54 68.5L56 68.5L56 66.5L58 66.5L58 64.5L60 64.5L60 65.5Z"/><path class="her-kite__marks" d="M49.3 37.7L49.3 12L50.7 12L50.7 37.7ZM49.3 62.5L50.7 62.5L50.7 82L49.3 82ZM16.7 35.8L83.3 35.8L83.3 37.2L16.7 37.2Z"/><text class="her-kite__initial" x="50" y="59.4" text-anchor="middle">L</text><path class="her-kite__icon" d="M80.5 13h11v8h-11zM83.8 13v-2.4h4.4V13M80.5 16.6h11"/></svg>
         </div>
         <div class="project__copy">
           <p class="project__role">Frontend Developer</p>
@@ -989,8 +1202,8 @@
         <span class="slide__meta">16 / 25</span>
       </div>
       <div class="project">
-        <div class="project__media">
-          <img src="/images/students-photo/placeholder.svg" alt="" draggable="false" />
+        <div class="project__media project__media--kite">
+          <svg class="her-kite her-kite--sand" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><rect class="her-kite__field" width="100" height="100"/><path class="her-kite__kite" d="M50 13L82.3 36.5L50 81L17.7 36.5Z"/><path class="her-kite__marks" d="M22.1 40.9L35.1 40.9L35.1 42.6L23.3 42.6ZM25.4 45.5L35.1 45.5L35.1 47.2L26.7 47.2ZM28.8 50.1L35.1 50.1L35.1 51.8L30 51.8ZM32.1 54.7L35.1 54.7L35.1 56.4L33.4 56.4ZM38.8 63.9L49 63.9L49 65.6L40 65.6ZM42.2 68.5L49 68.5L49 70.2L43.4 70.2ZM45.5 73.1L49 73.1L49 74.8L46.7 74.8ZM77.9 40.9L64.9 40.9L64.9 42.6L76.7 42.6ZM74.6 45.5L64.9 45.5L64.9 47.2L73.3 47.2ZM71.2 50.1L64.9 50.1L64.9 51.8L70 51.8ZM67.9 54.7L64.9 54.7L64.9 56.4L66.6 56.4ZM61.2 63.9L51 63.9L51 65.6L60 65.6ZM57.8 68.5L51 68.5L51 70.2L56.6 70.2ZM54.5 73.1L51 73.1L51 74.8L53.3 74.8Z"/><path class="her-kite__marks" d="M49.3 37.7L49.3 12L50.7 12L50.7 37.7ZM49.3 62.5L50.7 62.5L50.7 82L49.3 82ZM16.7 35.8L83.3 35.8L83.3 37.2L16.7 37.2Z"/><text class="her-kite__initial" x="50" y="59.4" text-anchor="middle">M</text><path class="her-kite__icon" d="M81 12.8h10l-.8 8.4h-8.4zM83.6 12.8v-.6a2.4 2.4 0 0 1 4.8 0v.6"/></svg>
         </div>
         <div class="project__copy">
           <p class="project__role">Frontend Developer</p>
@@ -1214,18 +1427,22 @@
 
     <section class="slide slide--dark" data-title="Thank You">
       <div class="slide__chrome">
-        <span class="kicker">Closing</span>
+        <span class="deck-brand" dir="ltr"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-10 -102 1464.1 414" width="232" height="66" role="img" aria-label="CodeWeekend" focusable="false"><title>CodeWeekend</title><path fill="var(--logo-mark, #2347B4)" d="M110 7.3L0 87.2L110 238.6V177.3L50.3 95.1L110 51.8ZM130 51.8L189.7 95.1L130 177.3V238.6L240 87.2L130 7.3ZM112.4 246.2L94.6 259.2L109.8 280.2L127.6 267.3ZM84.9 261.6L63.9 268.4L72 293.2L92.9 286.4Z"/><path fill="var(--logo-panel, #F5A71E)" d="M120 75.4L160.8 105L120 161.2L79.2 105Z"/><path fill="var(--logo-accent, #B4223B)" d="M58.4 283.9L37.3 277L24.2 295L45.4 301.9Z"/><path fill="var(--logo-word, #1B2034)" d="M336.1 155Q323.7 155 314.4 151.4Q305.2 147.8 299 141.3Q292.9 134.7 289.9 125.8Q286.8 116.9 286.8 106.3Q286.8 95.3 289.9 86Q292.9 76.7 298.9 69.7Q305 62.7 314.2 58.8Q323.3 55 335.4 55Q348.7 55 357.6 59.6Q366.5 64.1 371.3 71.9Q376.1 79.6 376.6 89.2L350.3 95.3Q350.3 89.2 348.2 85.2Q346 81.2 342.4 79.4Q338.8 77.5 334.3 77.5Q329.8 77.5 326.5 79.2Q323.2 80.9 320.8 84.4Q318.5 87.9 317.3 92.9Q316.1 98 316.1 104.8Q316.1 114.2 318.4 120.6Q320.6 127 325.1 130.3Q329.6 133.6 336.5 133.6Q343.3 133.6 347.1 130.6Q350.9 127.5 352.3 123Q353.8 118.5 353.8 114L379.7 118Q379.7 125.2 377.2 131.8Q374.8 138.5 369.5 143.8Q364.2 149.1 356 152.1Q347.8 155 336.1 155ZM432.8 155Q418.6 155 407.7 149.5Q396.8 143.9 390.7 132.8Q384.5 121.7 384.5 105Q384.5 87.9 390.8 76.8Q397 65.8 407.9 60.4Q418.9 55 433 55Q447.4 55 458.2 60.5Q469.1 66.1 475.3 77.2Q481.4 88.3 481.4 105Q481.4 122.3 475 133.4Q468.6 144.4 457.5 149.7Q446.5 155 432.8 155ZM433.5 133.8Q439.6 133.8 443.8 130.7Q447.9 127.7 450 121.6Q452 115.4 452 106.8Q452 97.3 449.8 90.8Q447.5 84.3 443.1 80.8Q438.7 77.3 432.2 77.3Q426.3 77.3 422.2 80.3Q418 83.4 415.9 89.5Q413.9 95.6 413.9 104.6Q413.9 118.9 419 126.3Q424.1 133.8 433.5 133.8ZM527.1 155Q515.9 155 507.3 149.2Q498.7 143.3 493.7 132.1Q488.8 120.8 488.8 104.5Q488.8 89.2 493.1 78.1Q497.4 67 505.7 61.1Q514 55.1 525.8 55.1Q534.5 55.1 540.8 58.5Q547.1 61.8 551.2 68.6Q555.4 75.5 557.5 86.1H560.8Q559.7 80.2 558.7 74.5Q557.7 68.8 557.1 63.7Q556.4 58.6 556.4 54.4V24.5H585.6V152.5H561.3L560.9 123.9H558.2Q556.3 134.5 552.1 141.5Q548 148.4 541.7 151.7Q535.4 155 527.1 155ZM537.4 131.6Q542 131.6 545.6 129.7Q549.2 127.7 551.7 124.1Q554.1 120.5 555.4 116Q556.6 111.5 556.6 106.4V103.7Q556.6 99.4 555.6 95.6Q554.6 91.9 552.9 88.8Q551.2 85.7 548.8 83.5Q546.4 81.2 543.3 80Q540.2 78.7 537 78.7Q531.2 78.7 527.2 82.2Q523.1 85.7 521 91.7Q518.8 97.6 518.8 105.4Q518.8 112.9 521.1 119Q523.3 125 527.5 128.3Q531.8 131.6 537.4 131.6ZM688.6 128.2Q687.8 131.6 686.3 134.9Q683.7 140.6 678.7 145.2Q673.6 149.8 665.8 152.4Q658 155 646.6 155Q634.2 155 624.9 151.6Q615.7 148.2 609.5 141.8Q603.4 135.4 600.4 126.5Q597.3 117.6 597.3 106.8Q597.3 96 600.3 86.6Q603.2 77.1 609.2 70Q615.1 62.9 624.1 58.9Q633.1 55 644.8 55Q656.5 55 665.2 58.9Q674 62.9 679.5 70.2Q685 77.5 687.2 87.6Q689.5 97.8 688 110.4L625.4 111Q626.3 121.9 631 127.3Q636.7 134 646.6 134Q651.3 134 654.4 132.7Q657.4 131.5 659.4 129.4Q661.4 127.3 662.5 124.3ZM626.1 95.5L662 95.2Q661.9 91.4 660.8 88.5Q658.9 82.9 654.8 80.2Q650.8 77.5 645 77.5Q638.5 77.5 634 80.9Q629.5 84.3 627.4 90.6Q626.6 92.9 626.1 95.5ZM714.7 152.5L691.8 57.5H722.4L733.7 129.1H736.3L749.9 57.5H783.4L797.3 129.1H799.8L811.1 57.5H840.7L818 152.5H778.9L767 83.9H764.7L753.4 152.5ZM933.9 128.2Q933.1 131.6 931.6 134.9Q929 140.6 924 145.2Q919 149.8 911.1 152.4Q903.3 155 892 155Q879.5 155 870.3 151.6Q861 148.2 854.9 141.8Q848.8 135.4 845.7 126.5Q842.6 117.6 842.6 106.8Q842.6 96 845.6 86.6Q848.6 77.1 854.5 70Q860.5 62.9 869.5 58.9Q878.5 55 890.2 55Q901.9 55 910.6 58.9Q919.3 62.9 924.8 70.2Q930.3 77.5 932.5 87.6Q934.8 97.8 933.4 110.4L870.7 111Q871.6 121.9 876.3 127.3Q882.1 134 892 134Q896.6 134 899.7 132.7Q902.8 131.5 904.7 129.4Q906.7 127.3 907.8 124.3ZM871.4 95.5L907.4 95.2Q907.2 91.4 906.2 88.5Q904.2 82.9 900.1 80.2Q896.1 77.5 890.3 77.5Q883.9 77.5 879.4 80.9Q874.9 84.3 872.7 90.6Q871.9 92.9 871.4 95.5ZM1033.7 128.2Q1032.9 131.6 1031.4 134.9Q1028.8 140.6 1023.7 145.2Q1018.7 149.8 1010.8 152.4Q1003 155 991.7 155Q979.3 155 970 151.6Q960.7 148.2 954.6 141.8Q948.5 135.4 945.4 126.5Q942.4 117.6 942.4 106.8Q942.4 96 945.3 86.6Q948.3 77.1 954.2 70Q960.2 62.9 969.2 58.9Q978.2 55 989.9 55Q1001.6 55 1010.3 58.9Q1019 62.9 1024.5 70.2Q1030 77.5 1032.3 87.6Q1034.5 97.8 1033.1 110.4L970.5 111Q971.3 121.9 976 127.3Q981.8 134 991.7 134Q996.4 134 999.4 132.7Q1002.5 131.5 1004.5 129.4Q1006.4 127.3 1007.5 124.3ZM971.1 95.5L1007.1 95.2Q1006.9 91.4 1005.9 88.5Q1003.9 82.9 999.9 80.2Q995.8 77.5 990.1 77.5Q983.6 77.5 979.1 80.9Q974.6 84.3 972.4 90.6Q971.6 92.9 971.1 95.5ZM1045.9 152.5V24.4H1074.3V93.8Q1080.1 90.4 1084.6 86.2Q1089.1 82 1092.6 77.2Q1096.1 72.4 1098.7 67.5Q1101.3 62.5 1103.1 57.5H1136.4Q1134.2 64.5 1130.3 71.4Q1126.3 78.4 1120.7 84.2Q1115 90.1 1107.2 94.4Q1099.5 98.7 1089.8 100.9V103.4Q1102 101 1109.8 103Q1117.7 105 1122.4 109.8Q1127 114.5 1129.6 121Q1132.1 127.5 1133.7 134.5L1137.7 152.5H1106.2L1104.2 140.6Q1102.9 133.3 1100.9 127.4Q1099 121.6 1094.9 118.2Q1090.9 114.9 1082.6 114.9H1074.3V152.5ZM1231.7 128.2Q1230.9 131.6 1229.4 134.9Q1226.8 140.6 1221.7 145.2Q1216.7 149.8 1208.8 152.4Q1201 155 1189.7 155Q1177.3 155 1168 151.6Q1158.7 148.2 1152.6 141.8Q1146.5 135.4 1143.4 126.5Q1140.4 117.6 1140.4 106.8Q1140.4 96 1143.3 86.6Q1146.3 77.1 1152.2 70Q1158.2 62.9 1167.2 58.9Q1176.2 55 1187.9 55Q1199.6 55 1208.3 58.9Q1217 62.9 1222.5 70.2Q1228 77.5 1230.3 87.6Q1232.5 97.8 1231.1 110.4L1168.5 111Q1169.3 121.9 1174 127.3Q1179.8 134 1189.7 134Q1194.4 134 1197.4 132.7Q1200.5 131.5 1202.5 129.4Q1204.4 127.3 1205.5 124.3ZM1169.1 95.5L1205.1 95.2Q1204.9 91.4 1203.9 88.5Q1201.9 82.9 1197.9 80.2Q1193.8 77.5 1188.1 77.5Q1181.6 77.5 1177.1 80.9Q1172.6 84.3 1170.4 90.6Q1169.6 92.9 1169.1 95.5ZM1243.9 152.5V57.5H1267.8L1268 89.9H1270.7Q1272.5 78.2 1276.5 70.4Q1280.6 62.7 1287.2 58.8Q1293.9 55 1303.4 55Q1319.6 55 1328 66Q1336.4 77.1 1336.4 100.5V152.5H1307.2V104.1Q1307.2 91.3 1303.5 85.4Q1299.8 79.4 1292.3 79.4Q1286 79.4 1281.8 83.4Q1277.5 87.4 1275.3 94.9Q1273 102.5 1273 113.3V152.5ZM1385.5 155Q1374.4 155 1365.7 149.2Q1357.1 143.3 1352.1 132.1Q1347.2 120.8 1347.2 104.5Q1347.2 89.2 1351.5 78.1Q1355.8 67 1364.1 61.1Q1372.4 55.1 1384.3 55.1Q1392.9 55.1 1399.2 58.5Q1405.5 61.8 1409.6 68.6Q1413.8 75.5 1415.9 86.1H1419.2Q1418.1 80.2 1417.1 74.5Q1416.1 68.8 1415.5 63.7Q1414.9 58.6 1414.9 54.4V24.5H1444V152.5H1419.7L1419.4 123.9H1416.7Q1414.7 134.5 1410.5 141.5Q1406.4 148.4 1400.1 151.7Q1393.8 155 1385.5 155ZM1395.8 131.6Q1400.5 131.6 1404.1 129.7Q1407.7 127.7 1410.1 124.1Q1412.5 120.5 1413.8 116Q1415 111.5 1415 106.4V103.7Q1415 99.4 1414 95.6Q1413.1 91.9 1411.3 88.8Q1409.6 85.7 1407.2 83.5Q1404.8 81.2 1401.7 80Q1398.7 78.7 1395.4 78.7Q1389.7 78.7 1385.6 82.2Q1381.6 85.7 1379.4 91.7Q1377.2 97.6 1377.2 105.4Q1377.2 112.9 1379.5 119Q1381.7 125 1386 128.3Q1390.2 131.6 1395.8 131.6Z"/></svg></span>
         <span class="slide__meta">CodeWeekend 2026 Demo Day</span>
       </div>
+      <span class="kicker">Closing</span>
       <h1>Thank <em>you.</em></h1>
-      <p class="lead">To our students, mentors, partners, judges, guests, and supporters — thank you for believing in this work and showing up for it.</p>
+      <p class="lead lead--narrow">To our students, mentors, partners, judges, guests, and supporters — thank you for believing in this work and showing up for it.</p>
       <div class="thanks-grid">
         <div>Students</div>
-        <div>Mentors</div>
-        <div>Partners</div>
-        <div>Community</div>
+        <div class="has-kite has-kite--a">Mentors<svg class="thanks-kite" aria-hidden="true" focusable="false"><line class="thanks-kite__string" x1="68.8" y1="44.6" x2="0" y2="100%"/><path class="thanks-kite__body thanks-kite__body--saffron" d="M61.5 3.2L83.7 14.1L68.8 44.6L44.3 21Z"/><path class="thanks-kite__knot" d="M60.1 3.5L67.4 44.9L70.2 44.4L62.9 3ZM44.5 22.4L83.9 15.4L83.5 12.7L44.1 19.6Z"/></svg></div>
+        <div class="has-kite has-kite--b">Partners<svg class="thanks-kite" aria-hidden="true" focusable="false"><line class="thanks-kite__string" x1="100" y1="53.2" x2="0" y2="100%"/><path class="thanks-kite__body thanks-kite__body--firuza" d="M106.1 3.1L127.8 23.4L100 53.2L80.2 17.5Z"/><path class="thanks-kite__knot" d="M104.5 2.9L98.3 53L101.6 53.4L107.8 3.3ZM80 19.2L127.6 25L128 21.7L80.4 15.8Z"/></svg></div>
+        <div class="has-kite has-kite--c">Community<svg class="thanks-kite" aria-hidden="true" focusable="false"><line class="thanks-kite__string" x1="64" y1="40.1" x2="0" y2="100%"/><path class="thanks-kite__body thanks-kite__body--pomegranate" d="M54.8 3.4L75.5 11.7L64 40.1L40.5 20.4Z"/><path class="thanks-kite__knot" d="M53.6 3.7L62.8 40.4L65.2 39.8L56.1 3.1ZM40.8 21.7L75.8 12.9L75.2 10.5L40.2 19.2Z"/></svg></div>
       </div>
-      <div class="cover__code" style="margin-top:28px;"><span>const future = </span><strong>students.build();</strong></div>
+      <div class="closing__foot">
+        <div class="cover__code" dir="ltr"><span>const future = </span><strong>students.build();</strong><i class="cursor" aria-hidden="true"></i></div>
+        <p class="signoff">Keep learning. Keep building. <em>Together.</em></p>
+      </div>
     </section>
 
   </div>
@@ -1251,6 +1468,7 @@
         titleEl.textContent = active.dataset.title || 'Slide';
         countEl.textContent = (index + 1) + ' / ' + slides.length;
         progressEl.value = ((index + 1) / slides.length) * 100;
+        if (history.replaceState) history.replaceState(null, '', '#' + (index + 1));
       };
 
       document.addEventListener('keydown', (event) => {
@@ -1279,7 +1497,17 @@
         show(event.clientX >= mid ? index + 1 : index - 1);
       });
 
-      show(0);
+      // Deep links: presentation.html#12 opens slide 12 (also kept in sync while presenting)
+      const fromHash = () => {
+        const n = parseInt(String(location.hash).replace('#', ''), 10);
+        return Number.isFinite(n) ? n - 1 : 0;
+      };
+      window.addEventListener('hashchange', () => {
+        const target = fromHash();
+        if (target !== index) show(target);
+      });
+
+      show(fromHash());
     })();
   </script>
 </body>

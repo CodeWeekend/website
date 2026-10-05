@@ -24,7 +24,7 @@
           <h3>{{ .title }}</h3>
           <p><strong>{{ .student }}</strong></p>
           <p>{{ .description }}</p>
-          {{ with .story }}<a href="{{ . }}">Read the student story <span aria-hidden="true">&rarr;</span></a>{{ end }}
+          {{ with .story }}<a href="{{ . }}">Read the student story <span class="arrow" aria-hidden="true">→</span></a>{{ end }}
         </div>
       </li>
       {{ end }}

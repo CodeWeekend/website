@@ -280,12 +280,36 @@
     setHidden(demoSlot, false);
   };
 
-  const fillViewer = (student) => {
-    const image = student.image && String(student.image).trim()
-      ? student.image
-      : placeholder;
+  /* Graduates without a consented photo are shown as their Her Kite tile
+     (inline SVG rendered on the card); the modal reuses that same kite. */
+  const hasPhoto = (value) => {
+    const src = String(value || '').trim();
+    return Boolean(src) && !/placeholder\.svg$/i.test(src);
+  };
 
-    imgEl.src = image;
+  const clearKite = () => {
+    const old = imgEl && imgEl.parentNode ? imgEl.parentNode.querySelector('.her-kite') : null;
+    if (old) old.remove();
+    if (imgEl) imgEl.hidden = false;
+  };
+
+  const showKite = (index) => {
+    const source = document.querySelector(`[data-grad-open="${index}"] .her-kite`);
+    if (!source || !imgEl || !imgEl.parentNode) return false;
+    const kite = source.cloneNode(true);
+    imgEl.hidden = true;
+    imgEl.removeAttribute('src');
+    imgEl.parentNode.appendChild(kite);
+    return true;
+  };
+
+  const fillViewer = (student, index) => {
+    clearKite();
+    const image = hasPhoto(student.image) ? String(student.image).trim() : '';
+
+    if (image || !showKite(index)) {
+      imgEl.src = image || placeholder;
+    }
     imgEl.alt = student.name ? `Portrait of ${student.name}` : 'Graduate portrait';
     protectImage(imgEl);
 
@@ -347,7 +371,7 @@
     if (!student || student.profile_complete === false) return;
 
     lastFocus = document.activeElement;
-    fillViewer(student);
+    fillViewer(student, index);
 
     const scrollEl = viewer.querySelector('.grad-viewer__scroll');
     if (scrollEl) scrollEl.scrollTop = 0;
@@ -357,12 +381,12 @@
     document.body.classList.add('grad-viewer-open');
     engageFocusTrap();
 
+    // Focus can only land once the dialog is visible (it is visibility:hidden until .is-open).
+    const closeBtn = viewer.querySelector('.grad-viewer__close');
     requestAnimationFrame(() => {
       viewer.classList.add('is-open');
+      if (closeBtn) closeBtn.focus({ preventScroll: true });
     });
-
-    const closeBtn = viewer.querySelector('.grad-viewer__close');
-    if (closeBtn) closeBtn.focus();
   };
 
   const closeViewer = () => {

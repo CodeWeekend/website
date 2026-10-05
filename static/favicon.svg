@@ -1,4 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="14" fill="#0C4F73"/>
-  <text x="32" y="42" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="32" font-weight="700" fill="#1AAEDC">{ }</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="CodeWeekend"><title>CodeWeekend</title><path fill="#0E1630" d="M6 0H26A6 6 0 0 1 32 6V26A6 6 0 0 1 26 32H6A6 6 0 0 1 0 26V6A6 6 0 0 1 6 0Z"/><path fill="#C8D9FF" d="M15 2.7L2.7 11.7L15 28.6V21.8L8.3 12.6L15 7.7ZM17 7.7L23.7 12.6L17 21.8V28.6L29.3 11.7L17 2.7Z"/><path fill="#F5A71E" d="M16 10L21.1 13.7L16 20.6L10.9 13.7Z"/></svg>

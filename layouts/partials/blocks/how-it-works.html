@@ -13,6 +13,14 @@
         <h3>{{ .title }}</h3>
         <p>{{ .body }}</p>
         <span class="how-step__meta">{{ .meta }}</span>
+        {{- $weeks := findRE `[0-9]+` .meta }}
+        {{- if $weeks }}
+          {{- $from := int (index $weeks 0) }}
+          {{- $to := int (index $weeks (sub (len $weeks) 1)) }}
+        <span class="how-step__weeks" aria-hidden="true">
+          {{- range $w := seq 12 }}<span{{ if and (ge $w $from) (le $w $to) }} class="is-on"{{ end }}></span>{{ end -}}
+        </span>
+        {{- end }}
       </article>
       {{ end }}
     </div>

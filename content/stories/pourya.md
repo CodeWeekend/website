@@ -12,7 +12,7 @@ quote: 'CodeWeekend is a wonderful program for any Computer Science student or g
 summary: "Pourya is from Kabul. He graduated from the CodeWeekend Coding Bootcamp and was hired as a Junior UI/UX Designer immediately after the program."
 description: "Pourya graduated from the CodeWeekend Coding Bootcamp and was hired as a Junior UI/UX Designer."
 image: "/images/stories/pourya.svg"
-image_alt: "Pourya Amire — initials avatar"
+image_alt: "Name tile for Pourya Amire: a saffron kite woven with kilim steps on lapis blue, marked with his initials PA, beside a small phone-design icon"
 weight: 10
 ---
 

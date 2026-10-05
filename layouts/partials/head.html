@@ -1,6 +1,6 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="theme-color" content="#FAFAF7" />
+<meta name="theme-color" content="#FBF7EF" />
 
 {{- $title := .Title -}}
 {{- if .IsHome -}}
@@ -20,20 +20,32 @@
 <meta property="og:description" content="{{ $description }}" />
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
 <meta property="og:url" content="{{ .Permalink }}" />
+<meta property="og:site_name" content="{{ .Site.Title }}" />
 {{- $ogImage := .Params.og_image | default .Site.Params.ogImage -}}
-{{- with $ogImage -}}
+{{- with $ogImage }}
 <meta property="og:image" content="{{ . | absURL }}" />
-{{- end -}}
+{{- if not $.Params.og_image }}
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="{{ $.Site.Title }}: {{ $.Site.Params.tagline | default "An inclusive community of developers." }}" />
+{{- end }}
+{{- end }}
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="{{ $title }}" />
 <meta name="twitter:description" content="{{ $description }}" />
+{{- with $ogImage }}
+<meta name="twitter:image" content="{{ . | absURL }}" />
+{{- if not $.Params.og_image }}
+<meta name="twitter:image:alt" content="{{ $.Site.Title }}: {{ $.Site.Params.tagline | default "An inclusive community of developers." }}" />
+{{- end }}
+{{- end }}
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..700,0..100&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:wght@400;500;600&family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,600;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Vazirmatn:wght@400;500;700;800&display=swap" rel="stylesheet" />
 
 <!-- CSS -->
 {{ $main := resources.Get "css/main.css" | resources.Minify | resources.Fingerprint }}
@@ -56,9 +68,11 @@
   {{ end }}
 {{ end }}
 
-<!-- Favicon -->
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="alternate icon" href="/favicon.ico" />
+<!-- Favicon and app icons (brand/logo/SPEC.md §5) -->
+<link rel="icon" href="{{ "favicon.ico" | relURL }}" sizes="32x32" />
+<link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | relURL }}" />
+<link rel="manifest" href="{{ "site.webmanifest" | relURL }}" />
 
 <!-- RSS -->
 {{ range .AlternativeOutputFormats -}}

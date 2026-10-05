@@ -1,12 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
-  <defs>
-    <linearGradient id="g4" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#F4A261"/>
-      <stop offset="100%" stop-color="#E76F51"/>
-    </linearGradient>
-  </defs>
-  <rect width="400" height="400" fill="url(#g4)"/>
-  <circle cx="80" cy="80" r="50" fill="rgba(255,255,255,0.10)"/>
-  <circle cx="340" cy="340" r="80" fill="rgba(255,255,255,0.08)"/>
-  <text x="200" y="240" font-family="'Fraunces', Georgia, serif" font-size="190" font-weight="500" fill="white" text-anchor="middle" letter-spacing="-8">MK</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 600" width="480" height="600"><defs><clipPath id="u"><path d="M223.9 150.1L223.9 225.9L119.6 225.9ZM256.1 150.1L360.4 225.9L256.1 225.9Z"/></clipPath><clipPath id="l"><path d="M182.1 359.9L297.9 359.9L240 420.9Z"/></clipPath></defs><rect width="480" height="600" fill="#0E1630"/><path fill="#F5A71E" d="M240 125.2L400.8 242L240 463.3L79.2 242Z"/><path fill="#0E1630" d="M79.2 236.6H400.8V247.4H79.2ZM234.6 125.2H245.4V242H234.6ZM234.6 436.5H245.4V463.3H234.6Z"/><path fill="#0E1630" clip-path="url(#u)" d="M-81.6 372.2L240 138.6L561.6 372.2V388.8L240 155.1L-81.6 388.8ZM-81.6 403L240 169.4L561.6 403V419.6L240 185.9L-81.6 419.6ZM-81.6 433.9L240 200.2L561.6 433.9V450.4L240 216.8L-81.6 450.4ZM-81.6 464.7L240 231L561.6 464.7V481.2L240 247.6L-81.6 481.2Z"/><path fill="#0E1630" clip-path="url(#l)" d="M79.2 220.6L240 441.9L400.8 220.6V197.8L240 419.1L79.2 197.8ZM79.2 180.5L240 401.8L400.8 180.5V157.7L240 379L79.2 157.7Z"/><path fill="#0E1630" transform="translate(148.9 333.8) scale(1.0764)" d="M6.9 0V-66H31L48.2 -18.5H48.7L65.5 -66H88.5V0H73.3L74.2 -49.6H73.1L54 0H40.8L22.1 -49.6H21L21.9 0ZM101.4 0V-66H117.5V-37.1Q122.4 -39.3 126.6 -42.6Q130.8 -45.9 134.05 -49.8Q137.3 -53.7 139.45 -57.85Q141.6 -62 142.6 -66H161.2Q160 -61.4 157.3 -56.65Q154.6 -51.9 150.8 -47.55Q147 -43.2 142.65 -39.8Q138.3 -36.4 133.8 -34.4V-32.9Q138.4 -32.9 141.95 -31.9Q145.5 -30.9 148.25 -28.8Q151 -26.7 153.05 -23.55Q155.1 -20.4 156.6 -16L162.3 0H144L140.3 -13.1Q139.1 -17.5 137.1 -20.05Q135.1 -22.6 131.8 -23.75Q128.5 -24.9 123.3 -24.9H117.5V0Z"/><g fill="none" stroke="#F5A71E" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(353.6 96)"><rect x="3" y="8" width="58" height="46" rx="8"/><path d="M3 21H61"/><path d="M12 33H34M12 43H46"/></g><g fill="#F5A71E" transform="translate(353.6 96)"><circle cx="11" cy="14.5" r="2.6"/><circle cx="19" cy="14.5" r="2.6"/></g></svg>

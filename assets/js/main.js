@@ -1,12 +1,14 @@
 /* ============================================================
    CodeWeekend — Main JS
-   Sticky nav, animated stat counters, fade-in observers
+   Sticky nav, mobile menu, animated stat counters
    ============================================================ */
 
 (function () {
   'use strict';
 
-  // ---------- Sticky nav with backdrop blur on scroll ----------
+  const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ---------- Sticky nav: paper bar gains a hairline once scrolled ----------
   const navWrap = document.getElementById('navWrap');
   if (navWrap) {
     const onScroll = () => {
@@ -17,9 +19,36 @@
     onScroll();
   }
 
+  // ---------- Mobile menu: close on Escape, outside click, or link choice ----------
+  const mobileNav = document.querySelector('.mobile-nav');
+  if (mobileNav) {
+    const summary = mobileNav.querySelector('summary');
+    const close = (restoreFocus) => {
+      if (!mobileNav.open) return;
+      mobileNav.open = false;
+      if (restoreFocus && summary) summary.focus();
+    };
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') close(true);
+    });
+    document.addEventListener('click', (e) => {
+      if (!mobileNav.contains(e.target)) close(false);
+    });
+    mobileNav.querySelectorAll('.mobile-nav__links a').forEach((a) => {
+      a.addEventListener('click', () => close(false));
+    });
+    if (summary) {
+      const syncLabel = () => {
+        summary.setAttribute('aria-label', mobileNav.open ? 'Close navigation menu' : 'Open navigation menu');
+      };
+      mobileNav.addEventListener('toggle', syncLabel);
+      syncLabel();
+    }
+  }
+
   // ---------- Animated stat counters ----------
   const statNums = document.querySelectorAll('.stat__num[data-target]');
-  if (statNums.length && 'IntersectionObserver' in window) {
+  if (statNums.length && 'IntersectionObserver' in window && !reduceMotion) {
     const animate = (el) => {
       const target = el.dataset.target || '0';
       const isFloat = target.includes('.');

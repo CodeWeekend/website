@@ -12,7 +12,7 @@ quote: "In a time when many Afghan women have limited opportunities to express t
 summary: "Mahdia is a participant in the 2026 Web & AI Development Bootcamp. From Panjshir, Afghanistan, she built and launched her own personal website from scratch in the first weeks of the program."
 description: "From Panjshir, Afghanistan: Mahdia built and launched her own personal website in the first weeks of the 2026 cohort."
 image: "/images/stories/mahdia.svg"
-image_alt: "Mahdia Khamoosh — initials avatar (real photo pending consent)"
+image_alt: "Name tile for Mahdia Khamoosh: a saffron kite on night blue, marked with her initials MK, beside a small website icon"
 featured: true
 weight: 5
 ---

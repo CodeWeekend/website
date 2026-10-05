@@ -3,7 +3,7 @@
     {{ partial "logo.html" . }}
     <ul class="nav-links">
       {{ range .Site.Menus.main }}
-        <li><a class="nav-link" href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+        <li><a class="nav-link" href="{{ .URL | relURL }}"{{ if $.IsMenuCurrent "main" . }} aria-current="page"{{ else if $.HasMenuCurrent "main" . }} aria-current="true"{{ end }}>{{ .Name }}</a></li>
       {{ end }}
     </ul>
     <details class="mobile-nav">
@@ -14,7 +14,7 @@
       </summary>
       <ul class="mobile-nav__links">
         {{ range .Site.Menus.main }}
-          <li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+          <li><a href="{{ .URL | relURL }}"{{ if $.IsMenuCurrent "main" . }} aria-current="page"{{ else if $.HasMenuCurrent "main" . }} aria-current="true"{{ end }}>{{ .Name }}</a></li>
         {{ end }}
       </ul>
     </details>

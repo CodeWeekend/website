@@ -1,0 +1,332 @@
+{{ define "main" }}
+{{- /* Brand & press kit (/brand/). Data lives in content/brand/_index.md front matter;
+       downloadable files live in static/brand/. Styles: assets/css/brand-kit.css. */ -}}
+{{- $kitDir := "static/brand/" -}}
+{{- $email := .Site.Params.contactEmail | default "hello@codeweekend.net" -}}
+
+{{- /* Kite parts, from static/brand/mark.svg (viewBox -10 -2.8 260 307.7). */ -}}
+{{- $left := "M110 7.3L0 87.2L110 238.6V177.3L50.3 95.1L110 51.8Z" -}}
+{{- $right := "M130 51.8L189.7 95.1L130 177.3V238.6L240 87.2L130 7.3Z" -}}
+{{- $panel := "M115 79L79.2 105L115 154.3ZM125 79V154.3L160.8 105Z" -}}
+{{- $stitches := "M113.5 245.8L97.4 257.5L110.3 275.3L126.5 263.6ZM87.7 260.1L68.7 266.3L75.5 287.2L94.5 281Z" -}}
+{{- $tassel := "M62.5 279.8L44.9 274.1L34 289.1L51.6 294.8Z" -}}
+{{- $ghost := printf "%s%s%s%s%s" $left $right $panel $stitches $tassel -}}
+
+<header class="page-header bk-header">
+  <div class="page-header__inner">
+    <div class="crumb"><a href="{{ "/" | relURL }}">Home</a> &middot; {{ .Title }}</div>
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p class="lead page-header__lead">{{ . }}</p>{{ end }}
+    <nav class="bk-toc" aria-label="On this page">
+      <ul>
+        <li><a href="#logo">Logo</a></li>
+        <li><a href="#downloads">Downloads</a></li>
+        <li><a href="#colour">Colour</a></li>
+        <li><a href="#type">Type</a></li>
+        <li><a href="#usage">Usage</a></li>
+        <li><a href="#press">About &amp; press</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="section section--alt bk-section" id="logo" aria-labelledby="bk-logo-title">
+  <div class="section-inner">
+    <div class="section-header">
+      <p class="eyebrow">The logo</p>
+      <h2 id="bk-logo-title">Gudiparan, the Bracket Kite</h2>
+      <p class="lead">Two code brackets, <code class="bk-glyph" translate="no">&lt;</code> and <code class="bk-glyph" translate="no">&gt;</code>, make an Afghan kite. Learners build it; the community holds the string.</p>
+    </div>
+
+    <div class="bk-showcase">
+      <figure class="bk-stage bk-stage--paper">
+        <img src="{{ "brand/logo.svg" | relURL }}" alt="The CodeWeekend logo: a blue and saffron kite made of two code brackets, beside the lowercase word codeweekend" width="1464" height="308">
+        <figcaption>Full colour on Paper</figcaption>
+      </figure>
+      <figure class="bk-stage bk-stage--night">
+        <img src="{{ "brand/logo-reverse.svg" | relURL }}" alt="The reverse CodeWeekend logo in light colours on a dark Night background" width="1464" height="308">
+        <figcaption>Reverse on Night</figcaption>
+      </figure>
+    </div>
+
+    <div class="bk-anatomy">
+      <div class="bk-anatomy__text">
+        <h3>A kite made from parts</h3>
+        <p>A gudiparan, the Afghan fighter kite, is made from simple parts with patience. It flies on weekends and rises because someone holds the string. CodeWeekend works the same way: learners build the thing and fly it, and mentors, alumni and donors hold the string.</p>
+        <p>Every angle comes from girih tile geometry. The kite is always a made object. We never draw a flyer or hands.</p>
+      </div>
+      <ol class="bk-parts">
+        {{- $parts := slice
+          (dict "name" "Opening bracket" "glyph" "<" "paths" (slice (dict "d" $left "c" "mark")))
+          (dict "name" "Closing bracket" "glyph" ">" "paths" (slice (dict "d" $right "c" "mark")))
+          (dict "name" "Saffron panel, the light" "glyph" "" "paths" (slice (dict "d" $panel "c" "panel")))
+          (dict "name" "Stitched tail, curling left" "glyph" "" "paths" (slice (dict "d" $stitches "c" "mark") (dict "d" $tassel "c" "accent")))
+          (dict "name" "The kite" "glyph" "" "paths" (slice (dict "d" (printf "%s%s%s" $left $right $stitches) "c" "mark") (dict "d" $panel "c" "panel") (dict "d" $tassel "c" "accent")))
+        -}}
+        {{- range $i, $p := $parts }}
+        <li class="bk-part{{ if eq $i 4 }} bk-part--whole{{ end }}">
+          <svg class="bk-part__art" viewBox="-10 -2.8 260 307.7" aria-hidden="true" focusable="false">
+            {{- if ne $i 4 }}<path class="bk-ghost" d="{{ $ghost }}"/>{{ end -}}
+            {{- range $p.paths }}<path class="bk-fill--{{ .c }}" d="{{ .d }}"/>{{ end -}}
+          </svg>
+          <span class="bk-part__name">{{ with $p.glyph }}<code class="bk-glyph" translate="no">{{ . }}</code> {{ end }}{{ $p.name }}</span>
+        </li>
+        {{- end }}
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="section bk-section" id="downloads" aria-labelledby="bk-downloads-title">
+  <div class="section-inner">
+    <div class="section-header">
+      <p class="eyebrow">Downloads</p>
+      <h2 id="bk-downloads-title">Logo files</h2>
+      <p class="lead">Use SVG wherever you can: it stays sharp at every size. The PNG files have transparent backgrounds.</p>
+    </div>
+
+    <div class="bk-cards">
+      {{- range .Params.downloads }}
+      {{- $card := . }}
+      <article class="bk-card">
+        <div class="bk-card__preview">
+          {{- range .previews }}
+          <div class="bk-pane bk-pane--{{ .ground }}">
+            <img src="{{ printf "brand/%s" .file | relURL }}" alt="" loading="lazy">
+          </div>
+          {{- end }}
+        </div>
+        <div class="bk-card__body">
+          <h3>{{ .name }}</h3>
+          <p>{{ .use }}</p>
+          {{ with .note }}<p class="bk-card__note">{{ . }}</p>{{ end }}
+          <ul class="bk-files">
+            {{- range .files }}
+            {{- $path := printf "%s%s" $kitDir .file }}
+            {{- $ext := path.Ext .file | strings.TrimPrefix "." }}
+            {{- $exists := os.Stat $path }}{{/* fails the build if a listed file is missing */}}
+            {{- $meta := printf "%s · any size" (upper $ext) }}
+            {{- if eq $ext "png" }}
+              {{- $img := imageConfig $path }}
+              {{- $meta = printf "PNG · %d px" $img.Width }}
+            {{- end }}
+            <li>
+              <a class="bk-file" href="{{ printf "brand/%s" .file | relURL }}" download>
+                <svg class="bk-file__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v11m0 0l-4.5-4.5M12 15l4.5-4.5M5 19.5h14"/></svg>
+                <span class="bk-file__label">{{ .label }}<span class="bk-sr">, {{ $card.name }},</span></span>
+                <span class="bk-file__meta" translate="no">{{ $meta }}</span>
+              </a>
+            </li>
+            {{- end }}
+          </ul>
+        </div>
+      </article>
+      {{- end }}
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt bk-section" id="colour" aria-labelledby="bk-colour-title">
+  <div class="section-inner">
+    <div class="section-header">
+      <p class="eyebrow">Colour</p>
+      <h2 id="bk-colour-title">Lapis, saffron and wool</h2>
+      <p class="lead">Lapis is the brand. Saffron is the light: one bright accent, never a co-equal field. Surfaces are warm Paper, and dark sections are Night, never pure black.</p>
+    </div>
+
+    <figure class="bk-share">
+      <div class="bk-share__bar" aria-hidden="true">
+        <span style="flex-grow:60" class="bk-share__seg bk-share__seg--paper"></span>
+        <span style="flex-grow:22" class="bk-share__seg bk-share__seg--night"></span>
+        <span style="flex-grow:12" class="bk-share__seg bk-share__seg--lapis"></span>
+        <span style="flex-grow:2" class="bk-share__seg bk-share__seg--firuza"></span>
+        <span style="flex-grow:5" class="bk-share__seg bk-share__seg--saffron"></span>
+        <span style="flex-grow:3" class="bk-share__seg bk-share__seg--pomegranate"></span>
+      </div>
+      <figcaption>
+        <span class="bk-share__title">A typical layout</span>
+        <ul class="bk-share__legend">
+          <li><i class="bk-dot bk-dot--paper" aria-hidden="true"></i>Paper about 60%</li>
+          <li><i class="bk-dot bk-dot--night" aria-hidden="true"></i>Ink and Night about 22%</li>
+          <li><i class="bk-dot bk-dot--lapis" aria-hidden="true"></i>Lapis about 12%</li>
+          <li><i class="bk-dot bk-dot--saffron" aria-hidden="true"></i>Saffron 5% or less</li>
+          <li><i class="bk-dot bk-dot--pomegranate" aria-hidden="true"></i>Pomegranate 3% or less</li>
+          <li><i class="bk-dot bk-dot--firuza" aria-hidden="true"></i>Firuza 2% or less</li>
+        </ul>
+      </figcaption>
+    </figure>
+
+    {{- range .Params.palette }}
+    <h3 class="bk-group-title">{{ .group }}</h3>
+    <ul class="bk-swatches">
+      {{- range .colours }}
+      <li class="bk-swatch">
+        <span class="bk-swatch__chip" style="{{ printf "background-color:%s" .hex | safeCSS }}" aria-hidden="true"></span>
+        <span class="bk-swatch__name">{{ .name }}</span>
+        <dl class="bk-swatch__values" translate="no">
+          <div><dt>HEX</dt><dd><code class="bk-copy">{{ .hex }}</code></dd></div>
+          <div><dt>RGB</dt><dd><code class="bk-copy">{{ .rgb }}</code></dd></div>
+          <div><dt>CSS</dt><dd><code class="bk-copy">var({{ .token }})</code></dd></div>
+        </dl>
+        <p class="bk-swatch__role">{{ .role }}</p>
+      </li>
+      {{- end }}
+    </ul>
+    {{- end }}
+
+    <div class="bk-rules">
+      <div class="bk-rules__col">
+        <h3>Text pairs that pass</h3>
+        <p>Every text colour meets WCAG AA. These are the pairs we use most.</p>
+        <ul class="bk-pairs">
+          <li><span class="bk-pair bk-pair--ink-paper" aria-hidden="true">Aa</span> Ink on Paper <span class="bk-ratio">15.1 : 1</span></li>
+          <li><span class="bk-pair bk-pair--lapis-paper" aria-hidden="true">Aa</span> Lapis on Paper <span class="bk-ratio">7.5 : 1</span></li>
+          <li><span class="bk-pair bk-pair--paper-night" aria-hidden="true">Aa</span> Paper on Night <span class="bk-ratio">16.7 : 1</span></li>
+          <li><span class="bk-pair bk-pair--saffron-night" aria-hidden="true">Aa</span> Saffron on Night <span class="bk-ratio">8.9 : 1</span></li>
+          <li><span class="bk-pair bk-pair--night-saffron" aria-hidden="true">Aa</span> Night on Saffron <span class="bk-ratio">8.9 : 1</span></li>
+        </ul>
+      </div>
+      <div class="bk-rules__col">
+        <h3>Never</h3>
+        <ul class="bk-never">
+          <li>Saffron text on Paper (1.9 : 1). Use Saffron for shapes, not words, on light grounds.</li>
+          <li>The Lapis logo on Night (2.2 : 1). Use the reverse logo.</li>
+          <li>Green, anywhere. Success states use Lapis with a check icon.</li>
+          <li>Lapis and Saffron as two equal stripes, or any flag-like band.</li>
+          <li>Gradients, glows or glass effects. All colour is flat.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section bk-section" id="type" aria-labelledby="bk-type-title">
+  <div class="section-inner">
+    <div class="section-header">
+      <p class="eyebrow">Typography</p>
+      <h2 id="bk-type-title">Four typefaces, one voice</h2>
+      <p class="lead">All four typefaces are free on Google Fonts. Atkinson Hyperlegible was designed so that easily confused characters look different, which helps a beginner reading code on a small phone.</p>
+    </div>
+
+    <div class="bk-type">
+      <article class="bk-specimen bk-specimen--display">
+        <p class="bk-specimen__role">Display and the wordmark</p>
+        <p class="bk-specimen__sample" translate="no">Change your life, learn to code.</p>
+        <p class="bk-specimen__meta"><a href="https://fonts.google.com/specimen/Bricolage+Grotesque" rel="noopener noreferrer">Bricolage Grotesque</a> · weights 500–800 · no italic</p>
+      </article>
+      <article class="bk-specimen bk-specimen--body">
+        <p class="bk-specimen__role">Body text and interface</p>
+        <p class="bk-specimen__sample" translate="no"><span class="bk-specimen__glyphs">Il1 O0 rn m</span>Every character is easy to tell apart, even at 16 px on a low-resolution screen.</p>
+        <p class="bk-specimen__meta"><a href="https://fonts.google.com/specimen/Atkinson+Hyperlegible+Next" rel="noopener noreferrer">Atkinson Hyperlegible Next</a> · 400, 600, 700 and italic</p>
+      </article>
+      <article class="bk-specimen bk-specimen--mono">
+        <p class="bk-specimen__role">Labels, data and code</p>
+        <p class="bk-specimen__sample" translate="no"><span class="bk-specimen__label">Cohort 2026 · Week 12 · Demo Day</span><span class="bk-specimen__code">const kite = '&lt; &gt;';</span></p>
+        <p class="bk-specimen__meta"><a href="https://fonts.google.com/specimen/Atkinson+Hyperlegible+Mono" rel="noopener noreferrer">Atkinson Hyperlegible Mono</a> · 400–600</p>
+      </article>
+      <article class="bk-specimen bk-specimen--rtl">
+        <p class="bk-specimen__role">Dari and Pashto</p>
+        <p class="bk-specimen__sample" lang="fa" dir="rtl" translate="no">یادگیری برنامه‌نویسی</p>
+        <p class="bk-specimen__meta"><a href="https://fonts.google.com/specimen/Vazirmatn" rel="noopener noreferrer">Vazirmatn</a> · 400–800 · replaces the Latin fonts on right-to-left pages</p>
+      </article>
+    </div>
+
+    <details class="bk-embed">
+      <summary>Embed code for websites</summary>
+      <pre translate="no"><code>&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;
+&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;
+&lt;link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:wght@400;500;600&amp;family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,600;0,700;1,400&amp;family=Bricolage+Grotesque:opsz,wght@12..96,500..800&amp;family=Vazirmatn:wght@400;500;700;800&amp;display=swap"&gt;</code></pre>
+    </details>
+  </div>
+</section>
+
+<section class="section section--alt bk-section" id="usage" aria-labelledby="bk-usage-title">
+  <div class="section-inner">
+    <div class="section-header">
+      <p class="eyebrow">Usage</p>
+      <h2 id="bk-usage-title">Give the kite room to fly</h2>
+      <p class="lead">Use the files as supplied. If you need a version that is not here, write to us and we will make it.</p>
+    </div>
+
+    <div class="bk-usage">
+      <figure class="bk-clear">
+        <svg class="bk-clear__art" viewBox="-96 -88.7 1636.1 423.3" role="img" aria-labelledby="bk-clear-title">
+          <title id="bk-clear-title">Clear space: an empty margin around the logo, on every side, at least 30% of the kite's width. The tail may sit inside it.</title>
+          <rect class="bk-clear__zone" x="-72" y="-64.7" width="1588.1" height="375.3" rx="6"/>
+          <rect class="bk-clear__ink" x="0" y="7.3" width="1444.1" height="231.3"/>
+          <image href="{{ "brand/logo.svg" | relURL }}" x="-10" y="-2.8" width="1464.1" height="307.7"/>
+          <path class="bk-clear__dim" d="M-72 122.95H0M-72 110.95V134.95M0 110.95V134.95M760 -64.7V7.3M748 -64.7H772M748 7.3H772"/>
+          <text class="bk-clear__x" x="-36" y="172" text-anchor="middle">x</text>
+          <text class="bk-clear__x" x="780" y="-14">x</text>
+        </svg>
+        <figcaption><strong>Clear space:</strong> keep <em>x</em>, at least 30% of the kite's width, empty on every side. The tail may sit inside it.</figcaption>
+      </figure>
+
+      <div class="bk-usage__rules">
+        <h3>Do</h3>
+        <ul class="bk-do">
+          <li>Use the full-colour logo on light grounds and the reverse logo on dark ones.</li>
+          <li>Keep the tail. Every version of the logo has one.</li>
+          <li>Keep the logo left to right, also on Dari and Pashto pages.</li>
+          <li>Write our name as <strong>CodeWeekend</strong> in running text.</li>
+        </ul>
+        <h3>Smallest sizes</h3>
+        <dl class="bk-min">
+          <div><dt>Horizontal logo</dt><dd>116 px wide on screen · 29 mm in print</dd></div>
+          <div><dt>Stacked logo</dt><dd>79 px tall on screen</dd></div>
+          <div><dt>Kite mark</dt><dd>20 px tall · 5 mm in print</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <h3 class="bk-group-title">Please don't</h3>
+    <ul class="bk-donts">
+      <li class="bk-dont">
+        <div class="bk-dont__pane bk-pane--paper" aria-hidden="true"><img class="bk-dont--stretch" src="{{ "brand/logo-small.svg" | relURL }}" alt="" loading="lazy"></div>
+        <p>Stretch or squash it.</p>
+      </li>
+      <li class="bk-dont">
+        <div class="bk-dont__pane bk-pane--paper" aria-hidden="true"><img class="bk-dont--rotate" src="{{ "brand/logo-small.svg" | relURL }}" alt="" loading="lazy"></div>
+        <p>Rotate or tilt it.</p>
+      </li>
+      <li class="bk-dont">
+        <div class="bk-dont__pane bk-pane--paper" aria-hidden="true"><img class="bk-dont--effects" src="{{ "brand/logo-small.svg" | relURL }}" alt="" loading="lazy"></div>
+        <p>Add shadows, outlines or glows.</p>
+      </li>
+      <li class="bk-dont">
+        <div class="bk-dont__pane bk-pane--saffron" aria-hidden="true"><img src="{{ "brand/logo-small.svg" | relURL }}" alt="" loading="lazy"></div>
+        <p>Place it on a Saffron field.</p>
+      </li>
+      <li class="bk-dont">
+        <div class="bk-dont__pane bk-pane--night" aria-hidden="true"><img src="{{ "brand/logo-small.svg" | relURL }}" alt="" loading="lazy"></div>
+        <p>Use the full-colour logo on Night.</p>
+      </li>
+      <li class="bk-dont">
+        <div class="bk-dont__pane bk-pane--paper" aria-hidden="true"><span class="bk-dont--retype"><img src="{{ "brand/mark-small.svg" | relURL }}" alt="" loading="lazy"><span>Code Weekend</span></span></div>
+        <p>Retype the name in another font.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="section bk-section bk-press" id="press" aria-labelledby="bk-press-title">
+  <div class="section-inner bk-press__grid">
+    <div class="bk-about">
+      <p class="eyebrow">For press</p>
+      <h2 id="bk-press-title" class="bk-press__title">Writing about us</h2>
+      <article class="prose">{{ .Content }}</article>
+    </div>
+    <aside class="bk-contact" aria-labelledby="bk-contact-title">
+      <h3 id="bk-contact-title">Press contact</h3>
+      <p>For interviews, facts, quotes or a logo version that is not here, write to us.</p>
+      <p class="bk-contact__email"><a href="mailto:{{ $email }}">{{ $email }}</a></p>
+      <p class="bk-contact__note">Photos of our learners: please ask us first. We share them only with each learner's consent.</p>
+      <ul class="bk-contact__links">
+        <li><a href="{{ "/media/" | relURL }}">CodeWeekend in the media</a></li>
+        <li><a href="{{ "/about/" | relURL }}">About CodeWeekend</a></li>
+        <li><a href="{{ "/contact/" | relURL }}">All contacts</a></li>
+      </ul>
+    </aside>
+  </div>
+</section>
+{{ end }}

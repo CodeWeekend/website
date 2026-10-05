@@ -1,12 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
-  <defs>
-    <linearGradient id="g3" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0C4F73"/>
-      <stop offset="100%" stop-color="#083B5A"/>
-    </linearGradient>
-  </defs>
-  <rect width="400" height="400" fill="url(#g3)"/>
-  <circle cx="320" cy="80" r="60" fill="rgba(26,174,220,0.15)"/>
-  <circle cx="80" cy="340" r="70" fill="rgba(26,174,220,0.10)"/>
-  <text x="200" y="240" font-family="'Fraunces', Georgia, serif" font-size="190" font-weight="500" fill="white" text-anchor="middle" letter-spacing="-8">MN</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 600" width="480" height="600"><rect width="480" height="600" fill="#F3ECDF"/><path fill="#2347B4" d="M240 125.2L400.8 242L240 463.3L79.2 242Z"/><path fill="#F3ECDF" d="M79.2 236.6H400.8V247.4H79.2ZM234.6 125.2H245.4V242H234.6ZM234.6 436.5H245.4V463.3H234.6Z"/><path fill="#F3ECDF" transform="translate(146.7 333.8) scale(1.0764)" d="M6.9 0V-66H31L48.2 -18.5H48.7L65.5 -66H88.5V0H73.3L74.2 -49.6H73.1L54 0H40.8L22.1 -49.6H21L21.9 0ZM101.4 0V-66H122.3L150.6 -21.7H151.8L150.8 -66H166.5V0H147.6L117.3 -46.8H116.2L117.1 0Z"/></svg>

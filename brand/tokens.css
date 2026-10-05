@@ -1,0 +1,26 @@
+/* CodeWeekend brand tokens v1.0 (from foundation.md) */
+:root {
+  --lapis-50:#F1F6FF; --lapis-100:#E3ECFF; --lapis-200:#C8D9FF; --lapis-300:#9CBBFF; --lapis-400:#6A92F3;
+  --lapis-500:#3F69DB; --lapis-600:#2347B4; --lapis-700:#1A3896; --lapis-800:#122970; --lapis-900:#0B1C4B;
+  --saffron-50:#FFF6E8; --saffron-100:#FFECCD; --saffron-200:#FFDCA1; --saffron-300:#FEC55F; --saffron-400:#F5A71E;
+  --saffron-500:#D89100; --saffron-600:#B47800; --saffron-700:#976400; --saffron-800:#7B5100; --saffron-900:#573905;
+  --pomegranate-50:#FFF0F0; --pomegranate-100:#FFE1E1; --pomegranate-300:#F4858A; --pomegranate-500:#CD3349;
+  --pomegranate-600:#B4223B; --pomegranate-700:#92182E;
+  --firuza-50:#E9F7FC; --firuza-100:#D1F0FA; --firuza-300:#60C0DE; --firuza-600:#116B82; --firuza-700:#06566A;
+  --white:#FFFFFF; --paper:#FBF7EF; --paper-2:#F3ECDF; --sand:#EADFCB;
+  --line:#E4DACA; --line-2:#EEE7DA; --line-strong:#8E8475;
+  --stone:#5F584C; --ink-2:#3A3E50; --ink:#1B2034;
+  --night:#0E1630; --night-2:#172042; --night-line:#2A3560; --mist:#A9B1C6;
+
+  /* semantic aliases */
+  --brand:var(--lapis-600); --brand-hover:var(--lapis-700); --accent:var(--saffron-400);
+  --link:var(--lapis-600); --link-on-dark:var(--lapis-200);
+  --bg:var(--paper); --bg-alt:var(--paper-2); --text:var(--ink); --text-muted:var(--stone);
+  --focus:var(--lapis-600); --focus-on-dark:var(--saffron-400);
+  --danger:var(--pomegranate-600); --success:var(--lapis-600); /* no green, by rule */
+
+  --font-display:'Bricolage Grotesque','Atkinson Hyperlegible Next',system-ui,sans-serif;
+  --font-body:'Atkinson Hyperlegible Next',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --font-mono:'Atkinson Hyperlegible Mono',ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+  --font-rtl:'Vazirmatn','Noto Naskh Arabic',Tahoma,system-ui,sans-serif;
+}

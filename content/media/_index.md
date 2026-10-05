@@ -20,3 +20,7 @@ description: "Independent reporting on CodeWeekend, Afghan developers, remote wo
 [The code must go on: An Afghan coding bootcamp becomes a lifeline under Taliban rule](https://www.technologyreview.com/2021/12/30/1043133/afghanistan-coding-bootcamp/) examines CodeWeekend's remote bootcamp after the Taliban takeover.
 
 These links lead to independent publishers and may be subject to their access or archive policies.
+
+## Writing about CodeWeekend?
+
+Our [brand and press kit](/brand/) has the logo in SVG and PNG, our colours and typefaces, a short boilerplate and the press contact. Please use the logo files as supplied, and write the name as one word: CodeWeekend.

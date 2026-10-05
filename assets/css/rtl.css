@@ -1,75 +1,138 @@
 /* ============================================================
-   CodeWeekend — RTL Overrides
-   Applied automatically when html[dir="rtl"]
-   Most properties already use logical inline-* values in main.css,
-   so this file handles only the things that need explicit flipping.
+   CodeWeekend — RTL Overrides (Dari, Pashto)
+   Applied automatically when html[dir="rtl"].
+   Brand rule (foundation §5): Vazirmatn replaces display, body and
+   mono; headings 800; body ~106% with line-height 1.8; no
+   letter-spacing and no text-transform anywhere, because spacing
+   breaks Arabic-script joining. The logo and code stay LTR.
+   Most layout already uses logical inline-* properties in main.css,
+   so this file only handles type and the few things that must flip.
    ============================================================ */
 
 html[dir="rtl"] {
-  font-family: var(--rtl-font);
+  --font-display: var(--font-rtl);
+  --font-body: var(--font-rtl);
+  --font-mono: var(--font-rtl);
+  font-family: var(--font-rtl);
 }
 html[dir="rtl"] body {
-  font-family: var(--rtl-font);
-  letter-spacing: 0;
-  font-size: 17px;
+  font-family: var(--font-rtl);
+  font-size: 18px;
+  line-height: 1.8;
 }
+@media (min-width: 1024px) {
+  html[dir="rtl"] body { font-size: 19px; }
+}
+
+/* No tracking, no case transforms: they break letter joining */
+html[dir="rtl"] *,
+html[dir="rtl"] *::before,
+html[dir="rtl"] *::after {
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+}
+
+/* Headings and display numerals: Vazirmatn 800, looser leading for the script */
 html[dir="rtl"] h1,
 html[dir="rtl"] h2,
 html[dir="rtl"] h3,
-html[dir="rtl"] h4,
 html[dir="rtl"] .display,
-html[dir="rtl"] .featured-story__quote,
-html[dir="rtl"] .program-hero__meta-item .v,
+html[dir="rtl"] .program-name,
 html[dir="rtl"] .stat__num,
 html[dir="rtl"] .how-step__num,
-html[dir="rtl"] .partner-logo,
-html[dir="rtl"] .site-footer__tag,
-html[dir="rtl"] .program-name {
-  font-family: var(--rtl-font);
-  letter-spacing: 0;
+html[dir="rtl"] .site-footer__signoff {
+  font-family: var(--font-rtl);
+  font-weight: 800;
 }
+html[dir="rtl"] h1,
+html[dir="rtl"] .display { line-height: 1.3; }
+html[dir="rtl"] h2,
+html[dir="rtl"] h3,
+html[dir="rtl"] .program-name,
+html[dir="rtl"] .site-footer__signoff { line-height: 1.35; }
+html[dir="rtl"] h4 { font-weight: 700; line-height: 1.5; }
 
-/* Reverse the eyebrow underline + the stories CTA arrow */
-html[dir="rtl"] .eyebrow { flex-direction: row-reverse; }
+/* Display-face text blocks that are not headings */
+html[dir="rtl"] .featured-story__quote,
+html[dir="rtl"] .testimonials__grid blockquote,
+html[dir="rtl"] article.prose blockquote,
+html[dir="rtl"] .program-hero__meta-item .v,
+html[dir="rtl"] .partner-logo,
+html[dir="rtl"] .alumni-card__body strong,
+html[dir="rtl"] .page-list__title {
+  font-family: var(--font-rtl);
+  font-weight: 700;
+  line-height: 1.6;
+}
+html[dir="rtl"] .partner-logo.italic { font-style: normal; }
+
+/* Body copy: about 6% larger, 1.8 leading */
+html[dir="rtl"] .lead,
+html[dir="rtl"] .hero__sub { font-size: clamp(19px, 1.5vw, 22px); line-height: 1.8; }
+html[dir="rtl"] article.prose { font-size: 19px; line-height: 1.8; }
+html[dir="rtl"] .program-desc,
+html[dir="rtl"] .how-step p,
+html[dir="rtl"] .involved-card p,
+html[dir="rtl"] .promise__list li { font-size: 17px; line-height: 1.8; }
+html[dir="rtl"] .blog-card p,
+html[dir="rtl"] .program-features li,
+html[dir="rtl"] .story-card__role,
+html[dir="rtl"] .stat__label { font-size: 16px; line-height: 1.75; }
+
+/* Labels set in Mono for Latin read as plain Vazirmatn in RTL */
+html[dir="rtl"] .eyebrow,
+html[dir="rtl"] .crumb,
+html[dir="rtl"] .program-tag,
+html[dir="rtl"] .program-meta__label,
+html[dir="rtl"] .story-card__cohort,
+html[dir="rtl"] .partners__label,
+html[dir="rtl"] .site-footer__col h4,
+html[dir="rtl"] .how-step__meta,
+html[dir="rtl"] .blog-meta,
+html[dir="rtl"] .np-banner__pill,
+html[dir="rtl"] .program-hero__meta-item h4,
+html[dir="rtl"] .featured-story__cohort,
+html[dir="rtl"] .project-card__meta,
+html[dir="rtl"] .testimonials__grid span,
+html[dir="rtl"] .hero__image-tag,
+html[dir="rtl"] .hero__trust,
+html[dir="rtl"] .site-footer__since { font-size: 14px; font-weight: 500; }
+
+/* Logo and code stay LTR */
+html[dir="rtl"] .logo { direction: ltr; }
+html[dir="rtl"] pre,
+html[dir="rtl"] code,
+html[dir="rtl"] kbd,
+html[dir="rtl"] samp {
+  direction: ltr;
+  unicode-bidi: isolate;
+  font-family: 'Atkinson Hyperlegible Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+}
+html[dir="rtl"] pre { text-align: left; }
+
+/* Nav underline grows from the reading start */
 html[dir="rtl"] .nav-link::after { transform-origin: right; }
 
 /* CTA arrows: → becomes ← when RTL */
-html[dir="rtl"] .btn--primary::after { content: '←'; }
-html[dir="rtl"] .util-cta::after { content: '←'; }
+html[dir="rtl"] .btn--primary::after { content: '←'; content: '←' / ''; }
+html[dir="rtl"] .util-cta::after { content: '←'; content: '←' / ''; }
 html[dir="rtl"] .btn--primary:hover::after { transform: translateX(-3px); }
 html[dir="rtl"] .util-cta:hover::after { transform: translateX(-2px); }
-html[dir="rtl"] .blog-card__arrow,
-html[dir="rtl"] .np-banner__link,
-html[dir="rtl"] .btn--ghost {
-  /* visual hint that text contains an arrow already */
-}
-html[dir="rtl"] .btn--ghost::after { transform: scaleX(-1); display: inline-block; }
-html[dir="rtl"] .stories-cta-row .btn--ghost { direction: rtl; }
 
-/* Featured quote left-quote becomes right-quote */
-html[dir="rtl"] .featured-story__quote::before {
-  content: '\201D';
-  inset-inline-start: auto;
-  inset-inline-end: -0.4em;
-}
+/* Arrows typed into link text (<span class="arrow">) point toward the reading direction */
+html[dir="rtl"] .arrow { transform: scaleX(-1); }
 
-/* Footer logo brace mirroring (rendered LTR brand) */
-html[dir="rtl"] .logo {
-  direction: ltr; /* Brand wordmark stays LTR; only surrounding chrome flips */
-}
+/* Featured quote mark: the opening mark for right-to-left reading */
+html[dir="rtl"] .featured-story__quote::before { content: '\201D'; }
 
-/* Newsletter form button stays right-aligned visually */
-/* Reverse the promise counter direction */
-html[dir="rtl"] .promise__list li { direction: rtl; }
+/* Stitch underlines sit lower under Arabic-script descenders */
+html[dir="rtl"] h1 em,
+html[dir="rtl"] h2 em,
+html[dir="rtl"] h3 em { text-underline-offset: 0.22em; }
 
 /* Section header alignment when RTL */
 html[dir="rtl"] .section-header { text-align: right; }
 html[dir="rtl"] .section-header.center { text-align: center; }
 
-/* For body prose, flip blockquote border */
-html[dir="rtl"] article.prose blockquote {
-  border-inline-start: 3px solid var(--sky-500);
-}
-
-/* Partner strip gets some breathing room */
-html[dir="rtl"] .partner-strip { direction: rtl; }
+/* Release-notes year prefix stays with the number */
+html[dir="rtl"] .impact-timeline__year { direction: ltr; text-align: right; }

@@ -9,6 +9,8 @@ Built with Hugo. Hosted on GitHub. Deployed via Coolify.
 - **[Hugo](https://gohugo.io/)** static site generator (extended, v0.140.0)
 - **Markdown** for all content (no CMS)
 - **Custom theme** in `layouts/` — no external theme dependency
+- **Brand system** in `brand/` — design tokens in `assets/css/main.css`, logo kit in `static/brand/` (see [Brand](#brand))
+- **Google Fonts** — Bricolage Grotesque (display), Atkinson Hyperlegible Next (body) and Mono (labels, code), Vazirmatn (Dari and Pashto)
 - **Google Translate** widget for Dari (دری) and Pashto (پښتو), with automatic RTL switching
 - **Caddy** in production (HTTP/2, gzip, zstd, security headers)
 - **GitHub Actions** for CI (build check, accessibility audit, Lighthouse)
@@ -94,9 +96,18 @@ Clicking دری or پښتو:
 3. Loads the Google Translate widget offscreen, which translates all visible text on next load
 4. The `assets/css/rtl.css` overrides handle CTA arrows (→ becomes ←), the featured-quote curly mark, and switches Latin fonts to Vazirmatn for proper Persian/Arabic rendering
 
-The bracket wordmark logo stays LTR even in RTL mode (brand integrity), but the rest of the page chrome flips correctly.
+The Bracket Kite logo (`layouts/partials/logo.html`) stays LTR even in RTL mode (`dir="ltr"`, brand integrity), but the rest of the page chrome flips correctly.
 
 When you have native Dari/Pashto translators on the team, migrate to [Hugo's native multilingual support](https://gohugo.io/content-management/multilingual/) for higher-quality translations.
+
+## Brand
+
+The CodeWeekend identity is **Gudiparan, the Bracket Kite**: two code brackets, `<` and `>`, make an Afghan fighter kite. Learners build it; the community holds the string.
+
+- **Guidelines:** [`brand/README.md`](brand/README.md) is the entry point: the idea, logo usage, colour, type, imagery, voice, and how the logo was chosen. Depth lives in [`brand/foundation.md`](brand/foundation.md) and [`brand/logo/SPEC.md`](brand/logo/SPEC.md).
+- **Tokens:** `assets/css/main.css` defines exactly the tokens in [`brand/tokens.css`](brand/tokens.css) (`--lapis-*`, `--saffron-*`, `--paper`, `--ink`, `--night`, `--font-display` and so on). Use tokens, never raw hex. There is no green in the palette, by rule.
+- **Logo files:** `static/brand/` (served at `/brand/<file>`); favicons, app icons and `site.webmanifest` sit in `static/`.
+- **Press kit page:** [`/brand/`](https://codeweekend.net/brand/) is built from `content/brand/_index.md`, `layouts/brand/list.html` and `assets/css/brand-kit.css`. To offer a new download, add the file to `static/brand/` and list it in the page's front matter.
 
 ## Project structure
 
@@ -104,8 +115,9 @@ When you have native Dari/Pashto translators on the team, migrate to [Hugo's nat
 codeweekend-site/
 ├── hugo.toml                  # site config, menus, params
 ├── archetypes/                # front-matter templates for new content
-├── assets/css/                # main.css + rtl.css (Hugo Pipes minifies + fingerprints)
+├── assets/css/                # main.css (brand tokens) + rtl.css + per-page CSS (Hugo Pipes minifies + fingerprints)
 ├── assets/js/                 # main.js
+├── brand/                     # brand guidelines, tokens, logo spec and exploration (not published)
 ├── content/                   # all Markdown content
 │   ├── _index.md
 │   ├── about/
@@ -126,6 +138,7 @@ codeweekend-site/
 │   │   ├── mentor.md
 │   │   └── hire.md
 │   ├── contact/_index.md
+│   ├── brand/_index.md        # brand & press kit page (/brand/)
 │   └── blog/                  # real news posts ported from codeweekend.net
 │       ├── becoming-nonprofit.md
 │       ├── codeweekend-updates-2022.md
@@ -147,12 +160,15 @@ codeweekend-site/
 │   ├── shortcodes/
 │   ├── programs/{single,list}.html
 │   ├── stories/{single,list}.html
-│   └── blog/{single,list}.html
+│   ├── blog/{single,list}.html
+│   └── brand/list.html        # brand & press kit
 ├── static/
 │   ├── images/
 │   │   ├── hero.svg           # editorial illustration with code window
 │   │   └── stories/*.svg      # initials-based avatar placeholders
-│   ├── favicon.svg
+│   ├── brand/                 # public logo kit: SVG + PNG lockups, marks, avatars
+│   ├── favicon.svg, favicon.ico, apple-touch-icon.png, icon-*.png
+│   ├── site.webmanifest
 │   └── robots.txt
 ├── .github/workflows/ci.yml
 ├── Dockerfile                 # multi-stage: Hugo build → Caddy serve

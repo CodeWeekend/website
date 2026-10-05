@@ -93,6 +93,10 @@ enableEmoji = true
     name = "Media"
     pageRef = "/media"
     weight = 50
+  [[menus.footer_about]]
+    name = "Brand kit"
+    pageRef = "/brand"
+    weight = 60
 
   [[menus.footer_involved]]
     name = "Apply"

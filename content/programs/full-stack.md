@@ -53,4 +53,4 @@ A six-week capstone, typically with a partner organization needing real engineer
 
 The Full Stack Bootcamp is currently between cohorts as we focus on the 2026 Web & AI program for women and girls in Afghanistan. Express interest below to be notified when the next Full Stack cohort opens.
 
-[Tell us you're interested →](mailto:hello@codeweekend.net?subject=Full%20Stack%20Bootcamp%20interest)
+[Tell us you're interested <span class="arrow" aria-hidden="true">→</span>](mailto:hello@codeweekend.net?subject=Full%20Stack%20Bootcamp%20interest)

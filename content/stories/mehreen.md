@@ -12,7 +12,7 @@ quote: 'CodeWeekend gave me the technical skills and the confidence to ask for t
 summary: "Mehreen came to CodeWeekend already employed, but in a role that didn't match her ambition. The bootcamp helped her transition into a better role with stronger technical responsibility."
 description: "Already working in tech, Mehreen used CodeWeekend to level up into a better role with deeper technical responsibility."
 image: "/images/stories/mehreen.svg"
-image_alt: "Mehreen Najm — initials avatar"
+image_alt: "Name tile for Mehreen Najm: a lapis-blue kite on warm paper, marked with her initials MN"
 weight: 30
 ---
 

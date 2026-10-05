@@ -12,7 +12,7 @@ quote: 'I learnt things that I was not able to learn in my 4 years of Computer S
 summary: "Mustafa is from Kabul. He came to CodeWeekend with a four-year computer science degree, and learned more in the bootcamp than in his entire university program."
 description: "Mustafa came with a CS degree and learned more in the bootcamp than in four years of university."
 image: "/images/stories/mustafa.svg"
-image_alt: "Mustafa Mohammadi — initials avatar"
+image_alt: "Name tile for Mustafa Mohammadi: a pomegranate-red kite patterned with seeds on sand, marked with his initials MM"
 weight: 20
 ---
 

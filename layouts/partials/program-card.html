@@ -1,5 +1,5 @@
 <article class="program-card{{ if eq .Params.accent "warm" }} advanced{{ end }}">
-  <div class="program-tag">{{ if eq .Params.accent "warm" }}▲{{ else }}●{{ end }} {{ .Params.status_label | default "Foundational" }} · {{ .Params.status | default "enrolling now" }}</div>
+  <div class="program-tag"><span class="program-tag__mark" aria-hidden="true"></span>{{ .Params.status_label | default "Foundational" }} · {{ .Params.status | default "enrolling now" }}</div>
   <h3 class="program-name">{{ .Title }}</h3>
   <div class="program-meta">
     <div class="program-meta__item">

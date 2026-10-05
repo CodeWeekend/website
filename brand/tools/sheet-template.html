@@ -1,0 +1,40 @@
+<!doctype html>
+<!-- Standard concept contact sheet. Copy next to your SVGs as sheet.html, set the 4 CSS vars + the title, then:
+     $SP/tools/render.sh sheet.html sheet.png 1600 1100
+     Expects in the same folder: logo.svg, logo-reverse.svg, logo-mono.svg, mark.svg, mark-reverse.svg, favicon.svg -->
+<html><head><meta charset="utf-8"><style>
+:root{ --paper:#FAF7F0; --dark:#0B1D3A; --ink:#14213D; --muted:#6B7280; }
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1600px;height:1100px;background:#E9E7E1;font:14px/1.3 -apple-system,Helvetica,Arial,sans-serif;color:#333;padding:28px;display:grid;
+ grid-template-columns:1fr 1fr;grid-template-rows:56px 380px 300px 300px;gap:16px}
+h1{grid-column:1/-1;font-size:24px;font-weight:600;color:#111;display:flex;align-items:baseline;gap:16px}
+h1 small{font-size:14px;color:#666;font-weight:400}
+.card{border-radius:10px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.card .lbl{position:absolute;left:14px;top:10px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;opacity:.55}
+.light{background:var(--paper);color:var(--ink)} .dark{background:var(--dark);color:#fff} .white{background:#fff}
+.lockup img{height:110px;width:auto;max-width:640px}
+.sizes{display:flex;gap:34px;align-items:flex-end}
+.sizes figure{display:flex;flex-direction:column;align-items:center;gap:8px;font-size:11px;opacity:.9}
+.nav{position:absolute;left:0;right:0;bottom:0;height:64px;background:#fff;border-top:1px solid #e5e5e5;display:flex;align-items:center;padding:0 22px;gap:26px}
+.nav img{height:30px;width:auto}
+.nav span{font-size:14px;color:#444}
+.nav b{margin-left:auto;background:var(--ink);color:#fff;border-radius:999px;padding:8px 16px;font-size:13px}
+.avatar{width:120px;height:120px;border-radius:50%;overflow:hidden;background:var(--dark);display:flex;align-items:center;justify-content:center}
+.avatar img{width:76px;height:76px}
+.tab{position:absolute;left:24px;bottom:22px;display:flex;align-items:center;gap:8px;background:#DEE1E6;border-radius:8px 8px 0 0;padding:8px 14px;font-size:12px;color:#333}
+</style></head><body>
+<h1>CONCEPT NAME <small>one-line idea</small></h1>
+<div class="card light lockup"><span class="lbl">Primary lockup · light</span><img src="logo.svg"></div>
+<div class="card dark lockup"><span class="lbl">Reverse lockup · dark</span><img src="logo-reverse.svg"></div>
+<div class="card light"><span class="lbl">Mark · light · 160 / 64 / 32 / 16 px</span>
+  <div class="sizes"><figure><img src="mark.svg" width="160" height="160">160</figure><figure><img src="mark.svg" width="64" height="64">64</figure>
+  <figure><img src="favicon.svg" width="32" height="32">32</figure><figure><img src="favicon.svg" width="16" height="16">16</figure></div></div>
+<div class="card dark"><span class="lbl">Mark · dark · 160 / 64 / 32 / 16 px</span>
+  <div class="sizes"><figure><img src="mark-reverse.svg" width="160" height="160">160</figure><figure><img src="mark-reverse.svg" width="64" height="64">64</figure>
+  <figure><img src="favicon.svg" width="32" height="32">32</figure><figure><img src="favicon.svg" width="16" height="16">16</figure></div></div>
+<div class="card white lockup"><span class="lbl">Mono · one colour</span><img src="logo-mono.svg" style="height:80px">
+  <div class="nav"><img src="logo.svg"><span>Programs</span><span>Impact</span><span>Stories</span><b>Apply</b></div></div>
+<div class="card light" style="gap:60px"><span class="lbl">Social avatar · browser tab</span>
+  <div class="avatar"><img src="mark-reverse.svg"></div>
+  <div class="tab"><img src="favicon.svg" width="16" height="16">CodeWeekend — learn to code</div></div>
+</body></html>

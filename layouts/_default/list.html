@@ -13,11 +13,11 @@
 
 <section class="list-grid">
   <div class="list-grid__inner">
-    <ul style="list-style: none; padding: 0;">
+    <ul class="page-list">
       {{ range .Pages.ByDate.Reverse }}
-        <li style="padding: 16px 0; border-bottom: 1px solid var(--line);">
-          <a href="{{ .RelPermalink }}" style="font-family: var(--serif); font-size: 24px; color: var(--slate-900);">{{ .Title }}</a>
-          {{ with .Description }}<p style="color: var(--slate-600); margin-top: 6px;">{{ . }}</p>{{ end }}
+        <li class="page-list__item">
+          <a class="page-list__title" href="{{ .RelPermalink }}">{{ .Title }}</a>
+          {{ with .Description }}<p class="page-list__desc">{{ . }}</p>{{ end }}
         </li>
       {{ end }}
     </ul>

@@ -61,7 +61,7 @@ Even in the first weeks, students have already begun to create inspiring project
 
 **Mahdia Khamoosh from Panjshir** built and launched her own personal website from scratch — a platform where her voice can be seen and heard. Other students have developed creative movie platforms, complete with features to display films and highlight talent. These are not just technical exercises — they are reflections of creativity and resilience.
 
-[Read Mahdia's story →](/stories/mahdia/)
+[Read Mahdia's story <span class="arrow" aria-hidden="true">→</span>](/stories/mahdia/)
 
 ## Future cohorts
 

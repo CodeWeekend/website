@@ -1,6 +1,6 @@
 <a href="{{ .RelPermalink }}" class="story-card">
   <div class="story-card__img">
-    <img src="{{ .Params.image }}" alt="{{ .Params.image_alt | default (printf "Portrait of %s" .Params.student_name) }}" loading="lazy" />
+    <img src="{{ .Params.image }}" alt="" loading="lazy" />
   </div>
   <div class="story-card__body">
     <div class="story-card__cohort">Cohort {{ .Params.cohort_num | default "—" }} · {{ .Params.program }}</div>
