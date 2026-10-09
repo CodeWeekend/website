@@ -286,7 +286,9 @@
       : placeholder;
 
     imgEl.src = image;
-    imgEl.alt = student.name ? `Portrait of ${student.name}` : 'Graduate portrait';
+    // The kit placeholder is abstract decoration, so it gets empty alt text.
+    const isPlaceholder = String(image).trim().endsWith(placeholder);
+    imgEl.alt = isPlaceholder ? '' : student.name ? `Portrait of ${student.name}` : 'Graduate portrait';
     protectImage(imgEl);
 
     nameEl.textContent = student.name || '';

@@ -1,17 +1,28 @@
 /* ============================================================
-   CodeWeekend — RTL Overrides
-   Applied automatically when html[dir="rtl"]
+   CodeWeekend — RTL Overrides (Dari / Pashto)
+   Applied automatically when html[dir="rtl"].
+   Kit rule: Vazirmatn for Arabic script, body 18px / 1.8, no artificial
+   letter spacing, natural RTL alignment. The logo and code stay LTR.
    Most properties already use logical inline-* values in main.css,
    so this file handles only the things that need explicit flipping.
    ============================================================ */
 
+/* Every text style resolves to Vazirmatn: headings, body and the short labels. */
 html[dir="rtl"] {
-  font-family: var(--rtl-font);
+  --cw-font: var(--cw-font-rtl);
+  --cw-mono: var(--cw-font-rtl);
+  font-family: var(--cw-font-rtl);
 }
 html[dir="rtl"] body {
-  font-family: var(--rtl-font);
-  letter-spacing: 0;
-  font-size: 17px;
+  font-family: var(--cw-font-rtl);
+  font-size: 18px;
+  line-height: 1.8;
+}
+/* Arabic script never takes letter-spacing or case transforms. */
+html[dir="rtl"] body,
+html[dir="rtl"] body * {
+  letter-spacing: 0 !important;
+  text-transform: none !important;
 }
 html[dir="rtl"] h1,
 html[dir="rtl"] h2,
@@ -19,18 +30,27 @@ html[dir="rtl"] h3,
 html[dir="rtl"] h4,
 html[dir="rtl"] .display,
 html[dir="rtl"] .featured-story__quote,
-html[dir="rtl"] .program-hero__meta-item .v,
-html[dir="rtl"] .stat__num,
-html[dir="rtl"] .how-step__num,
-html[dir="rtl"] .partner-logo,
-html[dir="rtl"] .site-footer__tag,
 html[dir="rtl"] .program-name {
-  font-family: var(--rtl-font);
-  letter-spacing: 0;
+  line-height: 1.4;
+}
+html[dir="rtl"] .lead,
+html[dir="rtl"] article.prose,
+html[dir="rtl"] .hero__sub,
+html[dir="rtl"] .promise__lead { line-height: 1.8; }
+
+/* Identity and code stay LTR, in isolated elements. */
+html[dir="rtl"] .logo { direction: ltr; unicode-bidi: isolate; }
+html[dir="rtl"] code,
+html[dir="rtl"] kbd,
+html[dir="rtl"] pre,
+html[dir="rtl"] samp {
+  font-family: 'Atkinson Hyperlegible Mono', monospace;
+  direction: ltr;
+  unicode-bidi: isolate;
+  text-align: left;
 }
 
-/* Reverse the eyebrow underline + the stories CTA arrow */
-html[dir="rtl"] .eyebrow { flex-direction: row-reverse; }
+/* The eyebrow dash needs no override: a flex row already starts at the right in RTL. */
 html[dir="rtl"] .nav-link::after { transform-origin: right; }
 
 /* CTA arrows: → becomes ← when RTL */
@@ -38,27 +58,12 @@ html[dir="rtl"] .btn--primary::after { content: '←'; }
 html[dir="rtl"] .util-cta::after { content: '←'; }
 html[dir="rtl"] .btn--primary:hover::after { transform: translateX(-3px); }
 html[dir="rtl"] .util-cta:hover::after { transform: translateX(-2px); }
-html[dir="rtl"] .blog-card__arrow,
-html[dir="rtl"] .np-banner__link,
-html[dir="rtl"] .btn--ghost {
-  /* visual hint that text contains an arrow already */
-}
 html[dir="rtl"] .btn--ghost::after { transform: scaleX(-1); display: inline-block; }
 html[dir="rtl"] .stories-cta-row .btn--ghost { direction: rtl; }
 
-/* Featured quote left-quote becomes right-quote */
-html[dir="rtl"] .featured-story__quote::before {
-  content: '\201D';
-  inset-inline-start: auto;
-  inset-inline-end: -0.4em;
-}
+/* Featured quote left-quote becomes right-quote; main.css's inset-inline-start already mirrors its position. */
+html[dir="rtl"] .featured-story__quote::before { content: '\201D'; }
 
-/* Footer logo brace mirroring (rendered LTR brand) */
-html[dir="rtl"] .logo {
-  direction: ltr; /* Brand wordmark stays LTR; only surrounding chrome flips */
-}
-
-/* Newsletter form button stays right-aligned visually */
 /* Reverse the promise counter direction */
 html[dir="rtl"] .promise__list li { direction: rtl; }
 
@@ -66,10 +71,5 @@ html[dir="rtl"] .promise__list li { direction: rtl; }
 html[dir="rtl"] .section-header { text-align: right; }
 html[dir="rtl"] .section-header.center { text-align: center; }
 
-/* For body prose, flip blockquote border */
-html[dir="rtl"] article.prose blockquote {
-  border-inline-start: 3px solid var(--sky-500);
-}
-
-/* Partner strip gets some breathing room */
+/* Partner strip follows the reading direction */
 html[dir="rtl"] .partner-strip { direction: rtl; }

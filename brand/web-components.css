@@ -1,0 +1,32 @@
+/* Portable examples, scoped to .cw-brand. Import tokens.css first.
+   Font paths are relative to this file. Keep fonts/ alongside it. */
+@font-face {font-family:Manrope;src:url('fonts/Manrope.ttf') format('truetype');font-weight:200 800;font-display:swap}
+@font-face {font-family:Vazirmatn;src:url('fonts/Vazirmatn.ttf') format('truetype');font-weight:100 900;font-display:swap}
+@font-face {font-family:'Atkinson Hyperlegible Mono';src:url('fonts/AtkinsonHyperlegibleMono.ttf') format('truetype');font-weight:200 800;font-display:swap}
+.cw-brand {color:var(--cw-text);background:var(--cw-background);font:400 18px/1.6 var(--cw-font)}
+.cw-brand h1,.cw-brand h2,.cw-brand h3 {font-weight:800;line-height:1.15}
+.cw-brand a {color:var(--cw-link);text-decoration:underline;text-underline-offset:.2em}
+.cw-brand a:hover {color:var(--cw-link-hover);text-decoration-thickness:2px}
+.cw-brand a:active {color:var(--cw-rust-deep)}
+.cw-brand :focus-visible {outline:3px solid var(--cw-focus);outline-offset:3px}
+.cw-brand .cw-button {display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 24px;border:2px solid transparent;border-radius:var(--cw-radius);font:700 1rem/1.3 var(--cw-font);cursor:pointer;background:var(--cw-rust);color:var(--cw-white);text-decoration:none}
+.cw-brand .cw-button:hover {background:var(--cw-rust-dark);color:var(--cw-white)}
+.cw-brand .cw-button:active {background:var(--cw-rust-deep);color:var(--cw-white)}
+.cw-brand .cw-button-accent {background:var(--cw-vermilion);color:var(--cw-ink)}
+.cw-brand .cw-button-accent:hover {background:var(--cw-vermilion-light);color:var(--cw-ink)}
+.cw-brand .cw-button-accent:active {background:var(--cw-vermilion);color:var(--cw-ink);box-shadow:inset 0 0 0 2px var(--cw-ink)}
+.cw-brand input,.cw-brand textarea,.cw-brand select {font:inherit;color:var(--cw-ink);background:var(--cw-cream);border:1px solid var(--cw-border);border-radius:8px;padding:10px 12px;min-height:44px}
+.cw-brand [aria-invalid=true] {border:2px solid var(--cw-error)}
+.cw-brand .cw-error {color:var(--cw-error);background:var(--cw-error-bg)}
+.cw-brand .cw-success {color:var(--cw-success);background:var(--cw-success-bg)}
+.cw-brand .cw-info {color:var(--cw-info);background:var(--cw-info-bg)}
+.cw-brand .cw-warning {color:var(--cw-warning);background:var(--cw-warning-bg)}
+.cw-brand .cw-status {padding:12px 16px;border-radius:8px}
+.cw-brand .cw-surface-2 {background:var(--cw-surface-2)}
+.cw-brand .cw-dark {background:var(--cw-ink);color:var(--cw-cream);--cw-link:var(--cw-vermilion-light);--cw-link-hover:var(--cw-cream);--cw-focus:var(--cw-cream)}
+.cw-brand .cw-dark a:active:not(.cw-button) {color:var(--cw-cream)}
+.cw-brand .cw-logo {direction:ltr;unicode-bidi:isolate;display:inline-block}
+.cw-brand :lang(fa),.cw-brand :lang(ps),.cw-brand:lang(fa),.cw-brand:lang(ps) {font-family:var(--cw-font-rtl);letter-spacing:normal;line-height:1.8}
+.cw-brand .cw-button:lang(fa),.cw-brand .cw-button:lang(ps) {font-family:var(--cw-font-rtl)}
+.cw-brand code,.cw-brand pre,.cw-brand code:lang(fa),.cw-brand code:lang(ps),.cw-brand pre:lang(fa),.cw-brand pre:lang(ps) {font-family:var(--cw-mono);direction:ltr;unicode-bidi:isolate;text-align:left}
+@media (forced-colors:active) {.cw-brand .cw-button {border:2px solid ButtonText}.cw-brand :focus-visible {outline:3px solid Highlight}}

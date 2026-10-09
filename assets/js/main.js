@@ -6,7 +6,7 @@
 (function () {
   'use strict';
 
-  // ---------- Sticky nav with backdrop blur on scroll ----------
+  // ---------- Sticky nav: show the divider once the page scrolls ----------
   const navWrap = document.getElementById('navWrap');
   if (navWrap) {
     const onScroll = () => {

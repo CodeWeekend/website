@@ -1,0 +1,67 @@
+CODEWEEKEND / PRELIMINARY NAME AND VISUAL SCREEN
+9 October 2026. This is a design screen, not a legal opinion or trademark clearance.
+
+NAME CHECK — CANADA
+The Canadian Intellectual Property Office's public trademark database was
+queried directly in its browser interface, with all trademark types, statuses,
+categories and available dates. Database update displayed: 7 October 2026.
+Search field: TM lookup.
+  CODEWEEKEND       — Results found: 0
+  "CODE WEEKEND"    — Results found: 0
+These are limited name searches, not phonetic, design-code, goods/services,
+common-law, ownership or international clearance searches. No WIPO image
+similarity search, EU, UK or US register clearance was performed.
+Database: https://ised-isde.canada.ca/cipo/trademark-search/srch?lang=eng
+WIPO explains the need for national/regional register checks as well:
+https://www.wipo.int/en/web/global-brand-database
+
+OTHER USES OF THE NAME
+The public web search found unrelated coding events named Code Weekend.
+Penn Engineering's Fall 2015 magazine describes a PennApps Code Weekend
+teaching event. This is evidence of historical name use, not evidence of a
+current registered trademark or a legal conflict.
+https://magazine.seas.upenn.edu/wp-content/uploads/2022/12/Penn-Engineering-Magazine-Fall-2015.pdf
+NITK's student activity report lists a June 2021 Code Weekend event:
+https://www.nitk.ac.in/document/attachments/3564/IE_NITK_Report.pdf
+Another contest website uses Code Weekend at https://codeweekend.dev/
+Its homepage was reachable; an organizer's indexed Codeforces post describes
+the contest. Its ownership and trademark position were not established.
+
+VISUAL COMPARISON — DESIGN OBSERVATIONS, NOT LEGAL CONCLUSIONS
+Webflow: the official brand assets show a blue, angled W assembled from
+separate segments. CodeWeekend's connected, upright channels differ in
+construction, but both use a W and serve overlapping technology audiences.
+https://brand.webflow.com/brand-assets
+Wix: the official asset page header uses the black WIX wordmark. Compare the
+complete wordmarks rather than treating every W as the same symbol.
+https://www.wix.com/about/design-assets
+Weebly: the current UK homepage displays the lowercase weebly wordmark with
+Square attribution. The shared initial remains a broad category association.
+https://www.weebly.com/uk
+Wattpad: closest colour/letter association among the four named references.
+The published 2021 orange mark has flowing, diagonal strokes and rounded
+terminals; CodeWeekend has upright channels, flat tops and a shared stem.
+The official Wattpad brand page was inaccessible in this session, so the
+visual comparison uses the archived asset below. Current 2026 artwork was
+not independently confirmed. Wikimedia identifies Wattpad as its author.
+https://commons.wikimedia.org/wiki/File:Wattpad_Logomark_Orange_(RGB_HR).png
+
+DESIGN DECISION
+Keep the approved W. Use the full codeweekend wordmark at first encounter
+and the supplied Ink-backed avatar for small profile uses. Do not rely on
+orange alone for recognition. Avoid imitating diagonal, brush-like W forms.
+A 12-unit cursor notch was compared at 16, 24, 32, 64 and 180 px widths.
+It becomes less than one pixel wide at 16 px and is an unreliable identity
+detail. The comparison is in notch-comparison.svg/png; it is NOT a logo master.
+Neither this decision nor a minor notch establishes legal distinctiveness.
+Before a major print or merchandise run, obtain professional name and design
+clearance in the intended markets. Existing name use deserves explicit review.
+
+ACCESSIBILITY SOURCES
+WCAG 2.2 contrast minimum: 4.5:1 for normal text, 3:1 for qualifying large text.
+The kit uses 4.5:1 for all approved text pairs; 3:1 for functional boundaries.
+Logo exemptions do not extend to navigation labels or button wording.
+https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html
+https://www.w3.org/TR/WCAG22/
+Computed sRGB ratios are in source/contrast.json. Passing colour pairs is
+not a claim that an entire website meets WCAG.

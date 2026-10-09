@@ -14,6 +14,15 @@ Built with Hugo. Hosted on GitHub. Deployed via Coolify.
 - **GitHub Actions** for CI (build check, accessibility audit, Lighthouse)
 - **Coolify** for self-hosted deployment
 
+## Brand
+
+The site applies the **Weekend W** identity (brand kit v1.1). Start with [`brand/START-HERE.txt`](brand/START-HERE.txt) and the nine-page guide [`brand/codeweekend-brand-guide.pdf`](brand/codeweekend-brand-guide.pdf).
+
+- **Colour:** `assets/css/main.css` uses the `--cw-*` tokens from [`brand/tokens.css`](brand/tokens.css) — Cream canvas, Ink text, Vermilion for the W and graphic highlights (never text on Cream), Rust primary buttons, Rust Dark underlined links.
+- **Type:** Manrope (800 headlines, 400–500 body, 18 px / 1.6), Atkinson Hyperlegible Mono 500 for short labels, Vazirmatn for Dari and Pashto — all from Google Fonts.
+- **Logo:** `layouts/partials/logo.html` inlines `static/brand/logo-primary.svg`; the footer shows the reverse version. Logo masters, icons and the social banner live in `static/brand/`, `static/` and `static/images/og-default.jpg`.
+- **Imagery:** face-free W field hero (`static/images/hero-*.svg`) and story tiles (`static/images/tiles/`), used as decorative images with empty alt text.
+
 ## Quick start
 
 ```bash
@@ -92,9 +101,9 @@ Clicking دری or پښتو:
 1. Sets a `googtrans` cookie pointing Google Translate at Dari (`fa`) or Pashto (`ps`)
 2. Sets `<html dir="rtl">` immediately (no flash) via an inline early-load script in `<head>`
 3. Loads the Google Translate widget offscreen, which translates all visible text on next load
-4. The `assets/css/rtl.css` overrides handle CTA arrows (→ becomes ←), the featured-quote curly mark, and switches Latin fonts to Vazirmatn for proper Persian/Arabic rendering
+4. The `assets/css/rtl.css` overrides handle CTA arrows (→ becomes ←), the featured-quote curly mark, and switch all type (Manrope and Atkinson Hyperlegible Mono) to Vazirmatn at 18 px / 1.8, without letter-spacing, for proper Dari/Pashto rendering
 
-The bracket wordmark logo stays LTR even in RTL mode (brand integrity), but the rest of the page chrome flips correctly.
+The Weekend W logo and code stay LTR in isolated elements even in RTL mode (brand rule), but the rest of the page chrome flips correctly.
 
 When you have native Dari/Pashto translators on the team, migrate to [Hugo's native multilingual support](https://gohugo.io/content-management/multilingual/) for higher-quality translations.
 
@@ -150,9 +159,12 @@ codeweekend-site/
 │   └── blog/{single,list}.html
 ├── static/
 │   ├── images/
-│   │   ├── hero.svg           # editorial illustration with code window
-│   │   └── stories/*.svg      # initials-based avatar placeholders
-│   ├── favicon.svg
+│   │   ├── hero-landscape.svg # Weekend W field hero (kit artwork)
+│   │   ├── hero-square.svg
+│   │   ├── tiles/*.svg        # kit story tiles and W patterns
+│   │   └── og-default.jpg     # kit social banner (1200 × 630)
+│   ├── brand/                 # logo masters and avatar from the brand kit
+│   ├── favicon.svg            # plus favicon.ico, app icons and site.webmanifest
 │   └── robots.txt
 ├── .github/workflows/ci.yml
 ├── Dockerfile                 # multi-stage: Hugo build → Caddy serve
@@ -196,9 +208,8 @@ docker run --rm -p 8080:80 codeweekend
 
 The site builds and runs as-is. Some content is placeholder until real assets are gathered:
 
-- **Student photos** in `static/images/stories/` are SVG initials avatars — replace with real graduate photos _with consent_
+- **Story images** use the brand kit's decorative tiles (`static/images/tiles/`) — sanitised project imagery can replace them later _with consent_, with alt text describing the work
 - **Application workflow** — replace the email-based interest pathway with a verified form before the next cohort opens
-- **Hero image** (`static/images/hero.svg`) is a stylized illustration — could be replaced with a real photo of a cohort, with consent
 - **Stats** in `data/stats.yaml` — currently shows real-looking numbers (10+ years, 280+ applications, 50 in 2026 cohort, 30 LNF scholarships); update as the program grows
 - **Donate flow** — currently routes to email; wire up direct online giving when ready
 

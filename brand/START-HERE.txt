@@ -1,0 +1,122 @@
+CODEWEEKEND / WEEKEND W
+Brand kit v1.1 / 9 October 2026
+
+SELECTED DIRECTION
+Weekend W: a compact, upright symbol made from two joined channels.
+The shared centre suggests people learning and building together.
+
+SHORTLIST
+1. CW Monogram: friendly, but its letters can read as "aw".
+2. Weekend W: selected for clarity, simplicity and versatility.
+3. Shared Blocks: modular, but too close to a chart or generic growth symbol.
+The three concept sheets are in exploration/. They were generated with the
+built-in image generation tool. The selected mark was then rebuilt in native
+SVG geometry; those SVGs are the final production masters.
+
+START WITH
+codeweekend-brand-guide.pdf - nine-page guide, including the shortlist
+brand-guide.html - local browser version; keep it beside the other folders
+logos/logo-primary.svg - default horizontal logo
+logos/logo-reverse.svg - use on dark Ink backgrounds
+logos/logo-mono-ink.svg - single-colour printing on light material
+logos/logo-mono-white.svg - single-colour printing on dark material
+logos/avatar.png - 800 x 800 social profile image
+logos/favicon.svg - website icon, designed for 16-32 px display
+
+ALSO INCLUDED
+Horizontal and stacked logos in SVG and transparent PNG.
+Symbol-only versions in SVG and transparent PNG.
+Social square: 1080 x 1080; portrait: 1080 x 1350; banner: 1200 x 630.
+SVG versions of social graphics have outlined type for portable rendering.
+To change their wording, edit source/build.py and rebuild them.
+applications/pattern.svg and pattern-sage.svg - separate accent families.
+imagery/ - face-free abstract hero (landscape and square) and three story tiles.
+web-preview.html - live colour, control and RTL specimens.
+web-components.css - scoped sample components; import tokens.css first.
+research/brand-screening.txt - preliminary search scope, findings and sources.
+research/notch-comparison.svg/png - rejected refinement, not a production logo.
+tokens.css - implementation-ready colour and type tokens.
+fonts/ - Manrope, Atkinson Hyperlegible Mono and Vazirmatn, with OFL licences.
+
+CORE BRAND
+Positioning: An inclusive community of developers.
+Signature line: Build something. Together.
+Personality: welcoming, practical, curious, confident.
+Voice: short sentences, concrete actions, useful next steps.
+Name in prose: CodeWeekend. Lowercase codeweekend is reserved for the logo.
+
+PALETTE (sRGB)
+Ink         #182B29 - wordmark, body text, dark backgrounds
+Vermilion   #F0643B - symbol, highlights, graphic blocks
+Cream       #F7F4EC - default background, text on Ink
+Sage        #BCC9BC - supporting panels and quiet pattern
+Muted       #52635E - secondary text on Cream
+
+Ink/Cream contrast: 13.49:1. Ink/Vermilion: 4.65:1. Ink/Sage: 8.63:1.
+Vermilion/Cream is 2.90:1: do not use this pair for text or functional icons.
+Use Ink lettering on Vermilion; use Cream lettering on Ink.
+
+FUNCTIONAL COLOUR
+Rust #CC3A10: primary button background with white text (5.02:1).
+Hover #A72D0B; active #822308. Vermilion buttons use Ink text.
+Links #A72D0B, underlined; hover #822308. Dark-surface links #FA805E.
+Second surface #EDE9DF. Functional borders #687B71; dividers #D9DED7.
+Rust #CC3A10 fails on the second surface: use the darker link token.
+Focus: 3 px Rust Dark outline / 3 px offset on light; Cream on dark.
+Error, success, information and warning pairs are in tokens.css.
+Always pair status colour with explanatory text or an icon.
+Do not create equal Ink, Vermilion and Sage stripes or tricolours.
+
+IMAGERY
+Use the supplied upright W field and story tiles as face-free defaults.
+Choose Ink/Cream/Vermilion OR Ink/Cream/Sage per composition.
+Keep headlines in HTML, with a quiet clear area around text.
+Abstract decorative images use empty alt text. Meaningful project imagery
+needs alt text describing the work. Remove identifying data from screenshots.
+No faces, rescue narratives, cultural shorthand or fabricated learner work.
+
+TYPE
+Manrope 800: headlines. Manrope 400-500: body.
+Atkinson Hyperlegible Mono 500: short labels and code.
+Web body: 18 px, line-height 1.6; labels: 12 px minimum.
+Keep Vazirmatn for Dari and Pashto. Use 18 px / 1.8 for body text, without
+artificial letter spacing. Set lang="fa-AF" or "ps-AF" and dir="rtl".
+The logo and code remain LTR in isolated elements. Have native speakers
+review translations; the guide specimens are not campaign translations.
+
+LOGO RULES
+Leave one stem-width of clear space around visible artwork (20% of the W width).
+Horizontal logo minimum: 160 px wide digitally, 35 mm in print.
+Symbol minimum: 20 px wide. For smaller digital sizes, use the favicon.
+Keep the W upright. Never stretch it, use outlines, or apply shadows/gradients.
+Use the supplied reverse version instead of improvising colours.
+No changes to the website are made by this package.
+
+REBUILD
+python3 source/build.py
+Requires fontTools. Then run source/render.cjs with Node.js and playwright-core
+to produce PNG exports and the PDF using a local Chrome installation.
+Poppler pdftoppm creates guide-page previews from the finished PDF.
+The renderer checks for missing images, overflow, footer clearance, SVG
+bounds, focus appearance and computed RTL font/direction. SVG-to-PNG
+exports use direct canvas rasterization to preserve alpha and dimensions.
+source/contrast.json records the calculated colour contrast values.
+source/render-checks.json records the final render checks and PNG dimensions.
+
+PROVENANCE
+Brand positioning and audience were informed by this project's README.
+New logo exploration and selection: 8 October 2026.
+Built-in image generation was used for the three exploration sheets.
+Final SVGs, social artwork, layout, copy and production assets were constructed
+as native vectors from the selected W concept. The wordmark uses outlined
+Manrope 800 with adjusted tracking. Font licences are included.
+The rejected kite draft is not part of this kit.
+
+REVIEW DECISION / V1.1
+All 14 approved SVG logo masters were compared with the previous kit and
+are unchanged. The tiny cursor notch was tested and rejected for poor
+small-size definition. Keep the full wordmark at first encounter.
+The Canadian name screen returned no matches for the two queried names,
+but unrelated Code Weekend events were found on the public web. This is
+not trademark clearance. Obtain a professional name/design review in the
+intended markets before a major print run; see research/brand-screening.txt.

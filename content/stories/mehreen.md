@@ -11,8 +11,8 @@ employer: "Industry"
 quote: 'CodeWeekend gave me the technical skills and the confidence to ask for the job I actually wanted.'
 summary: "Mehreen came to CodeWeekend already employed, but in a role that didn't match her ambition. The bootcamp helped her transition into a better role with stronger technical responsibility."
 description: "Already working in tech, Mehreen used CodeWeekend to level up into a better role with deeper technical responsibility."
-image: "/images/stories/mehreen.svg"
-image_alt: "Mehreen Najm — initials avatar"
+image: "/images/tiles/story-share.svg"
+image_alt: ""
 weight: 30
 ---
 
@@ -28,4 +28,4 @@ For graduates like Mehreen, the program is not the end of the relationship. The 
 
 ---
 
-*This story features a real CodeWeekend graduate. The accompanying image is a placeholder avatar; a portrait will be added with the graduate's consent.*
+*This story features a real CodeWeekend graduate.*

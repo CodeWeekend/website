@@ -15,9 +15,9 @@
   <div class="list-grid__inner">
     <ul style="list-style: none; padding: 0;">
       {{ range .Pages.ByDate.Reverse }}
-        <li style="padding: 16px 0; border-bottom: 1px solid var(--line);">
-          <a href="{{ .RelPermalink }}" style="font-family: var(--serif); font-size: 24px; color: var(--slate-900);">{{ .Title }}</a>
-          {{ with .Description }}<p style="color: var(--slate-600); margin-top: 6px;">{{ . }}</p>{{ end }}
+        <li style="padding: 16px 0; border-bottom: 1px solid var(--cw-line);">
+          <a href="{{ .RelPermalink }}" style="font-family: var(--cw-font); font-weight: 800; letter-spacing: -0.015em; font-size: 24px; color: var(--cw-ink);">{{ .Title }}</a>
+          {{ with .Description }}<p style="color: var(--cw-muted); margin-top: 6px;">{{ . }}</p>{{ end }}
         </li>
       {{ end }}
     </ul>

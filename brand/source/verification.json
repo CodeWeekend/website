@@ -1,0 +1,14 @@
+{
+  "logo_masters_unchanged": true,
+  "logo_masters_compared": 14,
+  "svg_files_parsed": 25,
+  "transparent_logo_pngs": 12,
+  "pdf_pages": 9,
+  "approved_contrast_pairs": 18,
+  "rtl_scripts": [
+    "Dari",
+    "Pashto"
+  ],
+  "export_tile_regression": "passed",
+  "note": "Colour and artifact verification, not a full website accessibility audit or trademark clearance."
+}

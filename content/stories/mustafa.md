@@ -11,8 +11,8 @@ employer: "Industry"
 quote: 'I learnt things that I was not able to learn in my 4 years of Computer Science class in one of the private universities. I cannot recommend it enough!'
 summary: "Mustafa is from Kabul. He came to CodeWeekend with a four-year computer science degree, and learned more in the bootcamp than in his entire university program."
 description: "Mustafa came with a CS degree and learned more in the bootcamp than in four years of university."
-image: "/images/stories/mustafa.svg"
-image_alt: "Mustafa Mohammadi — initials avatar"
+image: "/images/tiles/story-build.svg"
+image_alt: ""
 weight: 20
 ---
 
@@ -30,4 +30,4 @@ His story is the reason we believe a focused, mentor-led, project-driven program
 
 ---
 
-*This story features a real CodeWeekend graduate. The accompanying image is a placeholder avatar; a portrait will be added with the graduate's consent.*
+*This story features a real CodeWeekend graduate.*
