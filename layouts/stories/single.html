@@ -13,7 +13,7 @@
       {{ with .Description }}<p class="lead">{{ . }}</p>{{ end }}
     </div>
     <div class="story-hero__image">
-      <img src="{{ .Params.image }}" alt="{{ .Params.image_alt | default (printf "Portrait of %s" .Params.student_name) }}" />
+      <img src="{{ .Params.image | relURL }}" alt="{{ .Params.image_alt }}" />
     </div>
   </div>
 </section>

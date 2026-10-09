@@ -1,0 +1,21 @@
+/* CodeWeekend v1.1 — sRGB. Text pairings are documented in source/contrast.json. */
+:root {
+  --cw-ink: #182B29; --cw-ink-hover: #29413C; --cw-ink-deep: #0F1D1B;
+  --cw-cream: #F7F4EC; --cw-surface-2: #EDE9DF; --cw-white: #FFFFFF;
+  --cw-vermilion: #F0643B; --cw-vermilion-light: #FA805E; --cw-vermilion-wash: #FFF0E9;
+  --cw-rust: #CC3A10; --cw-rust-dark: #A72D0B; --cw-rust-deep: #822308;
+  --cw-sage: #BCC9BC; --cw-muted: #52635E;
+  --cw-line: #D9DED7; /* Decorative separators only; not input boundaries. */
+  --cw-border: #687B71; /* Functional control boundaries on light surfaces. */
+  --cw-error: #B3261E; --cw-error-bg: #FFF0EE;
+  --cw-success: #285C3F; --cw-success-bg: #E8F1E8;
+  --cw-info: #1F5A7A; --cw-info-bg: #EAF2F7;
+  --cw-warning: #775000; --cw-warning-bg: #FFF0C2;
+  --cw-text: var(--cw-ink); --cw-background: var(--cw-cream);
+  --cw-link: var(--cw-rust-dark); --cw-link-hover: var(--cw-rust-deep);
+  --cw-focus: var(--cw-rust-dark);
+  --cw-font: 'Manrope', sans-serif;
+  --cw-font-rtl: 'Vazirmatn', sans-serif;
+  --cw-mono: 'Atkinson Hyperlegible Mono', monospace;
+  --cw-space: 8px; --cw-radius: 12px;
+}

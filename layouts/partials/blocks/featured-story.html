@@ -4,7 +4,7 @@
 <section class="featured-story">
   <div class="featured-story__inner">
     <div class="featured-story__portrait">
-      <img src="{{ $hero.Params.image }}" alt="Portrait of {{ $hero.Params.student_name }}" loading="lazy" />
+      <img src="{{ $hero.Params.image | relURL }}" alt="{{ $hero.Params.image_alt }}" loading="lazy" />
     </div>
     <div>
       <div class="eyebrow alt">Featured story · {{ $hero.Date.Format "January 2006" }}</div>

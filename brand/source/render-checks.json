@@ -1,0 +1,297 @@
+{
+  "pages": 9,
+  "brokenImages": [],
+  "guideOverflow": [],
+  "footerCollisions": [],
+  "logoBounds": [
+    {
+      "file": "avatar.svg",
+      "inside": true,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 800,
+        "height": 800
+      }
+    },
+    {
+      "file": "favicon.svg",
+      "inside": true,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 32,
+        "height": 32
+      }
+    },
+    {
+      "file": "logo-mono-ink.svg",
+      "inside": true,
+      "bounds": {
+        "x": 16,
+        "y": 16,
+        "width": 1196.656005859375,
+        "height": 132
+      }
+    },
+    {
+      "file": "logo-mono-white.svg",
+      "inside": true,
+      "bounds": {
+        "x": 16,
+        "y": 16,
+        "width": 1196.656005859375,
+        "height": 132
+      }
+    },
+    {
+      "file": "logo-primary.svg",
+      "inside": true,
+      "bounds": {
+        "x": 16,
+        "y": 16,
+        "width": 1196.656005859375,
+        "height": 132
+      }
+    },
+    {
+      "file": "logo-reverse.svg",
+      "inside": true,
+      "bounds": {
+        "x": 16,
+        "y": 16,
+        "width": 1196.656005859375,
+        "height": 132
+      }
+    },
+    {
+      "file": "logo-stacked-mono-ink.svg",
+      "inside": true,
+      "bounds": {
+        "x": 69.76000213623047,
+        "y": 28,
+        "width": 459.8800048828125,
+        "height": 255.04998779296875
+      }
+    },
+    {
+      "file": "logo-stacked-mono-white.svg",
+      "inside": true,
+      "bounds": {
+        "x": 69.76000213623047,
+        "y": 28,
+        "width": 459.8800048828125,
+        "height": 255.04998779296875
+      }
+    },
+    {
+      "file": "logo-stacked-primary.svg",
+      "inside": true,
+      "bounds": {
+        "x": 69.76000213623047,
+        "y": 28,
+        "width": 459.8800048828125,
+        "height": 255.04998779296875
+      }
+    },
+    {
+      "file": "logo-stacked-reverse.svg",
+      "inside": true,
+      "bounds": {
+        "x": 69.76000213623047,
+        "y": 28,
+        "width": 459.8800048828125,
+        "height": 255.04998779296875
+      }
+    },
+    {
+      "file": "mark-mono-ink.svg",
+      "inside": true,
+      "bounds": {
+        "x": 16,
+        "y": 16,
+        "width": 200,
+        "height": 132
+      }
+    },
+    {
+      "file": "mark-mono-white.svg",
+      "inside": true,
+      "bounds": {
+        "x": 16,
+        "y": 16,
+        "width": 200,
+        "height": 132
+      }
+    },
+    {
+      "file": "mark-primary.svg",
+      "inside": true,
+      "bounds": {
+        "x": 16,
+        "y": 16,
+        "width": 200,
+        "height": 132
+      }
+    },
+    {
+      "file": "mark-reverse.svg",
+      "inside": true,
+      "bounds": {
+        "x": 16,
+        "y": 16,
+        "width": 200,
+        "height": 132
+      }
+    }
+  ],
+  "rtl": [
+    {
+      "script": "Dari",
+      "font": "Vazirmatn, sans-serif",
+      "direction": "rtl",
+      "logoDirection": "ltr"
+    },
+    {
+      "script": "Pashto",
+      "font": "Vazirmatn, sans-serif",
+      "direction": "rtl",
+      "logoDirection": "ltr"
+    }
+  ],
+  "codeFont": {
+    "font": "\"Atkinson Hyperlegible Mono\", monospace",
+    "direction": "ltr"
+  },
+  "focus": {
+    "width": "3px",
+    "offset": "3px"
+  },
+  "exports": [
+    {
+      "file": "logos/avatar.png",
+      "width": 800,
+      "height": 800
+    },
+    {
+      "file": "logos/favicon.png",
+      "width": 32,
+      "height": 32
+    },
+    {
+      "file": "logos/logo-mono-ink.png",
+      "width": 1600,
+      "height": 212
+    },
+    {
+      "file": "logos/logo-mono-white.png",
+      "width": 1600,
+      "height": 212
+    },
+    {
+      "file": "logos/logo-primary.png",
+      "width": 1600,
+      "height": 212
+    },
+    {
+      "file": "logos/logo-reverse.png",
+      "width": 1600,
+      "height": 212
+    },
+    {
+      "file": "logos/logo-stacked-mono-ink.png",
+      "width": 1600,
+      "height": 880
+    },
+    {
+      "file": "logos/logo-stacked-mono-white.png",
+      "width": 1600,
+      "height": 880
+    },
+    {
+      "file": "logos/logo-stacked-primary.png",
+      "width": 1600,
+      "height": 880
+    },
+    {
+      "file": "logos/logo-stacked-reverse.png",
+      "width": 1600,
+      "height": 880
+    },
+    {
+      "file": "logos/mark-mono-ink.png",
+      "width": 512,
+      "height": 362
+    },
+    {
+      "file": "logos/mark-mono-white.png",
+      "width": 512,
+      "height": 362
+    },
+    {
+      "file": "logos/mark-primary.png",
+      "width": 512,
+      "height": 362
+    },
+    {
+      "file": "logos/mark-reverse.png",
+      "width": 512,
+      "height": 362
+    },
+    {
+      "file": "applications/pattern-sage.png",
+      "width": 1400,
+      "height": 440
+    },
+    {
+      "file": "applications/pattern.png",
+      "width": 1400,
+      "height": 440
+    },
+    {
+      "file": "applications/social-banner.png",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "applications/social-portrait.png",
+      "width": 1080,
+      "height": 1350
+    },
+    {
+      "file": "applications/social-square.png",
+      "width": 1080,
+      "height": 1080
+    },
+    {
+      "file": "imagery/hero-landscape.png",
+      "width": 1600,
+      "height": 1000
+    },
+    {
+      "file": "imagery/hero-square.png",
+      "width": 1080,
+      "height": 1080
+    },
+    {
+      "file": "imagery/story-build.png",
+      "width": 1200,
+      "height": 900
+    },
+    {
+      "file": "imagery/story-learn.png",
+      "width": 1200,
+      "height": 900
+    },
+    {
+      "file": "imagery/story-share.png",
+      "width": 1200,
+      "height": 900
+    },
+    {
+      "file": "research/notch-comparison.png",
+      "width": 1100,
+      "height": 420
+    }
+  ]
+}

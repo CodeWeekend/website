@@ -21,7 +21,12 @@
     </div>
 
     <div class="hero__image-wrap">
-      <img src="{{ "/images/hero.svg" | relURL }}" alt="Stylized illustration of code on a screen, with text overlay reading 'A bootcamp for women and girls in Afghanistan'" loading="eager" />
+      {{/* Kit hero artwork: face-free W field. Square beside the text and on phones; landscape on stacked tablet widths. Decorative. */}}
+      <picture>
+        <source media="(max-width: 560px)" srcset="{{ "/images/hero-square.svg" | relURL }}" width="1080" height="1080" />
+        <source media="(max-width: 1024px)" srcset="{{ "/images/hero-landscape.svg" | relURL }}" width="1600" height="1000" />
+        <img src="{{ "/images/hero-square.svg" | relURL }}" alt="" width="1080" height="1080" loading="eager" />
+      </picture>
       {{ if $hero }}
       <a href="{{ $hero.RelPermalink }}" class="hero__image-tag">
         <strong>{{ $hero.Params.student_name }}</strong>

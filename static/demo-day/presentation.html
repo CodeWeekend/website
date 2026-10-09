@@ -6,36 +6,25 @@
   <title>CodeWeekend Demo Day 2026 — Presentation</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,550;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Atkinson+Hyperlegible+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <style>
+    /* CodeWeekend Weekend W kit v1.1 tokens (brand/tokens.css) — this deck is standalone. */
     :root {
-      --ink: #0e1f2c;
-      --navy: #083b5a;
-      --blue: #1aaedc;
-      --blue-soft: #b7e4f7;
-      --coral: #e76f51;
-      --paper: #fafaf7;
-      --warm: #f2e4ce;
-      --line: #dbe1e5;
-      --slate-300: #cbd5e1;
-      --slate-400: #94a3b8;
-      --slate-500: #64748b;
-      --slate-600: #475569;
-      --sky-100: #e0f2fe;
-      --sky-200: #bae6fd;
-      --sky-300: #7dd3fc;
-      --sky-400: #38bdf8;
-      --serif: 'Fraunces', Georgia, serif;
-      --sans: 'Inter', system-ui, sans-serif;
-      --mono: 'JetBrains Mono', ui-monospace, monospace;
+      --cw-ink: #182B29; --cw-ink-hover: #29413C; --cw-ink-deep: #0F1D1B;
+      --cw-cream: #F7F4EC; --cw-surface-2: #EDE9DF; --cw-white: #FFFFFF;
+      --cw-vermilion: #F0643B;
+      --cw-muted: #52635E;
+      --cw-line: #D9DED7;
+      --cw-font: 'Manrope', sans-serif;
+      --cw-mono: 'Atkinson Hyperlegible Mono', monospace;
     }
     * { box-sizing: border-box; }
     html, body {
       margin: 0;
       height: 100%;
-      background: #061018;
-      color: var(--ink);
-      font-family: var(--sans);
+      background: var(--cw-ink-deep);
+      color: var(--cw-ink);
+      font-family: var(--cw-font);
       overflow: hidden;
     }
     .deck {
@@ -49,7 +38,7 @@
       display: none;
       flex-direction: column;
       padding: clamp(28px, 4vw, 56px) clamp(28px, 5vw, 72px) clamp(40px, 5vw, 64px);
-      background: var(--paper);
+      background: var(--cw-cream);
       opacity: 0;
     }
     .slide.is-active {
@@ -61,13 +50,22 @@
       from { opacity: 0; transform: translateY(10px); }
       to { opacity: 1; transform: translateY(0); }
     }
-    .slide--dark {
-      background: linear-gradient(160deg, #062536 0%, var(--navy) 48%, #0a4a6e 100%);
-      color: white;
-    }
+    .slide--dark,
     .slide--navy {
-      background: var(--navy);
-      color: white;
+      background: var(--cw-ink);
+      color: var(--cw-cream);
+    }
+    .deck-logo {
+      direction: ltr;
+      unicode-bidi: isolate;
+      display: inline-block;
+      width: clamp(200px, 18vw, 280px);
+      margin: 0 0 clamp(18px, 3vh, 32px);
+    }
+    .deck-logo svg {
+      display: block;
+      width: 100%;
+      height: auto;
     }
     .slide__chrome {
       display: flex;
@@ -81,71 +79,71 @@
       align-items: center;
       gap: 12px;
       margin: 0;
-      color: #0c6a8c;
-      font-family: var(--mono);
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
+      color: var(--cw-muted);
+      font-family: var(--cw-mono);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
     }
     .slide--dark .kicker,
-    .slide--navy .kicker { color: var(--sky-200); }
+    .slide--navy .kicker { color: var(--cw-cream); }
     .kicker::before {
       content: '';
       width: 28px;
       height: 2px;
-      background: var(--coral);
+      background: var(--cw-vermilion);
     }
     .slide__meta {
-      color: var(--slate-500);
-      font-family: var(--mono);
-      font-size: 11px;
+      color: var(--cw-muted);
+      font-family: var(--cw-mono);
+      font-size: 12px;
+      font-weight: 500;
       letter-spacing: 0.08em;
       text-transform: uppercase;
     }
     .slide--dark .slide__meta,
-    .slide--navy .slide__meta { color: rgba(255,255,255,0.55); }
+    .slide--navy .slide__meta { color: var(--cw-cream); }
     h1 {
       margin: 0;
-      font-family: var(--serif);
+      font-family: var(--cw-font);
       font-size: clamp(42px, 7vw, 84px);
-      font-weight: 550;
-      line-height: 0.98;
-      letter-spacing: -0.02em;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.04em;
       max-width: 14ch;
     }
     h1 em, h2 em {
-      font-style: italic;
-      font-weight: 400;
-      color: var(--blue);
+      font-style: normal;
+      font-weight: inherit;
+      color: inherit;
     }
-    .slide--dark h1 em,
-    .slide--navy h1 em,
-    .slide--dark h2 em { color: var(--sky-300); }
     h2 {
       margin: 0 0 16px;
-      font-family: var(--serif);
+      font-family: var(--cw-font);
       font-size: clamp(34px, 5vw, 58px);
-      font-weight: 550;
+      font-weight: 800;
       line-height: 1.05;
+      letter-spacing: -0.035em;
       max-width: 18ch;
     }
     h3 {
       margin: 0 0 10px;
-      font-family: var(--serif);
+      font-family: var(--cw-font);
       font-size: clamp(24px, 3vw, 34px);
-      font-weight: 550;
+      font-weight: 800;
       line-height: 1.15;
+      letter-spacing: -0.02em;
     }
     .lead {
       margin: 18px 0 0;
       max-width: 42rem;
-      color: var(--slate-600);
+      color: var(--cw-muted);
       font-size: clamp(16px, 1.7vw, 20px);
-      line-height: 1.55;
+      line-height: 1.6;
     }
     .slide--dark .lead,
-    .slide--navy .lead { color: rgba(255,255,255,0.78); }
+    .slide--navy .lead { color: var(--cw-cream); }
     .cover {
       flex: 1;
       display: grid;
@@ -162,20 +160,22 @@
       text-align: center;
       padding: 20px;
       border-radius: 8px;
-      background: var(--coral);
-      color: white;
+      background: var(--cw-vermilion);
+      color: var(--cw-ink);
     }
     .cover__badge strong {
-      font-family: var(--serif);
+      font-family: var(--cw-font);
       font-size: clamp(56px, 8vw, 84px);
-      font-weight: 400;
-      line-height: 0.85;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 0.9;
     }
     .cover__badge span {
       display: block;
       margin-top: 8px;
-      font-family: var(--mono);
-      font-size: 11px;
+      font-family: var(--cw-mono);
+      font-size: 12px;
+      font-weight: 500;
       letter-spacing: 0.1em;
       text-transform: uppercase;
     }
@@ -184,12 +184,14 @@
       display: inline-block;
       padding: 14px 18px;
       border-radius: 6px;
-      background: rgba(14,31,44,0.92);
-      color: white;
-      font-family: var(--mono);
-      font-size: 13px;
+      background: var(--cw-ink-deep);
+      color: var(--cw-cream);
+      font-family: var(--cw-mono);
+      font-size: 14px;
+      direction: ltr;
+      unicode-bidi: isolate;
     }
-    .cover__code strong { color: var(--sky-300); font-weight: 600; }
+    .cover__code strong { color: var(--cw-cream); font-weight: 500; }
     .facts {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -199,19 +201,21 @@
     }
     .facts div {
       padding-top: 12px;
-      border-top: 1px solid rgba(255,255,255,0.18);
+      border-top: 1px solid var(--cw-ink-hover);
+      border-top: 1px solid color-mix(in srgb, var(--cw-cream) 18%, transparent);
     }
     .facts dt {
-      color: rgba(255,255,255,0.55);
-      font-family: var(--mono);
-      font-size: 10px;
+      color: var(--cw-cream);
+      font-family: var(--cw-mono);
+      font-size: 12px;
+      font-weight: 500;
       letter-spacing: 0.1em;
       text-transform: uppercase;
     }
     .facts dd {
       margin: 6px 0 0;
-      font-size: 15px;
-      font-weight: 650;
+      font-size: 16px;
+      font-weight: 700;
     }
     .stats {
       margin-top: auto;
@@ -222,23 +226,24 @@
     .stats article {
       min-height: 110px;
       padding: 20px 18px;
-      border: 1px solid var(--line);
+      border: 1px solid var(--cw-line);
       border-radius: 8px;
-      background: white;
+      background: var(--cw-white);
     }
     .stats strong {
       display: block;
-      font-family: var(--serif);
+      font-family: var(--cw-font);
       font-size: clamp(28px, 4vw, 40px);
-      font-weight: 450;
+      font-weight: 800;
+      letter-spacing: -0.04em;
       line-height: 1;
     }
     .stats span {
       display: block;
       margin-top: 10px;
-      color: var(--slate-500);
-      font-size: 13px;
-      line-height: 1.35;
+      color: var(--cw-muted);
+      font-size: 14px;
+      line-height: 1.4;
     }
     .journey {
       margin-top: auto;
@@ -250,24 +255,26 @@
       min-height: 180px;
       padding: 22px 18px;
       border-radius: 8px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
+      background: var(--cw-ink-hover);
+      border: 1px solid var(--cw-ink-hover);
+      border: 1px solid color-mix(in srgb, var(--cw-cream) 12%, transparent);
     }
     .journey span {
-      color: var(--coral);
-      font-family: var(--mono);
+      color: var(--cw-cream);
+      font-family: var(--cw-mono);
       font-size: 12px;
+      font-weight: 500;
       letter-spacing: 0.08em;
     }
     .journey h3 {
       margin: 14px 0 10px;
-      color: white;
+      color: var(--cw-cream);
       font-size: 24px;
     }
     .journey p {
       margin: 0;
-      color: rgba(255,255,255,0.72);
-      font-size: 14px;
+      color: var(--cw-cream);
+      font-size: 15px;
       line-height: 1.5;
     }
     .awards {
@@ -283,27 +290,30 @@
       flex-direction: column;
       gap: 10px;
       border-radius: 8px;
-      border: 1px solid rgba(255,255,255,0.14);
-      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--cw-ink-hover);
+      border: 1px solid color-mix(in srgb, var(--cw-cream) 14%, transparent);
+      background: var(--cw-ink-hover);
     }
     .awards span {
-      color: var(--coral);
-      font-family: var(--mono);
-      font-size: 11px;
+      color: var(--cw-cream);
+      font-family: var(--cw-mono);
+      font-size: 12px;
+      font-weight: 500;
       letter-spacing: 0.08em;
     }
     .awards strong {
-      color: white;
-      font-family: var(--serif);
+      color: var(--cw-cream);
+      font-family: var(--cw-font);
       font-size: clamp(18px, 1.8vw, 22px);
-      font-weight: 500;
+      font-weight: 800;
+      letter-spacing: -0.02em;
       line-height: 1.2;
     }
     .awards em {
       margin-top: auto;
-      color: var(--slate-300);
-      font-family: var(--sans);
-      font-size: 12px;
+      color: var(--cw-cream);
+      font-family: var(--cw-font);
+      font-size: 14px;
       font-style: normal;
       line-height: 1.45;
     }
@@ -319,16 +329,18 @@
       gap: 24px;
       align-items: center;
       padding: 18px 0;
-      border-top: 1px solid rgba(255,255,255,0.12);
+      border-top: 1px solid var(--cw-ink-hover);
+      border-top: 1px solid color-mix(in srgb, var(--cw-cream) 16%, transparent);
     }
-    .agenda li:last-child { border-bottom: 1px solid rgba(255,255,255,0.12); }
-    .agenda .num { color: var(--sky-400); font-family: var(--mono); font-size: 12px; }
-    .agenda h3 { margin: 0 0 4px; color: white; font-size: 26px; }
-    .agenda p { margin: 0; color: rgba(255,255,255,0.7); font-size: 14px; }
+    .agenda li:last-child { border-bottom: 1px solid var(--cw-ink-hover); border-bottom: 1px solid color-mix(in srgb, var(--cw-cream) 16%, transparent); }
+    .agenda .num { color: var(--cw-cream); font-family: var(--cw-mono); font-size: 12px; font-weight: 500; }
+    .agenda h3 { margin: 0 0 4px; color: var(--cw-cream); font-size: 26px; }
+    .agenda p { margin: 0; color: var(--cw-cream); font-size: 15px; }
     .agenda .meta {
-      color: var(--sky-200);
-      font-family: var(--mono);
-      font-size: 10px;
+      color: var(--cw-cream);
+      font-family: var(--cw-mono);
+      font-size: 12px;
+      font-weight: 500;
       letter-spacing: 0.08em;
       text-transform: uppercase;
     }
@@ -345,8 +357,8 @@
       min-height: 72px;
       padding: 12px 14px;
       border-radius: 6px;
-      background: white;
-      border: 1px solid var(--line);
+      background: var(--cw-white);
+      border: 1px solid var(--cw-line);
       display: flex;
       flex-direction: column;
       gap: 4px;
@@ -354,11 +366,11 @@
     .cohort strong {
       font-size: 14px;
       font-weight: 700;
-      color: var(--ink);
+      color: var(--cw-ink);
     }
     .cohort span {
-      color: var(--slate-500);
-      font-size: 11px;
+      color: var(--cw-muted);
+      font-size: 12px;
       line-height: 1.35;
     }
     .project {
@@ -373,7 +385,7 @@
       overflow: hidden;
       border-radius: 8px;
       aspect-ratio: 1;
-      background: var(--warm);
+      background: var(--cw-surface-2);
       max-height: min(520px, 62vh);
     }
     .project__media img {
@@ -384,8 +396,8 @@
     }
     .project__role {
       margin: 0 0 8px;
-      color: #0c6a8c;
-      font-size: 14px;
+      color: var(--cw-ink);
+      font-size: 15px;
       font-weight: 700;
     }
     .project h2 {
@@ -394,26 +406,27 @@
     }
     .project__loc {
       margin: 6px 0 22px;
-      color: var(--slate-500);
-      font-size: 14px;
+      color: var(--cw-muted);
+      font-size: 15px;
     }
     .project__label {
       margin: 0 0 8px;
-      color: var(--coral);
-      font-family: var(--mono);
-      font-size: 10px;
+      color: var(--cw-muted);
+      font-family: var(--cw-mono);
+      font-size: 12px;
+      font-weight: 500;
       letter-spacing: 0.12em;
       text-transform: uppercase;
     }
     .project h3 {
-      color: var(--ink);
+      color: var(--cw-ink);
       font-size: clamp(26px, 3vw, 36px);
     }
     .project__blurb {
       margin: 12px 0 0;
       max-width: 38rem;
-      color: var(--slate-600);
-      font-size: 16px;
+      color: var(--cw-muted);
+      font-size: 18px;
       line-height: 1.6;
     }
     .partners {
@@ -425,15 +438,15 @@
     .partners article {
       padding: 28px 24px;
       border-radius: 8px;
-      border: 1px solid var(--line);
-      background: white;
+      border: 1px solid var(--cw-line);
+      background: var(--cw-white);
     }
     .partners h3 { margin-bottom: 10px; }
     .partners p {
       margin: 0;
-      color: var(--slate-600);
-      font-size: 15px;
-      line-height: 1.55;
+      color: var(--cw-muted);
+      font-size: 16px;
+      line-height: 1.6;
     }
     .thanks-grid {
       margin-top: auto;
@@ -444,11 +457,14 @@
     .thanks-grid div {
       padding: 22px 18px;
       border-radius: 8px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
-      color: white;
-      font-family: var(--serif);
+      background: var(--cw-ink-hover);
+      border: 1px solid var(--cw-ink-hover);
+      border: 1px solid color-mix(in srgb, var(--cw-cream) 12%, transparent);
+      color: var(--cw-cream);
+      font-family: var(--cw-font);
       font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
     }
     .hud {
       position: fixed;
@@ -461,10 +477,12 @@
       justify-content: space-between;
       gap: 16px;
       padding: 10px 18px;
-      background: rgba(6,16,24,0.72);
-      color: rgba(255,255,255,0.72);
-      font-family: var(--mono);
-      font-size: 11px;
+      background: var(--cw-ink-deep);
+      background: color-mix(in srgb, var(--cw-ink-deep) 80%, transparent);
+      color: var(--cw-cream);
+      font-family: var(--cw-mono);
+      font-size: 12px;
+      font-weight: 500;
       letter-spacing: 0.06em;
       backdrop-filter: blur(8px);
     }
@@ -473,11 +491,12 @@
       height: 3px;
       appearance: none;
       border: 0;
-      background: rgba(255,255,255,0.15);
+      background: var(--cw-ink-hover);
+      background: color-mix(in srgb, var(--cw-cream) 15%, transparent);
     }
-    .hud progress::-webkit-progress-bar { background: rgba(255,255,255,0.15); }
-    .hud progress::-webkit-progress-value { background: var(--blue); }
-    .hud progress::-moz-progress-bar { background: var(--blue); }
+    .hud progress::-webkit-progress-bar { background: var(--cw-ink-hover); background: color-mix(in srgb, var(--cw-cream) 15%, transparent); }
+    .hud progress::-webkit-progress-value { background: var(--cw-vermilion); }
+    .hud progress::-moz-progress-bar { background: var(--cw-vermilion); }
     .help {
       position: fixed;
       top: 14px;
@@ -485,12 +504,12 @@
       z-index: 30;
       padding: 8px 10px;
       border-radius: 6px;
-      background: rgba(14,31,44,0.8);
-      color: white;
-      font-family: var(--mono);
-      font-size: 10px;
+      background: var(--cw-ink);
+      color: var(--cw-cream);
+      font-family: var(--cw-mono);
+      font-size: 12px;
+      font-weight: 500;
       letter-spacing: 0.06em;
-      opacity: 0.7;
     }
     @media (max-width: 900px) {
       .cover, .project { grid-template-columns: 1fr; }
@@ -506,6 +525,7 @@
   <div class="deck" id="deck">
 
     <section class="slide slide--dark is-active" data-title="Cover">
+      <div class="deck-logo" dir="ltr"><svg xmlns="http://www.w3.org/2000/svg" width="1235.74" height="164" viewBox="0 0 1235.74 164" role="img"><title>CodeWeekend - Weekend W</title><path fill="#F0643B" transform="translate(16 16) scale(1.0)" d="M0 0H40V78Q40 96 60 96Q80 96 80 78V0H120V78Q120 96 140 96Q160 96 160 78V0H200V82Q200 132 146 132H139Q113 132 100 119Q87 132 61 132H54Q0 132 0 82Z"/><g aria-label="codeweekend" fill="#F7F4EC" transform="translate(260 134) scale(0.072 -0.072)"><path transform="translate(0.000 0)" d="M616 -30Q448 -30 328.0 45.0Q208 120 144.0 249.0Q80 378 80 540Q80 704 146.5 833.0Q213 962 334.0 1036.0Q455 1110 620 1110Q811 1110 940.5 1013.5Q1070 917 1106 750L834 678Q810 762 750.5 809.0Q691 856 616 856Q530 856 475.0 814.5Q420 773 394.0 701.5Q368 630 368 540Q368 399 430.5 311.5Q493 224 616 224Q708 224 756.0 266.0Q804 308 828 386L1106 328Q1060 156 932.0 63.0Q804 -30 616 -30Z"/><path transform="translate(1124.333 0)" d="M626 -30Q463 -30 340.0 43.0Q217 116 148.5 244.5Q80 373 80 540Q80 709 150.0 837.5Q220 966 343.0 1038.0Q466 1110 626 1110Q789 1110 912.5 1037.0Q1036 964 1105.0 835.5Q1174 707 1174 540Q1174 372 1104.5 243.5Q1035 115 911.5 42.5Q788 -30 626 -30ZM626 224Q757 224 821.5 312.5Q886 401 886 540Q886 684 820.5 770.0Q755 856 626 856Q537 856 480.0 816.0Q423 776 395.5 705.0Q368 634 368 540Q368 395 433.5 309.5Q499 224 626 224Z"/><path transform="translate(2336.667 0)" d="M578 -30Q429 -30 317.0 45.0Q205 120 142.5 249.0Q80 378 80 540Q80 705 143.5 833.5Q207 962 322.0 1036.0Q437 1110 592 1110Q746 1110 851.0 1035.0Q956 960 1010.0 831.0Q1064 702 1064 540Q1064 378 1009.5 249.0Q955 120 847.0 45.0Q739 -30 578 -30ZM622 212Q713 212 767.5 253.0Q822 294 846.0 368.0Q870 442 870 540Q870 638 846.0 712.0Q822 786 769.5 827.0Q717 868 632 868Q541 868 482.5 823.5Q424 779 396.0 704.5Q368 630 368 540Q368 449 395.0 374.5Q422 300 478.0 256.0Q534 212 622 212ZM870 0V740H836V1440H1110V0Z"/><path transform="translate(3545.000 0)" d="M642 -30Q476 -30 349.5 41.5Q223 113 151.5 238.5Q80 364 80 526Q80 703 150.0 834.0Q220 965 343.0 1037.5Q466 1110 626 1110Q796 1110 915.0 1030.0Q1034 950 1091.0 805.0Q1148 660 1131 464H862V564Q862 729 809.5 801.5Q757 874 638 874Q499 874 433.5 789.5Q368 705 368 540Q368 389 433.5 306.5Q499 224 626 224Q706 224 763.0 259.0Q820 294 850 360L1122 282Q1061 134 929.5 52.0Q798 -30 642 -30ZM284 464V666H1000V464Z"/><path transform="translate(4719.333 0)" d="M370 0 40 1082 306 1080 502 436 701 1080H927L1126 436L1322 1080H1588L1258 0H1050L814 704L578 0Z"/><path transform="translate(6305.667 0)" d="M642 -30Q476 -30 349.5 41.5Q223 113 151.5 238.5Q80 364 80 526Q80 703 150.0 834.0Q220 965 343.0 1037.5Q466 1110 626 1110Q796 1110 915.0 1030.0Q1034 950 1091.0 805.0Q1148 660 1131 464H862V564Q862 729 809.5 801.5Q757 874 638 874Q499 874 433.5 789.5Q368 705 368 540Q368 389 433.5 306.5Q499 224 626 224Q706 224 763.0 259.0Q820 294 850 360L1122 282Q1061 134 929.5 52.0Q798 -30 642 -30ZM284 464V666H1000V464Z"/><path transform="translate(7480.000 0)" d="M642 -30Q476 -30 349.5 41.5Q223 113 151.5 238.5Q80 364 80 526Q80 703 150.0 834.0Q220 965 343.0 1037.5Q466 1110 626 1110Q796 1110 915.0 1030.0Q1034 950 1091.0 805.0Q1148 660 1131 464H862V564Q862 729 809.5 801.5Q757 874 638 874Q499 874 433.5 789.5Q368 705 368 540Q368 389 433.5 306.5Q499 224 626 224Q706 224 763.0 259.0Q820 294 850 360L1122 282Q1061 134 929.5 52.0Q798 -30 642 -30ZM284 464V666H1000V464Z"/><path transform="translate(8654.333 0)" d="M138 0 140 1440H416V560L782 1080H1118L728 540L1144 0H790L416 520V0Z"/><path transform="translate(9716.667 0)" d="M642 -30Q476 -30 349.5 41.5Q223 113 151.5 238.5Q80 364 80 526Q80 703 150.0 834.0Q220 965 343.0 1037.5Q466 1110 626 1110Q796 1110 915.0 1030.0Q1034 950 1091.0 805.0Q1148 660 1131 464H862V564Q862 729 809.5 801.5Q757 874 638 874Q499 874 433.5 789.5Q368 705 368 540Q368 389 433.5 306.5Q499 224 626 224Q706 224 763.0 259.0Q820 294 850 360L1122 282Q1061 134 929.5 52.0Q798 -30 642 -30ZM284 464V666H1000V464Z"/><path transform="translate(10891.000 0)" d="M876 0V510Q876 547 872.0 604.5Q868 662 847.0 720.0Q826 778 778.5 817.0Q731 856 644 856Q609 856 569.0 845.0Q529 834 494.0 802.5Q459 771 436.5 710.0Q414 649 414 548L258 622Q258 750 310.0 862.0Q362 974 466.5 1043.0Q571 1112 730 1112Q857 1112 937.0 1069.0Q1017 1026 1061.5 960.0Q1106 894 1125.0 822.5Q1144 751 1148.0 692.0Q1152 633 1152 606V0ZM138 0V1080H380V722H414V0Z"/><path transform="translate(12121.333 0)" d="M578 -30Q429 -30 317.0 45.0Q205 120 142.5 249.0Q80 378 80 540Q80 705 143.5 833.5Q207 962 322.0 1036.0Q437 1110 592 1110Q746 1110 851.0 1035.0Q956 960 1010.0 831.0Q1064 702 1064 540Q1064 378 1009.5 249.0Q955 120 847.0 45.0Q739 -30 578 -30ZM622 212Q713 212 767.5 253.0Q822 294 846.0 368.0Q870 442 870 540Q870 638 846.0 712.0Q822 786 769.5 827.0Q717 868 632 868Q541 868 482.5 823.5Q424 779 396.0 704.5Q368 630 368 540Q368 449 395.0 374.5Q422 300 478.0 256.0Q534 212 622 212ZM870 0V740H836V1440H1110V0Z"/></g></svg></div>
       <div class="slide__chrome">
         <span class="kicker">Web & AI Development Bootcamp</span>
         <span class="slide__meta">Live event</span>
@@ -514,7 +534,7 @@
         <div>
           <h1>CodeWeekend <em>2026 Demo Day</em></h1>
           <p class="lead">An online celebration of talent, persistence, and what becomes possible when opportunity meets code.</p>
-          <div class="cover__code"><span>const future = </span><strong>students.build();</strong></div>
+          <div class="cover__code" dir="ltr"><span>const future = </span><strong>students.build();</strong></div>
           <dl class="facts">
             <div><dt>When</dt><dd>Thursday, 27 August 2026</dd></div>
             <div><dt>Time</dt><dd>7:30–10:30 PM AFT</dd></div>
@@ -1213,6 +1233,7 @@
     </section>
 
     <section class="slide slide--dark" data-title="Thank You">
+      <div class="deck-logo" dir="ltr"><svg xmlns="http://www.w3.org/2000/svg" width="1235.74" height="164" viewBox="0 0 1235.74 164" role="img"><title>CodeWeekend - Weekend W</title><path fill="#F0643B" transform="translate(16 16) scale(1.0)" d="M0 0H40V78Q40 96 60 96Q80 96 80 78V0H120V78Q120 96 140 96Q160 96 160 78V0H200V82Q200 132 146 132H139Q113 132 100 119Q87 132 61 132H54Q0 132 0 82Z"/><g aria-label="codeweekend" fill="#F7F4EC" transform="translate(260 134) scale(0.072 -0.072)"><path transform="translate(0.000 0)" d="M616 -30Q448 -30 328.0 45.0Q208 120 144.0 249.0Q80 378 80 540Q80 704 146.5 833.0Q213 962 334.0 1036.0Q455 1110 620 1110Q811 1110 940.5 1013.5Q1070 917 1106 750L834 678Q810 762 750.5 809.0Q691 856 616 856Q530 856 475.0 814.5Q420 773 394.0 701.5Q368 630 368 540Q368 399 430.5 311.5Q493 224 616 224Q708 224 756.0 266.0Q804 308 828 386L1106 328Q1060 156 932.0 63.0Q804 -30 616 -30Z"/><path transform="translate(1124.333 0)" d="M626 -30Q463 -30 340.0 43.0Q217 116 148.5 244.5Q80 373 80 540Q80 709 150.0 837.5Q220 966 343.0 1038.0Q466 1110 626 1110Q789 1110 912.5 1037.0Q1036 964 1105.0 835.5Q1174 707 1174 540Q1174 372 1104.5 243.5Q1035 115 911.5 42.5Q788 -30 626 -30ZM626 224Q757 224 821.5 312.5Q886 401 886 540Q886 684 820.5 770.0Q755 856 626 856Q537 856 480.0 816.0Q423 776 395.5 705.0Q368 634 368 540Q368 395 433.5 309.5Q499 224 626 224Z"/><path transform="translate(2336.667 0)" d="M578 -30Q429 -30 317.0 45.0Q205 120 142.5 249.0Q80 378 80 540Q80 705 143.5 833.5Q207 962 322.0 1036.0Q437 1110 592 1110Q746 1110 851.0 1035.0Q956 960 1010.0 831.0Q1064 702 1064 540Q1064 378 1009.5 249.0Q955 120 847.0 45.0Q739 -30 578 -30ZM622 212Q713 212 767.5 253.0Q822 294 846.0 368.0Q870 442 870 540Q870 638 846.0 712.0Q822 786 769.5 827.0Q717 868 632 868Q541 868 482.5 823.5Q424 779 396.0 704.5Q368 630 368 540Q368 449 395.0 374.5Q422 300 478.0 256.0Q534 212 622 212ZM870 0V740H836V1440H1110V0Z"/><path transform="translate(3545.000 0)" d="M642 -30Q476 -30 349.5 41.5Q223 113 151.5 238.5Q80 364 80 526Q80 703 150.0 834.0Q220 965 343.0 1037.5Q466 1110 626 1110Q796 1110 915.0 1030.0Q1034 950 1091.0 805.0Q1148 660 1131 464H862V564Q862 729 809.5 801.5Q757 874 638 874Q499 874 433.5 789.5Q368 705 368 540Q368 389 433.5 306.5Q499 224 626 224Q706 224 763.0 259.0Q820 294 850 360L1122 282Q1061 134 929.5 52.0Q798 -30 642 -30ZM284 464V666H1000V464Z"/><path transform="translate(4719.333 0)" d="M370 0 40 1082 306 1080 502 436 701 1080H927L1126 436L1322 1080H1588L1258 0H1050L814 704L578 0Z"/><path transform="translate(6305.667 0)" d="M642 -30Q476 -30 349.5 41.5Q223 113 151.5 238.5Q80 364 80 526Q80 703 150.0 834.0Q220 965 343.0 1037.5Q466 1110 626 1110Q796 1110 915.0 1030.0Q1034 950 1091.0 805.0Q1148 660 1131 464H862V564Q862 729 809.5 801.5Q757 874 638 874Q499 874 433.5 789.5Q368 705 368 540Q368 389 433.5 306.5Q499 224 626 224Q706 224 763.0 259.0Q820 294 850 360L1122 282Q1061 134 929.5 52.0Q798 -30 642 -30ZM284 464V666H1000V464Z"/><path transform="translate(7480.000 0)" d="M642 -30Q476 -30 349.5 41.5Q223 113 151.5 238.5Q80 364 80 526Q80 703 150.0 834.0Q220 965 343.0 1037.5Q466 1110 626 1110Q796 1110 915.0 1030.0Q1034 950 1091.0 805.0Q1148 660 1131 464H862V564Q862 729 809.5 801.5Q757 874 638 874Q499 874 433.5 789.5Q368 705 368 540Q368 389 433.5 306.5Q499 224 626 224Q706 224 763.0 259.0Q820 294 850 360L1122 282Q1061 134 929.5 52.0Q798 -30 642 -30ZM284 464V666H1000V464Z"/><path transform="translate(8654.333 0)" d="M138 0 140 1440H416V560L782 1080H1118L728 540L1144 0H790L416 520V0Z"/><path transform="translate(9716.667 0)" d="M642 -30Q476 -30 349.5 41.5Q223 113 151.5 238.5Q80 364 80 526Q80 703 150.0 834.0Q220 965 343.0 1037.5Q466 1110 626 1110Q796 1110 915.0 1030.0Q1034 950 1091.0 805.0Q1148 660 1131 464H862V564Q862 729 809.5 801.5Q757 874 638 874Q499 874 433.5 789.5Q368 705 368 540Q368 389 433.5 306.5Q499 224 626 224Q706 224 763.0 259.0Q820 294 850 360L1122 282Q1061 134 929.5 52.0Q798 -30 642 -30ZM284 464V666H1000V464Z"/><path transform="translate(10891.000 0)" d="M876 0V510Q876 547 872.0 604.5Q868 662 847.0 720.0Q826 778 778.5 817.0Q731 856 644 856Q609 856 569.0 845.0Q529 834 494.0 802.5Q459 771 436.5 710.0Q414 649 414 548L258 622Q258 750 310.0 862.0Q362 974 466.5 1043.0Q571 1112 730 1112Q857 1112 937.0 1069.0Q1017 1026 1061.5 960.0Q1106 894 1125.0 822.5Q1144 751 1148.0 692.0Q1152 633 1152 606V0ZM138 0V1080H380V722H414V0Z"/><path transform="translate(12121.333 0)" d="M578 -30Q429 -30 317.0 45.0Q205 120 142.5 249.0Q80 378 80 540Q80 705 143.5 833.5Q207 962 322.0 1036.0Q437 1110 592 1110Q746 1110 851.0 1035.0Q956 960 1010.0 831.0Q1064 702 1064 540Q1064 378 1009.5 249.0Q955 120 847.0 45.0Q739 -30 578 -30ZM622 212Q713 212 767.5 253.0Q822 294 846.0 368.0Q870 442 870 540Q870 638 846.0 712.0Q822 786 769.5 827.0Q717 868 632 868Q541 868 482.5 823.5Q424 779 396.0 704.5Q368 630 368 540Q368 449 395.0 374.5Q422 300 478.0 256.0Q534 212 622 212ZM870 0V740H836V1440H1110V0Z"/></g></svg></div>
       <div class="slide__chrome">
         <span class="kicker">Closing</span>
         <span class="slide__meta">CodeWeekend 2026 Demo Day</span>
@@ -1225,7 +1246,7 @@
         <div>Partners</div>
         <div>Community</div>
       </div>
-      <div class="cover__code" style="margin-top:28px;"><span>const future = </span><strong>students.build();</strong></div>
+      <div class="cover__code" dir="ltr" style="margin-top:28px;"><span>const future = </span><strong>students.build();</strong></div>
     </section>
 
   </div>

@@ -1,6 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="640" height="640" viewBox="0 0 640 640" role="img" aria-label="Student portrait placeholder">
-  <rect width="640" height="640" fill="#F2E4CE"/>
-  <circle cx="320" cy="250" r="96" fill="#083B5A" opacity="0.18"/>
-  <path d="M160 520c40-110 120-160 160-160s120 50 160 160" fill="#083B5A" opacity="0.18"/>
-  <text x="320" y="590" text-anchor="middle" fill="#0C6A8C" font-family="Georgia, serif" font-size="28" letter-spacing="4">CODEWEEKEND</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="640" viewBox="0 0 640 640" role="img"><title>Decorative CodeWeekend profile placeholder</title><rect x="0" y="0" width="640" height="640" fill="#EDE9DF"/><path fill="#182B29" transform="translate(109.33 135.11) scale(2.11)" d="M0 0H40V78Q40 96 60 96Q80 96 80 78V0H120V78Q120 96 140 96Q160 96 160 78V0H200V82Q200 132 146 132H139Q113 132 100 119Q87 132 61 132H54Q0 132 0 82Z"/><rect x="38.4" y="530.49" width="145.07" height="12.8" fill="#BCC9BC"/><rect x="196.27" y="530.49" width="42.67" height="12.8" fill="#BCC9BC"/></svg>

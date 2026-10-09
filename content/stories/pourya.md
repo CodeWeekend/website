@@ -11,8 +11,8 @@ employer: "Industry"
 quote: 'CodeWeekend is a wonderful program for any Computer Science student or graduate to go through! I graduated from the program and now I have a job!'
 summary: "Pourya is from Kabul. He graduated from the CodeWeekend Coding Bootcamp and was hired as a Junior UI/UX Designer immediately after the program."
 description: "Pourya graduated from the CodeWeekend Coding Bootcamp and was hired as a Junior UI/UX Designer."
-image: "/images/stories/pourya.svg"
-image_alt: "Pourya Amire — initials avatar"
+image: "/images/tiles/story-share.svg"
+image_alt: ""
 weight: 10
 ---
 
@@ -28,4 +28,4 @@ His story is part of why we keep doing this. Every cohort is built around the go
 
 ---
 
-*This story features a real CodeWeekend graduate. The accompanying image is a placeholder avatar; a portrait will be added with the graduate's consent.*
+*This story features a real CodeWeekend graduate.*

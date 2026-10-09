@@ -1,0 +1,162 @@
+[
+  {
+    "role": "Body",
+    "foreground": "#182B29",
+    "background": "#F7F4EC",
+    "ratio": 13.489,
+    "required": 4.5,
+    "pass": true
+  },
+  {
+    "role": "Secondary text",
+    "foreground": "#52635E",
+    "background": "#EDE9DF",
+    "ratio": 5.241,
+    "required": 4.5,
+    "pass": true
+  },
+  {
+    "role": "Accent button",
+    "foreground": "#182B29",
+    "background": "#F0643B",
+    "ratio": 4.653,
+    "required": 4.5,
+    "pass": true
+  },
+  {
+    "role": "Accent hover",
+    "foreground": "#182B29",
+    "background": "#FA805E",
+    "ratio": 5.87,
+    "required": 4.5,
+    "pass": true
+  },
+  {
+    "role": "Primary button",
+    "foreground": "#FFFFFF",
+    "background": "#CC3A10",
+    "ratio": 5.024,
+    "required": 4.5,
+    "pass": true
+  },
+  {
+    "role": "Primary hover",
+    "foreground": "#FFFFFF",
+    "background": "#A72D0B",
+    "ratio": 6.946,
+    "required": 4.5,
+    "pass": true
+  },
+  {
+    "role": "Primary active",
+    "foreground": "#FFFFFF",
+    "background": "#822308",
+    "ratio": 9.576,
+    "required": 4.5,
+    "pass": true
+  },
+  {
+    "role": "Link on cream",
+    "foreground": "#A72D0B",
+    "background": "#F7F4EC",
+    "ratio": 6.32,
+    "required": 4.5,
+    "pass": true
+  },
+  {
+    "role": "Link on surface 2",
+    "foreground": "#A72D0B",
+    "background": "#EDE9DF",
+    "ratio": 5.73,
+    "required": 4.5,
+    "pass": true
+  },
+  {
+    "role": "Link hover",
+    "foreground": "#822308",
+    "background": "#EDE9DF",
+    "ratio": 7.898,
+    "required": 4.5,
+    "pass": true
+  },
+  {
+    "role": "Link on dark",
+    "foreground": "#FA805E",
+    "background": "#182B29",
+    "ratio": 5.87,
+    "required": 4.5,
+    "pass": true
+  },
+  {
+    "role": "Input border",
+    "foreground": "#687B71",
+    "background": "#EDE9DF",
+    "ratio": 3.717,
+    "required": 3,
+    "pass": true
+  },
+  {
+    "role": "Light focus",
+    "foreground": "#A72D0B",
+    "background": "#EDE9DF",
+    "ratio": 5.73,
+    "required": 3,
+    "pass": true
+  },
+  {
+    "role": "Dark focus",
+    "foreground": "#F7F4EC",
+    "background": "#182B29",
+    "ratio": 13.489,
+    "required": 3,
+    "pass": true
+  },
+  {
+    "role": "Error",
+    "foreground": "#B3261E",
+    "background": "#FFF0EE",
+    "ratio": 5.899,
+    "required": 4.5,
+    "pass": true
+  },
+  {
+    "role": "Success",
+    "foreground": "#285C3F",
+    "background": "#E8F1E8",
+    "ratio": 6.751,
+    "required": 4.5,
+    "pass": true
+  },
+  {
+    "role": "Info",
+    "foreground": "#1F5A7A",
+    "background": "#EAF2F7",
+    "ratio": 6.618,
+    "required": 4.5,
+    "pass": true
+  },
+  {
+    "role": "Warning",
+    "foreground": "#775000",
+    "background": "#FFF0C2",
+    "ratio": 6.308,
+    "required": 4.5,
+    "pass": true
+  },
+  {
+    "role": "Do not use Vermilion text on Cream",
+    "foreground": "#F0643B",
+    "background": "#F7F4EC",
+    "ratio": 2.899,
+    "required": 4.5,
+    "pass": false
+  },
+  {
+    "role": "Rust 600 not universal: fails on surface 2",
+    "foreground": "#CC3A10",
+    "background": "#EDE9DF",
+    "ratio": 4.144,
+    "required": 4.5,
+    "pass": false
+  }
+]

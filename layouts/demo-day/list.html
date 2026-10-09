@@ -61,7 +61,7 @@
           <strong>{{ len site.Data.demo_day_students }}</strong>
           <span>graduates<br />one stage</span>
         </div>
-        <div class="event-hero__code" aria-hidden="true">
+        <div class="event-hero__code" dir="ltr" aria-hidden="true">
           <span>const future =</span>
           <strong>students.build();</strong>
         </div>
@@ -444,7 +444,7 @@
       <p class="event-kicker event-kicker--light">Registration is open</p>
       <h2 id="rsvp-title">Be there when the work <em>goes live.</em></h2>
       <p>Reserve your place for CodeWeekend 2026 Demo Day on {{ .Params.event_date }}. We will email the private event link and any final details after you RSVP.</p>
-      <a class="event-button event-button--white" href="{{ .Params.rsvp_url }}" target="_blank" rel="noopener noreferrer">RSVP on Airtable</a>
+      <a class="event-button event-button--accent" href="{{ .Params.rsvp_url }}" target="_blank" rel="noopener noreferrer">RSVP on Airtable</a>
       <span>Free online event · Confirmation by email</span>
     </div>
   </section>

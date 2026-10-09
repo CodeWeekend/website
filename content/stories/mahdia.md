@@ -11,8 +11,8 @@ employer: "CodeWeekend Cohort 2025"
 quote: "In a time when many Afghan women have limited opportunities to express themselves, I created a platform where my voice can be seen and heard."
 summary: "Mahdia is a participant in the 2025 Web & AI Development Bootcamp. From Panjshir, Afghanistan, she built and launched her own personal website from scratch in the first weeks of the program."
 description: "From Panjshir, Afghanistan: Mahdia built and launched her own personal website in the first weeks of the 2025 cohort."
-image: "/images/stories/mahdia.svg"
-image_alt: "Mahdia Khamoosh — initials avatar (real photo pending consent)"
+image: "/images/tiles/story-build.svg"
+image_alt: ""
 featured: true
 weight: 5
 ---
@@ -37,4 +37,4 @@ We're proud to have Mahdia in the 2025 cohort. We can't wait to see what she shi
 
 ---
 
-_This story features a real CodeWeekend participant. The accompanying image is a placeholder avatar; a portrait will be added with the participant's consent._
+_This story features a real CodeWeekend participant._
