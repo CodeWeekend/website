@@ -12,6 +12,9 @@ status_label: "2026 Cohort"
 status: "current cohort"
 accent: "primary"
 cta_label: "Learn about future cohorts"
+home_step: "Step 1 · Start here"
+home_chip: "2026 cohort"
+home_note: "476 women and girls applied in 2026 · 50 admitted"
 features:
   - "Foundations: computer basics, internet, Git, essential digital tools"
   - "Frontend: HTML, CSS, JavaScript, responsive design, React framework"
@@ -19,13 +22,37 @@ features:
   - "Capstone Project: design and develop your own application, presented at Demo Day"
   - "Live mentorship from female mentors in Afghanistan and abroad"
   - "Full scholarships, internet packages, and laptop support available"
+card_title: "Web & AI Development Bootcamp"
+card_chip: "Foundational"
+audience: "Women and girls in Afghanistan, starting from computer basics. Some arrive having never built a website."
+outcome: "A live, deployed developer portfolio and an AI-powered app of her own, presented at Demo Day."
+teach: "Taught live by working developers, with female mentors from Afghanistan and abroad joining sessions."
+skills: ["Computer & internet basics", "Git & GitHub", "HTML & CSS", "JavaScript", "Responsive design", "React", "APIs", "AI & LLM integration"]
+phases:
+  - title: "Foundations"
+    text: "Computer basics, the internet, Git, and essential digital tools."
+  - title: "Frontend development"
+    text: "HTML, CSS, JavaScript, responsive design, and React."
+  - title: "Introduction to AI"
+    text: "Connecting large language models to web applications."
+  - title: "Capstone & Demo Day"
+    text: "Design and build your own app, then present it live."
+interest_url: "/get-involved/apply/"
+posters:
+  - src: "/images/news/bootcamp-2026-capstone-freshta.jpg"
+    alt: "BrainNote AI by Fareshta Foladi — colorful notes board with search and pinned ideas"
+  - src: "/images/news/bootcamp-2026-capstone-laima.jpg"
+    alt: "PitchPilot by Lima Rahimzai — startup coach dashboard for idea analysis and pitch drafts"
+  - src: "/images/news/bootcamp-2026-capstone-roqia.jpg"
+    alt: "AI Movie Analyzer by Roqia Stanikzai — film tracker that reads reviews and suggests taste patterns"
+visual_caption: "Capstone apps by Web & AI graduates"
 ---
 
 ## A bootcamp built for women and girls in Afghanistan
 
 The 2026 Web & AI Development Bootcamp is a 12-week, fully-live program created specifically for women and girls in Afghanistan — at a time when their access to technology education has been disproportionately constrained.
 
-We received **more than 280 applications** from across Afghanistan. After a careful selection process, **50 participants** were admitted. With generous support from the [Linda Norgrove Foundation](https://lindanorgrovefoundation.org), **30 learners were awarded full scholarships** and **24 are receiving internet packages** so they can stay connected to classes. CodeWeekend is also working to provide personal laptops for those who don't yet have one.
+We received **476 applications** from women and girls across Afghanistan. After a careful selection process, **50 participants** were admitted. With generous support from the [Linda Norgrove Foundation](https://lindanorgrovefoundation.org), **30 learners were awarded full scholarships**, with internet access covered so they could stay connected to classes. GiveInternet provided **laptops to 10 students** and **three months of internet support to more than 30 students**.
 
 ## Program structure: step by step
 
@@ -55,14 +82,14 @@ This year's bootcamp is led by **Jamshid Hashimi**, who guides students through 
 
 This mentorship helps students see what is possible — reminding them that a career in technology is within their reach.
 
-## Early student achievements
+## Student work
 
-Even in the first weeks, students have already begun to create inspiring projects.
+Each 2026 graduate chose a problem, planned a product, and built her own AI-powered application — then presented it live at Demo Day on 27 August 2026.
 
-**Mahdia Khamoosh from Panjshir** built and launched her own personal website from scratch — a platform where her voice can be seen and heard. Other students have developed creative movie platforms, complete with features to display films and highlight talent. These are not just technical exercises — they are reflections of creativity and resilience.
+[Read the 2026 Bootcamp story →](/news/bootcamp-2026-from-first-class-to-demo-day/)
 
-[Read Mahdia's story →](/stories/mahdia/)
+The program first ran in 2025. In that cohort's first weeks, **Mahdia Khamoosh from Panjshir** built and launched her own personal website from scratch — a platform where her voice can be seen and heard. [Read Mahdia's story →](/stories/mahdia/)
 
 ## Future cohorts
 
-Our plans for 2026 and beyond include expanding the bootcamp to reach more students, building new AI-focused learning tracks alongside web development, and strengthening partnerships and funding opportunities. If you'd like to be notified when the next cohort opens, subscribe below or email us at [hello@codeweekend.net](mailto:hello@codeweekend.net).
+Our plans for 2026 and beyond include expanding the bootcamp to reach more students, building new AI-focused learning tracks alongside web development, and strengthening partnerships and funding opportunities. If you'd like to be notified when the next cohort opens, subscribe below or email us at [fziaee@codeweekend.net](mailto:fziaee@codeweekend.net).

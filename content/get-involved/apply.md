@@ -8,7 +8,7 @@ date: 2026-07-30
 
 Applications are not currently open through a public form. CodeWeekend will publish the next cohort's eligibility, schedule, curriculum, available scholarships, and application deadline before accepting submissions.
 
-To register your interest, email [hello@codeweekend.net](mailto:hello@codeweekend.net?subject=Future%20cohort%20application) with:
+To register your interest, email [fziaee@codeweekend.net](mailto:fziaee@codeweekend.net?subject=Future%20cohort%20application) with:
 
 - Your name and current location
 - The program you are interested in

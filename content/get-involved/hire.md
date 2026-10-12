@@ -36,4 +36,4 @@ If you're hiring junior or mid-level developers and would like to be introduced 
 
 ## Get started
 
-Email [hiring@codeweekend.net](mailto:hiring@codeweekend.net) with what you're looking for. A short note is fine — we'll come back with questions.
+Email [fziaee@codeweekend.net](mailto:fziaee@codeweekend.net) with what you're looking for. A short note is fine — we'll come back with questions.

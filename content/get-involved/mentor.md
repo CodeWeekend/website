@@ -36,6 +36,6 @@ You don't run the curriculum. The instructors do that. Your job is the human-sca
 
 We recruit mentors before each cohort begins.
 
-[Email mentors@codeweekend.net](mailto:mentors@codeweekend.net) — tell us your background, what languages and frameworks you're strongest in, and how many hours a week you can give. We'll respond within a few days.
+[Email fziaee@codeweekend.net](mailto:fziaee@codeweekend.net) — tell us your background, what languages and frameworks you're strongest in, and how many hours a week you can give. We'll respond within a few days.
 
 If you want to talk to a current mentor before applying, say so in your email and we'll connect you with someone in your area of expertise.

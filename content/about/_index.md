@@ -23,7 +23,7 @@ CodeWeekend was founded by **Jamshid Hashimi on June 4, 2014**. Since then, the 
 
 In 2019, we launched our first structured Coding Bootcamp. The pilot program was completely free of charge; we accepted 20 participants and graduated 12. After the events of August 2021, we expanded the bootcamp into a remote, full-time offering serving Afghan youth both inside and outside Afghanistan.
 
-In **2026**, CodeWeekend was officially incorporated as a **non-profit society in British Columbia, Canada** — giving us the structure to expand programs, build long-term partnerships, and ensure our support is sustainable.
+In **2025**, CodeWeekend launched its Web & AI Development Bootcamp for women and girls in Afghanistan and was officially incorporated as a **non-profit society in British Columbia, Canada** — giving us the structure to expand programs, build long-term partnerships, and ensure our support is sustainable.
 
 ## What makes us different
 
@@ -34,7 +34,7 @@ Every class is taught live by a working developer — never pre-recorded, never 
 We've built and refined our curriculum across more than a decade of teaching, with continuous input from the developers and hiring managers who actually work in the market.
 
 **Practice, practice, practice.**
-We know how learning works, so we focus heavily on getting our students to build — a lot. By graduation, every student has shipped projects they're proud to put on a portfolio.
+We know how learning works, so we focus heavily on getting our students to build — a lot. By graduation, every student has built projects they're proud to put on a portfolio.
 
 **Expert trainers.**
 Our trainers and mentors are experienced developers from the industry, with both theoretical and practical knowledge.
@@ -51,6 +51,6 @@ CodeWeekend is run by a small team of working developers, instructors, and opera
 
 ## Our partners
 
-The 2026 program is made possible by the [Linda Norgrove Foundation](https://lindanorgrovefoundation.org), which provided 30 full scholarships and 24 internet packages for participants. In previous years, we've also partnered with [Hackajob](https://hackajob.com) (20 scholarships for women) and [Scrimba](https://scrimba.com) (premium course access for 100 students).
+Since 2025, the Web & AI program has been made possible by the [Linda Norgrove Foundation](https://lindanorgrovefoundation.org), which has funded 30 full scholarships each year along with internet access for participants. In 2026, GiveInternet also provided laptops to 10 students and internet support to more than 30. In previous years, we've also partnered with [Hackajob](https://hackajob.com) (20 scholarships for women) and [Scrimba](https://scrimba.com) (premium course access for 100 students).
 
 If you'd like to partner with us — whether through scholarships, internships, or hiring graduates — visit our [Get Involved](/get-involved/) page.

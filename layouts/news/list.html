@@ -1,0 +1,56 @@
+{{ define "main" }}
+{{ $posts := .Pages.ByDate.Reverse }}
+{{ $featured := index $posts 0 }}
+{{ $rest := after 1 $posts }}
+
+<section class="news-masthead">
+  <div class="news-masthead__atmosphere" aria-hidden="true"></div>
+  <div class="news-masthead__inner">
+    <div class="news-masthead__intro">
+      <div class="crumb"><a href="{{ "/" | relURL }}">Home</a> &middot; News</div>
+      <div class="eyebrow">From the community</div>
+      <h1>{{ .Title }}</h1>
+      {{ with .Description }}<p class="lead">{{ . }}</p>{{ end }}
+    </div>
+
+    {{ with $featured }}
+    <a href="{{ .RelPermalink }}" class="news-feature">
+      <div class="news-feature__media">
+        {{ with .Params.image }}
+          <img src="{{ . | relURL }}" alt="" loading="eager" decoding="async">
+        {{ else }}
+          <div class="news-feature__fallback">{{ .Params.category | default "News" }}</div>
+        {{ end }}
+      </div>
+      <div class="news-feature__body">
+        <div class="eyebrow alt">Latest · {{ .Params.category | default "News" }}</div>
+        <h2>{{ with .Params.hero_title }}{{ . }}{{ else }}{{ .Title }}{{ end }}</h2>
+        <p>{{ .Description }}</p>
+        <div class="news-feature__meta">
+          <span>{{ .Date.Format "January 2, 2006" }}</span>
+          <span class="news-feature__dot" aria-hidden="true"></span>
+          <span>{{ .Params.read_time | default "5 min read" }}</span>
+        </div>
+        <span class="btn--ghost news-feature__cta">Read story →</span>
+      </div>
+    </a>
+    {{ end }}
+  </div>
+</section>
+
+{{ if $rest }}
+<section class="news-archive">
+  <div class="news-archive__inner">
+    <div class="section-header">
+      <div class="eyebrow">Earlier stories</div>
+      <h2>More from the archive.</h2>
+    </div>
+    <div class="news-archive__grid">
+      {{ range $rest }}
+        {{ partial "blog-card.html" . }}
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+{{ end }}

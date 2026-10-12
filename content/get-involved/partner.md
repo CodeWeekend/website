@@ -1,22 +1,168 @@
 ---
 title: "Partner or Fund"
-description: "Support scholarships, connectivity, equipment, curriculum access, internships, or long-term nonprofit capacity."
+description: "Partner with CodeWeekend to fund scholarships, laptops, internet, learning platforms, mentoring, or internships for Afghan learners — especially women and girls."
 date: 2026-07-30
+layout: partner
+og_image: "/images/news/bootcamp-2026-capstones-grid.jpg"
+
+contact_email: "fziaee@codeweekend.net"
+
+hero:
+  eyebrow: "Partner with CodeWeekend"
+  title: "Fund the access. <em>See what they build.</em>"
+  lead: "CodeWeekend works with foundations, companies, education platforms, and community organizations to remove the practical barriers between Afghan learners — especially women and girls — and a future in technology. Every partnership is shaped around a concrete need, with clear scope and reporting."
+  caption_value: "Built by graduates"
+  caption_label: "Capstone apps designed and built in the Web & AI Bootcamp"
+  cards:
+    - position: "left"
+      image: "/images/news/bootcamp-2026-capstone-mahdia.jpg"
+      alt: "Capstone project poster for SafeNet Home by Mahdia Hassani — a cybersecurity awareness app shown on a laptop and a phone"
+      name: "Mahdia Hassani"
+      project: "SafeNet Home"
+    - position: "center"
+      image: "/images/news/bootcamp-2026-capstone-jamila.jpg"
+      alt: "Capstone project poster for AfghanBuddy by Jamila Waziry — an AI-powered travel assistant for exploring Afghanistan, shown on a laptop and a phone"
+      name: "Jamila Waziry"
+      project: "AfghanBuddy"
+    - position: "right"
+      image: "/images/news/bootcamp-2026-capstone-freshta.jpg"
+      alt: "Capstone project poster for BrainNote AI by Fareshta Foladi — an AI-powered notes app shown on a desktop monitor and a phone"
+      name: "Fareshta Foladi"
+      project: "BrainNote AI"
+
+proof:
+  - value: "2014"
+    label: "Founded as a volunteer developer community in Kabul"
+  - value: "100+"
+    label: "Sessions, events, and trainings since 2014"
+  - value: "2019"
+    label: "First coding bootcamp, launched as a free pilot"
+  - value: "2021"
+    label: "Bootcamp went fully remote for learners inside and outside Afghanistan"
+
+why:
+  eyebrow: "Why partner with us"
+  title: "Talent isn’t the gap. <em>Access is.</em>"
+  lead: "Our students bring motivation and ability. Partners provide what turns that into skills: a funded seat, a working laptop, a reliable connection, and people who open doors."
+  image: "/images/news/bootcamp-2026-demo-2.jpg"
+  image_alt: "Demo Day Highlights collage: four live screen-shares from the online Demo Day showing student apps MorningFocus, PostPlanner AI, Launchpad, and HireFlow, with presenters and attendees in video tiles"
+  image_title: "Demo Day 2026"
+  image_caption: "Graduates presented their apps live to students, mentors, partners, and alumni."
+  items:
+    - icon: "eye"
+      title: "Outcomes you can see"
+      text: "Support maps to specific costs — a seat, a laptop, a month of internet — and to real work. Graduates present the apps they built at Demo Day."
+    - icon: "shield"
+      title: "Accountable by design"
+      text: "CodeWeekend is a registered non-profit society in British Columbia, Canada. Scope, responsibilities, reporting, and safeguarding are agreed before any partnership begins."
+    - icon: "clock"
+      title: "Delivering since 2014"
+      text: "We started as a volunteer developer community in Kabul and have run live, mentor-supported bootcamps since 2019 — remote since 2021, for learners inside and outside Afghanistan."
+
+ways:
+  eyebrow: "Ways to partner"
+  title: "Choose the barrier <em>you want to remove.</em>"
+  lead: "Partnerships can be financial, in kind, or built on your team’s expertise. Many combine more than one."
+  items:
+    - icon: "cap"
+      title: "Scholarships"
+      text: "Fund full or partial seats so more admitted learners can take part in an upcoming cohort."
+      example: "Linda Norgrove Foundation — funding since 2025, including 30 full scholarships. Hackajob — scholarships for 20 women (2022)."
+    - icon: "laptop"
+      title: "Laptops and internet"
+      text: "Provide personal devices and connectivity packages so students can attend every live class."
+      example: "GiveInternet — laptops for 10 students and three months of internet for 30+ (2026)."
+    - icon: "book-open"
+      title: "Curriculum and platforms"
+      text: "Give learners access to courses, tools, and learning platforms that deepen what they learn in class."
+      example: "Scrimba — a year of premium course access for 100 learners (2022)."
+    - icon: "users"
+      title: "Instructors and mentors"
+      text: "Lend your team’s experience as volunteer instructors, technical mentors, or guest speakers."
+      link_label: "Individuals welcome too"
+      link_text: "Become a mentor"
+      link: "/get-involved/mentor/"
+    - icon: "briefcase"
+      title: "Internships and hiring"
+      text: "Offer internships, portfolio reviews, and fair hiring pathways that help graduates take the next step."
+      link_label: "Hiring now?"
+      link_text: "Meet our graduates"
+      link: "/get-involved/hire/"
+    - icon: "calendar"
+      title: "Events and operations"
+      text: "Support Demo Day, community events, and the non-profit capacity that keeps each cohort running."
+      example: "Linda Norgrove Foundation — support since 2025 for the wider costs of running the bootcamp."
+
+showcase:
+  eyebrow: "What partnership makes possible"
+  title: "From a funded seat <em>to a working app.</em>"
+  lead: "Graduates of the 2026 Web & AI Bootcamp finished with capstone apps they designed and built themselves. Here are four more."
+  projects:
+    - image: "/images/news/bootcamp-2026-capstone-laima.jpg"
+      alt: "Capstone project poster for PitchPilot by Lima Rahimzai — a startup coach dashboard for idea analysis and pitch drafts"
+      project: "PitchPilot"
+      name: "Lima Rahimzai"
+    - image: "/images/news/bootcamp-2026-capstone-maryam-m.jpg"
+      alt: "Capstone project poster for SmartCloset by Maryam Moostamandy — a digital wardrobe with clothing items and outfit suggestions"
+      project: "SmartCloset"
+      name: "Maryam Moostamandy"
+    - image: "/images/news/bootcamp-2026-capstone-rahima.jpg"
+      alt: "Capstone project poster for CatchyReminders by Rahimah Ansari — a reminder list with playful AI reminder styles"
+      project: "CatchyReminders"
+      name: "Rahimah Ansari"
+    - image: "/images/news/bootcamp-2026-capstone-roqia.jpg"
+      alt: "Capstone project poster for AI Movie Analyzer by Roqia Stanikzai — a film tracker that reads reviews and suggests taste patterns"
+      project: "AI Movie Analyzer"
+      name: "Roqia Stanikzai"
+  quote:
+    text: "My biggest achievement since joining CodeWeekend has been working on real-world team projects, especially building SafeNet. I learned JavaScript, React, Tailwind CSS, Git, GitHub, APIs, and AI concepts, which helped me grow from building static websites to creating and deploying dynamic web applications."
+    name: "Mahdia Hassani"
+    role: "2026 graduate · SafeNet Home"
+    avatar: "/images/news/bootcamp-2026-avatar-mahdia.jpg"
+    link: "/news/bootcamp-2026-from-first-class-to-demo-day/"
+    link_text: "Read the 2026 bootcamp story"
+
+process:
+  eyebrow: "How a partnership works"
+  title: "Simple to start. <em>Clear from day one.</em>"
+  steps:
+    - title: "Tell us about your organization"
+      text: "Share who you are, the kind of support you’re considering, and the best person to talk to."
+    - title: "We shape it together"
+      text: "We agree scope, responsibilities, reporting, and safeguarding expectations before anything starts."
+    - title: "Your support reaches students"
+      text: "Seats, devices, connectivity, or expertise go where they’re needed, when the cohort needs them."
+    - title: "You see the results"
+      text: "We report on what was agreed and publish applications, admissions, and graduations as separate numbers."
+
+partners:
+  title: "Partners who have already opened doors"
+  note: "Descriptions reflect the years and activities documented in our archive; they don’t imply a current agreement."
+  items:
+    - name: "Linda Norgrove Foundation"
+      url: "https://lindanorgrovefoundation.org"
+      featured: true
+      badge: "Core funding partner since 2025"
+      stats:
+        - value: "30"
+          label: "full scholarships"
+        - value: "~30"
+          label: "internet packages"
+      text: "Funding since 2025 for scholarships, internet packages, and the wider costs of running the bootcamp."
+    - name: "GiveInternet"
+      url: "https://giveinternet.org"
+      text: "2026: laptops for 10 students and three months of internet for more than 30."
+    - name: "Hackajob"
+      url: "https://hackajob.com"
+      text: "2022: scholarships for 20 women, plus a fundraising marathon."
+    - name: "Scrimba"
+      url: "https://scrimba.com"
+      text: "2021–2022: remote-learning support and a year of premium access for 100 learners."
+    - name: "RapidIteration"
+      url: "https://rapiditeration.com"
+      text: "Support for CodeWeekend’s community, technology work, and earlier website delivery."
+
+closing:
+  title: "Let’s plan the next cohort <em>together.</em>"
+  text: "Tell us about your organization, the support you have in mind, and who we should talk to. We’ll follow up to shape a partnership that fits."
 ---
-
-## Build a practical partnership
-
-CodeWeekend works with foundations, companies, education platforms, and community organizations to remove concrete barriers to technology education.
-
-Partnerships can support:
-
-- Full or partial learner scholarships
-- Internet packages and personal laptops
-- Curriculum and learning-platform access
-- Volunteer instructors and technical mentors
-- Internships, portfolio review, and fair hiring pathways
-- Demo Day, community events, and nonprofit operations
-
-Previous support from the [Linda Norgrove Foundation, Hackajob, and Scrimba](/partners/) shows how focused contributions can expand access.
-
-Email [hello@codeweekend.net](mailto:hello@codeweekend.net?subject=Partnership%20inquiry) with your organization, the kind of support you are considering, and a suitable contact person. CodeWeekend will follow up to define scope, responsibilities, reporting, and safeguarding expectations.

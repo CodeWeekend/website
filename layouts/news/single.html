@@ -1,0 +1,86 @@
+{{ define "main" }}
+{{- $org := dict "@type" "Organization" "name" .Site.Title "url" .Site.BaseURL -}}
+{{- $ld := dict
+  "@context" "https://schema.org"
+  "@type" "NewsArticle"
+  "headline" .Title
+  "description" .Description
+  "datePublished" (.Date.Format "2006-01-02")
+  "dateModified" (.Lastmod.Format "2006-01-02")
+  "mainEntityOfPage" .Permalink
+  "author" $org
+  "publisher" $org
+-}}
+{{- with .Params.image -}}{{- $ld = merge $ld (dict "image" (slice (. | absURL))) -}}{{- end -}}
+<script type="application/ld+json">{{ $ld | jsonify | safeJS }}</script>
+<header class="news-hero{{ with .Params.image }} news-hero--visual{{ end }}{{ if ne .Params.hero_layout "narrow" }} news-hero--wide{{ end }}{{ if eq .Params.hero_layout "split" }} news-hero--split{{ end }}">
+  <div class="news-hero__atmosphere" aria-hidden="true">
+    <span class="news-hero__orb news-hero__orb--a"></span>
+    <span class="news-hero__orb news-hero__orb--b"></span>
+    <span class="news-hero__slash"></span>
+  </div>
+
+  <div class="news-hero__inner">
+    <aside class="news-about" aria-label="About CodeWeekend">
+      <span class="news-about__badge" aria-hidden="true">{ }</span>
+      <p><strong>Teaching Afghans to code since 2014.</strong> Now focused on women and girls.</p>
+      <ul class="news-about__facts">
+        <li>Non-profit · BC, Canada</li>
+        <li>$0 tuition</li>
+      </ul>
+      <a class="news-about__link" href="{{ "/about/" | relURL }}">Our story</a>
+    </aside>
+
+    <div class="news-hero__rail">
+      <div class="crumb"><a href="{{ "/" | relURL }}">Home</a> &middot; <a href="{{ "/news/" | relURL }}">News</a></div>
+      <div class="blog-meta news-hero__meta">
+        {{ .Date.Format "January 2, 2006" }}
+        <span class="dot">·</span>{{ .Params.read_time | default "5 min read" }}
+      </div>
+    </div>
+
+    <div class="news-hero__copy">
+      <div class="news-hero__heading">
+        {{ with .Params.hero_kicker }}
+          <div class="eyebrow news-hero__kicker">{{ . }}</div>
+        {{ else }}
+          {{ with .Params.category }}<div class="eyebrow news-hero__kicker">{{ . }}</div>{{ end }}
+        {{ end }}
+        <h1>{{ with .Params.hero_title }}{{ . }}{{ else }}{{ $.Title }}{{ end }}</h1>
+      </div>
+      {{ with .Description }}<p class="news-hero__lead">{{ . }}</p>{{ end }}
+    </div>
+
+    {{ with .Params.image }}
+    <div class="news-hero__stage">
+      <span class="news-hero__chevron" aria-hidden="true"></span>
+      <figure class="news-hero__frame">
+        <img src="{{ . | relURL }}" alt="{{ with $.Params.image_alt }}{{ . }}{{ else }}{{ $.Title }}{{ end }}" width="1024" height="576" loading="eager" decoding="async"{{ with $.Params.image_position }} style="object-position: {{ . | safeCSS }}"{{ end }}>
+      </figure>
+    </div>
+    {{ end }}
+  </div>
+</header>
+
+<article class="prose prose--feature">
+  {{ .Content }}
+</article>
+
+<section class="blog-teaser news-more">
+  <div class="blog-teaser__inner">
+    <div class="section-header">
+      <div class="eyebrow">More from News</div>
+      <h2>Keep reading.</h2>
+    </div>
+    <div class="blog-grid">
+      {{ $current := .Permalink }}
+      {{ $more := where .Site.RegularPages "Section" "news" }}
+      {{ $more = where $more "Permalink" "ne" $current }}
+      {{ $more = first 3 ($more.ByDate.Reverse) }}
+      {{ range $more }}
+        {{ partial "blog-card.html" . }}
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

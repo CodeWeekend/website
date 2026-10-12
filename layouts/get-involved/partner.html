@@ -1,0 +1,191 @@
+{{ define "main" }}
+{{- $p := .Params -}}
+{{- $mail := printf "mailto:%s?subject=%s" $p.contact_email ("Partnership inquiry" | urlquery) -}}
+
+<header class="gi-hero gi-hero--deck">
+  <div class="gi-hero__inner">
+    <div class="gi-hero__text">
+      <div class="crumb"><a href="{{ "/" | relURL }}">Home</a> &middot; <a href="{{ "/get-involved/" | relURL }}">Get Involved</a> &middot; {{ .Title }}</div>
+      {{ with $p.hero }}
+      <div class="eyebrow alt">{{ .eyebrow }}</div>
+      <h1>{{ .title | safeHTML }}</h1>
+      <p class="lead">{{ .lead }}</p>
+      {{ end }}
+      <div class="gi-hero__ctas">
+        <a class="btn gi-btn" href="{{ $mail }}">Start a conversation</a>
+        <a class="btn btn--secondary" href="#ways">See ways to partner</a>
+      </div>
+      <div class="hero__trust">
+        <span><strong>Since 2014</strong></span>
+        <span aria-hidden="true">·</span>
+        <span><strong>Non-profit</strong> in BC, Canada</span>
+        <span aria-hidden="true">·</span>
+        <span><strong>$0</strong> tuition for students</span>
+      </div>
+    </div>
+    {{ with $p.hero }}
+    <figure class="gi-deck">
+      <div class="gi-deck__stage">
+        {{ range .cards }}
+        <div class="gi-deck__card gi-deck__card--{{ .position }}">
+          <img src="{{ .image | relURL }}" alt="{{ .alt }}" width="800" height="1127" decoding="async">
+          <span class="gi-deck__chip"><strong>{{ .name }}</strong>{{ .project }}</span>
+        </div>
+        {{ end }}
+      </div>
+      <figcaption class="gi-deck__caption"><strong>{{ .caption_value }}</strong> {{ .caption_label }}</figcaption>
+    </figure>
+    {{ end }}
+  </div>
+</header>
+
+{{ with $p.proof }}
+<section class="gi-proof" aria-label="CodeWeekend at a glance">
+  <ul class="gi-proof__list">
+    {{ range . }}
+    <li><strong>{{ .value }}</strong><span>{{ .label }}</span></li>
+    {{ end }}
+  </ul>
+</section>
+{{ end }}
+
+{{ with $p.why }}
+<section class="gi-section gi-why">
+  <div class="gi-inner">
+    <div class="section-header">
+      <div class="eyebrow">{{ .eyebrow }}</div>
+      <h2>{{ .title | safeHTML }}</h2>
+      <p class="lead">{{ .lead }}</p>
+    </div>
+    <div class="gi-why__grid">
+    {{ if .image }}
+    <figure class="gi-why__photo">
+      <img src="{{ .image | relURL }}" alt="{{ .image_alt }}" width="1080" height="1080" loading="lazy" decoding="async">
+      <figcaption><strong>{{ .image_title }}</strong>{{ .image_caption }}</figcaption>
+    </figure>
+    {{ end }}
+    <ul class="gi-reasons">
+      {{ range .items }}
+      <li>
+        <span class="gi-icon gi-icon--muted" aria-hidden="true">{{ partial "gi-icon.html" .icon }}</span>
+        <div>
+          <h3>{{ .title }}</h3>
+          <p>{{ .text }}</p>
+        </div>
+      </li>
+      {{ end }}
+    </ul>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ with $p.ways }}
+<section class="gi-section gi-section--warm" id="ways">
+  <div class="gi-inner">
+    <div class="section-header">
+      <div class="eyebrow alt">{{ .eyebrow }}</div>
+      <h2>{{ .title | safeHTML }}</h2>
+      <p class="lead">{{ .lead }}</p>
+    </div>
+    <ul class="gi-ways">
+      {{ range .items }}
+      <li>
+        <span class="gi-icon" aria-hidden="true">{{ partial "gi-icon.html" .icon }}</span>
+        <h3>{{ .title }}</h3>
+        <p>{{ .text }}</p>
+        {{ with .example }}<p class="gi-ways__example"><span>Past partner</span>{{ . }}</p>{{ end }}
+        {{ if .link }}<p class="gi-ways__example"><span>{{ .link_label | default "Next step" }}</span><a href="{{ .link | relURL }}">{{ .link_text }}</a></p>{{ end }}
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+</section>
+{{ end }}
+
+{{ with $p.showcase }}
+<section class="gi-section gi-showcase">
+  <div class="gi-inner">
+    <div class="section-header">
+      <div class="eyebrow">{{ .eyebrow }}</div>
+      <h2>{{ .title | safeHTML }}</h2>
+      <p class="lead">{{ .lead }}</p>
+    </div>
+    <ul class="gi-showcase__grid">
+      {{ range .projects }}
+      <li>
+        <img src="{{ .image | relURL }}" alt="{{ .alt }}" width="800" height="1127" loading="lazy" decoding="async">
+        <p><strong>{{ .project }}</strong>{{ .name }}</p>
+      </li>
+      {{ end }}
+    </ul>
+    {{ with .quote }}
+    <figure class="gi-showcase__quote">
+      <blockquote><p>{{ .text }}</p></blockquote>
+      <figcaption>
+        <img src="{{ .avatar | relURL }}" alt="" width="56" height="56" loading="lazy" decoding="async">
+        <span><strong>{{ .name }}</strong>{{ .role }}</span>
+        <a href="{{ .link | relURL }}">{{ .link_text }}</a>
+      </figcaption>
+    </figure>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
+
+{{ with $p.process }}
+<section class="gi-section gi-section--dark">
+  <div class="gi-inner">
+    <div class="section-header gi-header--solo">
+      <div class="eyebrow dark">{{ .eyebrow }}</div>
+      <h2>{{ .title | safeHTML }}</h2>
+    </div>
+    <ol class="gi-steps">
+      {{ range .steps }}
+      <li>
+        <h3>{{ .title }}</h3>
+        <p>{{ .text }}</p>
+      </li>
+      {{ end }}
+    </ol>
+  </div>
+</section>
+{{ end }}
+
+{{ with $p.partners }}
+<section class="gi-section gi-section--alt">
+  <div class="gi-inner">
+    <h2 class="gi-funders__title">{{ .title }}</h2>
+    <ul class="gi-funders gi-funders--spotlight">
+      {{ range .items }}
+      <li{{ if .featured }} class="is-featured"{{ end }}>
+        {{ with .badge }}<span class="gi-funders__badge">{{ . }}</span>{{ end }}
+        {{ with .stats }}
+        <ul class="gi-funders__stats">
+          {{ range . }}<li><strong>{{ .value }}</strong>{{ .label }}</li>{{ end }}
+        </ul>
+        {{ end }}
+        {{ if .url }}<a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .name }}<span class="visually-hidden"> (opens in a new tab)</span></a>{{ else }}<strong>{{ .name }}</strong>{{ end }}
+        <p>{{ .text }}</p>
+      </li>
+      {{ end }}
+    </ul>
+    <p class="gi-funders__note">{{ .note }} <a href="{{ "/partners/" | relURL }}">See all partners</a></p>
+  </div>
+</section>
+{{ end }}
+
+{{ with $p.closing }}
+<section class="gi-closing">
+  <div class="gi-closing__inner">
+    <h2>{{ .title | safeHTML }}</h2>
+    <p class="lead">{{ .text }}</p>
+    <div class="gi-closing__ctas">
+      <a class="btn gi-btn" href="{{ $mail }}">Start a conversation</a>
+      <a class="btn gi-btn--outline" href="{{ "/get-involved/donate/" | relURL }}">Give as an individual</a>
+    </div>
+    <p class="gi-closing__more">Prefer to email directly? <a href="{{ $mail }}">{{ $p.contact_email }}</a></p>
+  </div>
+</section>
+{{ end }}
+{{ end }}

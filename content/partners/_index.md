@@ -5,7 +5,11 @@ description: "Organizations that have funded scholarships, expanded access to le
 
 ## Linda Norgrove Foundation
 
-For the 2026 Web & AI Development Bootcamp, the [Linda Norgrove Foundation](https://lindanorgrovefoundation.org) funded **30 full scholarships** and **24 internet packages** for women and girls in Afghanistan.
+The [Linda Norgrove Foundation](https://lindanorgrovefoundation.org) has been CodeWeekend's core funding partner since 2025. For the 2025 Web & AI Development Bootcamp, it funded **30 full scholarships** and **24 internet packages** for women and girls in Afghanistan. In 2026, it again funded **30 full scholarships** and covered internet access and the wider costs of running the bootcamp.
+
+## GiveInternet
+
+In 2026, GiveInternet provided **laptops to 10 students** and **three months of internet support to more than 30 students** in the Web & AI Development Bootcamp.
 
 ## Hackajob
 

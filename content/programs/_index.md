@@ -1,12 +1,159 @@
 ---
 title: "Programs"
-description: "Fully-live, cohort-based coding bootcamps. The 2026 Web & AI Development Bootcamp is dedicated to women and girls in Afghanistan."
+description: "Free, fully-live coding Bootcamps for Afghan learners, taught by working developers — with a focus on women and girls."
+
+hero:
+  eyebrow: "Programs · Free · Fully live"
+  title: "Where Afghan learners <em>become builders.</em>"
+  lead: "Intensive coding Bootcamps, taught fully live by working developers and free for everyone accepted. We teach Afghan learners wherever they are, with a focus on women and girls."
+  photos:
+    - src: "/images/news/bootcamp-2021.jpg"
+      alt: "Students follow a live coding lesson on a projected screen while the instructor helps a student at her desk"
+      caption: "Live, hands-on teaching"
+      width: 2048
+      height: 1365
+    - src: "/images/news/learn-coding.jpg"
+      alt: "A full lecture hall at a CodeWeekend community session at Kardan University in Kabul"
+      caption: "Community sessions in Kabul"
+      width: 2048
+      height: 1365
+    - src: "/images/news/bootcamp-2026-demo-3.jpg"
+      alt: "An online Demo Day: a slide of graduates' apps, video tiles of organizers and mentors, and a chat full of congratulations"
+      caption: "Demo Day, online"
+      width: 2048
+      height: 1118
+  badge_title: "Since 2014"
+  badge_text: "From a volunteer community in Kabul to free, fully-live Bootcamps."
+
+glance:
+  kicker: "CodeWeekend at a glance"
+  title: "A decade of live teaching."
+  items:
+    - value: "10+"
+      label: "years of community events, trainings, and Bootcamps"
+    - value: "100+"
+      label: "sessions, events, and trainings run by volunteers"
+    - value: "$0"
+      label: "tuition — every Bootcamp is free for those accepted"
+    - value: "Live"
+      label: "every session taught by a working developer"
+
+serve:
+  eyebrow: "Who we serve"
+  title: "For learners with <em>the fewest doors open.</em>"
+  lead: "We teach Afghan learners inside and outside Afghanistan, with a focus on women and girls. Some arrive having never built a website. Others know enough to want structure, feedback, and a finish line."
+  pull: "For many students in Afghanistan, the hardest part of an online Bootcamp is not the code. It is showing up."
+  items:
+    - icon: "book"
+      barrier: "Classrooms closed to her"
+      text: "Since 2021, girls in Afghanistan have not been allowed to attend school beyond sixth grade, and since December 2022 women have been shut out of universities."
+      answer: "Fully live online learning — one of the few paths still open."
+    - icon: "heart"
+      barrier: "Tuition she can’t pay"
+      text: "Cost should never decide who gets to learn."
+      answer: "Every Bootcamp is free for those accepted, with full scholarships funded by partners."
+    - icon: "laptop-off"
+      barrier: "No computer of her own"
+      text: "Some of the students we admit don’t have a personal computer."
+      answer: "Partners such as GiveInternet provide laptops where they’re needed."
+    - icon: "wifi-off"
+      barrier: "A connection that drops"
+      text: "Internet is expensive and power cuts are common."
+      answer: "Internet packages from partners like the Linda Norgrove Foundation and GiveInternet keep students connected."
+
+programs:
+  eyebrow: "Our programs"
+  title: "Two Bootcamps. <em>One path forward.</em>"
+  lead: "Start with the foundational Web & AI Bootcamp, then continue into Full Stack to go deeper. Both are taught live, in cohort — never asynchronous, never recorded-and-forgotten."
+  connector: "Then, go deeper"
+
+work:
+  eyebrow: "Real work, real impact"
+  title: "Skills you can see. <em>Projects they built themselves.</em>"
+  lead: "One rule runs through every Bootcamp: if you learn it, you build with it. Learners finish with real projects they can share — from a first personal website to their own AI-powered apps, presented live at Demo Day."
+  link_text: "Explore student projects"
+  link: "/projects/"
+  apps:
+    - name: "A platform for her own voice"
+      by: "Mahdia Khamoosh"
+      cohort: "Web & AI · 2025"
+      text: "A personal website built from scratch to share her interests and perspective from Panjshir."
+      image: "/images/projects/mahdia-website.jpg"
+    - name: "SafeNet Home"
+      by: "Mahdia Hassani"
+      cohort: "Web & AI · 2026"
+      text: "Flags common scams and coaches everyday digital security habits."
+      image: "/images/news/bootcamp-2026-capstone-mahdia.jpg"
+    - name: "Silver Screen"
+      by: "Elhama Salah"
+      cohort: "Web & AI · 2025"
+      text: "A responsive movie platform with featured films, listings, and cinema information."
+      image: "/images/projects/elhama-movie-platform.jpg"
+    - name: "AfghanBuddy"
+      by: "Jamila Waziry"
+      cohort: "Web & AI · 2026"
+      text: "Explores Afghan destinations and culture, then builds trip plans."
+      image: "/images/news/bootcamp-2026-capstone-jamila.jpg"
+  quotes:
+    - text: "I learnt things that I was not able to learn in my 4 years of Computer Science class in one of the private universities."
+      name: "Mustafa Mohammadi"
+      project: "Bootcamp 2021–2022"
+      avatar: "/images/alumni/circle-cropped-4.png"
+    - text: "CodeWeekend gave me the practical experience and confidence to build real-world projects."
+      name: "Zahra Ahmadi"
+      project: "Web & AI Bootcamp 2026"
+      avatar: "/images/news/bootcamp-2026-avatar-zahra.jpg"
+
+record:
+  eyebrow: "Our track record"
+  title: "Every cohort since 2019 <em>built the next.</em>"
+  lead: "CodeWeekend began as a volunteer developer community in Kabul in 2014. Since the first Bootcamp in 2019, every cohort has depended on support from partners and individual donors."
+  cohorts:
+    - year: "2019"
+      value: "12"
+      label: "graduates"
+      text: "Our free pilot Bootcamp accepted 20 learners."
+    - year: "2021"
+      value: "75"
+      label: "participants"
+      text: "A remote, full-time cohort for learners inside and outside Afghanistan, with continuing mentorship."
+    - year: "2022"
+      value: "30"
+      label: "learners"
+      text: "Joined from more than 250 applicants. Hackajob funded scholarships for 20 women, and Scrimba gave 100 learners a year of premium access."
+    - year: "2025"
+      value: "280+"
+      label: "applicants"
+      text: "The first Web & AI Bootcamp for women and girls in Afghanistan. 50 were admitted, and the Linda Norgrove Foundation funded 30 full scholarships."
+    - year: "2026"
+      value: "476"
+      label: "applicants"
+      text: "50 women and girls were admitted. Graduates built their own AI-powered apps and presented them live at Demo Day."
+  note: "We report applications, admissions, and graduations separately and never present one as another."
+  link_text: "See our full impact record"
+  link: "/impact/"
+
+support:
+  eyebrow: "Support the next cohort"
+  title: "Far more learners apply <em>than we have seats for.</em>"
+  lead: "In recent cohorts, far more people have applied than we had seats for. Every donor, partner, and mentor helps open another seat in the next Bootcamp."
+  ways:
+    - icon: "heart"
+      title: "Donate"
+      text: "$25 covers one month of internet for one student. $2,500 covers a full seat — twelve weeks of live instruction."
+      cta: "Give to the next cohort"
+      url: "/get-involved/donate/"
+    - icon: "user-check"
+      title: "Partner or fund"
+      text: "Fund scholarships, internet, or laptops for Afghan learners in a future Bootcamp."
+      cta: "Partner with us"
+      url: "/get-involved/partner/"
+    - icon: "users"
+      title: "Mentor"
+      text: "Join live sessions to share your professional journey and answer the questions only practice can produce."
+      cta: "Become a mentor"
+      url: "/get-involved/mentor/"
+  learner_title: "Want to learn with us?"
+  learner_text: "Applications for the next cohort aren’t open yet."
+  learner_cta: "Register your interest"
 ---
-
-## Live, cohort-based, free for participants
-
-CodeWeekend runs intensive coding bootcamps that are taught fully live — never asynchronous, never recorded-and-forgotten. Students learn alongside a cohort of peers, with mentors who actively work as developers in industry.
-
-Our flagship program in 2026 is the **Web & AI Development Bootcamp**, a 12-week program created specifically for women and girls in Afghanistan. We've also offered longer Full Stack programs in previous cohorts, and continue to evaluate when to bring those back.
-
-All programs are free for participants thanks to the support of partners like the [Linda Norgrove Foundation](https://lindanorgrovefoundation.org), [Hackajob](https://hackajob.com), and [Scrimba](https://scrimba.com).
