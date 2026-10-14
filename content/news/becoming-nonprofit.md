@@ -42,7 +42,7 @@ aliases:
     <a href="#early-work">Early work</a>
     <a href="#non-profit">Non-profit</a>
     <a href="#voices">Voices</a>
-    <a class="news-stats__cta" href="/news/bootcamp-2026-from-first-class-to-demo-day/">Next: the 2026 cohort</a>
+    <a class="news-stats__cta" href="/news/bootcamp-2026-from-first-build-to-demo-day/">Next: the 2026 cohort</a>
   </nav>
 </div>
 
@@ -206,7 +206,7 @@ Our plans for the future, now that CodeWeekend has a non-profit foundation to bu
   <li><strong>Partnerships &amp; funding</strong><p>Strengthening the CodeWeekend Foundation’s partnerships and funding opportunities.</p></li>
 </ol>
 
-<a class="news-path__next news-path__next--link news-wide" href="/news/bootcamp-2026-from-first-class-to-demo-day/">
+<a class="news-path__next news-path__next--link news-wide" href="/news/bootcamp-2026-from-first-build-to-demo-day/">
   <span>What came next · 2026</span>
   The 2026 cohort, from first build to Demo Day.
 </a>

@@ -6,7 +6,9 @@ description: "Fifty Afghan women and girls selected. Twenty-five graduates. Twen
 category: "Cohort spotlight"
 read_time: "7 min read"
 thumb_style: "default"
-slug: "bootcamp-2026-from-first-class-to-demo-day"
+slug: "bootcamp-2026-from-first-build-to-demo-day"
+aliases:
+  - /news/bootcamp-2026-from-first-class-to-demo-day/
 image: "/images/news/bootcamp-2026-hero.jpg"
 image_alt: "CodeWeekend Web & AI Development Bootcamp 2026 banner — Learning with Purpose"
 og_image: "/images/news/bootcamp-2026-hero.jpg"
@@ -372,7 +374,7 @@ Graduates leave with projects they can keep improving, GitHub profiles with real
     <li><strong>Hire</strong><span>Junior front-end, web, or AI-integration roles — full-time, part-time, or freelance.</span></li>
     <li><strong>Host an internship</strong><span>A remote placement where she can work on a real team.</span></li>
   </ol>
-  <a class="news-hire__btn" href="mailto:fziaee@codeweekend.net?subject=2026%20graduate%20support%20offer%20(mentor%2C%20hire%2C%20or%20internship)">Email fziaee@codeweekend.net</a>
+  <a class="news-hire__btn" href="mailto:hiring@codeweekend.net?subject=2026%20graduate%20support%20offer%20(mentor%2C%20hire%2C%20or%20internship)">Email hiring@codeweekend.net</a>
   <a class="news-hire__link" href="/demo-day/#graduates">Meet the graduates and their projects</a>
   <p class="news-hire__fine">One message is enough — we’ll follow up from there.</p>
 </div>
@@ -391,14 +393,14 @@ Graduates leave with projects they can keep improving, GitHub profiles with real
       <div class="news-fund__legend" aria-hidden="true"><span class="is-in">50 seats in 2026</span><span class="is-out">426 without a seat this year</span></div>
     </div>
     <div class="news-fund__ctas">
-      <a class="news-fund__btn" href="mailto:fziaee@codeweekend.net?subject=Funding%20partnership%20for%20the%20next%20CodeWeekend%20cohort">Become a funding partner</a>
+      <a class="news-fund__btn" href="mailto:partnerships@codeweekend.net?subject=Funding%20partnership%20for%20the%20next%20CodeWeekend%20cohort">Become a funding partner</a>
       <a class="news-fund__link" href="/get-involved/partner/">Ways to partner</a>
     </div>
   </div>
   <ul class="news-fund__tiers">
-    <li><span class="news-fund__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.55a11 11 0 0 1 14 0M8.5 16.1a6 6 0 0 1 7 0M2 8.82a15 15 0 0 1 20 0"/><circle cx="12" cy="20" r="1"/></svg></span><strong>$25</strong><span>Keeps one learner online for a month of live classes</span></li>
-    <li><span class="news-fund__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="11" rx="1.5"/><path d="M2 19h20"/></svg></span><strong>$500</strong><span>A laptop of her own, for a learner who doesn’t have one</span></li>
-    <li><span class="news-fund__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22 9 12 4 2 9l10 5 10-5z"/><path d="M6 11.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-4.5"/></svg></span><strong>$2,500</strong><span>A full seat in the next cohort, from first class to Demo Day</span></li>
+    <li><span class="news-fund__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.55a11 11 0 0 1 14 0M8.5 16.1a6 6 0 0 1 7 0M2 8.82a15 15 0 0 1 20 0"/><circle cx="12" cy="20" r="1"/></svg></span><strong>$25</strong><span>One month of internet for one student — we pay monthly, not weekly</span></li>
+    <li><span class="news-fund__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="11" rx="1.5"/><path d="M2 19h20"/></svg></span><strong>$500</strong><span>A laptop for a student who doesn’t have one</span></li>
+    <li><span class="news-fund__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22 9 12 4 2 9l10 5 10-5z"/><path d="M6 11.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-4.5"/></svg></span><strong>$2,500</strong><span>A full seat: 6 months of internet ($25 × 6 = $150), a laptop ($500), and the live teaching through Demo Day</span></li>
     <li><span class="news-fund__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></svg></span><strong>$10,000</strong><span>A named scholarship or sponsorship of the next cohort</span></li>
   </ul>
   <div class="news-fund__trust">

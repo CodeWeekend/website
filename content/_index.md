@@ -8,7 +8,7 @@ hero:
   lead: "Since 2014, CodeWeekend has grown from a volunteer developer community in Kabul into free, fully-live coding bootcamps for Afghan learners, taught by working developers. Our 2026 Bootcamp was built for women and girls in Afghanistan."
   ide_file: "capstone.js"
   ide_label: "Web & AI Bootcamp 2026"
-  builds_link: "/news/bootcamp-2026-from-first-class-to-demo-day/#capstones"
+  builds_link: "/news/bootcamp-2026-from-first-build-to-demo-day/#capstones"
   builds_cta: "See all 2026 capstones"
   builds:
     - name: "Mahdia Hassani"
@@ -105,7 +105,7 @@ history:
       tag: "Latest"
       title: "Bigger, and building with AI"
       text: "476 women and girls applied and 50 were admitted. Graduates built their own AI-powered apps and presented them live at Demo Day."
-      link: "/news/bootcamp-2026-from-first-class-to-demo-day/"
+      link: "/news/bootcamp-2026-from-first-build-to-demo-day/"
 
 alumni:
   eyebrow: "Alumni"
@@ -164,9 +164,9 @@ journey:
   finale:
     when: "July – August · Capstone & Demo Day"
     title: "An app of her own, <em>presented live.</em>"
-    text: "Each graduate chose a problem, planned a product, and built it — then presented it to students, mentors, partners, and alumni at Demo Day."
+    text: "Each graduate chose a problem, planned a product, and built it. Twenty of the 25 graduates presented live to students, mentors, partners, and alumni at Demo Day."
     cta: "Read the 2026 Bootcamp story"
-    link: "/news/bootcamp-2026-from-first-class-to-demo-day/"
+    link: "/news/bootcamp-2026-from-first-build-to-demo-day/"
     image: "/images/news/bootcamp-2026-capstones-grid.jpg"
     alt: "Grid of 24 capstone apps from the 2026 cohort, each labelled with the graduate's name, including PostPlanner-AI, TravelGenie, MorningFocus, SafeNet, Launchpad, SmartCloset, MeetMind, and Freela"
 

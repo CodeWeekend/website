@@ -140,7 +140,7 @@ support:
   ways:
     - icon: "heart"
       title: "Donate"
-      text: "$25 covers one month of internet for one student. $2,500 covers a full seat — twelve weeks of live instruction."
+      text: "$25 covers one month of internet for one student. $2,500 covers a full seat: 6 months of internet, a laptop, and the live teaching through Demo Day."
       cta: "Give to the next cohort"
       url: "/get-involved/donate/"
     - icon: "user-check"

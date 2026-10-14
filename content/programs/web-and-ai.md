@@ -72,7 +72,7 @@ Participants explore the growing field of artificial intelligence, including how
 
 ### 4. Capstone Project
 
-The bootcamp ends with a capstone where each student designs and develops their own application — presented at a **Demo Day** to celebrate their progress.
+The bootcamp ends with a capstone where each student designs and develops her own application. Graduates present that work at **Demo Day** — in 2026, 20 of the 25 graduates presented live.
 
 By combining guided lessons with hands-on practice, the bootcamp helps learners gain both strong technical skills and the confidence to use them in the real world.
 
@@ -84,12 +84,12 @@ This mentorship helps students see what is possible — reminding them that a ca
 
 ## Student work
 
-Each 2026 graduate chose a problem, planned a product, and built her own AI-powered application — then presented it live at Demo Day on 27 August 2026.
+Each 2026 graduate chose a problem, planned a product, and built her own AI-powered application. Twenty of the 25 graduates presented live at Demo Day on 27 August 2026.
 
-[Read the 2026 Bootcamp story →](/news/bootcamp-2026-from-first-class-to-demo-day/)
+[Read the 2026 Bootcamp story →](/news/bootcamp-2026-from-first-build-to-demo-day/)
 
 The program first ran in 2025. In that cohort's first weeks, **Mahdia Khamoosh from Panjshir** built and launched her own personal website from scratch — a platform where her voice can be seen and heard. [Read Mahdia's story →](/stories/mahdia/)
 
 ## Future cohorts
 
-Our plans for 2026 and beyond include expanding the bootcamp to reach more students, building new AI-focused learning tracks alongside web development, and strengthening partnerships and funding opportunities. If you'd like to be notified when the next cohort opens, subscribe below or email us at [fziaee@codeweekend.net](mailto:fziaee@codeweekend.net).
+Our plans for 2026 and beyond include expanding the bootcamp to reach more students, building new AI-focused learning tracks alongside web development, and strengthening partnerships and funding opportunities. If you'd like to be notified when the next cohort opens, subscribe below or email us at [hello@codeweekend.net](mailto:hello@codeweekend.net).

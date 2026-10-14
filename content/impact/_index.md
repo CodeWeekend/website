@@ -176,7 +176,7 @@ cohort:
   report_text: "See the full 2026 report"
   report_url: "/impact/2026/"
   story_text: "Read the 2026 story"
-  story_url: "/news/bootcamp-2026-from-first-class-to-demo-day/"
+  story_url: "/news/bootcamp-2026-from-first-build-to-demo-day/"
 
 partners:
   eyebrow: "Partners"

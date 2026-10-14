@@ -34,7 +34,7 @@ phases:
     text: "Docker, CI/CD pipelines, and infrastructure as code."
   - title: "Capstone & interview prep"
     text: "Real engineering work and senior-level interviews."
-interest_url: "mailto:fziaee@codeweekend.net?subject=Full%20Stack%20Bootcamp%20interest"
+interest_url: "mailto:hello@codeweekend.net?subject=Full%20Stack%20Bootcamp%20interest"
 card_chip: "Advanced"
 photo: "/images/news/updates-2022-student-work.jpg"
 photo_width: 900
@@ -79,4 +79,4 @@ A six-week capstone, typically with a partner organization needing real engineer
 
 The Full Stack Bootcamp is currently between cohorts as we focus on the 2026 Web & AI program for women and girls in Afghanistan. Express interest below to be notified when the next Full Stack cohort opens.
 
-[Tell us you're interested →](mailto:fziaee@codeweekend.net?subject=Full%20Stack%20Bootcamp%20interest)
+[Tell us you're interested →](mailto:hello@codeweekend.net?subject=Full%20Stack%20Bootcamp%20interest)

@@ -95,11 +95,15 @@
     root.classList.add('is-autoplay');
     let visible = false;
     let hovering = false;
-    const sync = () => root.classList.toggle('is-playing', root.classList.contains('is-autoplay') && visible && !hovering);
+    let focused = false;
+    const sync = () => root.classList.toggle('is-playing', root.classList.contains('is-autoplay') && visible && !hovering && !focused);
     root.addEventListener('mouseenter', () => { hovering = true; sync(); });
     root.addEventListener('mouseleave', () => { hovering = false; sync(); });
-    root.addEventListener('focusin', () => { hovering = true; sync(); });
-    root.addEventListener('focusout', () => { hovering = false; sync(); });
+    root.addEventListener('focusin', () => { focused = true; sync(); });
+    root.addEventListener('focusout', (e) => {
+      focused = root.contains(e.relatedTarget);
+      sync();
+    });
     new IntersectionObserver((entries) => {
       visible = entries[0].isIntersecting;
       sync();

@@ -62,13 +62,15 @@
 	redir /codeweekend-mentors* /community/ 301
 	redir /team/* /community/ 301
 	redir /impact/2025* /impact/2026/ 301
-	redir /news* /blog/ 301
-	redir /codeweekend-2025-web-ai-development-bootcamp-and-becoming-a-non-profit-organization* /blog/becoming-nonprofit/ 301
-	redir /codeweekend-updates-2022* /blog/codeweekend-updates-2022/ 301
-	redir /codeweekend-bootcamp-2021* /blog/codeweekend-bootcamp-2021/ 301
-	redir /what-is-software-development* /blog/what-is-software-development/ 301
-	redir /a-successful-career-in-software-development* /blog/a-successful-career-in-software-development/ 301
-	redir /do-you-want-to-learn-coding-whats-next* /blog/do-you-want-to-learn-coding-whats-next/ 301
+	redir /blog /news/ 301
+	redir /blog/ /news/ 301
+	redir /news/bootcamp-2026-from-first-class-to-demo-day* /news/bootcamp-2026-from-first-build-to-demo-day/ 301
+	redir /codeweekend-2025-web-ai-development-bootcamp-and-becoming-a-non-profit-organization* /news/becoming-nonprofit/ 301
+	redir /codeweekend-updates-2022* /news/codeweekend-updates-2022/ 301
+	redir /codeweekend-bootcamp-2021* /news/codeweekend-bootcamp-2021/ 301
+	redir /what-is-software-development* /news/what-is-software-development/ 301
+	redir /a-successful-career-in-software-development* /news/a-successful-career-in-software-development/ 301
+	redir /do-you-want-to-learn-coding-whats-next* /news/do-you-want-to-learn-coding-whats-next/ 301
 
 	# 404 page
 	handle_errors {

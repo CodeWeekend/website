@@ -5,7 +5,7 @@ date: 2026-07-30
 layout: partner
 og_image: "/images/news/bootcamp-2026-capstones-grid.jpg"
 
-contact_email: "fziaee@codeweekend.net"
+contact_email: "partnerships@codeweekend.net"
 
 hero:
   eyebrow: "Partner with CodeWeekend"
@@ -119,7 +119,7 @@ showcase:
     name: "Mahdia Hassani"
     role: "2026 graduate · SafeNet Home"
     avatar: "/images/news/bootcamp-2026-avatar-mahdia.jpg"
-    link: "/news/bootcamp-2026-from-first-class-to-demo-day/"
+    link: "/news/bootcamp-2026-from-first-build-to-demo-day/"
     link_text: "Read the 2026 bootcamp story"
 
 process:

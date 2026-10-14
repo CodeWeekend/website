@@ -9,7 +9,7 @@ date: 2026-04-26
 
 These Terms of Service ("Terms") describe the agreement between **CodeWeekend** — a non-profit society incorporated in British Columbia, Canada — and you when you use this website, apply to our programs, mentor, donate, partner, or otherwise interact with CodeWeekend.
 
-We have written these Terms in the plainest language we could manage. If anything is unclear, email [fziaee@codeweekend.net](mailto:fziaee@codeweekend.net) and we will explain.
+We have written these Terms in the plainest language we could manage. If anything is unclear, email [hello@codeweekend.net](mailto:hello@codeweekend.net) and we will explain.
 
 By using the site or participating in any CodeWeekend activity, you agree to these Terms.
 
@@ -115,7 +115,7 @@ Curriculum materials we provide during the program are for your personal learnin
 ## 8. Donations and financial matters
 
 - **All donations are voluntary** and are used for program operations consistent with our mission.
-- **Donations are non-refundable** unless required by law or unless you can demonstrate the donation was made in error (e.g. duplicate transaction). We will work in good faith to resolve any donation issues — email [fziaee@codeweekend.net](mailto:fziaee@codeweekend.net).
+- **Donations are non-refundable** unless required by law or unless you can demonstrate the donation was made in error (e.g. duplicate transaction). We will work in good faith to resolve any donation issues — email [donate@codeweekend.net](mailto:donate@codeweekend.net).
 - **Tax receipts:** Until our charitable status with the Canada Revenue Agency is finalized, we cannot issue official Canadian tax receipts. We will provide acknowledgment letters and, once charitable status is granted, retroactively issue receipts to eligible 2026 donors.
 - **For donors outside Canada:** check with your local tax authority on the treatment of contributions to a Canadian non-profit society.
 
@@ -186,7 +186,9 @@ If you continue to use the site or participate in our programs after a change ta
 
 ## 16. Contact
 
-- **Email (general, privacy, and donation questions):** [fziaee@codeweekend.net](mailto:fziaee@codeweekend.net)
+- **General questions:** [hello@codeweekend.net](mailto:hello@codeweekend.net)
+- **Privacy questions:** [privacy@codeweekend.net](mailto:privacy@codeweekend.net)
+- **Donation questions:** [donate@codeweekend.net](mailto:donate@codeweekend.net)
 - **Mailing address:** Available on request. CodeWeekend is incorporated in British Columbia, Canada.
 
 For everything else, [the Contact page](/contact/) has more channels.

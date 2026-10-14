@@ -2,7 +2,7 @@
 title: "Get Involved"
 description: "CodeWeekend runs because of the people who fund it, mentor in it, and hire from it. Find the way to take part that fits you."
 og_image: "/images/news/bootcamp-2026-demo-live.jpg"
-contact_email: "fziaee@codeweekend.net"
+contact_email: "hello@codeweekend.net"
 
 hero:
   eyebrow: "Get involved"
@@ -43,7 +43,7 @@ paths:
         - value: "$25"
           label: "one month of internet for one student"
         - value: "$2,500"
-          label: "a full twelve-week seat"
+          label: "a full seat (6 months of internet, a laptop, and the teaching)"
       cta: "Give today"
       url: "/get-involved/donate/"
       image: "/images/news/bootcamp-2026-fund.jpg"
@@ -92,7 +92,7 @@ impact:
   name: "Zahra Ahmadi"
   role: "2026 graduate · Freela"
   avatar: "/images/news/bootcamp-2026-avatar-zahra.jpg"
-  link: "/news/bootcamp-2026-from-first-class-to-demo-day/"
+  link: "/news/bootcamp-2026-from-first-build-to-demo-day/"
   link_text: "Read the 2026 bootcamp story"
   partners_title: "Made possible by"
   partners:

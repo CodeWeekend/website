@@ -14,7 +14,7 @@ enableEmoji = true
   mentorFormUrl = "/get-involved/mentor/"
   hireFormUrl = "/get-involved/hire/"
   donateUrl = "/get-involved/donate/"
-  contactEmail = "fziaee@codeweekend.net"
+  contactEmail = "hello@codeweekend.net"
 
   [params.social]
     instagram = "https://instagram.com/codeweekend"

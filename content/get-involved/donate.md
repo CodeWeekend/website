@@ -5,7 +5,7 @@ date: 2026-04-01
 layout: donate
 og_image: "/images/news/bootcamp-2026-fund.jpg"
 
-donate_email: "fziaee@codeweekend.net"
+donate_email: "donate@codeweekend.net"
 
 hero:
   eyebrow: "Donate · Support the next cohort"
@@ -90,7 +90,7 @@ gifts:
       text: "A laptop, refurbished or new, for a student who needs one"
     - amount: "$2,500"
       icon: "cap"
-      text: "A full seat — twelve weeks of live instruction for one student"
+      text: "A full seat: 6 months of internet ($25 × 6 = $150), a laptop ($500), and the live teaching through Demo Day"
       featured: true
       badge: "Start to finish"
     - amount: "$10,000"
@@ -103,7 +103,7 @@ how:
   title: "How to give"
   steps:
     - title: "Email us"
-      text: "Write to [fziaee@codeweekend.net](mailto:fziaee@codeweekend.net?subject=Donation%20to%20CodeWeekend) with the amount you have in mind and whether it’s a one-time or monthly gift."
+      text: "Write to [donate@codeweekend.net](mailto:donate@codeweekend.net?subject=Donation%20to%20CodeWeekend) with the amount you have in mind and whether it’s a one-time or monthly gift."
     - title: "We arrange the details"
       text: "We’ll reply personally to set up your donation. Direct online giving is on the way; this page will link to it once it’s live."
     - title: "Direct your gift, if you like"

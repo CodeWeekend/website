@@ -11,7 +11,7 @@ CodeWeekend serves a community where privacy is not just a legal matter — it i
 
 This Privacy Policy explains what personal information CodeWeekend collects, how we use it, who we share it with, and the rights you have over your information.
 
-If anything below is unclear, please email us at [fziaee@codeweekend.net](mailto:fziaee@codeweekend.net). We will respond in plain language.
+If anything below is unclear, please email us at [privacy@codeweekend.net](mailto:privacy@codeweekend.net). We will respond in plain language.
 
 ## 1. Who we are
 
@@ -65,7 +65,7 @@ This is the most important section of this policy for many of our students. Beca
 - **Cohort group photos and class recordings** are kept private and never shared outside the cohort and program staff without explicit consent.
 - **If you are under 18,** we additionally require consent from a parent or guardian for any public-facing material.
 
-If you have ever appeared on our site or social media and want your image, name, or story removed, email [fziaee@codeweekend.net](mailto:fziaee@codeweekend.net). We will act within seven days.
+If you have ever appeared on our site or social media and want your image, name, or story removed, email [privacy@codeweekend.net](mailto:privacy@codeweekend.net). We will act within seven days.
 
 ## 5. Who we share information with
 
@@ -108,7 +108,7 @@ You can ask us to:
 - **Withdraw consent** at any time for any purpose where we rely on consent (e.g. publication of your photo or story, newsletter subscription).
 - **Receive a copy** of the information you provided to us in a structured, common format.
 
-To exercise any of these rights, email [fziaee@codeweekend.net](mailto:fziaee@codeweekend.net). We will respond within 30 days. If we cannot fulfil a request (for example, because we are legally required to retain records), we will tell you why.
+To exercise any of these rights, email [privacy@codeweekend.net](mailto:privacy@codeweekend.net). We will respond within 30 days. If we cannot fulfil a request (for example, because we are legally required to retain records), we will tell you why.
 
 If you believe we are not handling your information appropriately, you also have the right to complain to a supervisory authority. In Canada, that is the [Office of the Privacy Commissioner of Canada](https://www.priv.gc.ca/) federally, and the [Office of the Information and Privacy Commissioner for British Columbia](https://www.oipc.bc.ca/) provincially. If you are in the EU/UK, your local data protection authority can investigate.
 
@@ -141,7 +141,7 @@ CodeWeekend's bootcamp programs are designed for participants 16 and older. For 
 
 - We require parent or guardian consent for participation.
 - We require parent or guardian consent for any photo, name, or story used publicly.
-- We do not knowingly collect personal information from children under 13. If you believe we have, contact [fziaee@codeweekend.net](mailto:fziaee@codeweekend.net) and we will delete it immediately.
+- We do not knowingly collect personal information from children under 13. If you believe we have, contact [privacy@codeweekend.net](mailto:privacy@codeweekend.net) and we will delete it immediately.
 
 ## 12. Changes to this policy
 
@@ -157,7 +157,8 @@ We will update this policy from time to time as our practices evolve, the progra
 
 ## 13. Contact
 
-- **Email (privacy and general questions):** [fziaee@codeweekend.net](mailto:fziaee@codeweekend.net)
+- **Email:** [privacy@codeweekend.net](mailto:privacy@codeweekend.net)
+- **General contact:** [hello@codeweekend.net](mailto:hello@codeweekend.net)
 - **Mailing address:** Available on request — please email us first. CodeWeekend is incorporated in British Columbia, Canada.
 
 If you don't want to email, [the Contact page](/contact/) has additional channels.

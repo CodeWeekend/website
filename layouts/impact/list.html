@@ -160,7 +160,7 @@
                 {{ range . }}<li><strong>{{ .value }}</strong><span>{{ .label }}</span></li>{{ end }}
               </ul>
               {{ end }}
-              {{ with $c.link }}<a class="im-chapter__link" href="{{ . | relURL }}">{{ $c.link_text }}</a>{{ end }}
+              {{ with $c.link }}<a class="im-chapter__link" href="{{ if hasPrefix . "#" }}{{ . }}{{ else }}{{ . | relURL }}{{ end }}">{{ $c.link_text }}</a>{{ end }}
             </div>
           </article>
         </li>
