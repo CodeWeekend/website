@@ -1,6 +1,6 @@
 ---
 title: "Building a platform for her own voice"
-date: 2026-07-15
+date: 2025-10-15
 draft: false
 student_name: "Mahdia Khamoosh"
 cohort: "Web & AI 2025"

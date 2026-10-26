@@ -61,7 +61,6 @@
 	redir /codeweekend-instructors* /community/ 301
 	redir /codeweekend-mentors* /community/ 301
 	redir /team/* /community/ 301
-	redir /impact/2025* /impact/2026/ 301
 	redir /blog /news/ 301
 	redir /blog/ /news/ 301
 	redir /news/bootcamp-2026-from-first-class-to-demo-day* /news/bootcamp-2026-from-first-build-to-demo-day/ 301
