@@ -1,15 +1,138 @@
 {{ define "main" }}
-<header class="page-header">
-  <div class="page-header__inner">
-    <div class="crumb"><a href="{{ "/" | relURL }}">Home</a> &middot; Get Involved</div>
-    <h1>{{ .Title }}</h1>
-    {{ with .Description }}<p class="lead page-header__lead">{{ . }}</p>{{ end }}
+{{- $p := .Params -}}
+{{- $mail := printf "mailto:%s?subject=%s" $p.contact_email ("Getting involved with CodeWeekend" | urlquery) -}}
+
+<header class="gi-hero gi-hero--hub">
+  <div class="gi-hero__inner">
+    <div class="gi-hero__text">
+      <div class="crumb"><a href="{{ "/" | relURL }}">Home</a> &middot; {{ .Title }}</div>
+      {{ with $p.hero }}
+      <div class="eyebrow alt">{{ .eyebrow }}</div>
+      <h1>{{ .title | safeHTML }}</h1>
+      <p class="lead">{{ .lead }}</p>
+      {{ end }}
+      <div class="gi-hero__ctas">
+        <a class="btn gi-btn" href="#paths">Find your way in</a>
+        <a class="btn btn--secondary" href="{{ "/get-involved/donate/" | relURL }}">Donate</a>
+      </div>
+      <div class="hero__trust">
+        <span><strong>Since 2014</strong></span>
+        <span aria-hidden="true">·</span>
+        <span><strong>Non-profit</strong> in BC, Canada</span>
+        <span aria-hidden="true">·</span>
+        <span><strong>$0</strong> tuition for students</span>
+      </div>
+    </div>
+    {{ with $p.hero }}
+    <figure class="gi-live">
+      <div class="gi-live__frame">
+        <img src="{{ .image | relURL }}" alt="{{ .image_alt }}" width="1200" height="824" decoding="async">
+        <span class="gi-live__tag"><i aria-hidden="true"></i>{{ .tag }}</span>
+      </div>
+      <figcaption class="gi-live__caption">
+        <span class="gi-live__avatars" aria-hidden="true">
+          {{ range .avatars }}<img src="{{ . | relURL }}" alt="" width="40" height="40" decoding="async">{{ end }}
+        </span>
+        <span><strong>{{ .caption_title }}</strong>{{ .caption_text }}</span>
+      </figcaption>
+    </figure>
+    {{ end }}
   </div>
 </header>
 
-{{ with .Content }}
-<article class="prose">{{ . }}</article>
+{{ with $p.proof }}
+<section class="gi-proof" aria-label="CodeWeekend at a glance">
+  <ul class="gi-proof__list">
+    {{ range . }}
+    <li><strong>{{ .value }}</strong><span>{{ .label }}</span></li>
+    {{ end }}
+  </ul>
+</section>
 {{ end }}
 
-{{ partial "blocks/get-involved.html" . }}
+{{ with $p.paths }}
+<section class="gi-section gi-paths-section" id="paths">
+  <div class="gi-inner">
+    <div class="section-header">
+      <div class="eyebrow">{{ .eyebrow }}</div>
+      <h2>{{ .title | safeHTML }}</h2>
+      <p class="lead">{{ .lead }}</p>
+    </div>
+    <ul class="gi-paths">
+      {{ range .items }}
+      <li class="gi-path gi-path--{{ .key }}">
+        <a href="{{ .url | relURL }}">
+          <div class="gi-path__body">
+            <span class="gi-icon" aria-hidden="true">{{ partial "gi-icon.html" .icon }}</span>
+            <span class="gi-path__audience">{{ .audience }}</span>
+            <h3>{{ .title }}</h3>
+            <p>{{ .text }}</p>
+            {{ with .facts }}
+            <ul class="gi-path__facts">
+              {{ range . }}<li><strong>{{ .value }}</strong>{{ .label }}</li>{{ end }}
+            </ul>
+            {{ end }}
+            {{ with .note }}<p class="gi-path__note">{{ . }}</p>{{ end }}
+            {{ with .chip }}<span class="gi-path__chip">{{ . }}</span>{{ end }}
+            <span class="gi-path__cta">{{ .cta }}</span>
+          </div>
+          {{ with .image }}
+          <div class="gi-path__photo"><img src="{{ . | relURL }}" alt="" width="780" height="538" loading="lazy" decoding="async"></div>
+          {{ end }}
+          {{ with .posters }}
+          <div class="gi-path__posters" aria-hidden="true">
+            {{ range . }}<img src="{{ . | relURL }}" alt="" width="800" height="1127" loading="lazy" decoding="async">{{ end }}
+          </div>
+          {{ end }}
+        </a>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+</section>
+{{ end }}
+
+{{ with $p.impact }}
+<section class="gi-section gi-section--alt gi-impact">
+  <div class="gi-inner">
+    <div class="section-header gi-header--solo">
+      <div class="eyebrow">{{ .eyebrow }}</div>
+      <h2>{{ .title | safeHTML }}</h2>
+    </div>
+    <div class="gi-impact__grid">
+      <figure class="gi-showcase__quote gi-impact__quote">
+        <blockquote><p>{{ .quote }}</p></blockquote>
+        <figcaption>
+          <img src="{{ .avatar | relURL }}" alt="" width="56" height="56" loading="lazy" decoding="async">
+          <span><strong>{{ .name }}</strong>{{ .role }}</span>
+          <a href="{{ .link | relURL }}">{{ .link_text }}</a>
+        </figcaption>
+      </figure>
+      <div class="gi-impact__partners">
+        <h3>{{ .partners_title }}</h3>
+        <ul>
+          {{ range .partners }}
+          <li{{ if .featured }} class="is-featured"{{ end }}><strong>{{ .name }}</strong><span>{{ .note }}</span></li>
+          {{ end }}
+        </ul>
+        <a class="gi-impact__more" href="{{ "/partners/" | relURL }}">{{ .partners_link }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ with $p.closing }}
+<section class="gi-closing">
+  <div class="gi-closing__inner">
+    <h2>{{ .title | safeHTML }}</h2>
+    <p class="lead">{{ .text }}</p>
+    <div class="gi-closing__ctas">
+      <a class="btn gi-btn" href="{{ $mail }}">Email us</a>
+      <a class="btn gi-btn--outline" href="{{ "/contact/" | relURL }}">Contact page</a>
+    </div>
+    <p class="gi-closing__more">Prefer to write directly? <a href="{{ $mail }}">{{ $p.contact_email }}</a></p>
+  </div>
+</section>
+{{ end }}
 {{ end }}

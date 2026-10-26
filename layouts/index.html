@@ -1,14 +1,410 @@
 {{ define "main" }}
-  {{ partial "blocks/hero.html" . }}
-  {{ partial "blocks/featured-story.html" . }}
-  {{ partial "blocks/stats.html" . }}
-  {{ partial "blocks/programs.html" . }}
-  {{ partial "blocks/how-it-works.html" . }}
-  {{ partial "blocks/stories.html" . }}
-  {{ partial "blocks/testimonials.html" . }}
-  {{ partial "blocks/partners.html" . }}
-  {{ partial "blocks/promise.html" . }}
-  {{ partial "blocks/np-banner.html" . }}
-  {{ partial "blocks/blog-teaser.html" . }}
-  {{ partial "blocks/get-involved.html" . }}
+{{- $p := .Params -}}
+
+{{ with $p.hero }}
+<section class="hm-hero">
+  <div class="hm-hero__inner">
+    <div class="hm-hero__text">
+      <div class="eyebrow alt">{{ .eyebrow }}</div>
+      <h1>{{ .title | safeHTML }}</h1>
+      <p class="lead">{{ .lead }}</p>
+      <div class="hm-hero__ctas">
+        <a class="btn gi-btn" href="{{ "/programs/" | relURL }}">Explore the programs</a>
+        <a class="btn btn--secondary" href="#journey">See what students build</a>
+      </div>
+      <div class="hero__trust">
+        <span><strong>Registered non-profit</strong> in BC, Canada</span>
+        <span aria-hidden="true">·</span>
+        <span><strong>Scholarships</strong> &amp; internet support</span>
+      </div>
+    </div>
+
+    {{- $builds := .builds -}}
+    {{- $first := index $builds 0 -}}
+    <figure class="hm-hero__visual hm-ide" data-ide>
+      <figcaption class="visually-hidden">Capstone apps built by graduates of the 2026 Web &amp; AI Bootcamp: {{ range $i, $b := $builds }}{{ if $i }}, {{ end }}{{ $b.project }} by {{ $b.name }}{{ end }}.</figcaption>
+      <div class="hm-ide__window">
+        <div class="hm-ide__bar">
+          <span class="hm-ide__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="hm-ide__tab">{{ .ide_file }}</span>
+          <span class="hm-ide__label"><i aria-hidden="true"></i>{{ .ide_label }}</span>
+        </div>
+        <div class="hm-ide__body" aria-hidden="true">
+          <ol class="hm-ide__lines">{{ range seq 7 }}<li>{{ . }}</li>{{ end }}</ol>
+          <pre class="hm-ide__code"><code data-ide-code><span class="c">// Class of 2026 · Web &amp; AI Bootcamp</span>
+<span class="k">const</span> developer = <span class="s">"{{ $first.name }}"</span>;
+
+<span class="f">build</span>(<span class="s">"{{ $first.project }}"</span>, {
+  <span class="p">by</span>: developer,
+  <span class="p">for</span>: <span class="s">"{{ $first.for }}"</span>,
+});<span class="hm-ide__caret"></span></code></pre>
+        </div>
+        <div class="hm-ide__status">
+          <span class="hm-ide__state" data-ide-state>✓ Built</span>
+          <div class="hm-ide__picks" role="group" aria-label="Show a graduate's capstone">
+            {{- range $i, $b := $builds }}
+            <button type="button" data-ide-pick{{ if eq $i 0 }} class="is-active" aria-pressed="true"{{ else }} aria-pressed="false"{{ end }} aria-label="{{ $b.project }} by {{ $b.name }}" data-name="{{ $b.name }}" data-project="{{ $b.project }}" data-for="{{ $b.for }}" data-avatar="{{ with $b.avatar }}{{ replace (relURL .) " " "%20" }}{{ end }}" data-initials="{{ $b.initials }}"></button>
+            {{- end }}
+          </div>
+        </div>
+      </div>
+      <div class="hm-ide__app" aria-hidden="true">
+        {{- range $i, $b := $builds }}
+        <img{{ if eq $i 0 }} class="is-active"{{ end }} src="{{ $b.image | relURL }}" alt="" width="800" height="1127" decoding="async"{{ if $i }} loading="lazy"{{ end }}>
+        {{- end }}
+      </div>
+      <a class="hm-ide__credit" href="{{ .builds_link | relURL }}">
+        <span class="hm-ide__avatar" data-ide-avatar>{{ with $first.avatar }}<img src="{{ replace (relURL .) " " "%20" }}" alt="" width="48" height="48">{{ else }}{{ $first.initials }}{{ end }}</span>
+        <span class="hm-ide__who">
+          <strong data-ide-name>{{ $first.name }}</strong>
+          <span>Built <b data-ide-project>{{ $first.project }}</b> · Class of 2026</span>
+          <em>{{ .builds_cta }}</em>
+        </span>
+      </a>
+    </figure>
+  </div>
+</section>
+{{ end }}
+
+{{ with $p.proof }}
+<section class="hm-stats" aria-label="CodeWeekend at a glance">
+  <ul class="hm-stats__list">
+    {{ range . }}
+    <li>
+      <span class="hm-stats__kicker">{{ .kicker }}</span>
+      <strong>{{ .value }}</strong>
+      <span class="hm-stats__label">{{ .label }}</span>
+      {{ with .meter }}<span class="hm-stats__meter" aria-hidden="true"><i style="width: {{ . | safeCSS }}"></i></span>{{ end }}
+    </li>
+    {{ end }}
+  </ul>
+</section>
+{{ end }}
+
+{{ with $p.programs }}
+{{- $programs := (where site.RegularPages "Section" "programs").ByWeight -}}
+<section class="hm-programs" id="programs">
+  <div class="gi-inner">
+    <div class="hm-programs__header">
+      <div class="eyebrow">{{ .eyebrow }}</div>
+      <h2>{{ .title | safeHTML }}</h2>
+      <p class="lead">{{ .lead }}</p>
+    </div>
+    <div class="hm-track">
+      {{ range $i, $prog := $programs }}
+      {{ if gt $i 0 }}<div class="hm-track__link" aria-hidden="true"><span>{{ $.Params.programs.connector }}</span></div>{{ end }}
+      <article class="hm-program{{ if eq $i 0 }} hm-program--lead{{ end }}">
+        <div class="hm-program__top">
+          <span class="hm-program__step">{{ .Params.home_step }}</span>
+          <span class="hm-program__chip">{{ .Params.home_chip }}</span>
+        </div>
+        <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        <p class="hm-program__desc">{{ .Description }}</p>
+        <dl class="hm-program__facts">
+          <div><dt>Duration</dt><dd>{{ .Params.duration }}</dd></div>
+          <div><dt>Format</dt><dd>{{ .Params.format }}</dd></div>
+          <div><dt>{{ if .Params.prerequisite }}Prerequisite{{ else }}Level{{ end }}</dt><dd>{{ with .Params.prerequisite }}{{ . }}{{ else }}{{ .Params.level }}{{ end }}</dd></div>
+          <div><dt>Tuition</dt><dd>{{ .Params.tuition | default "Free" }}</dd></div>
+        </dl>
+        {{ with .Params.features }}
+        <ul class="hm-program__features">
+          {{ range . }}<li>{{ . }}</li>{{ end }}
+        </ul>
+        {{ end }}
+        <div class="hm-program__foot">
+          <a class="hm-program__cta" href="{{ .RelPermalink }}">{{ .Params.cta_label | default "Learn more" }}</a>
+          {{ with .Params.home_note }}<p class="hm-program__note">{{ . }}</p>{{ end }}
+        </div>
+      </article>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ with $p.history }}
+<section class="hm-history" aria-labelledby="hm-history-title">
+  <div class="hm-history__inner">
+    <div class="hm-history__intro">
+      <div class="eyebrow dark">{{ .eyebrow }}</div>
+      <h2 id="hm-history-title">{{ .title | safeHTML }}</h2>
+      <p class="lead">{{ .lead }}</p>
+      {{ with .photos }}
+      <div class="hm-history__photos">
+        {{ range . }}
+        <figure>
+          <img src="{{ .src | relURL }}" alt="{{ .alt }}" width="{{ .width }}" height="{{ .height }}" loading="lazy" decoding="async">
+          <figcaption>{{ .caption }}</figcaption>
+        </figure>
+        {{ end }}
+      </div>
+      {{ end }}
+      <a class="hm-history__more" href="{{ "/impact/" | relURL }}">{{ .more }}</a>
+    </div>
+    <ol class="hm-chapters">
+      {{ range $m := .milestones }}
+      <li class="hm-chapter">
+        <span class="hm-chapter__year">{{ $m.year }}</span>
+        <div class="hm-chapter__body">
+          <div class="hm-chapter__card">
+            {{ with $m.tag }}<span class="hm-chapter__tag">{{ . }}</span>{{ end }}
+            <h3>{{ $m.title }}</h3>
+            <p>{{ $m.text }}</p>
+            {{ with $m.link }}<a class="hm-chapter__link" href="{{ . | relURL }}" aria-label="Read more about {{ $m.year }}: {{ $m.title }}">Read more</a>{{ end }}
+          </div>
+        </div>
+      </li>
+      {{ end }}
+    </ol>
+  </div>
+</section>
+{{ end }}
+
+{{ with $p.alumni }}
+{{- $storyNames := slice -}}
+{{- $stories := slice -}}
+{{- range .stories }}
+  {{- with site.GetPage (printf "/stories/%s" .) }}
+    {{- $portrait := .Params.image -}}
+    {{- range first 1 (where site.Data.alumni "name" .Params.student_name) }}{{ $portrait = .image }}{{ end -}}
+    {{- $stories = $stories | append (dict "page" . "portrait" $portrait) -}}
+    {{- $storyNames = $storyNames | append .Params.student_name -}}
+  {{- end }}
+{{- end -}}
+{{- $recent := slice -}}
+{{- range site.Data.demo_day_students }}{{ if and .image (not (strings.HasSuffix .image ".svg")) }}{{ $recent = $recent | append (replaceRE `/students-photo/(.+)\.(jpe?g|png)$` "/students-photo/thumbs/$1.jpg" .image) }}{{ end }}{{ end -}}
+{{- $faces := slice -}}
+{{- $i := 0 -}}
+{{- range site.Data.alumni }}{{ if not (findRE `/avatar[^/]*$` .image) }}
+  {{- $faces = $faces | append .image -}}
+  {{- $i = add $i 1 -}}
+  {{- $k := sub (div $i 3) 1 -}}
+  {{- if and (eq (mod $i 3) 0) (lt $k (len $recent)) }}{{ $faces = $faces | append (index $recent $k) }}{{ end -}}
+{{ end }}{{ end -}}
+{{- $used := div $i 3 -}}
+{{- if lt $used (len $recent) }}{{ $faces = $faces | append (after $used $recent) }}{{ end -}}
+{{- $half := div (len $faces) 2 -}}
+<section class="hm-alumni" id="alumni" aria-labelledby="hm-alumni-title">
+  <div class="gi-inner">
+    <div class="hm-programs__header">
+      <div class="eyebrow">{{ .eyebrow }}</div>
+      <h2 id="hm-alumni-title">{{ .title | safeHTML }}</h2>
+      <p class="lead">{{ .lead }}</p>
+    </div>
+
+    <div class="hm-alumni__grid">
+      {{ with index $stories 0 }}
+      {{- $s := .page -}}
+      <a class="hm-spot" href="{{ $s.RelPermalink }}">
+        <span class="hm-spot__top">
+          <img src="{{ .portrait | relURL }}" alt="" width="104" height="104" loading="lazy" decoding="async">
+          <span class="hm-spot__cohort">{{ $s.Params.cohort }}</span>
+        </span>
+        <blockquote><p>{{ $s.Params.quote }}</p></blockquote>
+        <span class="hm-spot__who"><strong>{{ $s.Params.student_name }}</strong>{{ $s.Params.role_now }}</span>
+        <span class="hm-spot__cta">Read {{ index (split $s.Params.student_name " ") 0 }}'s story</span>
+      </a>
+      {{ end }}
+
+      <div class="hm-alumni__more">
+        <span class="hm-alumni__label">{{ .more_label }}</span>
+        <ul class="hm-rows">
+          {{ range after 1 $stories }}
+          {{- $s := .page -}}
+          <li>
+            <a class="hm-row" href="{{ $s.RelPermalink }}">
+              <img src="{{ .portrait | relURL }}" alt="" width="60" height="60" loading="lazy" decoding="async">
+              <span class="hm-row__text">
+                <span class="hm-row__meta"><strong>{{ $s.Params.student_name }}</strong><span class="hm-row__cohort">{{ $s.Params.cohort }}</span></span>
+                <span class="hm-row__role">{{ $s.Params.role_now }}</span>
+                <span class="hm-row__quote">&ldquo;{{ $s.Params.quote }}&rdquo;</span>
+              </span>
+              <span class="hm-row__arrow" aria-hidden="true">→</span>
+            </a>
+          </li>
+          {{ end }}
+        </ul>
+        <a class="hm-alumni__all" href="{{ "/stories/" | relURL }}">{{ .all_stories }}</a>
+      </div>
+    </div>
+
+    <div class="hm-dir">
+      <div class="hm-dir__text">
+        <span class="hm-dir__kicker">{{ .directory_kicker }}</span>
+        <h3>{{ .directory_title }}</h3>
+        <p>{{ .directory_text }}</p>
+        <div class="hm-dir__ctas">
+          <a class="hm-dir__cta" href="{{ "/alumni/" | relURL }}">{{ .directory_cta }}</a>
+          <a class="hm-dir__link" href="{{ "/demo-day/" | relURL }}">{{ .directory_recent }}</a>
+        </div>
+      </div>
+      <div class="hm-dir__faces" aria-hidden="true">
+        {{ range $row := slice (first $half $faces) (after $half $faces) }}
+        <ul class="hm-dir__row">
+          {{ range seq 2 }}{{ range $row }}<li><img src="{{ . | relURL }}" alt="" width="76" height="76" loading="lazy"></li>{{ end }}{{ end }}
+        </ul>
+        {{ end }}
+      </div>
+    </div>
+
+    {{ with where site.Data.testimonials "name" "not in" $storyNames }}
+    <div class="hm-cquotes">
+      <span class="hm-alumni__label">{{ $.Params.alumni.quotes_label }}</span>
+      <div class="hm-cquotes__grid">
+        {{ range . }}
+        <figure class="hm-cquote">
+          <blockquote><p>{{ .quote }}</p></blockquote>
+          <figcaption><strong>{{ .name }}</strong> · {{ .location }}</figcaption>
+        </figure>
+        {{ end }}
+      </div>
+    </div>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
+
+{{ with $p.journey }}
+<section class="hm-journey" id="journey">
+  <div class="gi-inner">
+    <div class="hm-journey__header">
+      <div class="eyebrow dark">{{ .eyebrow }}</div>
+      <h2>{{ .title | safeHTML }}</h2>
+      <p class="lead">{{ .lead }}</p>
+    </div>
+    {{- $steps := .steps -}}
+    {{- with .finale }}{{ $steps = $steps | append (merge . (dict "is_finale" true)) }}{{ end }}
+    <div class="hm-show" data-tabs data-autoplay>
+      <div class="hm-show__tabs" role="tablist" aria-label="Stages of the Bootcamp">
+        {{- range $i, $s := $steps }}
+        <button class="hm-show__tab{{ if eq $i 0 }} is-active{{ end }}" type="button" role="tab" id="hm-show-tab-{{ $i }}" aria-controls="hm-show-panel-{{ $i }}" aria-selected="{{ if eq $i 0 }}true{{ else }}false{{ end }}"{{ if ne $i 0 }} tabindex="-1"{{ end }}>
+          <span class="hm-show__num">{{ printf "%02d" (add $i 1) }}</span>
+          <span class="hm-show__meta">
+            <span class="hm-show__when">{{ $s.when }}</span>
+            <span class="hm-show__title">{{ $s.title | plainify }}</span>
+          </span>
+          <span class="hm-show__progress" aria-hidden="true"><i></i></span>
+        </button>
+        {{- end }}
+      </div>
+
+      <div class="hm-show__stage">
+        {{- range $i, $s := $steps }}
+        <div class="hm-show__panel{{ if eq $i 0 }} is-active{{ end }}" role="tabpanel" id="hm-show-panel-{{ $i }}" aria-labelledby="hm-show-tab-{{ $i }}" data-panel="{{ $i }}">
+          <figure class="hm-show__scene{{ if $s.duo }} hm-show__scene--duo{{ end }}">
+            {{- with $s.duo }}
+            {{ range . }}<span class="hm-show__win"><span class="hm-show__bar" aria-hidden="true"><i></i><i></i><i></i></span><img src="{{ .src | relURL }}" alt="{{ .alt }}" width="564" height="1100" loading="lazy"></span>{{ end }}
+            {{- else }}
+            <span class="hm-show__win"><span class="hm-show__bar" aria-hidden="true"><i></i><i></i><i></i></span><img src="{{ $s.image | relURL }}" alt="{{ $s.alt }}" width="{{ $s.width | default 1200 }}" height="{{ $s.height | default 750 }}" loading="lazy"></span>
+            {{- end }}
+          </figure>
+          <div class="hm-show__caption">
+            <p>{{ $s.text }}</p>
+            {{- if $s.is_finale }}
+            <a class="hm-show__cta" href="{{ $s.link | relURL }}">{{ $s.cta }}</a>
+            {{- else }}
+            <span class="hm-show__credit"><b>Built by</b>{{ $s.credit }}</span>
+            {{- end }}
+          </div>
+        </div>
+        {{- end }}
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ with $p.voices }}
+<section class="gi-section gi-section--alt hm-voices">
+  <div class="gi-inner">
+    <div class="section-header">
+      <div class="eyebrow">{{ .eyebrow }}</div>
+      <h2>{{ .title | safeHTML }}</h2>
+      <p class="lead">{{ .lead }}</p>
+    </div>
+    <div class="hm-gv" data-tabs>
+      <div class="hm-gv__photos" aria-hidden="true">
+        {{- range $i, $v := .items }}
+        <img class="hm-gv__photo{{ if eq $i 0 }} is-active{{ end }}" data-panel="{{ $i }}" src="{{ $v.portrait | relURL }}" alt="" width="640" height="800" loading="lazy">
+        {{- end }}
+        <span class="hm-gv__badge">2026 graduate</span>
+      </div>
+      <div class="hm-gv__main">
+        <span class="hm-gv__mark" aria-hidden="true">&ldquo;</span>
+        <div class="hm-gv__quotes">
+          {{- range $i, $v := .items }}
+          {{- $q := htmlEscape $v.quote -}}
+          {{- with $v.highlight }}{{ $q = replace $q (htmlEscape .) (printf "<mark>%s</mark>" (htmlEscape .)) }}{{ end }}
+          <figure class="hm-gv__quote{{ if eq $i 0 }} is-active{{ end }}" role="tabpanel" id="hm-gv-panel-{{ $i }}" aria-labelledby="hm-gv-tab-{{ $i }}" data-panel="{{ $i }}">
+            <blockquote><p>{{ $q | safeHTML }}</p></blockquote>
+            <figcaption><strong>{{ $v.name }}</strong><span>Built <b>{{ $v.project }}</b> · Web &amp; AI Bootcamp 2026</span></figcaption>
+          </figure>
+          {{- end }}
+        </div>
+        <div class="hm-gv__tabs" role="tablist" aria-label="Choose a graduate">
+          {{- range $i, $v := .items }}
+          <button class="hm-gv__tab{{ if eq $i 0 }} is-active{{ end }}" type="button" role="tab" id="hm-gv-tab-{{ $i }}" aria-controls="hm-gv-panel-{{ $i }}" aria-selected="{{ if eq $i 0 }}true{{ else }}false{{ end }}"{{ if ne $i 0 }} tabindex="-1"{{ end }}>
+            <img src="{{ $v.avatar | relURL }}" alt="" width="44" height="44" loading="lazy">
+            <span><strong>{{ index (split $v.name " ") 0 }}</strong>{{ $v.project }}</span>
+          </button>
+          {{- end }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ with $p.partners }}
+<section class="hm-partners" aria-labelledby="hm-partners-title">
+  <div class="hm-partners__inner">
+    <div class="hm-partners__intro">
+      <div class="eyebrow">{{ .eyebrow }}</div>
+      <h2 id="hm-partners-title">{{ .title | safeHTML }}</h2>
+      <p>{{ .text }}</p>
+      <div class="hm-partners__actions">
+        <a class="hm-partners__cta" href="{{ "/get-involved/partner/" | relURL }}">{{ .cta }}</a>
+        <a class="hm-partners__all" href="{{ "/partners/" | relURL }}">{{ .link }}</a>
+      </div>
+    </div>
+    <ul class="hm-plist">
+      {{- range .items }}
+      <li class="hm-plist__row{{ if .featured }} is-featured{{ end }}">
+        <span class="hm-plist__mono" aria-hidden="true">{{ .initials }}</span>
+        <div class="hm-plist__body">
+          <h3>{{ .name }} <span>{{ .when }}</span></h3>
+          <p>{{ .what }}</p>
+        </div>
+        {{- if .value }}
+        <div class="hm-plist__stat"><b>{{ .value }}</b><span>{{ .label }}</span></div>
+        {{- else }}
+        <span class="hm-plist__stat hm-plist__stat--icon gi-icon" aria-hidden="true">{{ partial "gi-icon.html" "heart" }}</span>
+        {{- end }}
+      </li>
+      {{- end }}
+    </ul>
+  </div>
+</section>
+{{ end }}
+
+{{ partial "blocks/promise.html" . }}
+{{ partial "blocks/np-banner.html" . }}
+{{ partial "blocks/blog-teaser.html" . }}
+
+{{ with $p.involve }}
+<section class="gi-closing hm-involve">
+  <div class="gi-closing__inner">
+    <h2>{{ .title | safeHTML }}</h2>
+    <p class="lead">{{ .text }}</p>
+    <ul class="hm-involve__paths">
+      {{ range .paths }}
+      <li><a href="{{ .url | relURL }}"><span class="gi-icon" aria-hidden="true">{{ partial "gi-icon.html" .icon }}</span>{{ .label }}</a></li>
+      {{ end }}
+    </ul>
+    <div class="gi-closing__ctas">
+      <a class="btn gi-btn" href="{{ "/get-involved/" | relURL }}">Find your way in</a>
+    </div>
+  </div>
+</section>
+{{ end }}
 {{ end }}

@@ -1,35 +1,220 @@
 ---
 title: "Impact and History"
 description: "A record of CodeWeekend's programs, cohorts, partnerships, and community milestones since 2014."
+
+hero:
+  eyebrow: "Impact · Since 2014"
+  title: "A decade of opening doors. <em>Every number on the record.</em>"
+  lead: "CodeWeekend began as a volunteer developer community in Kabul and grew into a registered nonprofit running free, fully-live Bootcamps for Afghan learners, with a focus on women and girls. This page keeps the numbers we published at every stage."
+  panel_kicker: "2026 Web & AI Bootcamp"
+  applied: 476
+  seats: 50
+  panel_caption: "Each dot is one application. The 50 in orange were offered a seat."
+  ribbon:
+    - year: "2014"
+      label: "Founded in Kabul"
+    - year: "2019"
+      label: "First Bootcamp"
+    - year: "2021"
+      label: "Remote cohort"
+    - year: "2022"
+      label: "Scholarships"
+    - year: "2024"
+      label: "Bootcamp continues"
+    - year: "2025"
+      label: "Women & girls · nonprofit"
+    - year: "2026"
+      label: "476 applications"
+
+glance:
+  kicker: "Since 2014"
+  title: "The record at a glance."
+  note: "Every figure on this page is labelled with its year."
+  items:
+    - value: "2014"
+      label: "founded in Kabul as a volunteer developer community"
+    - value: "100+"
+      label: "sessions, events, and trainings run by volunteers"
+    - value: "$0"
+      label: "tuition for every learner accepted into a Bootcamp"
+    - value: "2025"
+      label: "registered as a nonprofit society in British Columbia, Canada"
+
+demand:
+  eyebrow: "Demand"
+  title: "Far more people apply <em>than we have seats for.</em>"
+  lead: "In every cohort where we published both numbers, applications far outnumbered places — and the gap keeps growing."
+  max: 476
+  rows:
+    - year: "2022"
+      applied: 250
+      applied_label: "250+"
+      seats: 30
+      seats_label: "joined"
+    - year: "2025"
+      applied: 280
+      applied_label: "280+"
+      seats: 50
+      seats_label: "admitted"
+    - year: "2026"
+      applied: 476
+      applied_label: "476"
+      seats: 50
+      seats_label: "admitted"
+  callout_value: "426"
+  callout_text: "applicants to the 2026 cohort could not be offered a seat. More seats, laptops, and internet packages are what change that."
+  callout_cta: "Help open a seat"
+  callout_url: "/get-involved/donate/"
+  note: "The 2019 and 2021 cohorts published participant numbers only, so they are not charted here."
+
+timeline:
+  eyebrow: "Our story"
+  title: "Every chapter <em>built the next.</em>"
+  lead: "From a volunteer community to a nonprofit Bootcamp for women and girls — with the figures we published at each stage."
+  chapters:
+    - year: "2014"
+      tag: "Community"
+      title: "Founded in Kabul"
+      text: "Jamshid Hashimi founded CodeWeekend on June 4, 2014. The volunteer community went on to organize sessions, events, and training programs and support hundreds of developers."
+      figures:
+        - value: "100+"
+          label: "sessions, events & trainings"
+      photo: "/images/news/learn-coding.jpg"
+      photo_alt: "A full lecture hall at a CodeWeekend community session at Kardan University in Kabul"
+      photo_caption: "Community sessions in Kabul"
+    - year: "2019"
+      tag: "First Bootcamp"
+      title: "Structured training begins"
+      text: "CodeWeekend made structured Bootcamp training its main focus, starting with a free pilot."
+      figures:
+        - value: "20"
+          label: "learners accepted"
+        - value: "12"
+          label: "graduated"
+    - year: "2021"
+      tag: "Remote"
+      title: "A remote cohort for Afghan youth"
+      text: "After the events of August 2021, the Bootcamp became remote and full-time for learners inside and outside Afghanistan, with continuing coaching and mentorship."
+      figures:
+        - value: "75"
+          label: "participants"
+        - value: "6"
+          label: "months, live & full-time"
+      link: "/news/codeweekend-bootcamp-2021/"
+      link_text: "Read the 2021 cohort record"
+    - year: "2022"
+      tag: "Scholarships"
+      title: "More access for more learners"
+      text: "More than 250 people applied for the third cohort. Hackajob funded scholarships for women, and Scrimba gave learners a year of premium access."
+      figures:
+        - value: "250+"
+          label: "applied"
+        - value: "30"
+          label: "joined"
+        - value: "20"
+          label: "Hackajob scholarships for women"
+        - value: "100"
+          label: "learners with Scrimba premium"
+      photo: "/images/news/updates-2022-student-work.jpg"
+      photo_alt: "A student's admin dashboard project, with charts and a sales overview, open on a desktop monitor"
+      photo_caption: "Student project, 2022"
+      photo_position: "50% 20%"
+      link: "/news/codeweekend-updates-2022/"
+      link_text: "Read the 2022 review"
+    - year: "2024"
+      tag: "Bootcamp"
+      title: "The Bootcamp continues"
+      text: "Another cohort learned fully live and online, keeping structured training going for Afghan learners."
+    - year: "2025"
+      tag: "Women & girls"
+      title: "A Bootcamp for women and girls — and nonprofit status"
+      text: "CodeWeekend launched its Web & AI Development Bootcamp for women and girls in Afghanistan, supported by the Linda Norgrove Foundation, and incorporated as a nonprofit society in British Columbia, Canada."
+      figures:
+        - value: "280+"
+          label: "applied"
+        - value: "50"
+          label: "admitted"
+        - value: "30"
+          label: "full scholarships"
+        - value: "~30"
+          label: "internet packages"
+      photo: "/images/projects/elhama-movie-platform.jpg"
+      photo_alt: "Silver Screen, a responsive movie platform built by Elhama Salah during the 2025 Bootcamp"
+      photo_caption: "Student project, 2025"
+      link: "/impact/2025/"
+      link_text: "See the 2025 cohort impact"
+    - year: "2026"
+      tag: "Latest"
+      title: "Bigger, and building with AI"
+      text: "Applications rose from 280+ to 476. Graduates built their own AI-powered apps and presented them live at an online Demo Day."
+      figures:
+        - value: "476"
+          label: "applied"
+        - value: "50"
+          label: "admitted"
+      featured: true
+      photo: "/images/news/bootcamp-2026-demo-live.jpg"
+      photo_alt: "Online Demo Day 2026: a slide of graduates' apps next to video tiles of organizers, mentors, and graduates"
+      photo_caption: "Online Demo Day, 2026"
+      link: "#cohort-2026"
+      link_text: "See the 2026 cohort, stage by stage"
+
+cohort:
+  eyebrow: "Latest cohort · 2026"
+  title: "476 applied. <em>20 took the Demo Day stage.</em>"
+  lead: "12 weeks, fully live, for women and girls in Afghanistan. Each number is a different stage — none is an employment total."
+  stages:
+    - value: "476"
+      label: "applications received"
+    - value: "50"
+      label: "women and girls admitted"
+      note: "≈ 1 in 10 got a seat"
+    - value: "25"
+      label: "graduated"
+    - value: "20"
+      label: "presented their own apps at Demo Day"
+  report_text: "See the full 2026 report"
+  report_url: "/impact/2026/"
+  story_text: "Read the 2026 story"
+  story_url: "/news/bootcamp-2026-from-first-build-to-demo-day/"
+
+partners:
+  eyebrow: "Partners"
+  title: "None of it happens <em>alone.</em>"
+  lead: "Every cohort since 2019 has depended on partners and individual donors. These are the contributions on the public record."
+  items:
+    - name: "Linda Norgrove Foundation"
+      since: "Since 2025"
+      url: "https://lindanorgrovefoundation.org"
+      text: "Our core funding partner. 30 full scholarships in 2025 and again in 2026, plus internet packages and the wider costs of running the Bootcamp."
+    - name: "GiveInternet"
+      since: "2026"
+      text: "Laptops for 10 students and three months of internet support for more than 30 in the 2026 cohort."
+    - name: "Hackajob"
+      since: "2022"
+      url: "https://hackajob.com"
+      text: "Scholarships for 20 women in the third cohort — and a team half-marathon to raise funds for developers in Afghanistan."
+    - name: "Scrimba"
+      since: "2021–2022"
+      url: "https://scrimba.com"
+      text: "The learning platform behind the 2021 remote cohort, and a year of premium courses for 100 learners in 2022."
+
+reporting:
+  eyebrow: "How we report"
+  title: "Numbers you can <em>take at face value.</em>"
+  items:
+    - icon: "eye"
+      title: "Each stage, separately"
+      text: "Applications, admissions, scholarships, graduation, and Demo Day are different measures. We publish them separately and never present one as another."
+    - icon: "shield"
+      title: "No promised outcomes"
+      text: "We don't count admissions as graduations or promise jobs. Internships and hiring depend on people and organizations who choose to open a door."
+    - icon: "calendar"
+      title: "More to come"
+      text: "Future reports will add verified completion, portfolio, internship, and employment measures as they become available."
+
+closing:
+  title: "Help write <em>the next chapter.</em>"
+  text: "Every scholarship, laptop, and internet package turns an applicant into a learner. Support the next cohort, or partner with us to open more seats."
+  explore: "Meet the people behind the numbers:"
 ---
-
-CodeWeekend began as a volunteer-led developer community in Kabul and grew into a nonprofit delivering practical, mentor-supported technology education for Afghan learners. This timeline preserves the numbers the organization published at each stage.
-
-<ol class="impact-timeline">
-  <li>
-    <span class="impact-timeline__year">2014</span>
-    <div><h2>Founded in Kabul</h2><p><strong>Jamshid Hashimi founded CodeWeekend on June 4, 2014.</strong> The volunteer community went on to organize more than 100 sessions, events, and training programs and support hundreds of developers.</p></div>
-  </li>
-  <li>
-    <span class="impact-timeline__year">2019</span>
-    <div><h2>The first coding bootcamp</h2><p>CodeWeekend made structured bootcamp training its main focus. The free pilot accepted 20 learners and graduated 12.</p></div>
-  </li>
-  <li>
-    <span class="impact-timeline__year">2021</span>
-    <div><h2>A remote cohort for Afghan youth</h2><p>After the events of August 2021, the program expanded into a remote, full-time format for learners inside and outside Afghanistan. The cohort began with 75 participants and included continuing coaching and mentorship. <a href="/blog/codeweekend-bootcamp-2021/">Read the 2021 cohort record</a>.</p></div>
-  </li>
-  <li>
-    <span class="impact-timeline__year">2022</span>
-    <div><h2>Scholarships, access, and a third cohort</h2><p>More than 250 people applied and 30 learners joined the third cohort. Hackajob funded scholarships for 20 women, and Scrimba provided one year of premium access to 100 learners. <a href="/blog/codeweekend-updates-2022/">Read the 2022 review</a>.</p></div>
-  </li>
-  <li>
-    <span class="impact-timeline__year">2025</span>
-    <div><h2>Women, AI education, and nonprofit status</h2><p>CodeWeekend received more than 280 applications for its Web & AI program and admitted 50 women and girls. The Linda Norgrove Foundation supported 30 scholarships and 24 internet packages. CodeWeekend also incorporated as a nonprofit society in British Columbia. <a href="/impact/2025/">See the 2025 cohort impact</a>.</p></div>
-  </li>
-</ol>
-
-## What the numbers mean
-
-Applications, admissions, scholarships, and participation are different measures. CodeWeekend publishes them separately and does not describe admissions as graduations or guarantee an employment outcome. Future reporting will add verified completion, portfolio, internship, and employment measures as they become available.
-
-Explore the [alumni directory](/alumni/), [student projects](/projects/), and [success stories](/stories/) for the people and work behind these milestones.

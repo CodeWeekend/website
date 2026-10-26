@@ -1,0 +1,263 @@
+{{ define "main" }}
+{{- $p := .Params -}}
+
+{{ with $p.hero }}
+{{- $applied := int .applied -}}
+{{- $seats := int .seats -}}
+<header class="im-hero">
+  <div class="im-hero__inner">
+    <div class="im-hero__text">
+      <div class="crumb"><a href="{{ "/" | relURL }}">Home</a> &middot; Impact</div>
+      <div class="eyebrow dark">{{ .eyebrow }}</div>
+      <h1>{{ .title | safeHTML }}</h1>
+      <p class="lead">{{ .lead }}</p>
+      <div class="im-hero__ctas">
+        <a class="btn gi-btn" href="#timeline">Explore the record</a>
+        <a class="btn gi-btn--outline" href="{{ "/get-involved/donate/" | relURL }}">Support the next cohort</a>
+      </div>
+    </div>
+
+    <figure class="im-dots" role="img" aria-label="{{ $applied }} applications to the {{ .panel_kicker }}; {{ $seats }} were offered a seat.">
+      <div class="im-dots__head" aria-hidden="true">
+        <span class="im-dots__kicker">{{ .panel_kicker }}</span>
+        <div class="im-dots__nums">
+          <span class="im-dots__num"><strong>{{ $applied }}</strong>applications</span>
+          <span class="im-dots__num im-dots__num--seat"><strong>{{ $seats }}</strong>seats</span>
+        </div>
+      </div>
+      <div class="im-dots__grid" aria-hidden="true">
+        {{- $lit := 0 -}}
+        {{- $step := div $applied $seats -}}
+        {{- $picks := slice -}}
+        {{- range $k := seq 0 (sub $seats 1) -}}
+        {{- $jitter := mod (add (mul $k $k 7) (mul $k 3) 4) $step -}}
+        {{- $picks = $picks | append (add (div (mul $k $applied) $seats) $jitter) -}}
+        {{- end -}}
+        {{- range $i := seq 0 (sub $applied 1) -}}
+        {{- if in $picks $i -}}
+        {{- $lit = add $lit 1 -}}
+        <i class="is-seat" style="--d: {{ mul $lit 40 }}ms"></i>
+        {{- else -}}
+        <i></i>
+        {{- end -}}
+        {{- end -}}
+      </div>
+      <figcaption>{{ .panel_caption }}</figcaption>
+    </figure>
+  </div>
+
+  {{ with .ribbon }}
+  <nav class="im-ribbon" aria-label="Jump to a year">
+    <ol>
+      {{ range . }}
+      <li><a href="#y{{ .year }}"><span>{{ .year }}</span>{{ .label }}</a></li>
+      {{ end }}
+    </ol>
+  </nav>
+  {{ end }}
+</header>
+{{ end }}
+
+{{ with $p.glance }}
+<section class="pg-glance" aria-label="{{ .kicker }}: {{ .title }}">
+  <div class="pg-glance__inner">
+    <div class="pg-glance__head">
+      <span class="pg-glance__kicker">{{ .kicker }}</span>
+      <strong>{{ .title }}</strong>
+      {{ with .note }}<span class="pg-glance__note">{{ . }}</span>{{ end }}
+    </div>
+    <ol class="pg-glance__list">
+      {{ range .items }}
+      <li><strong>{{ .value }}</strong><span>{{ .label }}</span></li>
+      {{ end }}
+    </ol>
+  </div>
+</section>
+{{ end }}
+
+{{ with $p.demand }}
+{{- $max := float .max -}}
+<section class="gi-section im-demand" aria-labelledby="im-demand-title">
+  <div class="gi-inner">
+    <div class="section-header">
+      <div class="eyebrow">{{ .eyebrow }}</div>
+      <h2 id="im-demand-title">{{ .title | safeHTML }}</h2>
+      <p class="lead">{{ .lead }}</p>
+    </div>
+    <div class="im-demand__grid">
+      <div class="im-chart">
+        <div class="im-chart__legend" aria-hidden="true">
+          <span class="im-key im-key--applied">Applications</span>
+          <span class="im-key im-key--seats">Seats</span>
+        </div>
+        <ol class="im-chart__rows">
+          {{ range .rows }}
+          <li class="im-chart__row">
+            <span class="im-chart__year">{{ .year }}</span>
+            <span class="im-chart__track" aria-hidden="true">
+              <span class="im-chart__bar" style="--w: {{ printf "%.1f" (div (mul (float .applied) 100) $max) }}%">
+                <span class="im-chart__seats" style="--s: {{ printf "%.1f" (div (mul (float .seats) 100) (float .applied)) }}%"></span>
+              </span>
+            </span>
+            <span class="im-chart__nums"><strong>{{ .applied_label }}</strong> applied <span aria-hidden="true">·</span> <b>{{ .seats }}</b> {{ .seats_label }}</span>
+          </li>
+          {{ end }}
+        </ol>
+        {{ with .note }}<p class="im-chart__note">{{ . }}</p>{{ end }}
+      </div>
+      <aside class="im-callout">
+        <strong>{{ .callout_value }}</strong>
+        <p>{{ .callout_text }}</p>
+        <a class="im-callout__cta" href="{{ .callout_url | relURL }}">{{ .callout_cta }}</a>
+      </aside>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ with $p.timeline }}
+<section class="gi-section gi-section--alt im-story" id="timeline" aria-labelledby="im-story-title">
+  <div class="gi-inner">
+    <div class="section-header">
+      <div class="eyebrow">{{ .eyebrow }}</div>
+      <h2 id="im-story-title">{{ .title | safeHTML }}</h2>
+      <p class="lead">{{ .lead }}</p>
+    </div>
+    {{- $total := len .chapters -}}
+    <div class="im-story__layout" data-story>
+      <aside class="im-story__rail">
+        <div class="im-story__now" aria-hidden="true">
+          <span class="im-story__count">Chapter <b data-story-num>01</b> of {{ printf "%02d" $total }}</span>
+          <span class="im-story__year" data-story-year>{{ (index .chapters 0).year }}</span>
+          <span class="im-story__tag" data-story-tag>{{ (index .chapters 0).tag }}</span>
+        </div>
+        <nav class="im-story__nav" aria-label="Chapters">
+          <ol>
+            {{ range .chapters }}<li><a href="#y{{ .year }}"><span>{{ .year }}</span>{{ .tag }}</a></li>{{ end }}
+          </ol>
+        </nav>
+      </aside>
+      <ol class="im-chapters">
+        {{ range $i, $c := .chapters }}
+        <li class="im-chapter{{ if $c.photo }} im-chapter--photo{{ end }}{{ if $c.featured }} im-chapter--featured{{ end }}" id="y{{ $c.year }}" data-year="{{ $c.year }}" data-tag="{{ $c.tag }}">
+          <article class="im-chapter__card">
+            {{ with $c.photo }}
+            <figure class="im-chapter__photo">
+              <img src="{{ . | relURL }}" alt="{{ $c.photo_alt }}" loading="lazy" decoding="async"{{ with $c.photo_position }} style="object-position: {{ . | safeCSS }}"{{ end }}>
+              <figcaption>{{ $c.photo_caption }}</figcaption>
+            </figure>
+            {{ end }}
+            <div class="im-chapter__body">
+              <p class="im-chapter__meta">
+                <span class="im-chapter__num">{{ printf "%02d" (add $i 1) }}</span>
+                <span class="im-chapter__year">{{ $c.year }}</span>
+                <span class="im-chapter__tag">{{ $c.tag }}</span>
+              </p>
+              <h3>{{ $c.title }}</h3>
+              <p class="im-chapter__text">{{ $c.text }}</p>
+              {{ with $c.figures }}
+              <ul class="im-figures{{ if eq (len .) 4 }} im-figures--quad{{ end }}">
+                {{ range . }}<li><strong>{{ .value }}</strong><span>{{ .label }}</span></li>{{ end }}
+              </ul>
+              {{ end }}
+              {{ with $c.link }}<a class="im-chapter__link" href="{{ if hasPrefix . "#" }}{{ . }}{{ else }}{{ . | relURL }}{{ end }}">{{ $c.link_text }}</a>{{ end }}
+            </div>
+          </article>
+        </li>
+        {{ end }}
+      </ol>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ with $p.cohort }}
+<section class="gi-section gi-section--dark im-cohort" id="cohort-2026" aria-labelledby="im-cohort-title">
+  <div class="gi-inner im-cohort__grid">
+    <div class="im-cohort__intro">
+      <div class="eyebrow dark">{{ .eyebrow }}</div>
+      <h2 id="im-cohort-title">{{ .title | safeHTML }}</h2>
+      <p>{{ .lead }}</p>
+      <div class="im-cohort__links">
+        <a class="btn gi-btn" href="{{ .report_url | relURL }}">{{ .report_text }}</a>
+        <a class="im-cohort__story" href="{{ .story_url | relURL }}">{{ .story_text }}</a>
+      </div>
+    </div>
+    {{- $stages := .stages -}}
+    {{- $max := float (index $stages 0).value -}}
+    {{- $last := sub (len $stages) 1 -}}
+    <ol class="im-funnel">
+      {{ range $i, $s := $stages }}
+      {{- $next := index $stages (cond (lt $i $last) (add $i 1) $i) -}}
+      {{- $a := mul 100 (math.Sqrt (div (float $s.value) $max)) -}}
+      {{- $b := mul 100 (math.Sqrt (div (float $next.value) $max)) -}}
+      <li style="--i: {{ $i }}; --a: {{ printf "%.1f" $a }}%; --b: {{ printf "%.1f" $b }}%">
+        <span class="im-funnel__step">{{ printf "%02d" (add $i 1) }}</span>
+        <strong>{{ $s.value }}</strong>
+        <div class="im-funnel__track" aria-hidden="true">
+          <i class="im-funnel__band"></i>
+        </div>
+        <span class="im-funnel__label">{{ $s.label }}</span>
+        {{ with $s.note }}<em class="im-funnel__note">{{ . }}</em>{{ end }}
+      </li>
+      {{ end }}
+    </ol>
+  </div>
+</section>
+{{ end }}
+
+{{ with $p.partners }}
+<section class="gi-section im-partners" aria-labelledby="im-partners-title">
+  <div class="gi-inner">
+    <div class="section-header">
+      <div class="eyebrow">{{ .eyebrow }}</div>
+      <h2 id="im-partners-title">{{ .title | safeHTML }}</h2>
+      <p class="lead">{{ .lead }}</p>
+    </div>
+    <ul class="im-partner-list">
+      {{ range .items }}
+      <li class="im-partner">
+        <span class="im-partner__since">{{ .since }}</span>
+        <h3>{{ with .url }}<a href="{{ . }}" target="_blank" rel="noopener">{{ end }}{{ .name }}{{ if .url }}</a>{{ end }}</h3>
+        <p>{{ .text }}</p>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+</section>
+{{ end }}
+
+{{ with $p.reporting }}
+<section class="gi-section gi-section--warm im-reporting" aria-labelledby="im-reporting-title">
+  <div class="gi-inner">
+    <div class="section-header im-reporting__header">
+      <div class="eyebrow alt">{{ .eyebrow }}</div>
+      <h2 id="im-reporting-title">{{ .title | safeHTML }}</h2>
+    </div>
+    <ul class="gi-cards">
+      {{ range .items }}
+      <li>
+        <span class="gi-icon" aria-hidden="true">{{ partial "gi-icon.html" .icon }}</span>
+        <h3>{{ .title }}</h3>
+        <p>{{ .text }}</p>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+</section>
+{{ end }}
+
+{{ with $p.closing }}
+<section class="gi-closing">
+  <div class="gi-closing__inner">
+    <h2>{{ .title | safeHTML }}</h2>
+    <p class="lead">{{ .text }}</p>
+    <div class="gi-closing__ctas">
+      <a class="btn gi-btn" href="{{ "/get-involved/donate/" | relURL }}">Support the next cohort</a>
+      <a class="btn gi-btn--outline" href="{{ "/get-involved/partner/" | relURL }}">Partner with us</a>
+    </div>
+    <p class="gi-closing__more">{{ .explore }} <a href="{{ "/alumni/" | relURL }}">alumni directory</a> · <a href="{{ "/projects/" | relURL }}">student projects</a> · <a href="{{ "/stories/" | relURL }}">success stories</a></p>
+  </div>
+</section>
+{{ end }}
+{{ end }}

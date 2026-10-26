@@ -12,6 +12,9 @@ status_label: "Advanced"
 status: "future cohort"
 accent: "warm"
 cta_label: "Express interest"
+home_step: "Step 2 · Go deeper"
+home_chip: "Future cohort"
+home_note: "Run before in 2021 with Scrimba (75 participants) and 2022 with Hackajob (30 students)."
 features:
   - "Backend with Node.js, Python, and Go fundamentals"
   - "Databases: relational, document, key-value — when to use which"
@@ -19,11 +22,34 @@ features:
   - "DevOps: Docker, CI/CD, infrastructure as code"
   - "Capstone with a real partner organization"
   - "Senior-level interview preparation"
+audience: "Developers who are already building things and want to go deeper. Most come from the Web & AI Bootcamp; self-taught developers with equivalent experience are welcome too."
+outcome: "A capstone, typically with a partner organization that needs real engineering work, plus senior-level interview preparation."
+skills: ["Node.js", "Python", "Go", "Databases", "System design", "Docker", "CI/CD", "Infrastructure as code"]
+phases:
+  - title: "Backend development"
+    text: "Servers, routing, authentication, and database design."
+  - title: "Systems thinking"
+    text: "Caching, queueing, observability, and designing for failure."
+  - title: "DevOps & infrastructure"
+    text: "Docker, CI/CD pipelines, and infrastructure as code."
+  - title: "Capstone & interview prep"
+    text: "Real engineering work and senior-level interviews."
+interest_url: "mailto:hello@codeweekend.net?subject=Full%20Stack%20Bootcamp%20interest"
+card_chip: "Advanced"
+photo: "/images/news/updates-2022-student-work.jpg"
+photo_width: 900
+photo_height: 973
+photo_alt: "A student's admin dashboard project, with charts and a sales overview, open on a desktop monitor"
+history:
+  - value: "75"
+    label: "participants in 2021, with Scrimba"
+  - value: "30"
+    label: "students in 2022, from 250+ applications, with Hackajob"
 ---
 
 ## Who this program is for
 
-The Full Stack Bootcamp is for developers who are already building things, but want to go deeper. You've shipped at least one application. You can read most JavaScript code without looking things up. You're ready to learn the parts of the stack that scare junior developers — and become someone who isn't scared by them.
+The Full Stack Bootcamp is for developers who are already building things, but want to go deeper. You've built and deployed at least one application. You can read most JavaScript code without looking things up. You're ready to learn the parts of the stack that scare junior developers — and become someone who isn't scared by them.
 
 Most participants come directly from the Web & AI Bootcamp. We also accept developers with equivalent self-taught experience who want to fill in gaps.
 

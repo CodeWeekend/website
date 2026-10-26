@@ -5,7 +5,7 @@
 {{- $title := .Title -}}
 {{- if .IsHome -}}
   {{- $title = printf "%s — %s" .Site.Title (.Site.Params.tagline | default "Coding bootcamp") -}}
-{{- else -}}
+{{- else if not (strings.Contains .Title .Site.Title) -}}
   {{- $title = printf "%s — %s" .Title .Site.Title -}}
 {{- end -}}
 

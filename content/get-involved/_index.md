@@ -1,10 +1,115 @@
 ---
 title: "Get Involved"
-description: "CodeWeekend runs because of the people who fund it, mentor in it, and hire from it. Here's how you can help."
+description: "CodeWeekend runs because of the people who fund it, mentor in it, and hire from it. Find the way to take part that fits you."
+og_image: "/images/news/bootcamp-2026-demo-live.jpg"
+contact_email: "hello@codeweekend.net"
+
+hero:
+  eyebrow: "Get involved"
+  title: "It takes a community <em>to open a door.</em>"
+  lead: "CodeWeekend is free for participants because other people make it possible — funders, mentors who share professional experience, and companies that create fair pathways to work. There’s a place for you in that work."
+  image: "/images/news/bootcamp-2026-demo-live.jpg"
+  image_alt: "Online Demo Day 2026: a slide titled “Tonight’s projects” showing a grid of graduates’ apps, next to video tiles of the organizers, mentors, and graduates on the call, with emoji reactions"
+  tag: "Live at Demo Day 2026"
+  caption_title: "One evening, a whole community"
+  caption_text: "Graduates presented their apps to students, mentors, partners, alumni, and the wider CodeWeekend community."
+  avatars:
+    - "/images/news/bootcamp-2026-avatar-basira.jpg"
+    - "/images/news/bootcamp-2026-avatar-mahdia.jpg"
+    - "/images/news/bootcamp-2026-avatar-samira.jpg"
+    - "/images/news/bootcamp-2026-avatar-zahra.jpg"
+
+proof:
+  - value: "2014"
+    label: "Founded as a volunteer developer community in Kabul"
+  - value: "100+"
+    label: "Sessions, events, and trainings since 2014"
+  - value: "2019"
+    label: "First coding bootcamp, launched as a free pilot"
+  - value: "2021"
+    label: "Bootcamp went fully remote for learners inside and outside Afghanistan"
+
+paths:
+  eyebrow: "Five ways to take part"
+  title: "Find the role <em>that fits you.</em>"
+  lead: "Each path has its own page that explains what it asks of you, what we commit in return, and how to start."
+  items:
+    - key: "donate"
+      icon: "heart"
+      audience: "For individuals"
+      title: "Donate"
+      text: "Cover the practical things that turn an admitted applicant into a graduate: internet, laptops, and full seats."
+      facts:
+        - value: "$25"
+          label: "one month of internet for one student"
+        - value: "$2,500"
+          label: "a full seat (6 months of internet, a laptop, and the teaching)"
+      cta: "Give today"
+      url: "/get-involved/donate/"
+      image: "/images/news/bootcamp-2026-fund.jpg"
+      image_alt: "A young woman in a headscarf studying on a laptop"
+    - key: "partner"
+      icon: "user-check"
+      audience: "For organizations"
+      title: "Partner or fund"
+      text: "Fund scholarships, laptops and internet, learning platforms, internships, or the capacity to run future cohorts — with scope and reporting agreed up front."
+      note: "Past partners include the Linda Norgrove Foundation, GiveInternet, Hackajob, and Scrimba."
+      cta: "Explore partnership"
+      url: "/get-involved/partner/"
+      posters:
+        - "/images/news/bootcamp-2026-capstone-mahdia.jpg"
+        - "/images/news/bootcamp-2026-capstone-jamila.jpg"
+        - "/images/news/bootcamp-2026-capstone-freshta.jpg"
+    - key: "mentor"
+      icon: "users"
+      audience: "For working developers"
+      title: "Mentor"
+      text: "About two hours a week for one cohort: a 1:1 call with a student, plus an hour answering questions in the cohort chat."
+      chip: "Female mentors especially needed"
+      cta: "Apply to mentor"
+      url: "/get-involved/mentor/"
+    - key: "hire"
+      icon: "briefcase"
+      audience: "For employers"
+      title: "Hire a graduate"
+      text: "Tell us the role. We send candidate introductions with their best projects and a short note from us — and we take no placement fees."
+      chip: "Introductions within ~10 business days"
+      cta: "Meet our graduates"
+      url: "/get-involved/hire/"
+    - key: "apply"
+      icon: "pen"
+      audience: "For learners"
+      title: "Apply"
+      text: "Register your interest in a future cohort. Eligibility, schedule, and scholarships are published before applications open."
+      chip: "Free for admitted learners"
+      cta: "How to apply"
+      url: "/get-involved/apply/"
+
+impact:
+  eyebrow: "Why it matters"
+  title: "Small acts, <em>lasting skills.</em>"
+  quote: "CodeWeekend gave me the practical experience and confidence to build real-world projects. I learned how to develop production-ready applications, collaborate using Git and GitHub, and integrate AI into modern web development."
+  name: "Zahra Ahmadi"
+  role: "2026 graduate · Freela"
+  avatar: "/images/news/bootcamp-2026-avatar-zahra.jpg"
+  link: "/news/bootcamp-2026-from-first-build-to-demo-day/"
+  link_text: "Read the 2026 bootcamp story"
+  partners_title: "Made possible by"
+  partners:
+    - name: "Linda Norgrove Foundation"
+      note: "Core funding partner since 2025"
+      featured: true
+    - name: "GiveInternet"
+      note: "Laptops and internet, 2026"
+    - name: "Hackajob"
+      note: "Scholarships for women, 2022"
+    - name: "Scrimba"
+      note: "Learning platform access, 2021–2022"
+    - name: "RapidIteration"
+      note: "Technology and community support"
+  partners_link: "Meet all our partners"
+
+closing:
+  title: "Not sure where you fit? <em>Let’s talk.</em>"
+  text: "Tell us a little about yourself and what you have in mind. We’ll point you to the right path."
 ---
-
-## Five ways to take part
-
-CodeWeekend is free for participants because other people make it possible — funders like the [Linda Norgrove Foundation](https://lindanorgrovefoundation.org), mentors who share professional experience, and companies that create fair pathways to work. Learners, volunteers, employers, donors, and institutional partners each have a direct way to take part.
-
-The cards below describe each path. Each one has a dedicated page that explains exactly what it asks of you, what it commits in return, and how to start.

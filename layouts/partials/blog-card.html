@@ -1,8 +1,20 @@
 <a href="{{ .RelPermalink }}" class="blog-card">
-  <div class="blog-card__thumb {{ .Params.thumb_style }}">// {{ .Params.category | default "Post" }}</div>
+  <div class="blog-card__thumb{{ if not .Params.image }} {{ .Params.thumb_style | default "default" }}{{ end }}">
+    {{ with .Params.image }}
+      <img src="{{ . | relURL }}" alt="" loading="lazy" decoding="async">
+    {{ else }}
+      // {{ .Params.category | default "Post" }}
+    {{ end }}
+  </div>
   <div class="blog-card__body">
-    <div class="blog-meta">{{ .Date.Format "January 2, 2006" }}<span class="dot">·</span>{{ .Params.read_time | default "5 min read" }}</div>
-    <h3>{{ .Title }}</h3>
+    <div class="blog-card__topline">
+      {{ with .Params.category }}<span class="news-chip news-chip--card">{{ . }}</span>{{ end }}
+      <span class="blog-meta blog-card__meta">
+        {{ .Date.Format "Jan 2, 2006" }}
+        <span class="dot">·</span>{{ .Params.read_time | default "5 min read" }}
+      </span>
+    </div>
+    <h3>{{ with .Params.hero_title }}{{ . }}{{ else }}{{ .Title }}{{ end }}</h3>
     <p>{{ .Description }}</p>
     <span class="blog-card__arrow">Read post →</span>
   </div>

@@ -1,16 +1,17 @@
-<section class="promise" id="about">
+<section class="promise" aria-labelledby="promise-title">
   <div class="promise__inner">
-    <div class="eyebrow dark">The CodeWeekend Promise</div>
-    <h2>What every learner <em>can count on,</em> always.</h2>
-    <p class="promise__lead">A named, structural commitment to every student we accept. Not aspirational language — operational guarantees.</p>
+    <div class="promise__header">
+      <div class="eyebrow dark">The CodeWeekend Promise</div>
+      <h2 id="promise-title">What every learner <em>can&nbsp;count&nbsp;on.</em></h2>
+      <p class="promise__lead">Learning to code from Afghanistan takes courage — through power cuts, costly internet, and classrooms closed to girls. Whoever you are and wherever you join from, this is what we promise every student we accept.</p>
+    </div>
 
     <ul class="promise__list">
       {{ range site.Data.promise }}
       <li>
-        <div>
-          <strong>{{ .title }}</strong>
-          {{ .body }}
-        </div>
+        <span class="promise__icon gi-icon" aria-hidden="true">{{ partial "gi-icon.html" .icon }}</span>
+        <strong>{{ .title }}</strong>
+        <p>{{ .body }}</p>
       </li>
       {{ end }}
     </ul>

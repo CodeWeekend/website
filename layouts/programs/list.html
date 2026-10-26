@@ -1,25 +1,252 @@
 {{ define "main" }}
-<header class="page-header">
-  <div class="page-header__inner">
-    <div class="crumb"><a href="{{ "/" | relURL }}">Home</a> &middot; Programs</div>
-    <h1>{{ .Title }}</h1>
-    {{ with .Description }}<p class="lead page-header__lead">{{ . }}</p>{{ end }}
-  </div>
-</header>
+{{- $p := .Params -}}
+{{- $programs := .Pages.ByWeight -}}
 
-<section class="programs-block" style="border-top: none;">
-  <div class="programs-block__inner">
-    <div class="program-grid">
-      {{ range .Pages.ByWeight }}
-        {{ partial "program-card.html" . }}
+{{ with $p.hero }}
+<header class="gi-hero gi-hero--hub pg-hero">
+  <div class="gi-hero__inner">
+    <div class="gi-hero__text">
+      <div class="crumb"><a href="{{ "/" | relURL }}">Home</a> &middot; Programs</div>
+      <div class="eyebrow alt">{{ .eyebrow }}</div>
+      <h1>{{ .title | safeHTML }}</h1>
+      <p class="lead">{{ .lead }}</p>
+      <div class="gi-hero__ctas">
+        <a class="btn gi-btn" href="#programs">Explore the programs</a>
+        <a class="btn btn--secondary" href="{{ "/get-involved/donate/" | relURL }}">Support a student</a>
+      </div>
+      <div class="hero__trust">
+        <span><strong>$0</strong> tuition for students</span>
+        <span aria-hidden="true">·</span>
+        <span><strong>Non-profit</strong> in BC, Canada</span>
+      </div>
+    </div>
+    <div class="pg-mosaic">
+      {{ range $i, $ph := .photos }}
+      <figure class="pg-mosaic__photo">
+        <img src="{{ $ph.src | relURL }}" alt="{{ $ph.alt }}" width="{{ $ph.width }}" height="{{ $ph.height }}" {{ if gt $i 0 }}loading="lazy" {{ end }}decoding="async">
+        <figcaption>{{ $ph.caption }}</figcaption>
+      </figure>
       {{ end }}
+      <p class="pg-mosaic__badge"><strong>{{ .badge_title }}</strong>{{ .badge_text }}</p>
     </div>
   </div>
-</section>
+</header>
+{{ end }}
 
-{{ with .Content }}
-<article class="prose">{{ . }}</article>
+{{ with $p.glance }}
+<section class="pg-glance" aria-label="{{ .kicker }}: {{ .title }}">
+  <div class="pg-glance__inner">
+    <div class="pg-glance__head">
+      <span class="pg-glance__kicker">{{ .kicker }}</span>
+      <strong>{{ .title }}</strong>
+      {{ with .note }}<span class="pg-glance__note">{{ . }}</span>{{ end }}
+    </div>
+    <ol class="pg-glance__list">
+      {{ range .items }}
+      <li><strong>{{ .value }}</strong><span>{{ .label }}</span></li>
+      {{ end }}
+    </ol>
+  </div>
+</section>
+{{ end }}
+
+{{ with $p.serve }}
+<section class="gi-section pg-serve">
+  <div class="gi-inner pg-serve__grid">
+    <div class="pg-serve__intro">
+      <div class="eyebrow">{{ .eyebrow }}</div>
+      <h2>{{ .title | safeHTML }}</h2>
+      <p class="lead">{{ .lead }}</p>
+      <blockquote class="pg-serve__pull"><p>{{ .pull }}</p></blockquote>
+    </div>
+    <ul class="pg-barriers">
+      {{ range .items }}
+      <li class="pg-barrier">
+        <span class="gi-icon gi-icon--muted" aria-hidden="true">{{ partial "gi-icon.html" .icon }}</span>
+        <h3>{{ .barrier }}</h3>
+        <p>{{ .text }}</p>
+        <p class="pg-barrier__answer"><b>How we respond</b>{{ .answer }}</p>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+</section>
+{{ end }}
+
+{{ with $p.programs }}
+<section class="gi-section gi-section--alt pg-programs" id="programs">
+  <div class="gi-inner">
+    <div class="section-header">
+      <div class="eyebrow">{{ .eyebrow }}</div>
+      <h2>{{ .title | safeHTML }}</h2>
+      <p class="lead">{{ .lead }}</p>
+    </div>
+
+    {{ range $i, $prog := $programs }}
+    {{ if gt $i 0 }}<div class="pg-then" aria-hidden="true"><span>{{ $.Params.programs.connector }}</span></div>{{ end }}
+    <article class="pg-prog{{ if eq $i 0 }} pg-prog--lead{{ else }} pg-prog--next{{ end }}" id="{{ .File.ContentBaseName }}" aria-labelledby="pg-prog-{{ $i }}">
+      <div class="pg-prog__main">
+        <div class="pg-prog__top">
+          <span class="pg-prog__step">{{ .Params.home_step }}</span>
+          <span class="pg-prog__chip">{{ .Params.card_chip | default .Params.home_chip }}</span>
+        </div>
+        <h3 id="pg-prog-{{ $i }}"><a href="{{ .RelPermalink }}">{{ .Params.card_title | default .Title }}</a></h3>
+        <p class="pg-prog__desc">{{ .Description }}</p>
+        <dl class="pg-prog__facts">
+          <div><dt>Duration</dt><dd>{{ .Params.duration }}</dd></div>
+          <div><dt>Format</dt><dd>{{ .Params.format }}</dd></div>
+          <div><dt>{{ if .Params.prerequisite }}Prerequisite{{ else }}Level{{ end }}</dt><dd>{{ with .Params.prerequisite }}{{ . }}{{ else }}{{ .Params.level }}{{ end }}</dd></div>
+          <div><dt>Tuition</dt><dd>{{ .Params.tuition | default "Free" }}</dd></div>
+        </dl>
+        <div class="pg-prog__cols">
+          <div>
+            <h4>Who it’s for</h4>
+            <p>{{ .Params.audience }}</p>
+          </div>
+          <div>
+            <h4>What learners leave with</h4>
+            <p>{{ .Params.outcome }}</p>
+          </div>
+        </div>
+        {{ with .Params.skills }}
+        <div class="pg-prog__skills">
+          <h4>Skills learners gain</h4>
+          <ul>{{ range . }}<li>{{ . }}</li>{{ end }}</ul>
+        </div>
+        {{ end }}
+        {{ with .Params.teach }}
+        <p class="pg-prog__teach"><span class="gi-icon" aria-hidden="true">{{ partial "gi-icon.html" "users" }}</span>{{ . }}</p>
+        {{ end }}
+        <div class="pg-prog__ctas">
+          <a class="pg-prog__cta" href="{{ .RelPermalink }}">Explore the full program</a>
+          {{ with .Params.interest_url }}<a class="pg-prog__link" href="{{ . | relURL }}">{{ $prog.Params.cta_label }}</a>{{ end }}
+        </div>
+      </div>
+
+      <div class="pg-prog__side">
+        {{ with .Params.posters }}
+        <figure class="pg-prog__visual pg-prog__visual--posters">
+          <div class="pg-posters">
+            {{ range . }}<img src="{{ .src | relURL }}" alt="{{ .alt }}" width="800" height="1127" loading="lazy" decoding="async">{{ end }}
+          </div>
+          {{ with $prog.Params.visual_caption }}<figcaption>{{ . }}</figcaption>{{ end }}
+        </figure>
+        {{ end }}
+        {{ with .Params.photo }}
+        <figure class="pg-prog__visual pg-prog__visual--photo">
+          <img src="{{ . | relURL }}" alt="{{ $prog.Params.photo_alt }}" width="{{ $prog.Params.photo_width }}" height="{{ $prog.Params.photo_height }}" loading="lazy" decoding="async">
+          {{ with $prog.Params.history }}
+          <figcaption class="pg-prog__history">
+            <span>Run before</span>
+            <dl>{{ range . }}<div><dt>{{ .value }}</dt><dd>{{ .label }}</dd></div>{{ end }}</dl>
+          </figcaption>
+          {{ end }}
+        </figure>
+        {{ end }}
+        {{ with .Params.phases }}
+        <div class="pg-path">
+          <h4>How it unfolds</h4>
+          <ol>
+            {{ range $n, $ph := . }}
+            <li><span class="pg-path__num">{{ printf "%02d" (add $n 1) }}</span><div><strong>{{ $ph.title }}</strong><p>{{ $ph.text }}</p></div></li>
+            {{ end }}
+          </ol>
+        </div>
+        {{ end }}
+      </div>
+    </article>
+    {{ end }}
+  </div>
+</section>
 {{ end }}
 
 {{ partial "blocks/promise.html" . }}
+
+{{ with $p.work }}
+<section class="gi-section pg-work">
+  <div class="gi-inner">
+    <div class="section-header">
+      <div class="eyebrow">{{ .eyebrow }}</div>
+      <h2>{{ .title | safeHTML }}</h2>
+      <p class="lead">{{ .lead }}</p>
+    </div>
+    <ul class="pg-apps">
+      {{ range .apps }}
+      <li class="pg-app">
+        <img src="{{ .image | relURL }}" alt="" width="800" height="800" loading="lazy" decoding="async">
+        {{ with .cohort }}<span class="pg-app__cohort">{{ . }}</span>{{ end }}
+        <div class="pg-app__body">
+          <h3>{{ .name }}</h3>
+          <span class="pg-app__by">by {{ .by }}</span>
+          <p>{{ .text }}</p>
+        </div>
+      </li>
+      {{ end }}
+    </ul>
+    <div class="pg-work__foot">
+      <div class="gi-quotes pg-work__quotes">
+        {{ range .quotes }}
+        <blockquote>
+          <p>{{ .text }}</p>
+          <footer><img src="{{ .avatar | relURL }}" alt="" width="44" height="44" loading="lazy" decoding="async"><cite>{{ .name }}</cite><span>{{ .project }}</span></footer>
+        </blockquote>
+        {{ end }}
+      </div>
+      <a class="pg-work__more" href="{{ .link | relURL }}">{{ .link_text }}</a>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ with $p.record }}
+<section class="gi-section gi-section--dark pg-record">
+  <div class="gi-inner">
+    <div class="section-header">
+      <div class="eyebrow dark">{{ .eyebrow }}</div>
+      <h2>{{ .title | safeHTML }}</h2>
+      <p class="lead">{{ .lead }}</p>
+    </div>
+    <ol class="gi-stats">
+      {{ range .cohorts }}
+      <li>
+        <span class="gi-stats__year">{{ .year }}</span>
+        <strong>{{ .value }}<small>{{ .label }}</small></strong>
+        <p>{{ .text }}</p>
+      </li>
+      {{ end }}
+    </ol>
+    <div class="gi-stats__foot">
+      <p>{{ .note }}</p>
+      <a href="{{ .link | relURL }}">{{ .link_text }}</a>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ with $p.support }}
+<section class="gi-section gi-section--warm pg-support">
+  <div class="gi-inner">
+    <div class="section-header">
+      <div class="eyebrow alt">{{ .eyebrow }}</div>
+      <h2>{{ .title | safeHTML }}</h2>
+      <p class="lead">{{ .lead }}</p>
+    </div>
+    <ul class="gi-cards pg-ways">
+      {{ range .ways }}
+      <li>
+        <span class="gi-icon" aria-hidden="true">{{ partial "gi-icon.html" .icon }}</span>
+        <h3>{{ .title }}</h3>
+        <p>{{ .text }}</p>
+        <a class="pg-ways__cta" href="{{ .url | relURL }}">{{ .cta }}</a>
+      </li>
+      {{ end }}
+    </ul>
+    <div class="pg-learner">
+      <span class="gi-icon gi-icon--muted" aria-hidden="true">{{ partial "gi-icon.html" "pen" }}</span>
+      <p><strong>{{ .learner_title }}</strong> {{ .learner_text }}</p>
+      <a class="pg-learner__cta" href="{{ site.Params.applyFormUrl | relURL }}">{{ .learner_cta }}</a>
+    </div>
+  </div>
+</section>
+{{ end }}
 {{ end }}
