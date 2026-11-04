@@ -2,7 +2,7 @@
 title: "CodeWeekend Web & AI Development Bootcamp 2026 — from first build to Demo Day"
 date: 2026-09-01
 draft: false
-description: "Afghan women and girls went from a first webpage to AI applications of their own, built online from April to August and presented live at Demo Day on 27 August 2026."
+description: "Learning online through power cuts and unstable connections, Afghan women and girls built AI applications of their own and presented them live at Demo Day."
 category: "Cohort spotlight"
 read_time: "7 min read"
 thumb_style: "default"
@@ -30,14 +30,14 @@ offer_form_url: ""
 <div class="news-stats news-stats--themes news-wide">
   <div class="news-stats__head">
     <span class="news-stats__kicker">The 2026 cohort</span>
-    <span class="news-stats__title">From a first webpage to the Demo Day stage</span>
-    <p>April to August, fully online — with a capstone application at the end of it.</p>
+    <span class="news-stats__title">Inside the 2026 bootcamp</span>
+    <p>Twelve weeks of live teaching plus a capstone, fully online, from April to August.</p>
   </div>
   <ol class="news-stats__steps">
     <li><span class="news-stats__step">01 · Process</span><strong>Learn it, build with it</strong><span class="news-stats__label">Every stage ended in something that ran in a browser, and each project asked a little more than the last.</span></li>
-    <li><span class="news-stats__step">02 · Outcome</span><strong>Products of their own</strong><span class="news-stats__label">Graduates chose a problem, planned a product and built it, and they leave with projects they can keep improving and GitHub profiles with real work.</span></li>
+    <li><span class="news-stats__step">02 · Outcome</span><strong>Working products anyone can open</strong><span class="news-stats__label">Graduates chose a problem and built a product of their own. Open the <a href="#capstones">live demos and code</a> below.</span></li>
     <li><span class="news-stats__step">03 · Experience</span><strong>Support beyond the lecture</strong><span class="news-stats__label">Mentors helped students size ideas and debug failing features. When someone missed sessions, the team looked for a way back in.</span></li>
-    <li><span class="news-stats__step">04 · Impact</span><strong>A field they can picture themselves in</strong><span class="news-stats__label">Graduates describe new confidence, stronger problem-solving and the belief that they can build meaningful products.</span></li>
+    <li><span class="news-stats__step">04 · Impact</span><strong>Skills becoming real opportunities</strong><span class="news-stats__label">Samira Hakimi has secured a position at Aseel, and Hamisha Noori has landed a freelance project. Four graduates also describe, <a href="#voices">in their own words</a>, new confidence and readiness for professional work.</span></li>
   </ol>
   <nav class="news-stats__toc" aria-label="In this story">
     <a href="#access">Access</a>
@@ -287,11 +287,6 @@ Who each app is for and what it does. Open the live demo, or read the code on Gi
 
 Graduates from the cohort presented to students, mentors, partners, alumni, and the CodeWeekend community — explaining what they built, why it mattered, how it worked, and what had been hard along the way.
 
-<div class="news-demo__stat news-demo__stat--text">
-  <strong>Live, in their own words</strong>
-  <span>Graduates walked an audience through capstone applications they designed and built</span>
-</div>
-
 <p class="news-demo__note">A few months earlier, some of these students were still assembling their first pages.</p>
 
 </div>
@@ -353,7 +348,7 @@ When someone missed sessions, the team looked for a way back in. Often the inter
 
 ## Open a door for a 2026 graduate {#after data-kicker="07 — What’s next"}
 
-Graduates leave with projects they can keep improving, GitHub profiles with real work, and a clearer picture of the field. They remain part of the CodeWeekend community. Internships, hiring introductions, and ongoing mentorship are not guaranteed outcomes of graduation — they depend on people and organizations who choose to open a door.
+Graduates leave with projects they can keep improving, GitHub profiles with real work, and a clearer picture of the field. They remain part of the CodeWeekend community. Some doors are already opening: Samira Hakimi has secured a position at Aseel, and Hamisha Noori has landed a freelance project. We hope these are the first of many. Internships, hiring introductions, and ongoing mentorship are not guaranteed outcomes of graduation — they depend on people and organizations who choose to open a door.
 
 <p class="news-hire__label">What this cohort built with</p>
 
@@ -396,6 +391,7 @@ Graduates leave with projects they can keep improving, GitHub profiles with real
     <div class="news-fund__ctas">
       <a class="news-fund__btn" href="mailto:partnerships@codeweekend.net?subject=Funding%20partnership%20for%20the%20next%20CodeWeekend%20cohort">Become a funding partner</a>
       <a class="news-fund__link" href="/get-involved/partner/">Ways to partner</a>
+      <a class="news-fund__link" href="/impact/2026/">See our published 2026 results</a>
     </div>
   </div>
   <ul class="news-fund__tiers">
