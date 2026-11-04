@@ -78,7 +78,7 @@ By combining guided lessons with hands-on practice, the bootcamp helps learners 
 
 ## Who teaches
 
-This year's bootcamp is led by **Jamshid Hashimi**, who guides students through the structured curriculum. Alongside him, a group of dedicated **female mentors from Afghanistan and abroad** join live sessions to share professional experiences, answer questions, and encourage learners with their own stories.
+**Shaheer Kochai**, our Lead Instructor, guides students through this year's structured curriculum. A group of dedicated **female mentors from Afghanistan and abroad** also join live sessions to share professional experiences, answer questions, and encourage learners with their own stories.
 
 This mentorship helps students see what is possible — reminding them that a career in technology is within their reach.
 
