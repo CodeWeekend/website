@@ -4,13 +4,11 @@ description: "The people who run CodeWeekend, how it is governed, and those who 
 date: 2026-04-25
 ---
 
-## Leadership
+## Our team
 
-### Jamshid Hashimi
+These are the people running CodeWeekend today.
 
-**Founder and 2026 program lead**
-
-Jamshid is a passionate technologist, innovation enthusiast, and software engineer with more than a decade of experience. He founded CodeWeekend in Kabul on June 4, 2014, and has led the community ever since. Today he leads instruction for the 2026 cohort, guiding students through the structured curriculum.
+{{< team-grid >}}
 
 ## Board
 

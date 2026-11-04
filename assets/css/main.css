@@ -7071,6 +7071,81 @@ article.prose .news-band .news-demo__note { margin: 28px 0 0; }
   .im-partner-list { grid-template-columns: minmax(0, 1fr); }
 }
 
+/* ---------- TEAM ---------- */
+article.prose .team-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin: 28px 0 0;
+  padding: 0;
+  list-style: none;
+}
+article.prose .team-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 0;
+  padding: 20px;
+  border: 1px solid var(--slate-300);
+  border-radius: var(--radius);
+  background: white;
+}
+article.prose .team-card__avatar {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--sky-100);
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--sky-800);
+}
+article.prose .team-card__body { min-width: 0; }
+article.prose .team-card__name {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.25;
+}
+article.prose .team-card__role {
+  margin: 4px 0 0;
+  font-size: 15px;
+  line-height: 1.4;
+  color: var(--slate-600);
+}
+article.prose .team-card--lead {
+  grid-column: 1 / -1;
+  padding: 28px;
+  gap: 22px;
+  border-color: transparent;
+  background: linear-gradient(135deg, var(--sky-900), var(--slate-900));
+}
+article.prose .team-card--lead .team-card__avatar {
+  width: 76px;
+  height: 76px;
+  background: var(--sun-300);
+  font-size: 27px;
+  color: var(--slate-900);
+}
+article.prose .team-card--lead .team-card__name { font-size: 26px; color: white; }
+article.prose .team-card--lead .team-card__role { color: var(--sky-300); }
+article.prose .team-card__bio {
+  margin: 10px 0 0;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--sky-100);
+}
+@media (max-width: 600px) {
+  article.prose .team-grid { grid-template-columns: 1fr; }
+  article.prose .team-card--lead {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px;
+  }
+}
+
 /* ---------- PRINT ---------- */
 @media print {
   .util-bar, .nav-wrap, footer, .promise::before, .hero::before, .hero::after { display: none; }
