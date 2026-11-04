@@ -23,4 +23,4 @@ In 2022, [Hackajob](https://hackajob.com) funded scholarships for **20 women** i
 
 [RapidIteration](https://rapiditeration.com) has supported CodeWeekend's community, technology work, and earlier website delivery.
 
-Partnership descriptions are tied to the years and activities documented in CodeWeekend's archive; they do not imply a current funding agreement. [Partner with CodeWeekend](/get-involved/partner/) to support a future cohort.
+Each description covers specific years and activities and does not imply a current funding agreement. [Partner with CodeWeekend](/get-involved/partner/) to support a future cohort.

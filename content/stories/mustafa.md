@@ -27,7 +27,3 @@ Mustafa came to CodeWeekend as a Computer Science graduate from a private univer
 The CodeWeekend Coding Bootcamp is structured around exactly that gap. We teach the durable abstractions — the things that don't change with the next framework — paired with hands-on projects that mirror the work graduates will do on the job. Mustafa got hired as a Junior Software Developer after the program.
 
 His story is the reason we believe a focused, mentor-led, project-driven program can outperform a multi-year degree for the specific goal of making someone a working developer.
-
----
-
-*This story features a real CodeWeekend graduate. The accompanying image is a placeholder avatar; a portrait will be added with the graduate's consent.*

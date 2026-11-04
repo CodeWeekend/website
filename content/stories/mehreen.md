@@ -25,7 +25,3 @@ Through the program, Mehreen built the deeper technical skills she needed to mak
 ## Why the alumni network keeps mattering
 
 For graduates like Mehreen, the program is not the end of the relationship. The CodeWeekend Slack and alumni network remains active long after graduation: introductions, code reviews, salary advice, and the kind of community that comes from going through something difficult together.
-
----
-
-*This story features a real CodeWeekend graduate. The accompanying image is a placeholder avatar; a portrait will be added with the graduate's consent.*

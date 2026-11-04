@@ -137,7 +137,7 @@ process:
 
 partners:
   title: "Partners who have already opened doors"
-  note: "Descriptions reflect the years and activities documented in our archive; they don’t imply a current agreement."
+  note: "Each description covers specific years and activities and doesn’t imply a current agreement."
   items:
     - name: "Linda Norgrove Foundation"
       url: "https://lindanorgrovefoundation.org"

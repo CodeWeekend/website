@@ -1,11 +1,11 @@
 ---
 title: "Past and Present Community"
-description: "The instructors, mentors, staff, and volunteers documented across CodeWeekend's history."
+description: "The instructors, mentors, staff, and volunteers who have shaped CodeWeekend over the years."
 ---
 
-CodeWeekend has always been a community effort. The people below are preserved as part of the historical record; listing a person here does **not** imply that they currently hold a staff, instructor, mentor, or board role.
+CodeWeekend has always been a community effort. These are some of the people who have given their time to it over the years. Not all of them hold a role with us today.
 
-For confirmed current leadership and governance information, see [Team and Board](/about/team/).
+To meet the current team, see [Team and Board](/about/team/).
 
 ## Past instructors
 
@@ -14,7 +14,7 @@ For confirmed current leadership and governance information, see [Team and Board
 - **Mustafa Ehsan** — software engineer and former CodeWeekend instructor
 - **Zabih Khaleqi** — software engineer and former CodeWeekend instructor
 
-## Historical mentor network
+## Mentors over the years
 
 - **Murtaza Sultani** — software developer and UX/UI designer
 - **Mostafa Rezaie** — web developer

@@ -34,7 +34,3 @@ Mahdia's journey started with the website she built in her first weeks.
 Every website, every app, every new idea is more than code. It is a step toward a brighter future, showing the strength and imagination of the people who built it.
 
 We're proud to have had Mahdia in the 2025 cohort, and we can't wait to see what she builds next.
-
----
-
-_This story features a real CodeWeekend participant. The accompanying image is a placeholder avatar; a portrait will be added with the participant's consent._

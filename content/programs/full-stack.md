@@ -53,7 +53,7 @@ The Full Stack Bootcamp is for developers who are already building things, but w
 
 Most participants come directly from the Web & AI Bootcamp. We also accept developers with equivalent self-taught experience who want to fill in gaps.
 
-## The historical Full Stack Bootcamp
+## Earlier Full Stack Bootcamps
 
 CodeWeekend has previously run six-month Full Stack programs, most notably the **2021 cohort that started October 23rd with 75 participants** with support from [Scrimba](https://scrimba.com), and the **2022 cohort that admitted 30 students from 250+ applications** with scholarship support from [Hackajob](https://hackajob.com).
 

@@ -181,7 +181,7 @@ cohort:
 partners:
   eyebrow: "Partners"
   title: "None of it happens <em>alone.</em>"
-  lead: "Every cohort since 2019 has depended on partners and individual donors. These are the contributions on the public record."
+  lead: "Every cohort since 2019 has depended on partners and individual donors, including these."
   items:
     - name: "Linda Norgrove Foundation"
       since: "Since 2025"

@@ -25,7 +25,3 @@ weight: 10
 Pourya joined CodeWeekend as someone wanting to break into the industry. Through the bootcamp, he developed both the technical skills and the portfolio he needed to land a role as a Junior UI/UX Designer immediately after graduation.
 
 His story is part of why we keep doing this. Every cohort is built around the goal of getting graduates into real developer and design roles — and Pourya is one of many graduates who made it happen.
-
----
-
-*This story features a real CodeWeekend graduate. The accompanying image is a placeholder avatar; a portrait will be added with the graduate's consent.*

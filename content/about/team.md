@@ -1,12 +1,10 @@
 ---
 title: "Team and Board"
-description: "Confirmed leadership, nonprofit governance, and the historical team behind CodeWeekend."
+description: "The people who run CodeWeekend, how it is governed, and those who helped build it."
 date: 2026-04-25
 ---
 
-This page distinguishes confirmed current leadership from people documented on the former website. Historical service is preserved without implying that every person remains active today.
-
-## Confirmed current leadership
+## Leadership
 
 ### Jamshid Hashimi
 
@@ -16,17 +14,16 @@ Jamshid is a passionate technologist, innovation enthusiast, and software engine
 
 ## Board
 
-CodeWeekend is incorporated as a nonprofit society in British Columbia, Canada. The public source material available for this migration did not identify the current directors, so board names will be published after they are confirmed.
+CodeWeekend is incorporated as a nonprofit society in British Columbia, Canada.
 
-## Historical team
+## People who helped build CodeWeekend
 
-The former About page listed these people as team members. Their service is retained here as institutional history, not as a current staff directory:
+These people served on the CodeWeekend team in earlier years:
 
-- **Jamshid Hashimi** — founder
 - **Abida Nabizada** — teacher and developer
 - **Shaheen Naikpay** — operations and finance
 - **Hamid Afghan** — teacher and developer
 - **Mustafa Ehsan Alokozay** — lead mentor
 - **Azizullah Saeidi** — teacher and developer
 
-See the [past and present community](/community/) for the historical instructor and mentor network. For governance questions or role corrections, [contact CodeWeekend](/contact/).
+Meet more of the instructors and mentors who have shaped CodeWeekend in our [past and present community](/community/). For governance questions, [contact CodeWeekend](/contact/).

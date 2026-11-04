@@ -105,7 +105,7 @@ how:
     - title: "Email us"
       text: "Write to [donate@codeweekend.net](mailto:donate@codeweekend.net?subject=Donation%20to%20CodeWeekend) with the amount you have in mind and whether it’s a one-time or monthly gift."
     - title: "We arrange the details"
-      text: "We’ll reply personally to set up your donation. Direct online giving is on the way; this page will link to it once it’s live."
+      text: "We’ll reply personally to set up your donation."
     - title: "Direct your gift, if you like"
       text: "You can designate a gift to the general fund, a specific cohort, instructor compensation, or a particular cost like internet or laptops. For larger gifts or foundation grants, see [ways to partner](/get-involved/partner/)."
 
