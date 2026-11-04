@@ -23,5 +23,10 @@ These people served on the CodeWeekend team in earlier years:
 - **Hamid Afghan** — teacher and developer
 - **Mustafa Ehsan Alokozay** — lead mentor
 - **Azizullah Saeidi** — teacher and developer
+- **Fauzia Kargar** — executive director
+- **Akmal Arzhang** — lead mentor
+- **Ali Abassi** — lead mentor
+- **Sediq Khan** — mentor
+- **Jawed Mansoor** — director
 
 Meet more of the instructors and mentors who have shaped CodeWeekend in our [past and present community](/community/). For governance questions, [contact CodeWeekend](/contact/).
