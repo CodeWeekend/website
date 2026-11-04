@@ -2,7 +2,7 @@
 title: "CodeWeekend Web & AI Development Bootcamp 2026 — from first build to Demo Day"
 date: 2026-09-01
 draft: false
-description: "Fifty Afghan women and girls selected. Twenty-five graduates. Twenty Demo Day presenters — 27 August 2026."
+description: "Afghan women and girls went from a first webpage to AI applications of their own, built online from April to August and presented live at Demo Day on 27 August 2026."
 category: "Cohort spotlight"
 read_time: "7 min read"
 thumb_style: "default"
@@ -27,16 +27,17 @@ offer_form_url: ""
   </div>
 </div>
 
-<div class="news-stats news-wide">
+<div class="news-stats news-stats--themes news-wide">
   <div class="news-stats__head">
     <span class="news-stats__kicker">The 2026 cohort</span>
-    <span class="news-stats__title">From selection to the Demo Day stage</span>
+    <span class="news-stats__title">From a first webpage to the Demo Day stage</span>
     <p>April to August, fully online — with a capstone application at the end of it.</p>
   </div>
   <ol class="news-stats__steps">
-    <li style="--fill: 100%"><span class="news-stats__step">01 · Selected</span><strong>50</strong><span class="news-stats__label">students selected from provinces across Afghanistan</span><i aria-hidden="true"></i></li>
-    <li style="--fill: 50%"><span class="news-stats__step">02 · Graduated</span><strong>25</strong><span class="news-stats__label">graduates who completed the full bootcamp</span><i aria-hidden="true"></i></li>
-    <li style="--fill: 40%"><span class="news-stats__step">03 · Presented</span><strong>20</strong><span class="news-stats__label">presented capstone applications live at Demo Day, 27 August 2026</span><i aria-hidden="true"></i></li>
+    <li><span class="news-stats__step">01 · Process</span><strong>Learn it, build with it</strong><span class="news-stats__label">Every stage ended in something that ran in a browser, and each project asked a little more than the last.</span></li>
+    <li><span class="news-stats__step">02 · Outcome</span><strong>Products of their own</strong><span class="news-stats__label">Graduates chose a problem, planned a product and built it, and they leave with projects they can keep improving and GitHub profiles with real work.</span></li>
+    <li><span class="news-stats__step">03 · Experience</span><strong>Support beyond the lecture</strong><span class="news-stats__label">Mentors helped students size ideas and debug failing features. When someone missed sessions, the team looked for a way back in.</span></li>
+    <li><span class="news-stats__step">04 · Impact</span><strong>A field they can picture themselves in</strong><span class="news-stats__label">Graduates describe new confidence, stronger problem-solving and the belief that they can build meaningful products.</span></li>
   </ol>
   <nav class="news-stats__toc" aria-label="In this story">
     <a href="#access">Access</a>
@@ -284,11 +285,11 @@ Who each app is for and what it does. Open the live demo, or read the code on Gi
 
 ## Demo Day {#demo-day data-kicker="04 — 27 August 2026"}
 
-Twenty graduates presented to students, mentors, partners, alumni, and the CodeWeekend community — explaining what they built, why it mattered, how it worked, and what had been hard along the way. The wider graduate cohort was twenty-five; not every graduate presented live that evening.
+Graduates from the cohort presented to students, mentors, partners, alumni, and the CodeWeekend community — explaining what they built, why it mattered, how it worked, and what had been hard along the way.
 
-<div class="news-demo__stat">
-  <strong>20</strong>
-  <span>graduates walked a live audience through capstone applications they designed and built</span>
+<div class="news-demo__stat news-demo__stat--text">
+  <strong>Live, in their own words</strong>
+  <span>Graduates walked an audience through capstone applications they designed and built</span>
 </div>
 
 <p class="news-demo__note">A few months earlier, some of these students were still assembling their first pages.</p>
