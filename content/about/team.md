@@ -18,11 +18,11 @@ CodeWeekend is incorporated as a nonprofit society in British Columbia, Canada.
 
 These people served on the CodeWeekend team in earlier years:
 
-- **Abida Nabizada** — teacher and developer
+- **Hasib Tareen** — design lead
 - **Shaheen Naikpay** — operations and finance
 - **Hamid Afghan** — teacher and developer
 - **Mustafa Ehsan Alokozay** — lead mentor
-- **Azizullah Saeidi** — teacher and developer
+- **Farin Sadiqi** — design lead
 - **Fauzia Kargar** — executive director
 - **Akmal Arzhang** — lead mentor
 - **Ali Abassi** — lead mentor
